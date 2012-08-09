@@ -16,6 +16,5 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.ComTemplates.ToList();
         }
-        //asdad
     }
 }
