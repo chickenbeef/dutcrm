@@ -10,13 +10,16 @@
 
 // Original file name:
 // Generation date: 2012/08/08 03:33:42 PM
+
+using System;
+
 namespace CRMBusiness.CRM
 {
     
     /// <summary>
     /// There are no comments for CRMEntities in the schema.
     /// </summary>
-    public partial class CRMEntities : global::System.Data.Services.Client.DataServiceContext
+    public partial class CRMEntities : global::System.Data.Services.Client.DataServiceContext, IDisposable
     {
         /// <summary>
         /// Initialize a new CRMEntities object.
@@ -457,6 +460,11 @@ namespace CRMBusiness.CRM
         public void AddTovEmployees(vEmployee vEmployee)
         {
             base.AddObject("vEmployees", vEmployee);
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
     /// <summary>

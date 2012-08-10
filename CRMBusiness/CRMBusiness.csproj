@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientProblemLogBl.cs" />
+    <Compile Include="EscalationBl.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="ImageBl.cs" />
     <Compile Include="NoteBl.cs" />
