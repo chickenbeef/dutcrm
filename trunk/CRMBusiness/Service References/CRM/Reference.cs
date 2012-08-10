@@ -1353,7 +1353,7 @@ namespace CRMBusiness.CRM
         /// <param name="bRH_ID">Initial value of BRH_ID.</param>
         /// <param name="userId">Initial value of UserId.</param>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Client CreateClient(int cLIENT_ID, string name, string surname, global::System.DateTime dateOfBirth, int bRH_ID, global::System.Guid userId)
+        public static Client CreateClient(int cLIENT_ID, string name, string surname, global::System.DateTime dateOfBirth, int bRH_ID, string userId)
         {
             Client client = new Client();
             client.CLIENT_ID = cLIENT_ID;
@@ -1588,7 +1588,7 @@ namespace CRMBusiness.CRM
         /// There are no comments for Property UserId in the schema.
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Guid UserId
+        public string UserId
         {
             get
             {
@@ -1603,8 +1603,8 @@ namespace CRMBusiness.CRM
             }
         }
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Guid _UserId;
-        partial void OnUserIdChanging(global::System.Guid value);
+        private string _UserId;
+        partial void OnUserIdChanging(string value);
         partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
@@ -2370,7 +2370,7 @@ namespace CRMBusiness.CRM
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="userId">Initial value of UserId.</param>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Employee CreateEmployee(int eMP_ID, string name, string surname, global::System.DateTime dateCreated, global::System.Guid userId)
+        public static Employee CreateEmployee(int eMP_ID, string name, string surname, global::System.DateTime dateCreated, string userId)
         {
             Employee employee = new Employee();
             employee.EMP_ID = eMP_ID;
@@ -2560,7 +2560,7 @@ namespace CRMBusiness.CRM
         /// There are no comments for Property UserId in the schema.
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Guid UserId
+        public string UserId
         {
             get
             {
@@ -2575,8 +2575,8 @@ namespace CRMBusiness.CRM
             }
         }
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Guid _UserId;
-        partial void OnUserIdChanging(global::System.Guid value);
+        private string _UserId;
+        partial void OnUserIdChanging(string value);
         partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
