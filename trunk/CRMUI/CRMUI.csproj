@@ -61,7 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CRMService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Login\Login.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -70,6 +73,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CRMDataSet.cs">
       <DependentUpon>CRMDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
