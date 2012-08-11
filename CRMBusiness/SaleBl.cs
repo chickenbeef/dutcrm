@@ -13,23 +13,18 @@ namespace CRMBusiness
 
 
 		public void SaveSale(DateTime datecreated, int cid, int eid)
-		{
-
-			
+		{		
 			using (_crm = new CRMEntities(_uri))
 			{
-
-				var sal = new Sale
+				var sale = new Sale
 				{
 					DateCreated = datecreated,
 					CLIENT_ID = cid,
 					EMP_ID = eid
 				};
 
-
-				_crm.AddToSales(sal);
-				_crm.SaveChanges();
-				
+				_crm.AddToSales(sale);
+				_crm.SaveChanges();				
 			}
 		}
 

@@ -13,23 +13,27 @@ namespace CRMBusiness
         //Adds a new note to database
         public void AddNote(string description, DateTime datecreated, int cprid, int empid)
         {
-            _crm = new CRMEntities(_uri);
-            var n = new Note
-                        {
-                            Description = description,
-                            DateCreated = datecreated,
-                            CPR_ID = cprid,
-                            EMP_ID = empid
-                        };
-            _crm.AddToNotes(n);
-            _crm.SaveChanges();
+            using (_crm = new CRMEntities(_uri))
+            {
+                var n = new Note
+                {
+                    Description = description,
+                    DateCreated = datecreated,
+                    CPR_ID = cprid,
+                    EMP_ID = empid
+                };
+                _crm.AddToNotes(n);
+                _crm.SaveChanges();
+            }
         }
 
         //Get all notes for a specific problem logged(CPR_ID)
         public List<Note> GetNotes(int cprid)
         {
-            _crm = new CRMEntities(_uri);
-            return _crm.Notes.Where(n => n.CPR_ID == cprid).ToList();
+            using (_crm = new CRMEntities(_uri))
+            {
+                return _crm.Notes.Where(n => n.CPR_ID == cprid).ToList();
+            }           
         } 
     }
 }
