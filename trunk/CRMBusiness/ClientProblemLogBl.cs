@@ -75,7 +75,7 @@ namespace CRMBusiness
             using (_crm = new CRMEntities(_uri))
             {
                 return
-                    _crm.vClientProblemsLogs.Where(x => x.ClientName.Contains(nme) && x.ProblemDescription == desc).
+                    _crm.vClientProblemsLogs.Where(x => x.ClientName == nme && x.ProblemDescription.Contains(desc)).
                         ToList();
             }
         }

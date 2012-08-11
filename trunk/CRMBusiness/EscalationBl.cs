@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CRMBusiness.CRM;
 
@@ -14,12 +15,11 @@ namespace CRMBusiness
        #region methods
         public void UpdateConfig(string p, int d)
        {
-           using(_crm= new CRMEntities(_uri))
+           using(_crm = new CRMEntities(_uri))
            {
                var objESc = _crm.Escalations.SingleOrDefault(x=> x.Priority == p);
                if (objESc != null)
                {
-                   objESc.Priority = p;
                    objESc.Duration = (short) d;
                }
 
@@ -27,11 +27,11 @@ namespace CRMBusiness
            }
        }
 
-       public Escalation GetConfigInfo(string p)
+       public List<Escalation> GetConfigInfo()
        {
            using(_crm = new CRMEntities(_uri))
            {
-               return _crm.Escalations.SingleOrDefault(x=> x.Priority == p);
+               return _crm.Escalations.ToList();
            }
        }
       #endregion

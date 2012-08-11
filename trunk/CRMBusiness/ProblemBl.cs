@@ -13,29 +13,36 @@ namespace CRMBusiness
         //Add a new problem to the database(problem table)
         public void AddProblem(string description, DateTime datecreated, int empid)
         {
-            _crm = new CRMEntities(_uri);
-            var p = new Problem
-                        {
-                            Description = description,
-                            DateCreated = datecreated,
-                            EMP_ID = empid
-                        };
-            _crm.AddToProblems(p);
-            _crm.SaveChanges();
+            using (_crm = new CRMEntities(_uri))
+            {
+                var p = new Problem
+                {
+                    Description = description,
+                    DateCreated = datecreated,
+                    EMP_ID = empid
+                };
+                _crm.AddToProblems(p);
+                _crm.SaveChanges();
+            }
+            
         }
 
         //Get a problem for a specific problem ID
         public Problem GetProblem(int probid)
         {
-            _crm = new CRMEntities(_uri);
-            return _crm.Problems.SingleOrDefault(p => p.PROB_ID == probid);
+            using (_crm = new CRMEntities(_uri))
+            {
+                return _crm.Problems.SingleOrDefault(p => p.PROB_ID == probid);
+            }         
         }
 
         //Get problems that match a phrase or keywords(Description)
         public  List<Problem> GetProblems(string description)
         {
-            _crm = new CRMEntities(_uri);      
-            return _crm.Problems.Where(p => p.Description.Contains(description)).ToList();
+            using (_crm = new CRMEntities(_uri))
+            {
+                return _crm.Problems.Where(p => p.Description.Contains(description)).ToList();
+            }              
         } 
     }
 }
