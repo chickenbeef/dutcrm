@@ -13,21 +13,17 @@ namespace CRMBusiness
         //Adds a new image to database
         public void AddImage(byte[] imagefile, int epid)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                var i = new Image { ImageFile = imagefile, EP_ID = epid };
-                _crm.AddToImages(i);
-                _crm.SaveChanges();
-            }
+            _crm = new CRMEntities(_uri);
+            var i = new Image { ImageFile = imagefile, EP_ID = epid };
+            _crm.AddToImages(i);
+            _crm.SaveChanges();
         }
 
         //Gets all images for a specific problem(EP_ID)
         public List<Image> GetImages(int epid)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.Images.Where(i => i.EP_ID == epid).ToList();
-            }
+            _crm = new CRMEntities(_uri);
+            return _crm.Images.Where(i => i.EP_ID == epid).ToList();
         }
     }
 }
