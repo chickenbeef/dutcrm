@@ -41,7 +41,7 @@ namespace CRMBusiness
 
         //update client
 
-        public void UpdateClient(int cid, string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datecreated, DateTime datemodified,int branchid, string userid)
+        public void UpdateClient(int cid, string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datemodified,int branchid)
         {
             using (_crm = new CRMEntities(_uri))
             {
@@ -53,10 +53,8 @@ namespace CRMBusiness
                 objc.Telephone = tel;
                 objc.Cell = cell;
                 objc.Fax = fax;
-                objc.DateCreated = datecreated;
                 objc.DateModified = datemodified;
                 objc.BRH_ID = branchid;
-                objc.UserId = userid;
             }
         }
 
