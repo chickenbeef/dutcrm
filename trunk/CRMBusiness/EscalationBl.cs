@@ -12,27 +12,24 @@ namespace CRMBusiness
         private CRMEntities _crm;
         private readonly Uri _uri = new Uri("http://localhost:1677/CRMService.svc");
        #endregion
-       #region methods
-        public void UpdateConfig(string p, int d)
-       {
-           using(_crm = new CRMEntities(_uri))
-           {
-               var objESc = _crm.Escalations.SingleOrDefault(x=> x.Priority == p);
-               if (objESc != null)
-               {
-                   objESc.Duration = (short) d;
-               }
 
-               _crm.SaveChanges();
-           }
+       #region methods
+       public void UpdateConfig(string p, int d)
+       {
+           _crm = new CRMEntities(_uri);
+            var objESc = _crm.Escalations.SingleOrDefault(x=> x.Priority == p);
+            if (objESc != null)
+            {
+                objESc.Duration = (short) d;
+            }
+
+            _crm.SaveChanges();
        }
 
        public List<Escalation> GetConfigInfo()
        {
-           using(_crm = new CRMEntities(_uri))
-           {
-               return _crm.Escalations.ToList();
-           }
+           _crm = new CRMEntities(_uri);
+           return _crm.Escalations.ToList();
        }
       #endregion
     }

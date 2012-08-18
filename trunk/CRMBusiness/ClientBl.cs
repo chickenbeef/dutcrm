@@ -16,76 +16,65 @@ namespace CRMBusiness
         //save
         public void AddClient(string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datecreated, DateTime datemodified,int branchid, string userid)
         {
-            using (_crm = new CRMEntities(_uri))
+            _crm = new CRMEntities(_uri);
+  
+            var objc = new Client
             {
-                var objc = new Client
-                {
-                    Name = name,
-                    Surname = surname,
-                    DateOfBirth = dob,
-                    Telephone = tel,
-                    Cell = cell,
-                    Fax = fax,
-                    DateCreated = datecreated,
-                    DateModified = datemodified,
-                    BRH_ID = branchid,
-                    UserId = userid,
-                };
+                Name = name,
+                Surname = surname,
+                DateOfBirth = dob,
+                Telephone = tel,
+                Cell = cell,
+                Fax = fax,
+                DateCreated = datecreated,
+                DateModified = datemodified,
+                BRH_ID = branchid,
+                UserId = userid,
+            };
 
-
-                _crm.AddToClients(objc);
-                _crm.SaveChanges();
-            }
+            _crm.AddToClients(objc);
+            _crm.SaveChanges();
+            
        }
 
 
         //update client
 
-        public void UpdateClient(int cid, string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datemodified,int branchid)
+        public void UpdateClient(int cid, string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datemodified)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                var objc = _crm.Clients.SingleOrDefault(x => x.CLIENT_ID == cid);
-                if (objc == null) return;
-                objc.Name = name;
-                objc.Surname = surname;
-                objc.DateOfBirth = dob;
-                objc.Telephone = tel;
-                objc.Cell = cell;
-                objc.Fax = fax;
-                objc.DateModified = datemodified;
-                objc.BRH_ID = branchid;
-            }
+            _crm = new CRMEntities(_uri);
+            
+            var objc = _crm.Clients.SingleOrDefault(x => x.CLIENT_ID == cid);
+            if (objc == null) return;
+            objc.Name = name;
+            objc.Surname = surname;
+            objc.DateOfBirth = dob;
+            objc.Telephone = tel;
+            objc.Cell = cell;
+            objc.Fax = fax;
+            objc.DateModified = datemodified;           
         }
 
         //get client by name
-
         public vClient GetClientName(string  cName)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.vClients.SingleOrDefault(x => x.Name == cName);
-                
-            }
+            _crm = new CRMEntities(_uri);          
+            return _crm.vClients.SingleOrDefault(x => x.Name == cName);            
         }
+
         //get client by username
         public vClient GetClientUserName(string cUserName)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.vClients.SingleOrDefault(x => x.UserName == cUserName);
-
-            }
+            _crm = new CRMEntities(_uri);
+            return _crm.vClients.SingleOrDefault(x => x.UserName == cUserName);
         }
 
 
         //get all clients
         public List<vClient> GetAllClients()
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.vClients.ToList();
-            }
+            _crm = new CRMEntities(_uri);
+            return _crm.vClients.ToList();
         }
     }
 }
