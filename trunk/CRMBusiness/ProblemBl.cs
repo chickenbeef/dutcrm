@@ -28,7 +28,7 @@ namespace CRMBusiness
         public Problem GetProblem(int probid)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.Problems.SingleOrDefault(p => p.PROB_ID == probid);      
+            return _crm.Problems.Where(p => p.PROB_ID == probid).ToList()[0];
         }
 
         //Get problems that match a phrase or keywords(Description)

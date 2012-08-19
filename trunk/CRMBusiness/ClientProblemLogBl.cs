@@ -18,7 +18,7 @@ namespace CRMBusiness
 
         #region methods
 
-        public void Save(bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel, Int32 cId, Int32 eId,
+        public void AddClientProblem(bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel, Int32 cId, Int32 eId,
                          Int32 pId, Int32 sId, string p)
         {
             _crm = new CRMEntities(_uri);
@@ -55,7 +55,7 @@ namespace CRMBusiness
         public vClientProblemsLog GetClientProblem(int cprId)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClientProblemsLogs.SingleOrDefault(x => x.CPR_ID == cprId);
+            return _crm.vClientProblemsLogs.Where(x => x.CPR_ID == cprId).ToList()[0];
         }
 
         public List<vClientProblemsLog> GetClientProblem(string nme, string desc)
@@ -68,7 +68,7 @@ namespace CRMBusiness
                                         Int32 cId, Int32 eId, Int32 pId, Int32 sId, string p)
         {
             _crm = new CRMEntities(_uri);
-            var objCpl = _crm.ClientProblemsLogs.SingleOrDefault(x => x.CPR_ID == cprId);
+            var objCpl = _crm.ClientProblemsLogs.Where(x => x.CPR_ID == cprId).ToList()[0];
             if (objCpl == null) return;
             objCpl.Solved = cprSolved;
             objCpl.DateCreated = dCreated;
@@ -80,6 +80,7 @@ namespace CRMBusiness
             objCpl.SOL_ID = sId;
             objCpl.Priority = p;
 
+            _crm.UpdateObject(objCpl);
             _crm.SaveChanges();
         }
 
