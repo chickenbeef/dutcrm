@@ -44,7 +44,7 @@ namespace CRMBusiness
         {
             _crm = new CRMEntities(_uri);
             
-            var objc = _crm.Clients.SingleOrDefault(x => x.CLIENT_ID == cid);
+            var objc = _crm.Clients.Where(x => x.CLIENT_ID == cid).ToList()[0];
             if (objc == null) return;
             objc.Name = name;
             objc.Surname = surname;
@@ -52,21 +52,24 @@ namespace CRMBusiness
             objc.Telephone = tel;
             objc.Cell = cell;
             objc.Fax = fax;
-            objc.DateModified = datemodified;           
+            objc.DateModified = datemodified;
+         
+            _crm.UpdateObject(objc);
+            _crm.SaveChanges();
         }
 
         //get client by name
         public vClient GetClientName(string  cName)
         {
             _crm = new CRMEntities(_uri);          
-            return _crm.vClients.SingleOrDefault(x => x.Name == cName);            
+            return _crm.vClients.Where(x => x.Name == cName).ToList()[0];            
         }
 
         //get client by username
         public vClient GetClientUserName(string cUserName)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClients.SingleOrDefault(x => x.UserName == cUserName);
+            return _crm.vClients.Where(x => x.UserName == cUserName).ToList()[0];
         }
 
 

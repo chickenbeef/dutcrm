@@ -29,12 +29,14 @@ namespace CRMBusiness
         public void UpdateSolution(int solid, string description, DateTime datemodified, int probid, int empid)
         {
             _crm = new CRMEntities(_uri);
-            var s = _crm.Solutions.SingleOrDefault(sol => sol.SOL_ID == solid);
+            var s = _crm.Solutions.Where(sol => sol.SOL_ID == solid).ToList()[0];
             if (s == null) return;
             s.Description = description;
             s.DateModified = datemodified;
             s.PROB_ID = probid;
             s.EMP_ID = empid;
+
+            _crm.UpdateObject(s);
             _crm.SaveChanges();
         }
 

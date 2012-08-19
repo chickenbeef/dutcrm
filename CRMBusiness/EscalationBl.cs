@@ -17,13 +17,13 @@ namespace CRMBusiness
        public void UpdateConfig(string p, int d)
        {
            _crm = new CRMEntities(_uri);
-            var objESc = _crm.Escalations.SingleOrDefault(x=> x.Priority == p);
+            var objESc = _crm.Escalations.Where(x=> x.Priority == p).ToList()[0];
             if (objESc != null)
             {
                 objESc.Duration = (short) d;
-            }
-
-            _crm.SaveChanges();
+                _crm.UpdateObject(objESc);
+                _crm.SaveChanges();
+            }      
        }
 
        public List<Escalation> GetConfigInfo()
