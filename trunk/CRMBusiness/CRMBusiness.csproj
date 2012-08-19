@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BranchesBl.cs" />
     <Compile Include="ClientBl.cs" />
     <Compile Include="ClientProblemLogBl.cs" />
     <Compile Include="CompanyBl.cs" />
