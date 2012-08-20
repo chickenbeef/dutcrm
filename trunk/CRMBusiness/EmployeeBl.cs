@@ -12,65 +12,115 @@ namespace CRMBusiness
 
         public List<vEmployee> GetAllEmployees()
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.vEmployees.ToList();
-            }
-
-
+            _crm = new CRMEntities(_uri);
+            return _crm.vEmployees.ToList();
         }
 
         public List<vEmployee> GetEmployee(string username)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.vEmployees.Where(x => x.Name.Contains(username)).ToList();
-            }
+            _crm = new CRMEntities(_uri);
+            return _crm.vEmployees.Where(x => x.Name.Contains(username)).ToList();
         }
 
         public void AddEmployee(string username, string surname, string telephone, string cell, string fax, DateTime datecreated, DateTime datemodified, string userid)
         {
-            using (_crm = new CRMEntities(_uri))
+            _crm = new CRMEntities(_uri);
+            var emp = new Employee
             {
+                Name = username,
+                Surname = surname,
+                Telephone = telephone,
+                Cell = cell,
+                Fax = fax,
+                DateCreated = datecreated,
+                DateModified = datemodified,
+                UserId = userid
+            };
+            _crm.AddToEmployees(emp);
+            _crm.SaveChanges();
+        }
 
-                var emp = new Employee
-                {
-                    Name = username,
-                    Surname = surname,
-                    Telephone = telephone,
-                    Cell = cell,
-                    Fax = fax,
-                    DateCreated = datecreated,
-                    DateModified = datemodified,
-                    UserId = userid
-                };
-                _crm.AddToEmployees(emp);
+        public void UpdateEmployee(string username, string surname, string telephone, string cell, string fax, DateTime datemodified)
+        {
+            _crm = new CRMEntities(_uri);
+            var e = _crm.Employees.SingleOrDefault(emp => emp.Name == username);
+
+            if (e != null)
+            {
+                e.Name = username;
+                e.Surname = surname;
+                e.Telephone = telephone;
+                e.Cell = cell;
+                e.Fax = fax;
+                e.DateModified = datemodified;
+
                 _crm.SaveChanges();
             }
         }
 
-        public void UpdateEmployee(string username, string surname, string telephone, string cell, string fax, DateTime datecreated, DateTime datemodified, string userid)
-        {
-            using (_crm = new CRMEntities(_uri))
-            {
+        #region WithUsing
 
-                var e = _crm.Employees.SingleOrDefault(emp => emp.Name == username);
+        //public List<vEmployee> GetAllEmployees()
+        //{
+        //    using (_crm = new CRMEntities(_uri))
+        //    {
+        //        return _crm.vEmployees.ToList();
+        //    }
+        //}
 
-                if (e != null)
-                {
-                    e.Name = username;
-                    e.Surname = surname;
-                    e.Telephone = telephone;
-                    e.Cell = cell;
-                    e.Fax = fax;
-                    e.DateCreated = datecreated;
-                    e.DateModified = datemodified;
-                    e.UserId = userid;
+        //public List<vEmployee> GetEmployee(string username)
+        //{
+        //    using (_crm = new CRMEntities(_uri))
+        //    {
+        //        return _crm.vEmployees.Where(x => x.Name.Contains(username)).ToList();
+        //    }
+        //}
 
-                    _crm.SaveChanges();
-                }
-            }
+        //public void AddEmployee(string username, string surname, string telephone, string cell, string fax, DateTime datecreated, DateTime datemodified, string userid)
+        //{
+        //    using (_crm = new CRMEntities(_uri))
+        //    {
 
-        }
+        //        var emp = new Employee
+        //        {
+        //            Name = username,
+        //            Surname = surname,
+        //            Telephone = telephone,
+        //            Cell = cell,
+        //            Fax = fax,
+        //            DateCreated = datecreated,
+        //            DateModified = datemodified,
+        //            UserId = userid
+        //        };
+        //        _crm.AddToEmployees(emp);
+        //        _crm.SaveChanges();
+        //    }
+        //}
+
+        //public void UpdateEmployee(string username, string surname, string telephone, string cell, string fax, DateTime datecreated, DateTime datemodified, string userid)
+        //{
+        //    using (_crm = new CRMEntities(_uri))
+        //    {
+
+        //        var e = _crm.Employees.SingleOrDefault(emp => emp.Name == username);
+
+        //        if (e != null)
+        //        {
+        //            e.Name = username;
+        //            e.Surname = surname;
+        //            e.Telephone = telephone;
+        //            e.Cell = cell;
+        //            e.Fax = fax;
+        //            e.DateCreated = datecreated;
+        //            e.DateModified = datemodified;
+        //            e.UserId = userid;
+
+        //            _crm.SaveChanges();
+        //        }
+        //    }
+
+        //}
+
+        #endregion
     }
 }
