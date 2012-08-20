@@ -48,6 +48,7 @@
     <Compile Include="ClientBl.cs" />
     <Compile Include="ClientProblemLogBl.cs" />
     <Compile Include="CompanyBl.cs" />
+    <Compile Include="EmailProblemBl.cs" />
     <Compile Include="EscalationBl.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="ImageBl.cs" />
