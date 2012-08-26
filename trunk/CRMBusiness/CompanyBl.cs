@@ -22,8 +22,10 @@ namespace CRMBusiness
 		    return _crm.Companies.Where(co => co.CPY_ID == cpyid).ToList()[0];
 		}
 
-		public void AddCompany(string name, int type, int regtype, int regcomptype, string regno, string audfirmname, string audfirmqual, string audfirmaudit, bool vatregist, string vatregno, DateTime datecreated, DateTime datemodified  )
+		public bool AddCompany(string name, int type, int regtype, int regcomptype, string regno, string audfirmname, string audfirmqual, string audfirmaudit, bool vatregist, string vatregno, DateTime datecreated)
 		{
+            if (name.Equals("") || type.Equals(0) || regtype.Equals(0) || regcomptype.Equals(0) || 
+                regno.Equals(0) || vatregist.Equals(0) || vatregno.Equals(0)) return false;
 		    _crm = new CRMEntities(_uri);
 			var comp = new Company
 			{
@@ -38,11 +40,10 @@ namespace CRMBusiness
 				VATRegistered = vatregist,
 				VATRegNo = vatregno,
 				CreatedDate = datecreated,
-				ModifiedDate = datemodified,
 			};
-
 			_crm.AddToCompanies(comp);
 			_crm.SaveChanges();
+		    return true;
 		}
 	}
 }

@@ -14,8 +14,9 @@ namespace CRMBusiness
 
         //methods
         //save
-        public void AddClient(string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datecreated, DateTime datemodified,int branchid, string userid)
+        public bool AddClient(string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime dateofbirth, DateTime datecreated, int branchid, string userid)
         {
+            if (name.Equals("") || surname.Equals("") || dateofbirth.Equals("") || branchid.Equals(0)) return false;
             _crm = new CRMEntities(_uri);
   
             var objc = new Client
@@ -27,25 +28,24 @@ namespace CRMBusiness
                 Cell = cell,
                 Fax = fax,
                 DateCreated = datecreated,
-                DateModified = datemodified,
                 BRH_ID = branchid,
                 UserId = userid,
             };
 
             _crm.AddToClients(objc);
             _crm.SaveChanges();
-            
-       }
+            return true;
+        }
 
 
         //update client
 
-        public void UpdateClient(int cid, string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datemodified)
+        public bool UpdateClient(int cid, string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime datemodified)
         {
             _crm = new CRMEntities(_uri);
             
             var objc = _crm.Clients.Where(x => x.CLIENT_ID == cid).ToList()[0];
-            if (objc == null) return;
+            if (objc == null) return false;
             objc.Name = name;
             objc.Surname = surname;
             objc.DateOfBirth = dob;
@@ -56,6 +56,7 @@ namespace CRMBusiness
          
             _crm.UpdateObject(objc);
             _crm.SaveChanges();
+            return true;
         }
 
         //get client by name
