@@ -11,8 +11,9 @@ namespace CRMBusiness
         private readonly Uri _uri = new Uri("http://localhost:1677/CRMService.svc");
 
         //Adds a new note to database
-        public void AddNote(string description, DateTime datecreated, int cprid, int empid)
+        public bool AddNote(string description, DateTime datecreated, int cprid, int empid)
         {
+            if(description.Equals("") || cprid.Equals(0) || empid.Equals(0)) return false;
             _crm = new CRMEntities(_uri);
             var n = new Note
             {
@@ -23,6 +24,7 @@ namespace CRMBusiness
             };
             _crm.AddToNotes(n);
             _crm.SaveChanges();
+            return true;
         }
 
         //Get all notes for a specific problem logged(CPR_ID)

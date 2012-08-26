@@ -18,9 +18,10 @@ namespace CRMBusiness
 
         #region methods
 
-        public void AddClientProblem(bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel, Int32 cId, Int32 eId,
-                         Int32 pId, Int32 sId, string p)
+        public bool AddClientProblem(bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel,
+            Int32 cId, Int32 eId, Int32 pId, Int32 sId, string p)
         {
+            if (cId.Equals(0) || eId.Equals(0) || pId.Equals(0) || p.Equals("")) return false;
             _crm = new CRMEntities(_uri);
             var objCpl = new ClientProblemsLog
                                 {
@@ -35,9 +36,9 @@ namespace CRMBusiness
                                     Priority = p
                                 };
 
-
             _crm.AddToClientProblemsLogs(objCpl);
-            _crm.SaveChanges();           
+            _crm.SaveChanges();
+            return true;
         }
 
         public List<vClientProblemsLog> GetAllClientProblems()
@@ -64,12 +65,12 @@ namespace CRMBusiness
             return _crm.vClientProblemsLogs.Where(x => x.ClientName == nme && x.ProblemDescription.Contains(desc)).ToList();
         }
 
-        public void UpdateClientProblem(int cprId, bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel,
+        public bool UpdateClientProblem(int cprId, bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel,
                                         Int32 cId, Int32 eId, Int32 pId, Int32 sId, string p)
         {
             _crm = new CRMEntities(_uri);
             var objCpl = _crm.ClientProblemsLogs.Where(x => x.CPR_ID == cprId).ToList()[0];
-            if (objCpl == null) return;
+            if (objCpl == null) return false;
             objCpl.Solved = cprSolved;
             objCpl.DateCreated = dCreated;
             objCpl.DateSolved = dSolved;
@@ -79,9 +80,9 @@ namespace CRMBusiness
             objCpl.PROB_ID = pId;
             objCpl.SOL_ID = sId;
             objCpl.Priority = p;
-
             _crm.UpdateObject(objCpl);
             _crm.SaveChanges();
+            return true;
         }
 
         #endregion

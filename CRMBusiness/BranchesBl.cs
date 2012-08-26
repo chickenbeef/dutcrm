@@ -13,74 +13,70 @@ namespace CRMBusiness
         #endregion
 
         #region Methods
-        public void AddBranch(int cpyId, string daddress, int routingId, string brhname, string paddress1, string paddress2, string brhsubrb, string brhcity, string postaladdress1, string postaladdress2, string postcode, string brhtel, string brhfax, string brhemail, DateTime datecreated, DateTime datemodified, Char intkey)
+        public bool AddBranch(int cpyid, string docexaddr, int routingId, string name, string physaddr,
+            string physaddr2, string subrb, string city, string postaladdr1, string postaladdr2, string postalcode,
+            string tel, string fax, string email, DateTime datecreated, string intkey)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                var objb = new Branch
-                {
-                    CpyId = cpyId;
-                    Daddress = daddress;
-                    RoutingId = routingId;
-                    Brhname = brhname;
-                    Paddress1 = paddress1;
-                    Paddress2 = paddress2;
-                    Brhsubrb = brhsubrb;
-                    Brhcity = brhcity;
-                    Postaladdress1 = postaladdress1;
-                    Postaladdress2 = postaladdress2;
-                    Postcode = postcode;
-                    Brhtel = brhtel;
-                    Brhfax = brhfax;
-                    Brhemail = brhemail;
-                    Datecreated = datecreated;
-                    Datemodified = datemodified;
-                    Intkey = intkey;
-                };
-                
-                _crm.AddToBranches(objb);
-				_crm.SaveChanges();
+            if (cpyid.Equals(0) || name.Equals("") || physaddr.Equals("") || tel.Equals("") ||
+                fax.Equals("") || email.Equals("")) return false;
 
-            }
+            _crm = new CRMEntities(_uri);
+            var objb = new Branch
+            {
+                CPY_ID = cpyid,
+                DocexAddress = docexaddr,
+                RoutingID = routingId,
+                Name = name,
+                PhysicalAddress1 = physaddr,
+                PhysicalAddress2 = physaddr2,
+                Suburb = subrb,
+                City = city,
+                PostalAddress1 = postaladdr1,
+                PostalAddress2 = postaladdr2,
+                PostalCode = postalcode,
+                Tel = tel,
+                Fax = fax,
+                Email = email,
+                DateCreated = datecreated,
+                IntegrationKey = intkey
+            };
+
+            _crm.AddToBranches(objb);
+            _crm.SaveChanges();
+            return true;
         }
 
-        public void UpdateBranches(int brhId, string daddress, string brhname, string paddress1, string paddress2, string brhsubrb, string brhcity, string postaladdress1, string postaladdress2, string postcode, string brhtel, string brhfax, string brhemail, DateTime datemodified)
+        public bool UpdateBranches(int brhId, int cpyid, string docexaddr, int routingId, string name, string physaddr, string physaddr2, string subrb, string city, string postaladdr1, string postaladdr2, string postalcode, string tel, string fax, string email, DateTime datemodified, string intkey)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                var objb = _crm.Branches.SingleOrDefault(x => x.BRH_ID == brhId);
-                if (objb == null) return;
-                objb.Brhid = brhId;
-                objb.Daddress = daddress;
-                objb.Brhname = brhname;
-                objb.Paddress1 = paddress1;
-                objb.Paddress2 = paddress2;
-                objb.Brhsubrb = brhsubrb;
-                objb.Brhcity = brhcity;
-                objb.Postaladdress1 = postaladdress1;
-                objb.Postaladdress2 = postaladdress2;
-                objb.Postcode = postcode;
-                objb.Brhtel = brhtel;
-                objb.Brhfax = brhfax;
-                objb.Brhemail = brhemail;
-                objb.Datemodified = datemodified;
-            }
+            var objb = _crm.Branches.Where(x => x.BRH_ID == brhId).ToList()[0];
+            if (objb == null) return false;
+            objb.CPY_ID = cpyid;
+            objb.DocexAddress = docexaddr;
+            objb.RoutingID = routingId;
+            objb.Name = name;
+            objb.PhysicalAddress1 = physaddr;
+            objb.PhysicalAddress2 = physaddr2;
+            objb.Suburb = subrb;
+            objb.City = city;
+            objb.PostalAddress1 = postaladdr1;
+            objb.PostalAddress2 = postaladdr2;
+            objb.PostalCode = postalcode;
+            objb.Tel = tel;
+            objb.Fax = fax;
+            objb.Email = email;
+            objb.DateCreated = datemodified;
+            objb.IntegrationKey = intkey;
+            return true;
         }
 
         public List<Branch> GetAllBranches()
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.Branches.ToList();
-            }
+            return _crm.Branches.ToList();
         }
 
         public Branch GetBranch(int brhid)
         {
-            using (_crm = new CRMEntities(_uri))
-            {
-                return _crm.Branches.SingleOrDefault(x => x.BRH_ID == brhid);
-            }
+            return _crm.Branches.SingleOrDefault(x => x.BRH_ID == brhid);
         }
         #endregion
     }

@@ -48,9 +48,10 @@
     <Compile Include="ClientBl.cs" />
     <Compile Include="ClientProblemLogBl.cs" />
     <Compile Include="CompanyBl.cs" />
+    <Compile Include="ComTemplateBl.cs" />
     <Compile Include="EmailProblemBl.cs" />
+    <Compile Include="EmployeeBl.cs" />
     <Compile Include="EscalationBl.cs" />
-    <Compile Include="Example.cs" />
     <Compile Include="ImageBl.cs" />
     <Compile Include="NoteBl.cs" />
     <Compile Include="ProblemBl.cs" />

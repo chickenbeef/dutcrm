@@ -11,8 +11,9 @@ namespace CRMBusiness
         private readonly Uri _uri = new Uri("http://localhost:1677/CRMService.svc");
 
         //Add a new problem to the database(problem table)
-        public void AddProblem(string description, DateTime datecreated, int empid)
+        public bool AddProblem(string description, DateTime datecreated, int empid)
         {
+            if (description.Equals("") || empid.Equals(0)) return false;
             _crm = new CRMEntities(_uri);
             var p = new Problem
             {
@@ -21,7 +22,8 @@ namespace CRMBusiness
                 EMP_ID = empid
             };
             _crm.AddToProblems(p);
-            _crm.SaveChanges();         
+            _crm.SaveChanges();
+            return true;
         }
 
         //Get a problem for a specific problem ID

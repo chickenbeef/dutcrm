@@ -14,16 +14,15 @@ namespace CRMBusiness
        #endregion
 
        #region methods
-       public void UpdateConfig(string p, int d)
+       public bool UpdateConfig(string priority, int duration)
        {
            _crm = new CRMEntities(_uri);
-            var objESc = _crm.Escalations.Where(x=> x.Priority == p).ToList()[0];
-            if (objESc != null)
-            {
-                objESc.Duration = (short) d;
-                _crm.UpdateObject(objESc);
-                _crm.SaveChanges();
-            }      
+            var objESc = _crm.Escalations.Where(x=> x.Priority == priority).ToList()[0];
+           if (objESc == null) return false;
+           objESc.Duration = (short) duration;
+           _crm.UpdateObject(objESc);
+           _crm.SaveChanges();
+           return true;
        }
 
        public List<Escalation> GetConfigInfo()
