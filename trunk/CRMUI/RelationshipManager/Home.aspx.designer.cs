@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRMUI.Login {
+namespace CRMUI.RelationshipManager {
     
     
-    public partial class Login {
+    public partial class Home {
         
         /// <summary>
         /// ResourceManager1 control.
