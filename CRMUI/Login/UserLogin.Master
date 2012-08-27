@@ -1,0 +1,67 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/Login/UserLogin.master.cs" Inherits="CRMUI.Login.UserLogin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../Styles/Main.css"/>
+        <asp:ContentPlaceHolder ID="head" runat="server">              
+        </asp:ContentPlaceHolder>
+        </head>
+    <body>
+        <form id="form1" runat="server">
+            <div class="fullwidth">
+                <table class="fullwidth">
+                    <tr>
+                        <td class="bluestripe">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="fullwidth">
+                                <tr>
+                                    <td class="leftgrayheader">
+                                        <img class="logo" src="../Images/Logo.png" alt="Law Property logo"/>
+                                    </td>
+                                    <td>
+                                        <table class="fullwidth">
+                                            <tr>
+                                                <td class="middlegrayheader"></td>
+                                                <td class="rightgrayheader">Law Active Holdings</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blueheader">
+                            Customer Relationship Management System</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="subheading">User Login</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:ContentPlaceHolder ID="cplBody" runat="server">
+                            </asp:ContentPlaceHolder></td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            © 2011 LAW Property (Pty) Ltd. All rights reserved</td>
+                    </tr>
+                    <tr>
+                        <td class="bluestripe">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </body>
+</html>

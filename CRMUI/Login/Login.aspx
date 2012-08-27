@@ -1,16 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CRMUI.Login.Login" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login/UserLogin.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CRMUI.Login.Login" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default"/>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cplBody" runat="server">
+    <ext:Panel ID="pnlMain" runat="server" Height="408" Title="Login">
+        <Items>
+        </Items>
+    </ext:Panel>
+</asp:Content>
