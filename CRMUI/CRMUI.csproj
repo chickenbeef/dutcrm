@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ext.Net">
-      <HintPath>..\packages\Ext.NET.2.0.0\lib\Ext.Net.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Ext.NET.Pro.2.0.0\lib\Ext.Net.dll</HintPath>
     </Reference>
     <Reference Include="Ext.Net.Utilities, Version=2.0.1.26920, Culture=neutral, PublicKeyToken=2c34ac34702a3c23, processorArchitecture=MSIL">
       <HintPath>..\packages\Ext.NET.Utilities.2.0.1\lib\Ext.Net.Utilities.dll</HintPath>
@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CallCentreManager\AutomationSettings.aspx" />
+    <Content Include="CallCentreManager\EmailSettings.aspx" />
     <Content Include="CallCentreManager\Home.aspx" />
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="CallCentreManager\CCM.Master.designer.cs">
       <DependentUpon>CCM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\EmailSettings.aspx.cs">
+      <DependentUpon>EmailSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\EmailSettings.aspx.designer.cs">
+      <DependentUpon>EmailSettings.aspx</DependentUpon>
     </Compile>
     <Compile Include="CallCentreManager\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
