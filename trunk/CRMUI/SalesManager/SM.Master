@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/RelationshipManager/RM.master.cs" Inherits="CRMUI.RelationshipManager.RM" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SM.Master.cs" Inherits="CRMUI.SalesManager.SM" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -11,7 +11,7 @@
         </head>
     <body>
         <form id="form1" runat="server">
-            <div class="fullwidth">
+            <div>
                 <table class="fullwidth">
                     <tr>
                         <td class="bluestripe">
@@ -44,14 +44,15 @@
                         <td>
                             <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
                                 <Items>
-                                    <ext:LinkButton runat="server" ID="lnkRecordSale" Text="Record Sale" AutoPostBack="True" PostBackUrl="~/RelationshipManager/Home.aspx"/>
+                                    <ext:LinkButton runat="server" ID="lnkSupportReports" Text="Support Reports" AutoPostBack="True" PostBackUrl="~/SalesManager/Home.aspx" />
                                     <ext:ToolbarFill runat="server"/>
+                                    <ext:ToolbarSeparator runat="server"/>
                                     <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Login/Login.aspx"/>
                                 </Items>
                             </ext:Toolbar></td>
                     </tr>
                     <tr>
-                        <td class="subheading">Relationship Manager</td>
+                        <td class="subheading">Sales Manager</td>
                     </tr>
                     <tr>
                         <td>

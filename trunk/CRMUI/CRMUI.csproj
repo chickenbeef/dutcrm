@@ -73,14 +73,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CallCentreManager\AutomationSettings.aspx" />
+    <Content Include="CallCentreManager\Home.aspx" />
+    <Content Include="Client\EmailSupport.aspx" />
+    <Content Include="Client\Home.aspx" />
     <Content Include="CRMService.svc" />
     <Content Include="Images\Header1.png" />
     <Content Include="Images\Header2.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Login\Login.aspx" />
     <Content Include="RelationshipManager\Home.aspx" />
+    <Content Include="SalesManager\Home.aspx" />
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\xtheme-gray-extend.css" />
+    <Content Include="SupportAgent\AddProblemReference.aspx" />
+    <Content Include="SupportAgent\AddSolutionReference.aspx" />
+    <Content Include="SupportAgent\Home.aspx" />
+    <Content Include="SupportAgent\CheckTicketStatus.aspx" />
+    <Content Include="SupportAgent\NewTicket.aspx" />
+    <Content Include="SupportAgent\SolveTicket.aspx" />
+    <Content Include="SupportAgent\UpdateSolutionReference.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -92,6 +104,48 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallCentreManager\AutomationSettings.aspx.cs">
+      <DependentUpon>AutomationSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\AutomationSettings.aspx.designer.cs">
+      <DependentUpon>AutomationSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\CCM.Master.cs">
+      <DependentUpon>CCM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\CCM.Master.designer.cs">
+      <DependentUpon>CCM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\CM.Master.cs">
+      <DependentUpon>CM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\CM.Master.designer.cs">
+      <DependentUpon>CM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Client\EmailSupport.aspx.cs">
+      <DependentUpon>EmailSupport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\EmailSupport.aspx.designer.cs">
+      <DependentUpon>EmailSupport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +187,76 @@
       <DependentUpon>CRMService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesManager\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesManager\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManager\SM.Master.cs">
+      <DependentUpon>SM.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesManager\SM.Master.designer.cs">
+      <DependentUpon>SM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\AddProblemReference.aspx.cs">
+      <DependentUpon>AddProblemReference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\AddProblemReference.aspx.designer.cs">
+      <DependentUpon>AddProblemReference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\AddSolutionReference.aspx.cs">
+      <DependentUpon>AddSolutionReference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\AddSolutionReference.aspx.designer.cs">
+      <DependentUpon>AddSolutionReference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\CheckTicketStatus.aspx.cs">
+      <DependentUpon>CheckTicketStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\CheckTicketStatus.aspx.designer.cs">
+      <DependentUpon>CheckTicketStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\NewTicket.aspx.cs">
+      <DependentUpon>NewTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\NewTicket.aspx.designer.cs">
+      <DependentUpon>NewTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\SA.Master.cs">
+      <DependentUpon>SA.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\SA.Master.designer.cs">
+      <DependentUpon>SA.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\SolveTicket.aspx.cs">
+      <DependentUpon>SolveTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\SolveTicket.aspx.designer.cs">
+      <DependentUpon>SolveTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\UpdateSolutionReference.aspx.cs">
+      <DependentUpon>UpdateSolutionReference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\UpdateSolutionReference.aspx.designer.cs">
+      <DependentUpon>UpdateSolutionReference.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CRMBusiness\CRMBusiness.csproj">
@@ -154,6 +278,8 @@
   <ItemGroup>
     <Content Include="RelationshipManager\RM.Master" />
     <Content Include="Login\UserLogin.Master" />
+    <Content Include="CallCentreManager\CCM.Master" />
+    <Content Include="Client\CM.Master" />
     <None Include="Reports\CRMDataSet.xsc">
       <DependentUpon>CRMDataSet.xsd</DependentUpon>
     </None>
@@ -165,6 +291,8 @@
     <None Include="Reports\CRMDataSet.xss">
       <DependentUpon>CRMDataSet.xsd</DependentUpon>
     </None>
+    <Content Include="SalesManager\SM.Master" />
+    <Content Include="SupportAgent\SA.Master" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
