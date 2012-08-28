@@ -3,7 +3,7 @@
 <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
-    <ext:Panel ID="pnlMain" runat="server" Height="615" MaxWidth="1349" Title="Automation Settings">
+    <ext:Panel ID="pnlMain" runat="server" Height="615" MaxWidth="1349" Title="Email Settings">
         <Items>
         </Items>
     </ext:Panel>
