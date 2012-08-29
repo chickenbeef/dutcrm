@@ -103,13 +103,22 @@ namespace CRMUI.RelationshipManager {
         protected global::Ext.Net.Button btnNameSearch;
         
         /// <summary>
-        /// Panel2 control.
+        /// streClient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel Panel2;
+        protected global::Ext.Net.Store streClient;
+        
+        /// <summary>
+        /// mdlClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlClient;
         
         /// <summary>
         /// txtName control.
@@ -118,7 +127,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtName;
+        protected global::Ext.Net.Column txtName;
         
         /// <summary>
         /// txtSurname control.
@@ -127,7 +136,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtSurname;
+        protected global::Ext.Net.Column txtSurname;
         
         /// <summary>
         /// txtUsername control.
@@ -136,7 +145,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtUsername;
+        protected global::Ext.Net.Column txtUsername;
         
         /// <summary>
         /// txtDateOfBirth control.
@@ -145,7 +154,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtDateOfBirth;
+        protected global::Ext.Net.Column txtDateOfBirth;
         
         /// <summary>
         /// txtTelephone control.
@@ -154,7 +163,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtTelephone;
+        protected global::Ext.Net.Column txtTelephone;
         
         /// <summary>
         /// txtCell control.
@@ -163,7 +172,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtCell;
+        protected global::Ext.Net.Column txtCell;
         
         /// <summary>
         /// txtFax control.
@@ -172,7 +181,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtFax;
+        protected global::Ext.Net.Column txtFax;
         
         /// <summary>
         /// btnAccept control.
@@ -191,15 +200,6 @@ namespace CRMUI.RelationshipManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Panel pnlConfirm;
-        
-        /// <summary>
-        /// txtDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.TextField txtDate;
         
         /// <summary>
         /// txtClientId control.

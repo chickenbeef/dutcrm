@@ -48,6 +48,8 @@
                                     <ext:ToolbarSpacer runat="server"/>
                                     <ext:LinkButton ID="LnkAutomationSettings" runat="server" Text="Automation Settings" AutoPostBack="True" PostBackUrl="~/CallCentreManager/AutomationSettings.aspx" />
                                     <ext:ToolbarSpacer runat="server"/>
+                                    <ext:LinkButton runat="server" ID="lnkEmailSettings" Text="Email Settings" AutoPostBack="True" PostBackUrl="~/CallCentreManager/EmailSettings.aspx" />
+                                    <ext:ToolbarSpacer runat="server"/>
                                     <ext:ToolbarFill ID="ToolbarFill1" runat="server"/>
                                     <ext:ToolbarSeparator runat="server"/>
                                     <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Login/Login.aspx"/>

@@ -76,6 +76,8 @@
     <Content Include="CallCentreManager\AutomationSettings.aspx" />
     <Content Include="CallCentreManager\EmailSettings.aspx" />
     <Content Include="CallCentreManager\Home.aspx" />
+    <Content Include="CallCentreManager\SupportReports.aspx" />
+    <Content Include="CallCentreManager\WebForm3.aspx" />
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
     <Content Include="CRMService.svc" />
@@ -94,6 +96,11 @@
     <Content Include="SupportAgent\NewTicket.aspx" />
     <Content Include="SupportAgent\SolveTicket.aspx" />
     <Content Include="SupportAgent\UpdateSolutionReference.aspx" />
+    <Content Include="User Controls\ProblemsPerAgentUserControl.ascx" />
+    <Content Include="User Controls\SalesDayUserControl.ascx" />
+    <Content Include="User Controls\SalesMonthUserControl.ascx" />
+    <Content Include="User Controls\SalesWeekUserControl.ascx" />
+    <Content Include="User Controls\SupportUserControl.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -132,6 +139,20 @@
     </Compile>
     <Compile Include="CallCentreManager\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\SupportReports.aspx.cs">
+      <DependentUpon>SupportReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\SupportReports.aspx.designer.cs">
+      <DependentUpon>SupportReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\CM.Master.cs">
       <DependentUpon>CM.Master</DependentUpon>
@@ -264,6 +285,41 @@
     </Compile>
     <Compile Include="SupportAgent\UpdateSolutionReference.aspx.designer.cs">
       <DependentUpon>UpdateSolutionReference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ProblemsPerAgentUserControl.ascx.cs">
+      <DependentUpon>ProblemsPerAgentUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Controls\ProblemsPerAgentUserControl.ascx.designer.cs">
+      <DependentUpon>ProblemsPerAgentUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\SalesDayUserControl.ascx.cs">
+      <DependentUpon>SalesDayUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Controls\SalesDayUserControl.ascx.designer.cs">
+      <DependentUpon>SalesDayUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\SalesMonthUserControl.ascx.cs">
+      <DependentUpon>SalesMonthUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Controls\SalesMonthUserControl.ascx.designer.cs">
+      <DependentUpon>SalesMonthUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\SalesWeekUserControl.ascx.cs">
+      <DependentUpon>SalesWeekUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Controls\SalesWeekUserControl.ascx.designer.cs">
+      <DependentUpon>SalesWeekUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\SupportUserControl.ascx.cs">
+      <DependentUpon>SupportUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Controls\SupportUserControl.ascx.designer.cs">
+      <DependentUpon>SupportUserControl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

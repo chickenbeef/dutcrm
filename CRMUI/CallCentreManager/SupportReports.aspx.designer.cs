@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRMUI.SalesManager {
+namespace CRMUI.CallCentreManager {
     
     
-    public partial class WebForm1 {
+    public partial class SupportReports {
         
         /// <summary>
         /// ResourceManager1 control.
@@ -49,13 +49,13 @@ namespace CRMUI.SalesManager {
         protected global::Ext.Net.Panel Panel1;
         
         /// <summary>
-        /// SalesDayUserControl1 control.
+        /// ProblemsPerAgentUserControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CRMUI.User_Controls.SalesDayUserControl SalesDayUserControl1;
+        protected global::CRMUI.User_Controls.ProblemsPerAgentUserControl ProblemsPerAgentUserControl1;
         
         /// <summary>
         /// Panel2 control.
@@ -67,31 +67,13 @@ namespace CRMUI.SalesManager {
         protected global::Ext.Net.Panel Panel2;
         
         /// <summary>
-        /// SalesWeekUserControl1 control.
+        /// SupportUserControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CRMUI.User_Controls.SalesWeekUserControl SalesWeekUserControl1;
-        
-        /// <summary>
-        /// Panel3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Panel Panel3;
-        
-        /// <summary>
-        /// SalesMonthUserControl1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CRMUI.User_Controls.SalesMonthUserControl SalesMonthUserControl1;
+        protected global::CRMUI.User_Controls.SupportUserControl SupportUserControl1;
         
         /// <summary>
         /// ScriptManager1 control.

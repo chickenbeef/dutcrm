@@ -10,7 +10,7 @@
             <ext:HBoxLayoutConfig Align="Stretch" DefaultMargins="2" />
         </LayoutConfig>
         <Items>
-            <ext:Panel ID="pnlSearch" runat="server" Flex="1" Title="Search Client By" Icon="VcardEdit">
+            <ext:Panel ID="pnlSearch" runat="server" Flex="100" Title="Search Client" Icon="VcardEdit">
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig Align="Stretch" />
                 </LayoutConfig>
@@ -20,46 +20,77 @@
                             <ext:AccordionLayoutConfig />
                         </LayoutConfig>
                         <Items>
-                            <ext:Panel ID="pnlUsername" runat="server" Title="Username" BodyPadding="30" Layout="HBoxLayout">
+                            <ext:Panel ID="pnlUsername" runat="server" Title="SEARCH BY USERNAME">
+                                <LayoutConfig>
+                                    <ext:HBoxLayoutConfig Align="Middle"/>
+                                </LayoutConfig>
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Client Username" Flex="4"/>
-                                    <ext:Button runat="server" ID="btnUsernameSearch" Text="Search" Flex="1"/>
+                                    <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Client Username" Width="300" Margins="0 0 0 30"/>
+                                    <ext:Button runat="server" ID="btnUsernameSearch" Text="Search" Width="80" Margins="0 0 0 10"/>
                                 </Items>
                             </ext:Panel>
-                            <ext:Panel ID="pnlName" runat="server" Title="Name" BodyPadding="30" Layout="HBoxLayout">
+                            <ext:Panel ID="pnlName" runat="server" Title="SEARCH BY CLIENT NAME">
+                                <LayoutConfig>
+                                    <ext:HBoxLayoutConfig Align="Middle"/>
+                                </LayoutConfig>
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtSName" FieldLabel="Client Name" Flex="4"/>
-                                    <ext:Button runat="server" ID="btnNameSearch" Text="Search" Flex="1"/>
+                                    <ext:TextField runat="server" ID="txtSName" FieldLabel="Client Name" Width="300" Margins="0 0 0 30"/>
+                                    <ext:Button runat="server" ID="btnNameSearch" Text="Search" Width="80" Margins="0 0 0 10"/>
                                 </Items>
                             </ext:Panel>
                         </Items>
                     </ext:Panel>
-                    <ext:Panel ID="Panel2" runat="server" Flex="3" Title="Client Details" Icon="Vcard">
+                    <ext:Panel Title="Client Details" runat="server" Border="false" Flex="3" Icon="Vcard">
                         <LayoutConfig>
-                            <ext:VBoxLayoutConfig Padding="30" Align="Stretch"/>
+                            <ext:HBoxLayoutConfig Align="Stretch"/>
                         </LayoutConfig>
                         <Items>
-                            <ext:TextField runat="server" ID="txtName" FieldLabel="Name" ReadOnly="True"/>
-                            <ext:TextField runat="server" ID="txtSurname" FieldLabel="Surname" ReadOnly="True"/>
-                            <ext:TextField runat="server" ID="txtUsername" FieldLabel="Username" ReadOnly="True"/>
-                            <ext:TextField runat="server" ID="txtDateOfBirth" FieldLabel="Date Of Birth" ReadOnly="True"/>
-                            <ext:TextField runat="server" ID="txtTelephone" FieldLabel="Telephone" ReadOnly="True"/>
-                            <ext:TextField runat="server" ID="txtCell" FieldLabel="Cell" ReadOnly="True"/>
-                            <ext:TextField runat="server" ID="txtFax" FieldLabel="Fax" ReadOnly="True" />
-                            <ext:Button runat="server" ID="btnAccept" Text="Accept"/>
+                            <ext:GridPanel runat="server" Flex="1" >
+                                <Store>
+                                    <ext:Store ID="streClient" runat="server">
+                                        <Model>
+                                            <ext:Model ID="mdlClient" runat="server">
+                                                <Fields>
+                                                    <ext:ModelField Name="Client_ID"/>
+                                                    <ext:ModelField Name="Name"/>
+                                                    <ext:ModelField Name="Surname"/>
+                                                    <ext:ModelField Name="Username"/>
+                                                    <ext:ModelField Name="DateOfBirth"/>
+                                                    <ext:ModelField Name="Telephone"/>
+                                                    <ext:ModelField Name="Cell"/>
+                                                    <ext:ModelField Name="Fax"/>
+                                                </Fields>
+                                            </ext:Model>
+                                        </Model>
+                                    </ext:Store>
+                                </Store>
+                                <ColumnModel>
+                                    <Columns>
+                                        <ext:Column runat="server" ID="txtName" Text="Name"/>
+                                        <ext:Column runat="server" ID="txtSurname" Text="Surname"/>
+                                        <ext:Column runat="server" ID="txtUsername" Text="Username"/>
+                                        <ext:Column runat="server" ID="txtDateOfBirth" Text="Date Of Birth"/>
+                                        <ext:Column runat="server" ID="txtTelephone" Text="Telephone"/>
+                                        <ext:Column runat="server" ID="txtCell" Text="Cell"/>
+                                        <ext:Column runat="server" ID="txtFax" Text="Fax"/>
+                                    </Columns>
+                                </ColumnModel>
+                                <Buttons>
+                                    <ext:Button runat="server" ID="btnAccept" Text="Accept" Padding="5"/>
+                                </Buttons>
+                            </ext:GridPanel>
                         </Items>
                     </ext:Panel>
                 </Items>
             </ext:Panel>
-            <ext:Panel ID="pnlConfirm" runat="server" Flex="1" Title="Confirm Sale">
+            <ext:Panel ID="pnlConfirm" runat="server" Flex="90" Title="Confirm Sale" Icon="Disk">
                 <LayoutConfig>
-                    <ext:VBoxLayoutConfig Align="Stretch" Padding="30"/>
+                    <ext:VBoxLayoutConfig/>
                 </LayoutConfig>
                 <Items>
-                    <ext:TextField runat="server" ID="txtDate" FieldLabel="Date" ReadOnly="True"/>
-                    <ext:TextField runat="server" ID="txtClientId" FieldLabel="Client ID" ReadOnly="True"/>
-                    <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" ReadOnly="True"/>
-                    <ext:Button runat="server" ID="btnConfirm" Text="Record Sale"/>
+                    <ext:TextField runat="server" ID="txtClientId" FieldLabel="Client ID" ReadOnly="True" Margins="30 0 10 30" Width="300"/>
+                    <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" ReadOnly="True" Margins="10 0 10 30" Width="300"/>
+                    <ext:Button runat="server" ID="btnConfirm" Text="Record Sale" Padding="5" Margins="0 0 0 135"/>
                 </Items>
             </ext:Panel>
         </Items>
