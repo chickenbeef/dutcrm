@@ -58,6 +58,15 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.LinkButton LnkAutomationSettings;
         
         /// <summary>
+        /// lnkEmailSettings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.LinkButton lnkEmailSettings;
+        
+        /// <summary>
         /// ToolbarFill1 control.
         /// </summary>
         /// <remarks>

@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRMUI.SalesManager {
+namespace CRMUI.CallCentreManager {
     
     
-    public partial class WebForm1 {
+    public partial class WebForm3 {
         
         /// <summary>
         /// ResourceManager1 control.
@@ -22,6 +22,15 @@ namespace CRMUI.SalesManager {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
+        /// PlaceHolder1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+        
+        /// <summary>
         /// pnlMain control.
         /// </summary>
         /// <remarks>
@@ -31,75 +40,75 @@ namespace CRMUI.SalesManager {
         protected global::Ext.Net.Panel pnlMain;
         
         /// <summary>
-        /// ReportsTabPanel control.
+        /// pnlEmailSettings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TabPanel ReportsTabPanel;
+        protected global::Ext.Net.FormPanel pnlEmailSettings;
         
         /// <summary>
-        /// Panel1 control.
+        /// txtServer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel Panel1;
+        protected global::Ext.Net.TextField txtServer;
         
         /// <summary>
-        /// SalesDayUserControl1 control.
+        /// txtUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CRMUI.User_Controls.SalesDayUserControl SalesDayUserControl1;
+        protected global::Ext.Net.TextField txtUsername;
         
         /// <summary>
-        /// Panel2 control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel Panel2;
+        protected global::Ext.Net.TextField txtPassword;
         
         /// <summary>
-        /// SalesWeekUserControl1 control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CRMUI.User_Controls.SalesWeekUserControl SalesWeekUserControl1;
+        protected global::Ext.Net.TextField txtConfirmPassword;
         
         /// <summary>
-        /// Panel3 control.
+        /// txtPort control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel Panel3;
+        protected global::Ext.Net.TextField txtPort;
         
         /// <summary>
-        /// SalesMonthUserControl1 control.
+        /// chkEnableSSL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CRMUI.User_Controls.SalesMonthUserControl SalesMonthUserControl1;
+        protected global::Ext.Net.Checkbox chkEnableSSL;
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// txtSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::Ext.Net.Button txtSave;
     }
 }
