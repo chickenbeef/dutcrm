@@ -10,7 +10,7 @@
         </LayoutConfig>
         <Items>
             
-            <ext:Panel ID="pnlSearch" runat="server" Flex="100" Title="Search Client" Icon="BookMagnify">
+            <ext:Panel ID="pnlSearch" runat="server" Flex="100" Title="Search Client" Icon="UserMagnify">
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig Align="Stretch" />
                 </LayoutConfig>
@@ -20,23 +20,23 @@
                             <ext:AccordionLayoutConfig />
                         </LayoutConfig>
                         <Items>
-                            <ext:Panel ID="pnlUsername" runat="server" Title="SEARCH BY USERNAME" Icon="EmailMagnify">
+                            <ext:Panel ID="pnlUsername" runat="server" Title="SEARCH BY USERNAME" Icon="PageMagnify">
                                 <LayoutConfig>
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
                                 <Items>
                                     <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Client Username" Width="300" Margins="0 0 0 30"/>
-                                    <ext:Button runat="server" ID="btnUsernameSearch" Text="Search" Width="80" Margins="0 0 0 10"/>
+                                    <ext:Button runat="server" ID="btnUsernameSearch" Text="Search" Width="80" Margins="0 0 0 10" Icon="Magnifier"/>
                                 </Items>
                             </ext:Panel>
 
-                            <ext:Panel ID="pnlName" runat="server" Title="SEARCH BY CLIENT NAME" Icon="UserMagnify">
+                            <ext:Panel ID="pnlName" runat="server" Title="SEARCH BY CLIENT NAME" Icon="PageMagnify">
                                 <LayoutConfig>
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
                                 <Items>
                                     <ext:TextField runat="server" ID="txtSName" FieldLabel="Client Name" Width="300" Margins="0 0 0 30"/>
-                                    <ext:Button runat="server" ID="btnNameSearch" Text="Search" Width="80" Margins="0 0 0 10"/>
+                                    <ext:Button runat="server" ID="btnNameSearch" Text="Search" Width="80" Margins="0 0 0 10" Icon="Magnifier"/>
                                 </Items>
                             </ext:Panel>
                         </Items>
@@ -71,7 +71,7 @@
                                     </Columns>
                                 </ColumnModel>
                                 <Buttons>
-                                    <ext:Button runat="server" ID="btnAccept" Text="Accept" Padding="5" Icon="BookmarkGo"/>
+                                    <ext:Button runat="server" ID="btnAccept" Text="Accept" Padding="5" Icon="ArrowEw"/>
                                 </Buttons>
                             </ext:GridPanel>
                         </Items>
