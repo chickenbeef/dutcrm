@@ -103,6 +103,15 @@ namespace CRMUI.RelationshipManager {
         protected global::Ext.Net.Button btnNameSearch;
         
         /// <summary>
+        /// gpClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.GridPanel gpClient;
+        
+        /// <summary>
         /// streClient control.
         /// </summary>
         /// <remarks>
