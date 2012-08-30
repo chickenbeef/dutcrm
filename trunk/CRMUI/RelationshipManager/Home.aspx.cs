@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using CRMBusiness;
 
 namespace CRMUI.RelationshipManager
 {
@@ -7,6 +8,7 @@ namespace CRMUI.RelationshipManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

@@ -45,7 +45,7 @@
                             <ext:HBoxLayoutConfig Align="Stretch"/>
                         </LayoutConfig>
                         <Items>
-                            <ext:GridPanel runat="server" Flex="1" >
+                            <ext:GridPanel ID="gpClient" runat="server" Flex="1" >
                                 <Store>
                                     <ext:Store ID="streClient" runat="server">
                                         <Model>
@@ -66,8 +66,8 @@
                                 </Store>
                                 <ColumnModel>
                                     <Columns>
-                                        <ext:Column runat="server" ID="txtName" Text="Name"/>
-                                        <ext:Column runat="server" ID="txtSurname" Text="Surname"/>
+                                        <ext:Column runat="server" ID="txtName" Text="Name" DataIndex="Name"/>
+                                        <ext:Column runat="server" ID="txtSurname" Text="Surname" DataIndex="Surname"/>
                                         <ext:Column runat="server" ID="txtUsername" Text="Username"/>
                                         <ext:Column runat="server" ID="txtDateOfBirth" Text="Date Of Birth"/>
                                         <ext:Column runat="server" ID="txtTelephone" Text="Telephone"/>
