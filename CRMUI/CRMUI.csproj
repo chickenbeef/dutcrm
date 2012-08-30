@@ -77,7 +77,6 @@
     <Content Include="CallCentreManager\EmailSettings.aspx" />
     <Content Include="CallCentreManager\Home.aspx" />
     <Content Include="CallCentreManager\SupportReports.aspx" />
-    <Content Include="CallCentreManager\WebForm3.aspx" />
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
     <Content Include="CRMService.svc" />
@@ -146,13 +145,6 @@
     </Compile>
     <Compile Include="CallCentreManager\SupportReports.aspx.designer.cs">
       <DependentUpon>SupportReports.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CallCentreManager\WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CallCentreManager\WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\CM.Master.cs">
       <DependentUpon>CM.Master</DependentUpon>
