@@ -130,6 +130,15 @@ namespace CRMUI.RelationshipManager {
         protected global::Ext.Net.Model mdlClient;
         
         /// <summary>
+        /// txtCID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtCID;
+        
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -163,7 +172,7 @@ namespace CRMUI.RelationshipManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Column txtDateOfBirth;
+        protected global::Ext.Net.DateColumn txtDateOfBirth;
         
         /// <summary>
         /// txtTelephone control.
@@ -182,15 +191,6 @@ namespace CRMUI.RelationshipManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Column txtCell;
-        
-        /// <summary>
-        /// txtFax control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Column txtFax;
         
         /// <summary>
         /// btnAccept control.
