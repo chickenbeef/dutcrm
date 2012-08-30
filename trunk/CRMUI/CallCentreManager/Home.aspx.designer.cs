@@ -103,22 +103,22 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Button btnNameSearch;
         
         /// <summary>
-        /// streClient control.
+        /// streEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Store streClient;
+        protected global::Ext.Net.Store streEmployee;
         
         /// <summary>
-        /// mdlClient control.
+        /// mdlEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Model mdlClient;
+        protected global::Ext.Net.Model mdlEmployee;
         
         /// <summary>
         /// txtName control.
@@ -164,15 +164,6 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Panel pnlSetRole;
-        
-        /// <summary>
-        /// txtClientId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.TextField txtClientId;
         
         /// <summary>
         /// txtEmpId control.

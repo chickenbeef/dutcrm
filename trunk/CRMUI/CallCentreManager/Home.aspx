@@ -10,7 +10,7 @@
         </LayoutConfig>
         <Items>
             
-            <ext:Panel ID="pnlSearch" runat="server" Flex="100" Title="Search Client" Icon="UserMagnify">
+            <ext:Panel ID="pnlSearch" runat="server" Flex="100" Title="Search Employee" Icon="UserMagnify">
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig Align="Stretch" />
                 </LayoutConfig>
@@ -25,36 +25,36 @@
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Client Username" Width="300" Margins="0 0 0 30"/>
+                                    <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Employee Username" Width="300" Margins="0 0 0 30"/>
                                     <ext:Button runat="server" ID="btnUsernameSearch" Text="Search" Width="80" Margins="0 0 0 10" Icon="Magnifier"/>
                                 </Items>
                             </ext:Panel>
 
-                            <ext:Panel ID="pnlName" runat="server" Title="SEARCH BY CLIENT NAME" Icon="PageMagnify">
+                            <ext:Panel ID="pnlName" runat="server" Title="SEARCH BY NAME" Icon="PageMagnify">
                                 <LayoutConfig>
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtSName" FieldLabel="Client Name" Width="300" Margins="0 0 0 30"/>
+                                    <ext:TextField runat="server" ID="txtSName" FieldLabel="Employee Name" Width="300" Margins="0 0 0 30"/>
                                     <ext:Button runat="server" ID="btnNameSearch" Text="Search" Width="80" Margins="0 0 0 10" Icon="Magnifier"/>
                                 </Items>
                             </ext:Panel>
                         </Items>
                     </ext:Panel>
-                    <%--Client details populated in panel below--%>
+                    <%--Employee details populated in panel below--%>
 
-                    <ext:Panel Title="Client Details" runat="server" Border="false" Flex="3" Icon="Vcard">
+                    <ext:Panel Title="Employee Details" runat="server" Border="false" Flex="3" Icon="Vcard">
                         <LayoutConfig>
                             <ext:HBoxLayoutConfig Align="Stretch"/>
                         </LayoutConfig>
                         <Items>
                             <ext:GridPanel runat="server" Flex="1" >
                                 <Store>
-                                    <ext:Store ID="streClient" runat="server">
+                                    <ext:Store ID="streEmployee"  runat="server">
                                         <Model>
-                                            <ext:Model ID="mdlClient" runat="server">
+                                            <ext:Model ID="mdlEmployee" runat="server">
                                                 <Fields>
-                                                    <ext:ModelField Name="Client_ID"/>
+                                                    <ext:ModelField Name="Employee_ID"/>
                                                     <ext:ModelField Name="Name"/>
                                                     <ext:ModelField Name="Surname"/>
                                                     <ext:ModelField Name="Username"/>
@@ -79,12 +79,12 @@
                 </Items>
             </ext:Panel>
             <%--Role settings Panel --%>
-            <ext:Panel ID="pnlSetRole" runat="server" Flex="90" Title="Set role for specified user" Icon="Wrench">
+            <ext:Panel ID="pnlSetRole" runat="server" Flex="90" Title="Set employee role" Icon="Wrench">
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig/>
                 </LayoutConfig>
                 <Items>
-                    <ext:TextField runat="server" ID="txtClientId" FieldLabel="Client ID" ReadOnly="True" Margins="30 0 10 30" Width="300"/>
+                    
                     <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" ReadOnly="True" Margins="10 0 10 30" Width="300"/>
                     
                     <ext:FieldSet runat="server" Title="Current role is selected" Margins="10 0 10 135" Width="350">
