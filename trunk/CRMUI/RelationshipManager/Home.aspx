@@ -51,14 +51,13 @@
                                         <Model>
                                             <ext:Model ID="mdlClient" runat="server">
                                                 <Fields>
-                                                    <ext:ModelField Name="Client_ID"/>
+                                                    <ext:ModelField Name="CLIENT_ID"/>
                                                     <ext:ModelField Name="Name"/>
                                                     <ext:ModelField Name="Surname"/>
-                                                    <ext:ModelField Name="Username"/>
+                                                    <ext:ModelField Name="UserName"/>
                                                     <ext:ModelField Name="DateOfBirth"/>
                                                     <ext:ModelField Name="Telephone"/>
                                                     <ext:ModelField Name="Cell"/>
-                                                    <ext:ModelField Name="Fax"/>
                                                 </Fields>
                                             </ext:Model>
                                         </Model>
@@ -66,13 +65,13 @@
                                 </Store>
                                 <ColumnModel>
                                     <Columns>
+                                        <ext:Column runat="server" ID="txtCID" Text="Client ID" DataIndex="CLIENT_ID"/>
                                         <ext:Column runat="server" ID="txtName" Text="Name" DataIndex="Name"/>
                                         <ext:Column runat="server" ID="txtSurname" Text="Surname" DataIndex="Surname"/>
-                                        <ext:Column runat="server" ID="txtUsername" Text="Username"/>
-                                        <ext:Column runat="server" ID="txtDateOfBirth" Text="Date Of Birth"/>
-                                        <ext:Column runat="server" ID="txtTelephone" Text="Telephone"/>
-                                        <ext:Column runat="server" ID="txtCell" Text="Cell"/>
-                                        <ext:Column runat="server" ID="txtFax" Text="Fax"/>
+                                        <ext:Column runat="server" ID="txtUsername" Text="Username" DataIndex="UserName"/>
+                                        <ext:DateColumn runat="server" ID="txtDateOfBirth" Text="Date Of Birth" Format="DD-MON-YYYY" DataIndex="DateOfBirth"/>
+                                        <ext:Column runat="server" ID="txtTelephone" Text="Telephone" DataIndex="Telephone"/>
+                                        <ext:Column runat="server" ID="txtCell" Text="Cell" DataIndex="Cell"/>
                                     </Columns>
                                 </ColumnModel>
                                 <Buttons>
