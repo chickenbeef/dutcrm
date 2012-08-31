@@ -10,7 +10,7 @@
 namespace CRMUI.CallCentreManager {
     
     
-    public partial class WebForm1 {
+    public partial class Home {
         
         /// <summary>
         /// ResourceManager1 control.

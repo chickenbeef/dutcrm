@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CallCentreManager/CCM.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="CRMUI.CallCentreManager.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CallCentreManager/CCM.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="CRMUI.CallCentreManager.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default"/>
 </asp:Content>
