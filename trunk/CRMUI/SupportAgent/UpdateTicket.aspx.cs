@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CRMUI.SupportAgent
 {
-    public partial class CheckTicketStatus : System.Web.UI.Page
+    public partial class UpdateTicket : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

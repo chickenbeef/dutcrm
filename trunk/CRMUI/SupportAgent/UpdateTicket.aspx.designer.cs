@@ -10,7 +10,7 @@
 namespace CRMUI.SupportAgent {
     
     
-    public partial class CheckTicketStatus {
+    public partial class UpdateTicket {
         
         /// <summary>
         /// ResourceManager1 control.

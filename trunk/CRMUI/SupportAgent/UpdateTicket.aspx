@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SupportAgent/SA.Master" AutoEventWireup="true" CodeBehind="CheckTicketStatus.aspx.cs" Inherits="CRMUI.SupportAgent.CheckTicketStatus" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SupportAgent/SA.Master" AutoEventWireup="true" CodeBehind="UpdateTicket.aspx.cs" Inherits="CRMUI.SupportAgent.UpdateTicket" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default"/>
 
