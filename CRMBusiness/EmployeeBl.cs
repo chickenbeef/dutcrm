@@ -22,7 +22,7 @@ namespace CRMBusiness
             return _crm.vEmployees.Where(x => x.Name.Contains(username)).ToList();
         }
 
-        public bool AddEmployee(string name, string surname, string telephone, string cell, string fax, DateTime datecreated, string userid)
+        public bool AddEmployee(string name, string surname, string telephone, string cell, string fax, DateTime datecreated, Guid userid)
         {
             if (name.Equals("") || surname.Equals("")) return false;
             _crm = new CRMEntities(_uri);

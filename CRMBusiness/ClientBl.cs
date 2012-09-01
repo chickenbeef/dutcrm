@@ -14,7 +14,7 @@ namespace CRMBusiness
 
         //methods
         //save
-        public bool AddClient(string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime dateofbirth, DateTime datecreated, int branchid, string userid)
+        public bool AddClient(string name, string surname, DateTime dob, string tel, string cell, string fax, DateTime dateofbirth, DateTime datecreated, int branchid, Guid userid)
         {
             if (name.Equals("") || surname.Equals("") || dateofbirth.Equals("") || branchid.Equals(0)) return false;
             _crm = new CRMEntities(_uri);

@@ -2614,6 +2614,30 @@ namespace CRMData
         private Nullable<global::System.Int32> _EMP_ID;
         partial void OnEMP_IDChanging(Nullable<global::System.Int32> value);
         partial void OnEMP_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Guid> Mail_ID
+        {
+            get
+            {
+                return _Mail_ID;
+            }
+            set
+            {
+                OnMail_IDChanging(value);
+                ReportPropertyChanging("Mail_ID");
+                _Mail_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Mail_ID");
+                OnMail_IDChanged();
+            }
+        }
+        private Nullable<global::System.Guid> _Mail_ID;
+        partial void OnMail_IDChanging(Nullable<global::System.Guid> value);
+        partial void OnMail_IDChanged();
 
         #endregion
     
@@ -3834,12 +3858,14 @@ namespace CRMData
         /// Create a new Sale object.
         /// </summary>
         /// <param name="sALE_ID">Initial value of the SALE_ID property.</param>
+        /// <param name="dateCreated">Initial value of the DateCreated property.</param>
         /// <param name="cLIENT_ID">Initial value of the CLIENT_ID property.</param>
         /// <param name="eMP_ID">Initial value of the EMP_ID property.</param>
-        public static Sale CreateSale(global::System.Int32 sALE_ID, global::System.Int32 cLIENT_ID, global::System.Int32 eMP_ID)
+        public static Sale CreateSale(global::System.Int32 sALE_ID, global::System.DateTime dateCreated, global::System.Int32 cLIENT_ID, global::System.Int32 eMP_ID)
         {
             Sale sale = new Sale();
             sale.SALE_ID = sALE_ID;
+            sale.DateCreated = dateCreated;
             sale.CLIENT_ID = cLIENT_ID;
             sale.EMP_ID = eMP_ID;
             return sale;
@@ -3878,9 +3904,9 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> DateCreated
+        public global::System.DateTime DateCreated
         {
             get
             {
@@ -3895,8 +3921,8 @@ namespace CRMData
                 OnDateCreatedChanged();
             }
         }
-        private Nullable<global::System.DateTime> _DateCreated;
-        partial void OnDateCreatedChanging(Nullable<global::System.DateTime> value);
+        private global::System.DateTime _DateCreated;
+        partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
     
         /// <summary>
