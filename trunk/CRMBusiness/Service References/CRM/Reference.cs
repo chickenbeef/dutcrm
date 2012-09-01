@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/08/30 11:22:38 AM
+// Generation date: 2012/09/01 05:59:58 PM
 namespace CRMBusiness.CRM
 {
     
@@ -2279,6 +2279,28 @@ namespace CRMBusiness.CRM
         partial void OnEMP_IDChanging(global::System.Nullable<int> value);
         partial void OnEMP_IDChanged();
         /// <summary>
+        /// There are no comments for Property Mail_ID in the schema.
+        /// </summary>
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.Guid> Mail_ID
+        {
+            get
+            {
+                return this._Mail_ID;
+            }
+            set
+            {
+                this.OnMail_IDChanging(value);
+                this._Mail_ID = value;
+                this.OnMail_IDChanged();
+                this.OnPropertyChanged("Mail_ID");
+            }
+        }
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.Guid> _Mail_ID;
+        partial void OnMail_IDChanging(global::System.Nullable<global::System.Guid> value);
+        partial void OnMail_IDChanged();
+        /// <summary>
         /// There are no comments for Client in the schema.
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -3292,13 +3314,15 @@ namespace CRMBusiness.CRM
         /// Create a new Sale object.
         /// </summary>
         /// <param name="sALE_ID">Initial value of SALE_ID.</param>
+        /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="cLIENT_ID">Initial value of CLIENT_ID.</param>
         /// <param name="eMP_ID">Initial value of EMP_ID.</param>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Sale CreateSale(int sALE_ID, int cLIENT_ID, int eMP_ID)
+        public static Sale CreateSale(int sALE_ID, global::System.DateTime dateCreated, int cLIENT_ID, int eMP_ID)
         {
             Sale sale = new Sale();
             sale.SALE_ID = sALE_ID;
+            sale.DateCreated = dateCreated;
             sale.CLIENT_ID = cLIENT_ID;
             sale.EMP_ID = eMP_ID;
             return sale;
@@ -3329,7 +3353,7 @@ namespace CRMBusiness.CRM
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.DateTime> DateCreated
+        public global::System.DateTime DateCreated
         {
             get
             {
@@ -3344,8 +3368,8 @@ namespace CRMBusiness.CRM
             }
         }
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.DateTime> _DateCreated;
-        partial void OnDateCreatedChanging(global::System.Nullable<global::System.DateTime> value);
+        private global::System.DateTime _DateCreated;
+        partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.

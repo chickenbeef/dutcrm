@@ -7,14 +7,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cplBody" runat="server">
     <ext:Panel ID="pnlMain" runat="server" Height="612" Title="Record Sale">
         <LayoutConfig>
-            <ext:HBoxLayoutConfig Align="Stretch" DefaultMargins="2" />
+            <ext:HBoxLayoutConfig Align="Stretch" />
         </LayoutConfig>
         <Items>
+            <%--LEFT PANEL--%>
             <ext:Panel ID="pnlSearch" runat="server" Flex="100" Title="Search Client" Icon="UserMagnify">
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig Align="Stretch" />
                 </LayoutConfig>
                 <Items>
+                    <%--TOP LEFT PANEL--%>
                     <ext:Panel ID="Panel1" runat="server" Flex="1">
                         <LayoutConfig>
                             <ext:AccordionLayoutConfig />
@@ -40,6 +42,7 @@
                             </ext:Panel>
                         </Items>
                     </ext:Panel>
+                    <%--BOTTOM LEFT PANEL--%>
                     <ext:Panel Title="Client Details" runat="server" Border="false" Flex="3" Icon="Vcard">
                         <LayoutConfig>
                             <ext:HBoxLayoutConfig Align="Stretch"/>
@@ -82,7 +85,8 @@
                     </ext:Panel>
                 </Items>
             </ext:Panel>
-            <ext:Panel ID="pnlConfirm" runat="server" Flex="90" Title="Confirm Sale" Icon="Disk">
+            <%--RIGHT PANEL--%>
+            <ext:Panel ID="pnlConfirm" runat="server" Flex="91" Title="Confirm Sale" Icon="Disk">
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig/>
                 </LayoutConfig>

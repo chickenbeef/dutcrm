@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CRMBusiness;
 
 namespace CRMUI.SupportAgent
 {
@@ -17,8 +18,13 @@ namespace CRMUI.SupportAgent
             {
                 Role = Request.QueryString["role"].ToString(CultureInfo.InvariantCulture);
 
-                if(Role.Equals("EmailSupportAgent", StringComparison.InvariantCultureIgnoreCase))
+                if (Role.Equals("EmailSupportAgent", StringComparison.InvariantCultureIgnoreCase))
                 {
+                    //Assign data source to repeater
+                    var ep = new EmailProblemBl().GetAllUnAttendedEmailProblems();
+                    rptrEmailProblems.DataSource = ep;
+                    rptrEmailProblems.DataBind();
+
                     //enables options of email support agent
                     pnlEmailSupport.Visible = true;
                     pnlEmailSupport.Enabled = true;
