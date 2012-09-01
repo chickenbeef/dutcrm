@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="CRMModelStoreContainer">
           <EntitySet Name="Branches" EntityType="CRMModel.Store.Branches" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ClientProblemsLog" EntityType="CRMModel.Store.ClientProblemsLog" store:Type="Tables" Schema="dbo" />
@@ -133,10 +133,6 @@
             <End Role="Problems" EntitySet="Problems" />
             <End Role="Solutions" EntitySet="Solutions" />
           </AssociationSet>
-          <AssociationSet Name="Solutions_ClientProblemsLog_FK1" Association="CRMModel.Store.Solutions_ClientProblemsLog_FK1">
-            <End Role="Solutions" EntitySet="Solutions" />
-            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Branches">
           <Key>
@@ -228,12 +224,13 @@
           <Property Name="Attended" Type="bit" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
           <Property Name="EMP_ID" Type="int" />
+          <Property Name="Mail_ID" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="EMP_ID" />
           </Key>
-          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="Telephone" Type="varchar" MaxLength="10" />
@@ -282,7 +279,7 @@
             <PropertyRef Name="SALE_ID" />
           </Key>
           <Property Name="SALE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="DateCreated" Type="smalldatetime" />
+          <Property Name="DateCreated" Type="smalldatetime" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
           <Property Name="EMP_ID" Type="int" Nullable="false" />
         </EntityType>
@@ -572,20 +569,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Solutions_ClientProblemsLog_FK1">
-          <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="0..1" />
-          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Solutions">
-              <PropertyRef Name="SOL_ID" />
-            </Principal>
-            <Dependent Role="ClientProblemsLog">
-              <PropertyRef Name="SOL_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CRMModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -781,6 +765,7 @@
           <NavigationProperty Name="Client" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Clients" />
           <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
           <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
+          <Property Type="Guid" Name="Mail_ID" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -848,7 +833,7 @@
             <PropertyRef Name="SALE_ID" />
           </Key>
           <Property Name="SALE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
           <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
           <Property Name="EMP_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="CRMModel.Clients_Sales_FK1" FromRole="Sales" ToRole="Clients" />
@@ -1218,7 +1203,8 @@
             <ScalarProperty Name="Paragraph" ColumnName="Paragraph" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="EmailProblems"><EntityTypeMapping TypeName="CRMModel.EmailProblem"><MappingFragment StoreEntitySet="EmailProblems">
-            <ScalarProperty Name="EP_ID" ColumnName="EP_ID" />
+            <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
+                <ScalarProperty Name="EP_ID" ColumnName="EP_ID" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
             <ScalarProperty Name="Attended" ColumnName="Attended" />
