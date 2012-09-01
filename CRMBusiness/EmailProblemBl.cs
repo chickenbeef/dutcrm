@@ -49,6 +49,11 @@ namespace CRMBusiness
             return _crm.EmailProblems.ToList();
         }
 
+        public List<EmailProblem> GetAllUnAttendedEmailProblems()
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.EmailProblems.Where(x => x.Attended == false).ToList();
+        }
     }
 }
 

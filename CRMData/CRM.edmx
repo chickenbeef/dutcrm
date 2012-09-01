@@ -765,7 +765,7 @@
           <NavigationProperty Name="Client" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Clients" />
           <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
           <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
-          <Property Type="Guid" Name="Mail_ID" />
+          <Property Type="Guid" Name="Mail_ID" Nullable="true" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>

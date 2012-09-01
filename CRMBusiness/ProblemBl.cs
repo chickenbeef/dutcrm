@@ -37,7 +37,7 @@ namespace CRMBusiness
         public  List<Problem> GetProblems(string description)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.Problems.Where(p => p.Description.Contains(description)).ToList();             
-        } 
+            return _crm.Problems.Where(p => p.Description.Contains(description)).ToList();          
+        }
     }
 }

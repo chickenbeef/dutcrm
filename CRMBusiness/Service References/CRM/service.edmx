@@ -104,6 +104,7 @@
         <Property Name="Attended" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CLIENT_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="EMP_ID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="Mail_ID" Type="Edm.Guid" Nullable="true" />
         <NavigationProperty Name="Client" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Clients" />
         <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
         <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
@@ -174,7 +175,7 @@
           <PropertyRef Name="SALE_ID" />
         </Key>
         <Property Name="SALE_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-        <Property Name="DateCreated" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DateCreated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="CLIENT_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="EMP_ID" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Client" Relationship="CRMModel.Clients_Sales_FK1" FromRole="Sales" ToRole="Clients" />
