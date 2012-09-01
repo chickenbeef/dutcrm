@@ -49,22 +49,22 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.LinkButton lnkHome;
         
         /// <summary>
-        /// LnkNewTicket control.
+        /// LnkSolveTicket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton LnkNewTicket;
+        protected global::Ext.Net.LinkButton LnkSolveTicket;
         
         /// <summary>
-        /// lnkStatus control.
+        /// lnkUpdateTicket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkStatus;
+        protected global::Ext.Net.LinkButton lnkUpdateTicket;
         
         /// <summary>
         /// ToolbarSpacer1 control.
@@ -76,13 +76,13 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.ToolbarSpacer ToolbarSpacer1;
         
         /// <summary>
-        /// lnkSolve control.
+        /// lnkUpdateSolution control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkSolve;
+        protected global::Ext.Net.LinkButton lnkUpdateSolution;
         
         /// <summary>
         /// ToolbarSpacer2 control.

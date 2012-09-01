@@ -47,11 +47,11 @@
                                 <Items>
                                     <ext:LinkButton AutoPostBack="True" ID="lnkHome" runat="server" Text="Home"/>
                                     <ext:ToolbarSpacer runat="server"/>
-                                    <ext:LinkButton ID="LnkNewTicket" runat="server" Text="New Ticket" AutoPostBack="True" PostBackUrl="~/SupportAgent/NewTicket.aspx" />
+                                    <ext:LinkButton ID="LnkSolveTicket" runat="server" Text="Solve Ticket" AutoPostBack="True" PostBackUrl="~/SupportAgent/SolveTicket.aspx" />
                                     <ext:ToolbarSpacer runat="server"/>
-                                    <ext:LinkButton ID="lnkStatus" runat="server" Text="Check Ticket Status" AutoPostBack="True" PostBackUrl="~/SupportAgent/CheckTicketStatus.aspx" />
+                                    <ext:LinkButton ID="lnkUpdateTicket" runat="server" Text="Update Ticket" AutoPostBack="True" PostBackUrl="~/SupportAgent/UpdateTicket.aspx" />
                                     <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server"/>
-                                     <ext:LinkButton ID="lnkSolve" runat="server" Text="Solve Ticket" AutoPostBack="True" PostBackUrl="~/SupportAgent/SolveTicket.aspx" />
+                                     <ext:LinkButton ID="lnkUpdateSolution" runat="server" Text="Update Solution" AutoPostBack="True" PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx" />
                                     <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server"/>
                                     <ext:ToolbarFill ID="ToolbarFill1" runat="server"/>
                                     <ext:ToolbarSeparator runat="server"/>
