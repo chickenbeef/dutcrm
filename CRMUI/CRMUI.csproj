@@ -91,11 +91,8 @@
     <Content Include="SalesManager\Home.aspx" />
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\xtheme-gray-extend.css" />
-    <Content Include="SupportAgent\AddProblemReference.aspx" />
-    <Content Include="SupportAgent\AddSolutionReference.aspx" />
     <Content Include="SupportAgent\Home.aspx" />
-    <Content Include="SupportAgent\CheckTicketStatus.aspx" />
-    <Content Include="SupportAgent\NewTicket.aspx" />
+    <Content Include="SupportAgent\UpdateTicket.aspx" />
     <Content Include="SupportAgent\SolveTicket.aspx" />
     <Content Include="SupportAgent\UpdateSolutionReference.aspx" />
     <Content Include="User Controls\ProblemsPerAgentUserControl.ascx" />
@@ -225,20 +222,6 @@
     <Compile Include="SalesManager\SM.Master.designer.cs">
       <DependentUpon>SM.Master</DependentUpon>
     </Compile>
-    <Compile Include="SupportAgent\AddProblemReference.aspx.cs">
-      <DependentUpon>AddProblemReference.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SupportAgent\AddProblemReference.aspx.designer.cs">
-      <DependentUpon>AddProblemReference.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SupportAgent\AddSolutionReference.aspx.cs">
-      <DependentUpon>AddSolutionReference.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SupportAgent\AddSolutionReference.aspx.designer.cs">
-      <DependentUpon>AddSolutionReference.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SupportAgent\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,19 +229,12 @@
     <Compile Include="SupportAgent\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SupportAgent\CheckTicketStatus.aspx.cs">
-      <DependentUpon>CheckTicketStatus.aspx</DependentUpon>
+    <Compile Include="SupportAgent\UpdateTicket.aspx.cs">
+      <DependentUpon>UpdateTicket.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SupportAgent\CheckTicketStatus.aspx.designer.cs">
-      <DependentUpon>CheckTicketStatus.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SupportAgent\NewTicket.aspx.cs">
-      <DependentUpon>NewTicket.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SupportAgent\NewTicket.aspx.designer.cs">
-      <DependentUpon>NewTicket.aspx</DependentUpon>
+    <Compile Include="SupportAgent\UpdateTicket.aspx.designer.cs">
+      <DependentUpon>UpdateTicket.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupportAgent\SA.Master.cs">
       <DependentUpon>SA.Master</DependentUpon>
