@@ -20,7 +20,7 @@
           <DataField>DateCreated</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="NumberOfCalls">
+        <Field Name="NumberOfProblems">
           <DataField>NumberOfCalls</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -31,7 +31,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>CRMDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Joshua\Desktop\CRM\CRMUI\CRMDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Joshua\Documents\DUT 3rd year\DS3\CRM\Implementation\WebApp\CRM\CRMUI\Reports\CRMDataSet.xsd</rd:SchemaPath>
         <rd:TableName>ProblemsPerAgent</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -250,14 +250,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NumberOfCalls">
+                    <Textbox Name="NumberOfProblems">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NumberOfCalls.Value</Value>
+                              <Value>=Fields!NumberOfProblems.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                               </Style>
@@ -268,7 +268,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NumberOfCalls</rd:DefaultName>
+                      <rd:DefaultName>NumberOfProblems</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Silver</Color>
@@ -281,7 +281,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -407,7 +406,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>10cm</Height>
+    <Height>29.7cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>

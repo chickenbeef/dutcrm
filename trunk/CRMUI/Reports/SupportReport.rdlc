@@ -16,7 +16,7 @@
           <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NumberOfCallsPerDay">
+        <Field Name="NumberOfProblemsPerDay">
           <DataField>NumberOfCallsPerDay</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
@@ -35,7 +35,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>CRMDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Joshua\Desktop\CRM\CRMUI\CRMDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Joshua\Documents\DUT 3rd year\DS3\CRM\Implementation\WebApp\CRM\CRMUI\Reports\CRMDataSet.xsd</rd:SchemaPath>
         <rd:TableName>SupportData</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -173,7 +173,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Number Of Calls For The Day:</Value>
+                <Value>Number Of Problems For The Day:</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calisto MT</FontFamily>
@@ -189,9 +189,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>8.49104cm</Top>
-        <Left>0.71438cm</Left>
-        <Height>0.81167cm</Height>
-        <Width>7.99861cm</Width>
+        <Left>0.71437cm</Left>
+        <Height>1.12917cm</Height>
+        <Width>9.18924cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -210,7 +210,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!NumberOfCallsPerDay.Value</Value>
+                <Value>=Fields!NumberOfProblemsPerDay.Value</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calisto MT</FontFamily>
@@ -226,9 +226,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>8.49104cm</Top>
-        <Left>8.78355cm</Left>
+        <Left>9.93888cm</Left>
         <Height>0.81167cm</Height>
-        <Width>6.945cm</Width>
+        <Width>7.3066cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>

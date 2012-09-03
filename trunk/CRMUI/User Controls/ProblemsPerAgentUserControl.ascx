@@ -2,8 +2,9 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
-	Font-Size="8pt" Height="1210px" InteractiveDeviceInfos="(Collection)" 
-	WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="815px">
+	Font-Size="8pt" Height="" InteractiveDeviceInfos="(Collection)" 
+	WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="" 
+    SizeToReportContent="True">
 	<LocalReport ReportPath="Reports\ProblemsPerAgent.rdlc">
 		<DataSources>
 			<rsweb:ReportDataSource DataSourceId="odsProblemsPerAgent" 
