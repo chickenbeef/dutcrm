@@ -21,7 +21,7 @@
             <Mappings>
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
               <Mapping SourceColumn="DateCreated" DataSetColumn="DateCreated" />
-              <Mapping SourceColumn="NumberOfCalls" DataSetColumn="NumberOfCalls" />
+              <Mapping SourceColumn="NumberOfCalls" DataSetColumn="NumberOfProblems" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -98,7 +98,7 @@ FROM            CommonProblem CROSS JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
-              <Mapping SourceColumn="NumberOfCallsPerDay" DataSetColumn="NumberOfCallsPerDay" />
+              <Mapping SourceColumn="NumberOfCallsPerDay" DataSetColumn="NumberOfProblemsPerDay" />
               <Mapping SourceColumn="UnSolvedCount" DataSetColumn="UnSolvedCount" />
               <Mapping SourceColumn="SolvedCount" DataSetColumn="SolvedCount" />
             </Mappings>
@@ -123,7 +123,7 @@ FROM            CommonProblem CROSS JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DateCreated" msprop:Generator_ColumnVarNameInTable="columnDateCreated" msprop:Generator_ColumnPropNameInRow="DateCreated" msprop:Generator_ColumnPropNameInTable="DateCreatedColumn" msprop:Generator_UserColumnName="DateCreated" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="NumberOfCalls" msprop:Generator_ColumnVarNameInTable="columnNumberOfCalls" msprop:Generator_ColumnPropNameInRow="NumberOfCalls" msprop:Generator_ColumnPropNameInTable="NumberOfCallsColumn" msprop:Generator_UserColumnName="NumberOfCalls" type="xs:int" minOccurs="0" />
+              <xs:element name="NumberOfProblems" msprop:Generator_ColumnVarNameInTable="columnNumberOfProblems" msprop:Generator_ColumnPropNameInRow="NumberOfProblems" msprop:Generator_ColumnPropNameInTable="NumberOfProblemsColumn" msprop:Generator_UserColumnName="NumberOfProblems" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -202,7 +202,7 @@ FROM            CommonProblem CROSS JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NumberOfCallsPerDay" msprop:Generator_ColumnVarNameInTable="columnNumberOfCallsPerDay" msprop:Generator_ColumnPropNameInRow="NumberOfCallsPerDay" msprop:Generator_ColumnPropNameInTable="NumberOfCallsPerDayColumn" msprop:Generator_UserColumnName="NumberOfCallsPerDay" type="xs:int" minOccurs="0" />
+              <xs:element name="NumberOfProblemsPerDay" msprop:Generator_ColumnVarNameInTable="columnNumberOfProblemsPerDay" msprop:Generator_ColumnPropNameInRow="NumberOfProblemsPerDay" msprop:Generator_ColumnPropNameInTable="NumberOfProblemsPerDayColumn" msprop:Generator_UserColumnName="NumberOfProblemsPerDay" type="xs:int" minOccurs="0" />
               <xs:element name="UnSolvedCount" msprop:Generator_ColumnVarNameInTable="columnUnSolvedCount" msprop:Generator_ColumnPropNameInRow="UnSolvedCount" msprop:Generator_ColumnPropNameInTable="UnSolvedCountColumn" msprop:Generator_UserColumnName="UnSolvedCount" type="xs:int" minOccurs="0" />
               <xs:element name="SolvedCount" msprop:Generator_ColumnVarNameInTable="columnSolvedCount" msprop:Generator_ColumnPropNameInRow="SolvedCount" msprop:Generator_ColumnPropNameInTable="SolvedCountColumn" msprop:Generator_UserColumnName="SolvedCount" type="xs:int" minOccurs="0" />
             </xs:sequence>

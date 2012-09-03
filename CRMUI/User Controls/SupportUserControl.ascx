@@ -3,9 +3,9 @@
 
 
 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
-	Font-Size="8pt" Height="1210px" InteractiveDeviceInfos="(Collection)" 
-	WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="815px" 
-	style="text-align: justify">
+	Font-Size="8pt" Height="300px" InteractiveDeviceInfos="(Collection)" 
+	WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="" 
+	style="text-align: justify" SizeToReportContent="True">
 	<LocalReport ReportPath="Reports\SupportReport.rdlc">
 		<DataSources>
 			<rsweb:ReportDataSource DataSourceId="odsSupportReport" Name="SupportData" />

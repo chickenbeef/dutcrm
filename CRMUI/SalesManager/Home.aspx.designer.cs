@@ -22,6 +22,15 @@ namespace CRMUI.SalesManager {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// pnlMain control.
         /// </summary>
         /// <remarks>
@@ -92,14 +101,5 @@ namespace CRMUI.SalesManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::CRMUI.User_Controls.SalesMonthUserControl SalesMonthUserControl1;
-        
-        /// <summary>
-        /// ScriptManager1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
     }
 }

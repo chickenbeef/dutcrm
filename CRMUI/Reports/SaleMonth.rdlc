@@ -80,7 +80,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>3.66924cm</Top>
-        <Left>6.5532cm</Left>
+        <Left>6.97653cm</Left>
         <Height>0.81167cm</Height>
         <Width>7.28895cm</Width>
         <ZIndex>1</ZIndex>
@@ -435,7 +435,7 @@
         <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>SalesMonth</DataSetName>
         <Top>4.99216cm</Top>
-        <Left>3.45127cm</Left>
+        <Left>3.66294cm</Left>
         <Height>1.27937cm</Height>
         <Width>13.26159cm</Width>
         <ZIndex>2</ZIndex>
@@ -446,7 +446,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>10cm</Height>
+    <Height>29.7cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
