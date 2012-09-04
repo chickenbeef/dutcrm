@@ -2620,7 +2620,7 @@ namespace CRMData
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Guid> Mail_ID
+        public global::System.String Mail_ID
         {
             get
             {
@@ -2630,13 +2630,13 @@ namespace CRMData
             {
                 OnMail_IDChanging(value);
                 ReportPropertyChanging("Mail_ID");
-                _Mail_ID = StructuralObject.SetValidValue(value);
+                _Mail_ID = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("Mail_ID");
                 OnMail_IDChanged();
             }
         }
-        private Nullable<global::System.Guid> _Mail_ID;
-        partial void OnMail_IDChanging(Nullable<global::System.Guid> value);
+        private global::System.String _Mail_ID;
+        partial void OnMail_IDChanging(global::System.String value);
         partial void OnMail_IDChanged();
 
         #endregion

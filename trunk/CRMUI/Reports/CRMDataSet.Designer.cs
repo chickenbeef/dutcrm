@@ -2586,6 +2586,7 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("DateCreated", "DateCreated");
             tableMapping.ColumnMappings.Add("NumberOfCalls", "NumberOfProblems");
+            tableMapping.ColumnMappings.Add("NumberOfProblems", "NumberOfProblems");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2602,7 +2603,8 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Name, DateCreated, NumberOfCalls FROM dbo.ProblemsPerAgent";
+            this._commandCollection[0].CommandText = "SELECT        Name, DateCreated, NumberOfProblems\r\nFROM            ProblemsPerAge" +
+                "nt";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3265,6 +3267,7 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("NumberOfCallsPerDay", "NumberOfProblemsPerDay");
             tableMapping.ColumnMappings.Add("UnSolvedCount", "UnSolvedCount");
             tableMapping.ColumnMappings.Add("SolvedCount", "SolvedCount");
+            tableMapping.ColumnMappings.Add("NumberOfProblemsPerDay", "NumberOfProblemsPerDay");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3281,7 +3284,7 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CommonProblem.Description, ProblemsPerDay.NumberOfCallsPerDay, UnSolvedProblems.UnSolvedCount, SolvedProblems.SolvedCount
+            this._commandCollection[0].CommandText = @"SELECT        CommonProblem.Description, UnSolvedProblems.UnSolvedCount, SolvedProblems.SolvedCount, ProblemsPerDay.NumberOfProblemsPerDay
 FROM            CommonProblem CROSS JOIN
                          ProblemsPerDay CROSS JOIN
                          SolvedProblems CROSS JOIN

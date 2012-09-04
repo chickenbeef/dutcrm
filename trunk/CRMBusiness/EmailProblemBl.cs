@@ -12,7 +12,7 @@ namespace CRMBusiness
         //METHODS
 
         //SAVE
-        public bool AddEmailProblem(string description, DateTime datecreated, int clientid, int employeeid)
+        public bool AddEmailProblem(string description, DateTime datecreated, int clientid, int employeeid, string mailid)
         {
             if(description.Equals("") || clientid.Equals(0)) return false;
             _crm = new CRMEntities(_uri);
@@ -21,7 +21,8 @@ namespace CRMBusiness
                                 Description = description,
                                 DateCreated = datecreated,
                                 CLIENT_ID = clientid,
-                                EMP_ID = employeeid
+                                EMP_ID = employeeid,
+                                Mail_ID = mailid
                             };
             _crm.AddToEmailProblems(objep);
             _crm.SaveChanges();

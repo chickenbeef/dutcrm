@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/09/01 05:59:58 PM
+// Generation date: 2012/09/04 01:28:46 PM
 namespace CRMBusiness.CRM
 {
     
@@ -2282,7 +2282,7 @@ namespace CRMBusiness.CRM
         /// There are no comments for Property Mail_ID in the schema.
         /// </summary>
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.Guid> Mail_ID
+        public string Mail_ID
         {
             get
             {
@@ -2297,8 +2297,8 @@ namespace CRMBusiness.CRM
             }
         }
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.Guid> _Mail_ID;
-        partial void OnMail_IDChanging(global::System.Nullable<global::System.Guid> value);
+        private string _Mail_ID;
+        partial void OnMail_IDChanging(string value);
         partial void OnMail_IDChanged();
         /// <summary>
         /// There are no comments for Client in the schema.

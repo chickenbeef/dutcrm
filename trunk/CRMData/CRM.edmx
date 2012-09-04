@@ -133,6 +133,10 @@
             <End Role="Problems" EntitySet="Problems" />
             <End Role="Solutions" EntitySet="Solutions" />
           </AssociationSet>
+          <AssociationSet Name="Solutions_ClientProblemsLog_FK1" Association="CRMModel.Store.Solutions_ClientProblemsLog_FK1">
+            <End Role="Solutions" EntitySet="Solutions" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Branches">
           <Key>
@@ -224,7 +228,7 @@
           <Property Name="Attended" Type="bit" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
           <Property Name="EMP_ID" Type="int" />
-          <Property Name="Mail_ID" Type="uniqueidentifier" />
+          <Property Name="Mail_ID" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
@@ -251,8 +255,8 @@
           <Key>
             <PropertyRef Name="IMG_ID" />
           </Key>
-          <Property Name="IMG_ID" Type="int" Nullable="false" />
-          <Property Name="ImageFile" Type="image" Nullable="false" />
+          <Property Name="IMG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImageFile" Type="varbinary(max)" Nullable="false" />
           <Property Name="EP_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Notes">
@@ -569,6 +573,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Solutions_ClientProblemsLog_FK1">
+          <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="0..1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solutions">
+              <PropertyRef Name="SOL_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="SOL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -765,7 +781,7 @@
           <NavigationProperty Name="Client" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Clients" />
           <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
           <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
-          <Property Type="Guid" Name="Mail_ID" Nullable="true" />
+          <Property Type="String" Name="Mail_ID" Nullable="true" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
