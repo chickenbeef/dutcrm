@@ -1,37 +1,83 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CallCentreManager/CCM.Master" AutoEventWireup="true" CodeBehind="MessagingServices.aspx.cs" Inherits="CRMUI.CallCentreManager.MessaginServices" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CallCentreManager/CCM.Master" AutoEventWireup="true" CodeBehind="MessagingServices.aspx.cs" Inherits="CRMUI.CallCentreManager.MessagingServices" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <ext:ResourceManager ID="ResourceManagerMessaginServices" runat="server" Theme= "Default"/>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
-    <%--Markup for messaging servces using comtemplate--%>
-    <ext:Panel ID="pnlMain" runat="server" Height="615" Title="Messaging Services" Layout="HBoxLayout" >
+    
+
+    <ext:Panel ID="pnlMain" runat="server" Height="615" Title="Messaging Services" >
+         <LayoutConfig>
+            <ext:HBoxLayoutConfig Align="Stretch" />
+        </LayoutConfig>
        <Items>
-          <ext:Panel id="pnlMessage" Height="614" runat="server" Layout="vboxLayout" Flex="1" Border="false">
+           <%--LEFT PANEL FOR CONFIGURE MESSAGE--%>
+           <ext:Panel ID="Panel1" runat="server" Height="615" Title="Message Settings" Layout="HBoxLayout" Flex="50" Padding="2" Icon="Mail">
+            <Items>
+            <ext:Panel id="pnlSub1" Height="614" runat="server" Layout="vboxLayout" Flex="2" Border="false">
             <Items >
                 <ext:Panel ID="pnlDetails" runat="server"  Height="314" Flex="2" Layout="vboxLayout" border="false">
                     <Items >
-                            <ext:TextField ID="txtName" runat="server" FieldLabel="Client Name " margins="30 0 10 30" />
-                            <ext:TextField  ID="txtClID" runat="server" FieldLabel="Client ID " margins="10 0 10 30"/>
-                            <ext:Label ID="Label1" runat="server" Text="Description:" Margins="10 0 0 30" />
+                            <ext:TextField ID="txtMessageType" runat="server" FieldLabel="Type Of Message" margins="30 0 10 30" />
+                            <ext:TextField  ID="txtSubject" runat="server" FieldLabel="Subject" margins="10 0 10 30"/>
+                            <ext:Label ID="lblBody" runat="server" Text="Message Body:" Margins="10 0 0 30" />
                             <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="250" />
                     </Items>
                 </ext:Panel>
                 <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1" Border="false" >
                     <Items >
-                        <ext:Button ID="btnSend" runat="server" Text="Send" Margins="10 0 0 135" Padding="5" Width="50" />
+                        <ext:Button ID="btnSave" runat="server" Text="Save" Margins="10 0 0 135" Padding="5" Width="50" />
                         <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="10 0 0 10" />  
                     </Items>
                 </ext:Panel>
             </Items>   
           </ext:Panel> 
-          <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="150 0 10 0" Border="false">
-              <Content>
-                  
-                  
-              </Content>
-          </ext:Panel>
        </Items>
     </ext:Panel>
-
+           
+            <%--RIGHT PANEL FOR RECIPIENTS--%>
+           <ext:Panel ID="pnlMessageClients" Title="Client Details" runat="server" Border="false" Flex="50" Icon="Vcard" Padding="2">
+                        <LayoutConfig>
+                            <ext:HBoxLayoutConfig Align="Stretch"/>
+                        </LayoutConfig>
+                        <Items>
+                            <ext:GridPanel ID="gpClient" runat="server" Flex="1" >
+                                <Store>
+                                    <ext:Store ID="streClient" runat="server">
+                                        <Model>
+                                            <ext:Model ID="mdlClient" runat="server">
+                                                <Fields>
+                                                    <ext:ModelField Name="CLIENT_ID"/>
+                                                    <ext:ModelField Name="Name"/>
+                                                    <ext:ModelField Name="Surname"/>
+                                                    <ext:ModelField Name="UserName"/>
+                                                    <ext:ModelField Name="DateOfBirth"/>
+                                                    <ext:ModelField Name="Telephone"/>
+                                                    <ext:ModelField Name="Cell"/>
+                                                </Fields>
+                                            </ext:Model>
+                                        </Model>
+                                    </ext:Store>
+                                </Store>
+                                <ColumnModel>
+                                    <Columns>
+                                        <ext:Column runat="server" ID="txtCID" Text="Client ID" DataIndex="CLIENT_ID"/>
+                                        <ext:Column runat="server" ID="txtName" Text="Name" DataIndex="Name"/>
+                                        <ext:Column runat="server" ID="txtSurname" Text="Surname" DataIndex="Surname"/>
+                                        <ext:Column runat="server" ID="txtUsername" Text="Username" DataIndex="UserName"/>
+                                        <ext:DateColumn runat="server" ID="txtDateOfBirth" Text="Date Of Birth" Format="DD-MON-YYYY" DataIndex="DateOfBirth"/>
+                                        <ext:Column runat="server" ID="txtTelephone" Text="Telephone" DataIndex="Telephone"/>
+                                        <ext:Column runat="server" ID="txtCell" Text="Cell" DataIndex="Cell"/>
+                                    </Columns>
+                                </ColumnModel>
+                                <Buttons>
+                                    <ext:Button runat="server" ID="btnSend" Text="Send" Padding="5" Icon="ArrowEw"/>
+                                </Buttons>
+                            </ext:GridPanel>
+                        </Items>
+                    </ext:Panel>
+                    
+                    <%--END OF RIGHT PANEL--%>
+                </Items>
+            </ext:Panel>
 </asp:Content>

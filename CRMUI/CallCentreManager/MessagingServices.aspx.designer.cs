@@ -10,7 +10,7 @@
 namespace CRMUI.CallCentreManager {
     
     
-    public partial class MessaginServices {
+    public partial class MessagingServices {
         
         /// <summary>
         /// ResourceManagerMessaginServices control.
@@ -31,13 +31,22 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlMain;
         
         /// <summary>
-        /// pnlMessage control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel pnlMessage;
+        protected global::Ext.Net.Panel Panel1;
+        
+        /// <summary>
+        /// pnlSub1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Panel pnlSub1;
         
         /// <summary>
         /// pnlDetails control.
@@ -49,31 +58,31 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlDetails;
         
         /// <summary>
-        /// txtName control.
+        /// txtMessageType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtName;
+        protected global::Ext.Net.TextField txtMessageType;
         
         /// <summary>
-        /// txtClID control.
+        /// txtSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtClID;
+        protected global::Ext.Net.TextField txtSubject;
         
         /// <summary>
-        /// Label1 control.
+        /// lblBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Label Label1;
+        protected global::Ext.Net.Label lblBody;
         
         /// <summary>
         /// heDesc control.
@@ -94,13 +103,13 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlbuttons;
         
         /// <summary>
-        /// btnSend control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Button btnSend;
+        protected global::Ext.Net.Button btnSave;
         
         /// <summary>
         /// btnCancel control.
@@ -112,12 +121,111 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Button btnCancel;
         
         /// <summary>
-        /// pnlUploadImg control.
+        /// pnlMessageClients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel pnlUploadImg;
+        protected global::Ext.Net.Panel pnlMessageClients;
+        
+        /// <summary>
+        /// gpClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.GridPanel gpClient;
+        
+        /// <summary>
+        /// streClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store streClient;
+        
+        /// <summary>
+        /// mdlClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlClient;
+        
+        /// <summary>
+        /// txtCID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtCID;
+        
+        /// <summary>
+        /// txtName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtName;
+        
+        /// <summary>
+        /// txtSurname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtSurname;
+        
+        /// <summary>
+        /// txtUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtUsername;
+        
+        /// <summary>
+        /// txtDateOfBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.DateColumn txtDateOfBirth;
+        
+        /// <summary>
+        /// txtTelephone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtTelephone;
+        
+        /// <summary>
+        /// txtCell control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtCell;
+        
+        /// <summary>
+        /// btnSend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnSend;
     }
 }
