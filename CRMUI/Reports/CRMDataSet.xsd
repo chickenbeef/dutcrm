@@ -11,8 +11,9 @@
             <MainSource>
               <DbSource ConnectionRef="CRM (Web.config)" DbObjectName="CRM.dbo.ProblemsPerAgent" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Name, DateCreated, NumberOfCalls FROM dbo.ProblemsPerAgent</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Name, DateCreated, NumberOfProblems
+FROM            ProblemsPerAgent</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -22,6 +23,7 @@
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
               <Mapping SourceColumn="DateCreated" DataSetColumn="DateCreated" />
               <Mapping SourceColumn="NumberOfCalls" DataSetColumn="NumberOfProblems" />
+              <Mapping SourceColumn="NumberOfProblems" DataSetColumn="NumberOfProblems" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -86,7 +88,7 @@
               <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CommonProblem.Description, ProblemsPerDay.NumberOfCallsPerDay, UnSolvedProblems.UnSolvedCount, SolvedProblems.SolvedCount
+                    <CommandText>SELECT        CommonProblem.Description, UnSolvedProblems.UnSolvedCount, SolvedProblems.SolvedCount, ProblemsPerDay.NumberOfProblemsPerDay
 FROM            CommonProblem CROSS JOIN
                          ProblemsPerDay CROSS JOIN
                          SolvedProblems CROSS JOIN
@@ -101,6 +103,7 @@ FROM            CommonProblem CROSS JOIN
               <Mapping SourceColumn="NumberOfCallsPerDay" DataSetColumn="NumberOfProblemsPerDay" />
               <Mapping SourceColumn="UnSolvedCount" DataSetColumn="UnSolvedCount" />
               <Mapping SourceColumn="SolvedCount" DataSetColumn="SolvedCount" />
+              <Mapping SourceColumn="NumberOfProblemsPerDay" DataSetColumn="NumberOfProblemsPerDay" />
             </Mappings>
             <Sources />
           </TableAdapter>
