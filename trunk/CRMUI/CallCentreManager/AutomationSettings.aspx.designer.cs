@@ -58,15 +58,6 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.ComboBox cmbPriorities;
         
         /// <summary>
-        /// fdstHours control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.FieldSet fdstHours;
-        
-        /// <summary>
         /// txtHours control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,24 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.SpinnerField txtHours;
+        
+        /// <summary>
+        /// cmbUnattend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ComboBox cmbUnattend;
+        
+        /// <summary>
+        /// fdstHours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.FieldSet fdstHours;
         
         /// <summary>
         /// txtMins control.
@@ -101,5 +110,14 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Button btnConfirm;
+        
+        /// <summary>
+        /// cont4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Container cont4;
     }
 }
