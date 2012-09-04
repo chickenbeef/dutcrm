@@ -4,7 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
-    
+    <%--Markup for messaging servces using comtemplate--%>
     <ext:Panel ID="pnlMain" runat="server" Height="615" Title="Messaging Services" Layout="HBoxLayout" >
        <Items>
           <ext:Panel id="pnlMessage" Height="614" runat="server" Layout="vboxLayout" Flex="1" Border="false">
