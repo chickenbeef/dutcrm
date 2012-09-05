@@ -58,6 +58,24 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.ComboBox cmbPriorities;
         
         /// <summary>
+        /// strEscalation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store strEscalation;
+        
+        /// <summary>
+        /// mdlEscalation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlEscalation;
+        
+        /// <summary>
         /// txtHours control.
         /// </summary>
         /// <remarks>
@@ -65,15 +83,6 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.SpinnerField txtHours;
-        
-        /// <summary>
-        /// cmbUnattend control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.ComboBox cmbUnattend;
         
         /// <summary>
         /// fdstHours control.
