@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Client/CM.Master" AutoEventWireup="true" CodeBehind="EmailSupport.aspx.cs" Inherits="CRMUI.Client.EmailSupport" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCMHead" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme= "Default"/>
@@ -20,8 +22,8 @@
                 </ext:Panel>
                 <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1" Border="false" >
                     <Items >
-                        <ext:Button ID="btnSend" runat="server" Text="Send" Margins="10 0 0 135" Padding="5" Width="50" />
-                        <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="10 0 0 10" />  
+                        <ext:Button ID="btnSend" runat="server" Text="Send" Margins="10 0 0 135" Padding="5"  Icon="EmailGo" />
+                        <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="10 0 0 10" Icon="Cancel" />  
                     </Items>
                 </ext:Panel>
             </Items>   
@@ -29,8 +31,7 @@
           <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="150 0 10 0" Border="false">
               <Content>
                   <asp:ScriptManager ID="ScriptManager1" runat="server"/>
-                  <asp:AjaxFileUpload runat="server" Width="300"/>
-                  
+                  <asp:AjaxFileUpload ID="AjaxFileUpload1" runat="server" Width="300"/>
               </Content>
           </ext:Panel>
        </Items>

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio 10.0\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Ext.Net">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\Ext.NET.Pro.2.0.0\lib\Ext.Net.dll</HintPath>
@@ -87,6 +88,7 @@
     <Content Include="Images\Header2.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Login\Login.aspx" />
+    <Content Include="Login\PasswordRecovery.aspx" />
     <Content Include="RelationshipManager\Home.aspx" />
     <Content Include="SalesManager\Home.aspx" />
     <Content Include="Styles\Main.css" />
@@ -173,6 +175,13 @@
     </Compile>
     <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\PasswordRecovery.aspx.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\PasswordRecovery.aspx.designer.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\UserLogin.Master.cs">
       <DependentUpon>UserLogin.Master</DependentUpon>
@@ -338,7 +347,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1677</DevelopmentServerPort>
+          <DevelopmentServerPort>61510</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

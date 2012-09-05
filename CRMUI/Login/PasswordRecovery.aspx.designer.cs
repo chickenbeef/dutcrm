@@ -10,7 +10,7 @@
 namespace CRMUI.Login {
     
     
-    public partial class Login {
+    public partial class PaswordRecovery {
         
         /// <summary>
         /// ResourceManager1 control.
@@ -31,57 +31,30 @@ namespace CRMUI.Login {
         protected global::Ext.Net.Panel pnlMain;
         
         /// <summary>
-        /// pnlLogin control.
+        /// pnlPasswordrecover control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel pnlLogin;
+        protected global::Ext.Net.Panel pnlPasswordrecover;
         
         /// <summary>
-        /// txtUserName control.
+        /// PasswordRecovery1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtUserName;
+        protected global::System.Web.UI.WebControls.PasswordRecovery PasswordRecovery1;
         
         /// <summary>
-        /// txtPassword control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtPassword;
-        
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Label lblError;
-        
-        /// <summary>
-        /// btnSignIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnSignIn;
-        
-        /// <summary>
-        /// hlForgotPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.HyperLink hlForgotPassword;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }
