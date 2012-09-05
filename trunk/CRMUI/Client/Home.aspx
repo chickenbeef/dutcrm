@@ -13,17 +13,18 @@
         <Items>
             <ext:Panel ID="pnlDetails" runat="server" Flex="1" Border="false" Layout="VBoxLayout">
                 <Items>
-                    <ext:TextField ID="txtName" runat="server" FieldLabel="Name" Width="300" Margins="30 0 10 30" />
-                    <ext:TextField ID="txtSurname" runat="server" FieldLabel="Surname" Width="300" Margins="10 0 10 30" />
+                    <ext:TextField ID="txtName" runat="server" FieldLabel="Name" Width="300" Margins="30 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your Name"/>
+                    <ext:TextField ID="txtSurname" runat="server" FieldLabel="Surname" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your surname " />
                     <ext:DateField ID="dfDob" runat="server" Vtype="daterange" FieldLabel="Date Of Birth"
-                        EnableKeyEvents="true" Width="300" Margins="10 0 10 30" />
-                    <ext:TextField ID="txtTel" runat="server" FieldLabel="Telephone No" Width="300" Margins="10 0 10 30" />
-                    <ext:TextField ID="txtCell" runat="server" FieldLabel="Cell No" Width="300" Margins="10 0 10 30" />
-                    <ext:TextField ID="txtFax" runat="server" FieldLabel="Fax No" Width="300" Margins="10 0 10 30" />
+                        EnableKeyEvents="true" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please enter your date of birth"/>
+                    <ext:TextField ID="txtTel" runat="server" FieldLabel="Telephone No" Width="300" Margins="10 0 10 30" ReadOnly="True"/>
+                    <ext:TextField ID="txtCell" runat="server" FieldLabel="Cell No" Width="300" Margins="10 0 10 30" ReadOnly="True"/>
+                    <ext:TextField ID="txtFax" runat="server" FieldLabel="Fax No" Width="300" Margins="10 0 10 30" ReadOnly="True"/>
                     <ext:Panel runat="server" Layout="HBoxLayout" Border="false">
                         <Items>
-                            <ext:Button ID="btnUpdate" runat="server" Text="Update" Padding="5" Margins="0 0 0 135" />
-                            <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="0 0 0 10" />
+                            <ext:Button ID="btnEdit" runat="server" Text="Edit" Padding="5" Margins="0 0 0 135" Icon="PageEdit" OnDirectClick="BtnEditClick"/>
+                            <ext:Button ID="btnUpdate" runat="server" Text="Update" Padding="5" Margins="0 0 0 10" Icon="PageGo" OnDirectClick="BtnUpdateClick" />
+                            <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="0 0 0 10" Icon="cancel" OnDirectClick="BtnCancelClick"/>
                         </Items>
                     </ext:Panel>
                 </Items>

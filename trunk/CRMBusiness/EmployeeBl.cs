@@ -16,10 +16,16 @@ namespace CRMBusiness
             return _crm.vEmployees.ToList();
         }
 
-        public List<vEmployee> GetEmployee(string username)
+        public List<vEmployee> GetEmployeeByName(string name)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vEmployees.Where(x => x.Name.Contains(username)).ToList();
+            return _crm.vEmployees.Where(x => x.Name.Contains(name)).ToList();
+        }
+
+        public vEmployee GetEmployee(string username)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.vEmployees.Where(x => x.UserName.Contains(username)).ToList()[0];
         }
 
         public bool AddEmployee(string name, string surname, string telephone, string cell, string fax, DateTime datecreated, Guid userid)

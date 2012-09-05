@@ -94,6 +94,15 @@ namespace CRMUI.Client {
         protected global::Ext.Net.TextField txtFax;
         
         /// <summary>
+        /// btnEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnEdit;
+        
+        /// <summary>
         /// btnUpdate control.
         /// </summary>
         /// <remarks>
