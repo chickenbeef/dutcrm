@@ -18,10 +18,25 @@
             <Items >
                 <ext:Panel ID="pnlDetails" runat="server"  Height="314" Flex="2" Layout="vboxLayout" border="false">
                     <Items >
-                            <ext:TextField ID="txtMessageType" runat="server" FieldLabel="Type Of Message" margins="30 0 10 30" />
-                            <ext:TextField  ID="txtSubject" runat="server" FieldLabel="Subject" margins="10 0 10 30"/>
+                            <ext:ComboBox ID="cmbComTemplate" runat="server"  FieldLabel="Select a template" Margins="10 0 10 0"
+                                    DisplayField="Name" ValueField="CT_ID" >
+                                   <Store>
+                                    <ext:Store ID="streComTemplate" runat="server">
+                                        <Model>
+                                            <ext:Model ID="mdlComTemplate" runat="server">
+                                                <fields>
+                                                    <ext:ModelField Name="CT_ID"/>
+                                                    <ext:ModelField Name="Name"/>
+                                                    <ext:ModelField Name="Paragraph"/>
+                                                </fields>
+                                            </ext:Model>
+                                        </Model>
+                                    </ext:Store>
+                                   </Store>
+                                </ext:ComboBox>
+                            
                             <ext:Label ID="lblBody" runat="server" Text="Message Body:" Margins="10 0 0 30" />
-                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="250" />
+                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 30" Width="610" Height="250" />
                     </Items>
                 </ext:Panel>
                 <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1" Border="false" >

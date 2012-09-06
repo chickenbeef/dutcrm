@@ -58,22 +58,31 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlDetails;
         
         /// <summary>
-        /// txtMessageType control.
+        /// cmbComTemplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtMessageType;
+        protected global::Ext.Net.ComboBox cmbComTemplate;
         
         /// <summary>
-        /// txtSubject control.
+        /// streComTemplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtSubject;
+        protected global::Ext.Net.Store streComTemplate;
+        
+        /// <summary>
+        /// mdlComTemplate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlComTemplate;
         
         /// <summary>
         /// lblBody control.
@@ -85,13 +94,13 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Label lblBody;
         
         /// <summary>
-        /// heDesc control.
+        /// editrPara control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.HtmlEditor heDesc;
+        protected global::Ext.Net.HtmlEditor editrPara;
         
         /// <summary>
         /// pnlbuttons control.

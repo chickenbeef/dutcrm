@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CRMBusiness;
 
 namespace CRMUI.CallCentreManager
 {
@@ -11,7 +12,9 @@ namespace CRMUI.CallCentreManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var comms = new ComTemplateBl().GetAllTemplates();
+            streComTemplate.DataSource = comms;
+            streComTemplate.DataBind();
         }
     }
 }
