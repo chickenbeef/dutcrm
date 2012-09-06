@@ -43,10 +43,6 @@
                                         </Model>
                                     </ext:Store>
                                    </Store>
-                                   <Listeners>
-                                       <select Handler="#{txtHours.clearValue();
-                                                            #{txtHours}.setValue(#cmbPriorities.strEscalation.get)"></select>
-                                   </Listeners>
                                 </ext:ComboBox>
                                 
                                 <ext:FieldSet runat="server">
@@ -64,8 +60,8 @@
                              
                                 <ext:FieldSet runat="server" ID="fdstHours" Title="Set unattended time for notification" Margins="10 0 10 0">
                                     <Items>
-                                        <ext:SpinnerField runat="server" ID="txtMins" FieldLabel="Number of mins" Width="150"
-                                             Padding="5" Margins="10 0 10 0"/>
+                                        <ext:TextField ID="txtMins" InputType="Number" FieldLabel="text field" runat="server" />                            
+                                       
                                     </Items>
                             </ext:FieldSet>
                         </Items>
