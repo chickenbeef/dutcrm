@@ -14,8 +14,8 @@
             <Items >
                 <ext:Panel ID="pnlDetails" runat="server"  Height="314" Flex="2" Layout="vboxLayout" border="false">
                     <Items >
-                            <ext:TextField ID="txtName" runat="server" FieldLabel="Client Name " margins="30 0 10 30" />
-                            <ext:TextField  ID="txtClID" runat="server" FieldLabel="Client ID " margins="10 0 10 30"/>
+                            <ext:TextField ID="txtName" runat="server" FieldLabel="Client Name " margins="30 0 10 30" ReadOnly="True"/>
+                            <ext:TextField  ID="txtClID" runat="server" FieldLabel="Client ID " margins="10 0 10 30" ReadOnly="True"/>
                             <ext:Label ID="Label1" runat="server" Text="Description:" Margins="10 0 0 30" />
                             <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="250" />
                     </Items>
