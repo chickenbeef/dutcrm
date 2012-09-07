@@ -13,21 +13,30 @@ namespace CRMUI.Client
             try
             {
                 string userName = Request.QueryString["UserName"];
+                Session["UserName"] = userName;
                 var objCl = new ClientBl().GetClientUserName(userName);
-                if (!IsPostBack)
-                {
-                    txtName.Text = objCl.Name;
-                    txtSurname.Text = objCl.Surname;
-                    dfDob.Text = objCl.DateOfBirth.ToString(CultureInfo.InvariantCulture);
-                    txtTel.Text = objCl.Telephone;
-                    txtCell.Text = objCl.Cell;
-                    txtFax.Text = objCl.Fax;
-                    txtClientID.Text = objCl.CLIENT_ID.ToString(CultureInfo.InvariantCulture);
-                    txtBranchID.Text = objCl.BRH_ID.ToString(CultureInfo.InvariantCulture);
+                 
+                    if(!IsPostBack)
+                    {
+                        Session["txtName.Text"] = objCl[0].Name;
+                        txtName.Text = objCl[0].Name;
+                        txtSurname.Text = objCl[0].Surname;
+                        dfDob.Text = objCl[0].DateOfBirth.ToString(CultureInfo.InvariantCulture);
+                        txtTel.Text = objCl[0].Telephone;
+                        txtCell.Text = objCl[0].Cell;
+                        txtFax.Text = objCl[0].Fax;
+                        Session["txtClientID.Text"] = objCl[0].CLIENT_ID.ToString(CultureInfo.InvariantCulture);
+                        txtClientID.Text = objCl[0].CLIENT_ID.ToString(CultureInfo.InvariantCulture);
+                        txtBranchID.Text = objCl[0].BRH_ID.ToString(CultureInfo.InvariantCulture);
+                        
+                    }
+                    
+               
 
-                }
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
@@ -56,14 +65,14 @@ namespace CRMUI.Client
                 string userName = Request.QueryString["UserName"];
                 var objCl = new ClientBl().GetClientUserName(userName);
 
-                txtName.Value = objCl.Name;
-                txtSurname.Value = objCl.Surname;
-                dfDob.Value = objCl.DateOfBirth;
-                txtTel.Value = objCl.Telephone;
-                txtCell.Value = objCl.Cell;
-                txtFax.Value = objCl.Fax;
-                txtClientID.Value = objCl.CLIENT_ID;
-                txtBranchID.Value = objCl.BRH_ID;
+                txtName.Value = objCl[0].Name;
+                txtSurname.Value = objCl[0].Surname;
+                dfDob.Value = objCl[0].DateOfBirth;
+                txtTel.Value = objCl[0].Telephone;
+                txtCell.Value = objCl[0].Cell;
+                txtFax.Value = objCl[0].Fax;
+                txtClientID.Value = objCl[0].CLIENT_ID;
+                txtBranchID.Value = objCl[0].BRH_ID;
 
                 txtName.ReadOnly = true;
                 txtSurname.ReadOnly = true;

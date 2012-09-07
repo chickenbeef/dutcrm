@@ -22,7 +22,7 @@
                 </ext:Panel>
                 <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1" Border="false" >
                     <Items >
-                        <ext:Button ID="btnSend" runat="server" Text="Send" Margins="10 0 0 135" Padding="5"  Icon="EmailGo" />
+                        <ext:Button ID="btnSend" runat="server" Text="Send" Margins="10 0 0 135" Padding="5"  Icon="EmailGo" OnDirectClick="btnSend_OnDirectClick" />
                         <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="10 0 0 10" Icon="Cancel" />  
                     </Items>
                 </ext:Panel>
