@@ -238,6 +238,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.FormPanel FormPanel1;
         
         /// <summary>
+        /// txtEPId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtEPId;
+        
+        /// <summary>
         /// txtClientId control.
         /// </summary>
         /// <remarks>
@@ -328,22 +337,94 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Panel pnlEmailSupport;
         
         /// <summary>
-        /// pnlLeft2 control.
+        /// pnlLeft control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel pnlLeft2;
+        protected global::Ext.Net.Panel pnlLeft;
         
         /// <summary>
-        /// rptrEmailProblems control.
+        /// statusBar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrEmailProblems;
+        protected global::Ext.Net.StatusBar statusBar;
+        
+        /// <summary>
+        /// lblPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label lblPage;
+        
+        /// <summary>
+        /// ToolbarSpacer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolbarSpacer ToolbarSpacer1;
+        
+        /// <summary>
+        /// ToolbarSeparator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolbarSeparator ToolbarSeparator1;
+        
+        /// <summary>
+        /// ToolbarSpacer2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolbarSpacer ToolbarSpacer2;
+        
+        /// <summary>
+        /// lblTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label lblTotal;
+        
+        /// <summary>
+        /// btnPrev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnPrev;
+        
+        /// <summary>
+        /// ToolbarSeparator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolbarSeparator ToolbarSeparator2;
+        
+        /// <summary>
+        /// btnNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnNext;
         
         /// <summary>
         /// pnlRight2 control.

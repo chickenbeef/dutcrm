@@ -6,25 +6,44 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CRMBusiness;
+using Ext.Net;
 
 namespace CRMUI.SupportAgent
 {
     public partial class CallHome : System.Web.UI.Page
     {
         public static string Role;
+        private static int _totalPages;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            //code for left panel
+            #region Left Panel
+
+            //create status variables for email problems
+            int totalProblems;
+            var cards = new EmailProblemGuiBl
+            {
+                DataSource = new EmailProblemBl().GetAllUnAttendedEmailProblems(),
+                PageSize = 5,
+                BtnLogOnDirectClick = BtnLogOnDirectClick
+            }.CreateListOfCardPanels(out totalProblems, out _totalPages);
+            pnlLeft.Items.Add(cards);
+            statusBar.DefaultText = "<b>Total Problems: " + totalProblems + "</b>";
+            lblPage.Html = "<b>Page " + 1 + " of " + _totalPages + "</b>";
+
+            #endregion
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            #region Redirect  based on role
+            if (!IsPostBack)
             {
                 Role = Request.QueryString["role"].ToString(CultureInfo.InvariantCulture);
 
                 if (Role.Equals("EmailSupportAgent", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    //Assign data source to repeater
-                    var ep = new EmailProblemBl().GetAllUnAttendedEmailProblems();
-                    rptrEmailProblems.DataSource = ep;
-                    rptrEmailProblems.DataBind();
-
                     //enables options of email support agent
                     pnlEmailSupport.Visible = true;
                     pnlEmailSupport.Enabled = true;
@@ -36,6 +55,59 @@ namespace CRMUI.SupportAgent
                     pnlCallSupport.Enabled = true;
                 }
             }
+            #endregion
         }
+
+        #region Left Panel
+
+        private static void BtnLogOnDirectClick(object sender, DirectEventArgs directEventArgs)
+        {
+            var epid = directEventArgs.ExtraParams[0].Value;
+            var clientid = directEventArgs.ExtraParams[1].Value;
+            ExtNet.Msg.Notify(epid, clientid).Show();
+        }
+
+        protected void BtnNextClick(object sender, DirectEventArgs e)
+        {
+            int index = int.Parse(e.ExtraParams["index"]);
+
+            if ((index + 1) < pnlLeft.Items.Count)
+            {
+                pnlLeft.ActiveIndex = index + 1;
+            }
+            //show current page
+            lblPage.Html = "<b>Page " + (pnlLeft.ActiveIndex + 1) + " of " + _totalPages + "</b>";
+
+            CheckButtons();
+
+            //refresh panels to add any new emails that have arrived
+            pnlLeft.Render();
+        }
+
+        protected void BtnPrevClick(object sender, DirectEventArgs e)
+        {
+            int index = int.Parse(e.ExtraParams["index"]);
+
+            if ((index - 1) >= 0)
+            {
+                pnlLeft.ActiveIndex = index - 1;
+            }
+            //show current page
+            lblPage.Html = "<b>Page " + (pnlLeft.ActiveIndex + 1) + " of " + _totalPages + "</b>";
+
+            CheckButtons();
+            //refresh panels to add any new emails that have arrived
+            pnlLeft.Render();
+        }
+
+        private void CheckButtons()
+        {
+            int index = pnlLeft.ActiveIndex;
+
+            btnNext.Disabled = index == (pnlLeft.Items.Count - 1);
+            btnPrev.Disabled = index == 0;
+        }
+
+        #endregion
     }
 }

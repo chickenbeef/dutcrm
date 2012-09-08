@@ -27,5 +27,11 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.Images.Where(i => i.EP_ID == epid).ToList();
         }
+
+        public int GetImageCount(int epid)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.Images.Where(i => i.EP_ID == epid).Count();
+        }
     }
 }

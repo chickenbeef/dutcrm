@@ -1,82 +1,92 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SA.Master.cs" Inherits="CRMUI.SupportAgent.SA" %>
-<%@ Import Namespace="CRMUI.SupportAgent" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../Styles/Main.css"/>
+    <link rel="stylesheet" type="text/css" href="../Styles/Main.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="fullwidth">
-                <table class="fullwidth">
-                    <tr>
-                        <td class="bluestripe">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <table class="fullwidth">
-                                <tr>
-                                    <td class="leftgrayheader">
-                                        <img class="logo" src="../Images/Logo.png" alt="Law Property logo"/>
-                                    </td>
-                                    <td>
-                                        <table class="fullwidth">
-                                            <tr>
-                                                <td class="middlegrayheader"></td>
-                                                <td class="rightgrayheader">Law Active Holdings</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="blueheader">
-                            Customer Relationship Management System</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
-                                <Items>
-                                    <ext:LinkButton AutoPostBack="True" ID="lnkHome" runat="server" Text="Home"/>
-                                    <ext:ToolbarSpacer runat="server"/>
-                                    <ext:LinkButton ID="LnkSolveTicket" runat="server" Text="Solve Ticket" AutoPostBack="True" PostBackUrl="~/SupportAgent/SolveTicket.aspx" />
-                                    <ext:ToolbarSpacer runat="server"/>
-                                    <ext:LinkButton ID="lnkUpdateTicket" runat="server" Text="Update Ticket" AutoPostBack="True" PostBackUrl="~/SupportAgent/UpdateTicket.aspx" />
-                                    <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server"/>
-                                     <ext:LinkButton ID="lnkUpdateSolution" runat="server" Text="Update Solution" AutoPostBack="True" PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx" />
-                                    <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server"/>
-                                    <ext:ToolbarFill ID="ToolbarFill1" runat="server"/>
-                                    <ext:ToolbarSeparator runat="server"/>
-                                    <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Login/Login.aspx"/>
-                                </Items>
-                            </ext:Toolbar></td>
-                    </tr>
-                    <tr>
-                        <td class="subheading">Support Agent</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <asp:ContentPlaceHolder ID="cphCallCMBody" runat="server">
-                            </asp:ContentPlaceHolder></td>
-                    </tr>
-                    <tr>
-                        <td class="footer">
-                            © 2011 LAW Property (Pty) Ltd. All rights reserved</td>
-                    </tr>
-                    <tr>
-                        <td class="bluestripe">
-                        </td>
-                    </tr>
-                </table>
-            </div>
+    <div>
+        <table class="fullwidth">
+            <tr>
+                <td class="bluestripe">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="fullwidth">
+                        <tr>
+                            <td class="leftgrayheader">
+                                <img class="logo" src="../Images/Logo.png" alt="Law Property logo" />
+                            </td>
+                            <td>
+                                <table class="fullwidth">
+                                    <tr>
+                                        <td class="middlegrayheader">
+                                        </td>
+                                        <td class="rightgrayheader">
+                                            Law Active Holdings
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="blueheader">
+                    Customer Relationship Management System
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ext:Toolbar ID="Toolbar1" runat="server">
+                        <Items>
+                            <ext:LinkButton AutoPostBack="True" ID="lnkHome" runat="server" Text="Home" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton ID="LnkSolveTicket" runat="server" Text="Solve Ticket" AutoPostBack="True"
+                                PostBackUrl="~/SupportAgent/SolveTicket.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px; " />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton ID="lnkUpdateTicket" runat="server" Text="Update Ticket" AutoPostBack="True"
+                                PostBackUrl="~/SupportAgent/UpdateTicket.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                            <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
+                            <ext:LinkButton ID="lnkUpdateSolution" runat="server" Text="Update Solution" AutoPostBack="True"
+                                PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                            <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
+                            <ext:ToolbarFill ID="ToolbarFill1" runat="server" />
+                            <ext:ToolbarSeparator runat="server" />
+                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Login/Login.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                        </Items>
+                    </ext:Toolbar>
+                </td>
+            </tr>
+            <tr>
+                <td class="subheading">
+                    Support Agent
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="cphCallCMBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    © 2011 LAW Property (Pty) Ltd. All rights reserved
+                </td>
+            </tr>
+            <tr>
+                <td class="bluestripe">
+                </td>
+            </tr>
+        </table>
+    </div>
     </form>
 </body>
 </html>

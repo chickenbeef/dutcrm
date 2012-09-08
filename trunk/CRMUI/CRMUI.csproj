@@ -97,6 +97,7 @@
     <Content Include="SupportAgent\UpdateTicket.aspx" />
     <Content Include="SupportAgent\SolveTicket.aspx" />
     <Content Include="SupportAgent\UpdateSolutionReference.aspx" />
+    <Content Include="SupportAgent\ViewImages.aspx" />
     <Content Include="User Controls\ProblemsPerAgentUserControl.ascx" />
     <Content Include="User Controls\SalesDayUserControl.ascx" />
     <Content Include="User Controls\SalesMonthUserControl.ascx" />
@@ -238,6 +239,12 @@
     <Compile Include="SupportAgent\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SupportAgent\ImageView.Master.cs">
+      <DependentUpon>ImageView.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\ImageView.Master.designer.cs">
+      <DependentUpon>ImageView.Master</DependentUpon>
+    </Compile>
     <Compile Include="SupportAgent\UpdateTicket.aspx.cs">
       <DependentUpon>UpdateTicket.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +272,12 @@
     </Compile>
     <Compile Include="SupportAgent\UpdateSolutionReference.aspx.designer.cs">
       <DependentUpon>UpdateSolutionReference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\ViewImages.aspx.cs">
+      <DependentUpon>ViewImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\ViewImages.aspx.designer.cs">
+      <DependentUpon>ViewImages.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Controls\ProblemsPerAgentUserControl.ascx.cs">
       <DependentUpon>ProblemsPerAgentUserControl.ascx</DependentUpon>
@@ -337,6 +350,7 @@
     </None>
     <Content Include="SalesManager\SM.Master" />
     <Content Include="SupportAgent\SA.Master" />
+    <Content Include="SupportAgent\ImageView.Master" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
