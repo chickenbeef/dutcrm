@@ -10,7 +10,7 @@ using Ext.Net;
 
 namespace CRMUI.SupportAgent
 {
-    public partial class CallHome : System.Web.UI.Page
+    public partial class CallHome : Page
     {
         public static string Role;
         private static int _totalPages;
@@ -20,17 +20,24 @@ namespace CRMUI.SupportAgent
             //code for left panel
             #region Left Panel
 
-            //create status variables for email problems
-            int totalProblems;
-            var cards = new EmailProblemGuiBl
+            try
             {
-                DataSource = new EmailProblemBl().GetAllUnAttendedEmailProblems(),
-                PageSize = 5,
-                BtnLogOnDirectClick = BtnLogOnDirectClick
-            }.CreateListOfCardPanels(out totalProblems, out _totalPages);
-            pnlLeft.Items.Add(cards);
-            statusBar.DefaultText = "<b>Total Problems: " + totalProblems + "</b>";
-            lblPage.Html = "<b>Page " + 1 + " of " + _totalPages + "</b>";
+                //create status variables for email problems
+                int totalProblems;
+                var cards = new EmailProblemGuiBl
+                {
+                    DataSource = new EmailProblemBl().GetAllUnAttendedEmailProblems(),
+                    PageSize = 5,
+                    BtnLogOnDirectClick = BtnLogOnDirectClick
+                }.CreateListOfCardPanels(out totalProblems, out _totalPages);
+                pnlLeft.Items.Add(cards);
+                statusBar.DefaultText = "<b>Total Problems: " + totalProblems + "</b>";
+                lblPage.Html = "<b>Page " + 1 + " of " + _totalPages + "</b>";
+            }
+            catch (Exception ex)
+            {
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+            }
 
             #endregion
         }
@@ -62,50 +69,78 @@ namespace CRMUI.SupportAgent
 
         private static void BtnLogOnDirectClick(object sender, DirectEventArgs directEventArgs)
         {
-            var epid = directEventArgs.ExtraParams[0].Value;
-            var clientid = directEventArgs.ExtraParams[1].Value;
-            ExtNet.Msg.Notify(epid, clientid).Show();
+            try
+            {
+                var epid = directEventArgs.ExtraParams[0].Value;
+                var clientid = directEventArgs.ExtraParams[1].Value;
+                ExtNet.Msg.Notify(epid, clientid).Show();
+            }
+            catch (Exception ex)
+            {
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+            }
         }
 
         protected void BtnNextClick(object sender, DirectEventArgs e)
         {
-            int index = int.Parse(e.ExtraParams["index"]);
-
-            if ((index + 1) < pnlLeft.Items.Count)
+            try
             {
-                pnlLeft.ActiveIndex = index + 1;
+                var index = int.Parse(e.ExtraParams["index"]);
+
+                if ((index + 1) < pnlLeft.Items.Count)
+                {
+                    pnlLeft.ActiveIndex = index + 1;
+                }
+                //show current page
+                lblPage.Html = "<b>Page " + (pnlLeft.ActiveIndex + 1) + " of " + _totalPages + "</b>";
+
+                CheckButtons();
+
+                //refresh panels to add any new emails that have arrived
+                pnlLeft.Render();
             }
-            //show current page
-            lblPage.Html = "<b>Page " + (pnlLeft.ActiveIndex + 1) + " of " + _totalPages + "</b>";
-
-            CheckButtons();
-
-            //refresh panels to add any new emails that have arrived
-            pnlLeft.Render();
+            catch (Exception ex)
+            {
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+            }
         }
 
         protected void BtnPrevClick(object sender, DirectEventArgs e)
         {
-            int index = int.Parse(e.ExtraParams["index"]);
-
-            if ((index - 1) >= 0)
+            try
             {
-                pnlLeft.ActiveIndex = index - 1;
-            }
-            //show current page
-            lblPage.Html = "<b>Page " + (pnlLeft.ActiveIndex + 1) + " of " + _totalPages + "</b>";
+                var index = int.Parse(e.ExtraParams["index"]);
 
-            CheckButtons();
-            //refresh panels to add any new emails that have arrived
-            pnlLeft.Render();
+                if ((index - 1) >= 0)
+                {
+                    pnlLeft.ActiveIndex = index - 1;
+                }
+                //show current page
+                lblPage.Html = "<b>Page " + (pnlLeft.ActiveIndex + 1) + " of " + _totalPages + "</b>";
+
+                CheckButtons();
+                //refresh panels to add any new emails that have arrived
+                pnlLeft.Render();
+            }
+            catch (Exception ex)
+            {
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+            }
         }
 
         private void CheckButtons()
         {
-            int index = pnlLeft.ActiveIndex;
+            try
+            {
+                var index = pnlLeft.ActiveIndex;
 
-            btnNext.Disabled = index == (pnlLeft.Items.Count - 1);
-            btnPrev.Disabled = index == 0;
+                btnNext.Disabled = index == (pnlLeft.Items.Count - 1);
+                btnPrev.Disabled = index == 0;
+            }
+            catch (Exception ex)
+            {
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+            }
         }
 
         #endregion
