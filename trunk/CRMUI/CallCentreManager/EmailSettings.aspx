@@ -12,17 +12,24 @@
         <Items>
             <ext:FormPanel runat="server" ID="pnlEmailSettings" Width="400" Height="240" BodyPadding="30" Frame="True">
                 <Items>
-                    <ext:TextField runat="server" ID="txtServer" FieldLabel="POP Server" Anchor="100%" AllowBlank="False" />
-                    <ext:TextField runat="server" ID="txtUsername" FieldLabel="Username" Anchor="100%" AllowBlank="False"/>
+                    <ext:TextField runat="server" ID="txtServer" FieldLabel="POP Server" Anchor="100%" AllowBlank="False" 
+                        IndicatorTip="It is required field" MsgTarget="Side"/>
+
+                    <ext:TextField runat="server" ID="txtUsername" FieldLabel="Username" Anchor="100%" AllowBlank="False"
+                        IndicatorTip="It is required field" MsgTarget="Side"/>
+
                     <ext:TextField runat="server" ID="txtPassword" FieldLabel="Password" InputType="Password"
-                        Anchor="100%" AllowBlank="False"/>
+                        Anchor="100%" AllowBlank="False" IndicatorTip="It is required field" MsgTarget="Side"/>
+
                     <ext:TextField ID="txtConfirmPassword" runat="server" FieldLabel="Confirm Password" Vtype="password"
-                        InputType="Password" MsgTarget="Side" Anchor="100%" AllowBlank="False"/>
-                    <ext:TextField runat="server" ID="txtPort" FieldLabel="Port"  Anchor="50%" AllowBlank="False" />
+                        InputType="Password" MsgTarget="Side" Anchor="100%" AllowBlank="False" IndicatorTip="It is required field"/>
+
+                    <ext:TextField runat="server" ID="txtPort" FieldLabel="Port"  Anchor="50%" AllowBlank="False" IndicatorTip="It is required field"/>
+
                     <ext:Checkbox runat="server" ID="chkEnableSSL" FieldLabel="Use SSL" />
                 </Items>
                 <Buttons>
-                    <ext:Button runat="server" ID="txtSave" Text="Save" Icon="Disk" Padding="5" />
+                    <ext:Button runat="server" ID="BtnSave" Text="Save" Icon="Disk" Padding="5" OnDirectClick="SaveSettings" />
                 </Buttons>
             </ext:FormPanel>
         </Items>
