@@ -241,6 +241,7 @@
     </Compile>
     <Compile Include="SupportAgent\ImageView.Master.cs">
       <DependentUpon>ImageView.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SupportAgent\ImageView.Master.designer.cs">
       <DependentUpon>ImageView.Master</DependentUpon>
@@ -275,6 +276,7 @@
     </Compile>
     <Compile Include="SupportAgent\ViewImages.aspx.cs">
       <DependentUpon>ViewImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SupportAgent\ViewImages.aspx.designer.cs">
       <DependentUpon>ViewImages.aspx</DependentUpon>
@@ -360,7 +362,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>1677</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
