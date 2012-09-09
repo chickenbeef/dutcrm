@@ -44,7 +44,11 @@
                         <td>
                             <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
                                 <Items>
-                                    <ext:LinkButton runat="server" ID="lnkSupportReports" Text="Update Roles" AutoPostBack="True" PostBackUrl="~/CallCentreManager/Home.aspx" />
+                                    <ext:LinkButton runat="server" ID="lnkUpdateRoles" Text="Update Roles" AutoPostBack="True" PostBackUrl="~/CallCentreManager/Home.aspx" />
+                                    <ext:ToolbarSpacer runat="server"/>
+                                    <ext:LinkButton runat="server" ID="lnkSupportReports" Text="Support Reports" AutoPostBack="True" PostBackUrl="~/CallCentreManager/SupportReports.aspx" />
+                                    <ext:ToolbarSpacer  runat="server"/>
+                                    <ext:LinkButton runat="server" ID="lnkMessagingServices" Text="Messaging Services" AutoPostBack="True" PostBackUrl="~/CallCentreManager/MessagingServices.aspx" />
                                     <ext:ToolbarSpacer runat="server"/>
                                     <ext:LinkButton ID="LnkAutomationSettings" runat="server" Text="Automation Settings" AutoPostBack="True" PostBackUrl="~/CallCentreManager/AutomationSettings.aspx" />
                                     <ext:ToolbarSpacer runat="server"/>

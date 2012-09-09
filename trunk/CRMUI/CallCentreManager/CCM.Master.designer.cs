@@ -40,6 +40,15 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Toolbar Toolbar1;
         
         /// <summary>
+        /// lnkUpdateRoles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.LinkButton lnkUpdateRoles;
+        
+        /// <summary>
         /// lnkSupportReports control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.LinkButton lnkSupportReports;
+        
+        /// <summary>
+        /// lnkMessagingServices control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.LinkButton lnkMessagingServices;
         
         /// <summary>
         /// LnkAutomationSettings control.
