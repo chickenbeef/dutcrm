@@ -82,7 +82,7 @@ namespace CRMUI.CallCentreManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.SpinnerField txtHours;
+        protected global::Ext.Net.NumberField txtHours;
         
         /// <summary>
         /// fdstHours control.
@@ -100,7 +100,7 @@ namespace CRMUI.CallCentreManager {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtMins;
+        protected global::Ext.Net.NumberField txtMins;
         
         /// <summary>
         /// Container1 control.
