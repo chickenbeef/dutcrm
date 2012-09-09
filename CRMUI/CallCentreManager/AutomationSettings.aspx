@@ -29,8 +29,8 @@
                         <Items>
                             <ext:Label runat="server" ID="lblpriorty" Text="Set escalation for unsolved tickets per priority" Margins="10 0 10 0"/> 
 
-                                <ext:ComboBox ID="cmbPriorities" runat="server"  FieldLabel="Select priority to update" Margins="10 0 10 0"
-                                    DisplayField="Priority" ValueField="Duration">
+                                <ext:ComboBox ID="cmbPriorities" runat="server"  FieldLabel="Priorityriority to update" Margins="20 0 10 0"
+                                    DisplayField="Priority" ValueField="Duration" Editable="False">
                                    <Store>
                                     <ext:Store ID="strEscalation" runat="server">
                                         <Model>
@@ -43,12 +43,20 @@
                                         </Model>
                                     </ext:Store>
                                    </Store>
+                                   <listeners>
+                                       <Select Handler="#{txtHours}.setValue(#{cmbPriorities}.getValue());"/>
+                                   </listeners>
                                 </ext:ComboBox>
                                 
                                 <ext:FieldSet runat="server">
                                     <Items>
-                                        <ext:SpinnerField runat="server" ID="txtHours" FieldLabel="Number of hours" Width="150"
-                                       Padding="5" Margins="10 0 10 0" />
+                                        <ext:NumberField runat="server" ID="txtHours" FieldLabel="Number of hours" Width="150" 
+                                        Padding="5" Margins="10 0 10 0" MinValue="1" MaxValue="84" Editable="False" AllowBlank="False">
+                                            
+                                           </ext:NumberField>
+                                        
+                                        
+                                        
                                     </Items>
                                 </ext:FieldSet>
                         </Items>
@@ -58,17 +66,19 @@
                         <Items>
                              <ext:Label runat="server" Text="Set notification period for unattended tickets" Margins="10 0 10 0"/>   
                              
-                                <ext:FieldSet runat="server" ID="fdstHours" Title="Set unattended time for notification" Margins="10 0 10 0">
+                                <ext:FieldSet runat="server" ID="fdstHours" Margins="5 0 10 0">
                                     <Items>
-                                        <ext:TextField ID="txtMins" InputType="Number" FieldLabel="text field" runat="server" />                            
+                                        <ext:NumberField runat="server" ID="txtMins" FieldLabel="Unattended Minutes allowed" Width="150" 
+                                                         Padding="5" Margins="10 0 10 0" MinValue="1" AllowDecimals="False" MaxValue="84" Editable="False" AllowBlank="false"/>
+                                                                   
                                        
                                     </Items>
                             </ext:FieldSet>
                         </Items>
                     </ext:Container>
-                    <ext:Container ID="Container1" runat="server" Margins="10 0 10 0">
+                    <ext:Container ID="Container1" runat="server" Margins="5 0 10 0">
                         <Items>
-                            <ext:Button runat="server" ID="btnConfirm" Text="Save" Padding="5" Icon="PageSave" OnClick="SaveSettings__"/>
+                            <ext:Button runat="server" ID="btnConfirm" Text="Save" Padding="5" Icon="PageSave" OnDirectClick="SaveSettings"/>
                         </Items>
                     </ext:Container>
                 </Items>
