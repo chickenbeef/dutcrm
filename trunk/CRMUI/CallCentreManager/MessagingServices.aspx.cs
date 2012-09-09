@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CRMBusiness;
+using Ext.Net;
 
 namespace CRMUI.CallCentreManager
 {
@@ -13,8 +15,23 @@ namespace CRMUI.CallCentreManager
         protected void Page_Load(object sender, EventArgs e)
         {
             var comms = new ComTemplateBl().GetAllTemplates();
-            streComTemplate.DataSource = comms;
-            streComTemplate.DataBind();
+            var cl = new ClientBl().GetAllClients();
+
+                    if (!IsPostBack)
+                    {
+                            streComTemplate.DataSource = comms;
+                            streComTemplate.DataBind();
+            
+
+                            streClient.DataSource = cl;
+                            streClient.DataBind();
+                    }
+        }
+
+
+        protected void SendMessage(object sender, DirectEventArgs e)
+        {
+            ExtNet.MessageBox.Prompt("Template Body", cmbComTemplate.SelectedItem.Value).Show();
         }
     }
 }

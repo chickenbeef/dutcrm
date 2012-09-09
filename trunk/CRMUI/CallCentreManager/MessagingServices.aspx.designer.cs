@@ -85,15 +85,6 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Model mdlComTemplate;
         
         /// <summary>
-        /// lblBody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Label lblBody;
-        
-        /// <summary>
         /// editrPara control.
         /// </summary>
         /// <remarks>
@@ -193,15 +184,6 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Column txtSurname;
         
         /// <summary>
-        /// txtUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Column txtUsername;
-        
-        /// <summary>
         /// txtDateOfBirth control.
         /// </summary>
         /// <remarks>
@@ -227,6 +209,15 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Column txtCell;
+        
+        /// <summary>
+        /// checkc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.CheckColumn checkc;
         
         /// <summary>
         /// btnSend control.
