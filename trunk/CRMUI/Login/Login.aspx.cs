@@ -36,6 +36,14 @@ namespace CRMUI.Login
                          Response.Redirect("~/SalesManager/Home.aspx");
 
                      }
+                     if(Roles.IsUserInRole(txtUserName.Text,"Call Support Agent"))
+                     {
+                         Response.Redirect("~/SupportAgent/Home.aspx");
+                     }
+                     if(Roles.IsUserInRole(txtUserName.Text,"Email Support Agent"))
+                     {
+                         Response.Redirect("~/SupportAgent/Home.aspx");
+                     }
                  }
                  else
                  {

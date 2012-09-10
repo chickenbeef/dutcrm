@@ -83,6 +83,7 @@
     <Content Include="CallCentreManager\SupportReports.aspx" />
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
+    <Content Include="Client\Upload.aspx" />
     <Content Include="CRMService.svc" />
     <Content Include="Images\Header1.png" />
     <Content Include="Images\Header2.png" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="Client\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
