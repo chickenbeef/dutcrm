@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using AjaxControlToolkit;
 using CRMBusiness;
 using Ext.Net;
@@ -50,7 +51,8 @@ namespace CRMUI.Client
 
         protected void btnCancel_OnDirectClick(object sender, DirectEventArgs e)
         {
-            throw new NotImplementedException();
+            Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
+            
         }
     }
 }
