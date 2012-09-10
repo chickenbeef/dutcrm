@@ -23,12 +23,11 @@ namespace CRMBusiness
                                 Description = description,
                                 DateCreated = datecreated,
                                 CLIENT_ID = clientid,
-                                EMP_ID = employeeid,
                                 Mail_ID = mailid,
                             };
             _crm.AddToEmailProblems(objep);
             _crm.SaveChanges();
-            return objep.EP_ID
+            return objep.EP_ID;
         }
 
         //UPDATE
