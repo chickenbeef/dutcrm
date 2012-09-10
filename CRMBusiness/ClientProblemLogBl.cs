@@ -33,7 +33,8 @@ namespace CRMBusiness
                                     EMP_ID = eId,
                                     PROB_ID = pId,
                                     SOL_ID = sId,
-                                    Priority = p
+                                    Priority = p,
+                                    SolvedOnCreate = cprSolved
                                 };
 
             _crm.AddToClientProblemsLogs(objCpl);
@@ -59,10 +60,16 @@ namespace CRMBusiness
             return _crm.vClientProblemsLogs.Where(x => x.CPR_ID == cprId).ToList()[0];
         }
 
-        public List<vClientProblemsLog> GetClientProblem(string nme, string desc)
+        public List<vClientProblemsLog> GetClientProblemByUsername(string username)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClientProblemsLogs.Where(x => x.ClientName == nme && x.ProblemDescription.Contains(desc)).ToList();
+            return _crm.vClientProblemsLogs.Where(x => x.ClientUsername == username).ToList();
+        }
+
+        public List<vClientProblemsLog> GetClientProblemByDescription(string description)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.vClientProblemsLogs.Where(x => x.ProblemDescription.Contains(description)).ToList();
         }
 
         public bool UpdateClientProblem(int cprId, bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel,

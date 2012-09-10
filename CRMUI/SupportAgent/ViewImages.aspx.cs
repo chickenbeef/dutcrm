@@ -33,7 +33,7 @@ namespace CRMUI.SupportAgent
             catch (Exception ex)
             {
 
-                ExtNet.Msg.Alert("Error", ex.Message);
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }
     }

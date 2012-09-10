@@ -6,8 +6,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
     <%--CALL Support Agent--%>
-    <ext:Panel ID="pnlCallSupport" runat="server" MinHeight="615" Title="Home"
-        TitleAlign="Center" Enabled="False" Visible="False">
+    <ext:Panel ID="pnlCallSupport" runat="server" MinHeight="615" Title="Home" TitleAlign="Center"
+        Enabled="False" Visible="False">
         <LayoutConfig>
             <ext:HBoxLayoutConfig Align="Stretch" />
         </LayoutConfig>
@@ -105,7 +105,8 @@
                         <Items>
                             <ext:FormPanel runat="server" ID="FormPanel1" Border="false" Padding="5">
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtEPId" InputType="Hidden" /> <%--add to main project--%>
+                                    <ext:TextField runat="server" ID="txtEPId" InputType="Hidden" />
+                                    <%--add to main project--%>
                                     <ext:TextField runat="server" ID="txtClientId" InputType="Hidden" />
                                     <ext:TextField runat="server" ID="txtEmployeeId" InputType="Hidden" />
                                     <ext:TextField runat="server" ID="txtClientName" FieldLabel="Client Name" AnchorHorizontal="70%" />
@@ -136,47 +137,19 @@
     <ext:Panel ID="pnlEmailSupport" runat="server" MinHeight="615" Title="Home" TitleAlign="Center"
         Enabled="False" Visible="False">
         <LayoutConfig>
-            <ext:ColumnLayoutConfig ManageOverflow="1"/>
+            <ext:VBoxLayoutConfig  Align="Stretch"/>
         </LayoutConfig>
         <Items>
             <%--LEFT PANEL--%>
-            <ext:Panel runat="server" ID="pnlLeft" ColumnWidth="0.5" Title="Email Problems" MinHeight="590" ActiveIndex="0">
-                    <LayoutConfig>
-                        <ext:CardLayoutConfig DeferredRender="True" />
-                    </LayoutConfig>
-                    <BottomBar>
-                        <ext:StatusBar ID="statusBar" runat="server" Padding="5">
-                            <Items>
-                                <ext:Label runat="server" ID="lblPage" />
-                                <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
-                                <ext:ToolbarSeparator ID="ToolbarSeparator1" runat="server" />
-                                <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
-                                <ext:Label runat="server" ID="lblTotal" />
-                                <ext:Button runat="server" ID="btnPrev" Text="<b>Prev</b>">
-                                    <DirectEvents>
-                                        <Click OnEvent="BtnPrevClick">
-                                            <ExtraParams>
-                                                <ext:Parameter Name="index" Value="#{pnlLeft}.items.indexOf(#{pnlLeft}.layout.activeItem)"
-                                                    Mode="Raw" />
-                                            </ExtraParams>
-                                        </Click>
-                                    </DirectEvents>
-                                </ext:Button>
-                                <ext:ToolbarSeparator ID="ToolbarSeparator2" runat="server" />
-                                <ext:Button runat="server" ID="btnNext" Text="<b>Next</b>">
-                                    <DirectEvents>
-                                        <Click OnEvent="BtnNextClick">
-                                            <ExtraParams>
-                                                <ext:Parameter Name="index" Value="#{pnlLeft}.items.indexOf(#{pnlLeft}.layout.activeItem)"
-                                                    Mode="Raw" />
-                                            </ExtraParams>
-                                        </Click>
-                                    </DirectEvents>
-                                </ext:Button>
-                            </Items>
-                        </ext:StatusBar>
-                    </BottomBar>
-                </ext:Panel>
+            <ext:Panel runat="server" ID="pnlLeft" Flex="1" Title="Email Problems" MinHeight="590"
+                ActiveIndex="0">
+                <LayoutConfig>
+                    <ext:VBoxLayoutConfig  Align="Stretch"/>
+                </LayoutConfig>
+                <Items>
+                    
+                </Items>
+            </ext:Panel>
             <%--RIGHT PANEL--%>
             <ext:Panel ID="pnlRight2" runat="server" Border="false" ColumnWidth="0.5" MinHeight="590">
                 <LayoutConfig>
@@ -184,7 +157,8 @@
                 </LayoutConfig>
                 <Items>
                     <%--TOP RIGHT PANEL--%>
-                    <ext:Panel runat="server" ID="pnlTopRight2" Title="Create Ticket" Icon="TagBlueAdd" Height="250">
+                    <ext:Panel runat="server" ID="pnlTopRight2" Title="Create Ticket" Icon="TagBlueAdd"
+                        Height="250" BodyPadding="10">
                         <Items>
                             <ext:FormPanel runat="server" ID="FormPanel2" Border="false" Padding="5">
                                 <Items>
@@ -207,7 +181,32 @@
                     <%--BOTTOM RIGHT PANEL--%>
                     <ext:Panel runat="server" ID="pnlBottomRight2" Title="Search For Solution" MinHeight="340"
                         Icon="BookMagnify" Border="false">
+                        <LayoutConfig>
+                            <ext:VBoxLayoutConfig Align="Stretch" />
+                        </LayoutConfig>
                         <Items>
+                            <ext:Panel runat="server" ID="pnlSearch2" Height="50">
+                                <LayoutConfig>
+                                    <ext:HBoxLayoutConfig Align="Middle" />
+                                </LayoutConfig>
+                                <Items>
+                                    <ext:TextField runat="server" ID="txtProblemSearch2" Width="450" FieldLabel="Description"
+                                        Margins="0 0 0 15" />
+                                    <ext:Button runat="server" ID="btnProbSearch2" Text="Search" Icon="Magnifier"
+                                        Margins="0 0 0 10">
+                                        <Listeners>
+                                            <Click Handler="App.direct.ShowSolutions();"></Click>
+                                        </Listeners>
+                                    </ext:Button>
+                                </Items>
+                            </ext:Panel>
+                            <ext:Panel runat="server" ID="pnlProblemSolution2" ActiveIndex="0" MinHeight="507">
+                                <LayoutConfig>
+                                    <ext:CardLayoutConfig  DeferredRender="True"/>
+                                </LayoutConfig>
+                                <Items>
+                                </Items>
+                            </ext:Panel>
                         </Items>
                     </ext:Panel>
                 </Items>

@@ -41,12 +41,14 @@
         <Property Name="EMP_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="SOL_ID" Type="Edm.Int32" Nullable="true" />
         <Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        <Property Name="SolvedOnCreate" Type="Edm.Boolean" Nullable="false" />
         <NavigationProperty Name="Client" Relationship="CRMModel.Clients_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Clients" />
         <NavigationProperty Name="Notes" Relationship="CRMModel.CPL_Notes_FK" FromRole="ClientProblemsLog" ToRole="Notes" />
         <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Employees" />
         <NavigationProperty Name="Escalation" Relationship="CRMModel.Escalation_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Escalation" />
         <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Problems" />
         <NavigationProperty Name="Solution" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Solutions" />
+        <NavigationProperty Name="Images" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="ClientProblemsLog" ToRole="Image" />
       </EntityType>
       <EntityType Name="Client">
         <Key>
@@ -105,6 +107,8 @@
         <Property Name="CLIENT_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="EMP_ID" Type="Edm.Int32" Nullable="true" />
         <Property Name="Mail_ID" Type="Edm.String" Nullable="true" />
+        <Property Name="From" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        <Property Name="Subject" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
         <NavigationProperty Name="Client" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Clients" />
         <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
         <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
@@ -141,10 +145,12 @@
         <Key>
           <PropertyRef Name="IMG_ID" />
         </Key>
-        <Property Name="IMG_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="IMG_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="ImageFile" Type="Edm.Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
         <Property Name="EP_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CPR_ID" Type="Edm.Int32" Nullable="true" />
         <NavigationProperty Name="EmailProblem" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="Images" ToRole="EmailProblems" />
+        <NavigationProperty Name="ClientProblemsLog" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="Image" ToRole="ClientProblemsLog" />
       </EntityType>
       <EntityType Name="Note">
         <Key>
@@ -208,6 +214,10 @@
           <PropertyRef Name="SOL_ID" />
           <PropertyRef Name="SolutionDescription" />
           <PropertyRef Name="Priority" />
+          <PropertyRef Name="SolvedOnCreate" />
+          <PropertyRef Name="EmployeeSurname" />
+          <PropertyRef Name="ClientSurname" />
+          <PropertyRef Name="ClientUsername" />
         </Key>
         <Property Name="CPR_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="Solved" Type="Edm.Boolean" Nullable="false" />
@@ -223,6 +233,10 @@
         <Property Name="SOL_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="SolutionDescription" Type="Edm.String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
         <Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        <Property Name="SolvedOnCreate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="EmployeeSurname" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="ClientSurname" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="ClientUsername" Type="Edm.String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
       </EntityType>
       <EntityType Name="vClient">
         <Key>
@@ -473,6 +487,18 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
+      <Association Name="FK_ClientProblemsLog_Images">
+        <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="0..1" />
+        <End Role="Image" Type="CRMModel.Image" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="ClientProblemsLog">
+            <PropertyRef Name="CPR_ID" />
+          </Principal>
+          <Dependent Role="Image">
+            <PropertyRef Name="CPR_ID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
     </Schema>
     <Schema Namespace="CRMData" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
       <EntityContainer Name="CRMEntities" p7:LazyLoadingEnabled="true" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
@@ -559,6 +585,10 @@
         <AssociationSet Name="Problems_Solutions_FK1" Association="CRMModel.Problems_Solutions_FK1">
           <End Role="Problems" EntitySet="Problems" />
           <End Role="Solutions" EntitySet="Solutions" />
+        </AssociationSet>
+        <AssociationSet Name="FK_ClientProblemsLog_Images" Association="CRMModel.FK_ClientProblemsLog_Images">
+          <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+          <End Role="Image" EntitySet="Images" />
         </AssociationSet>
       </EntityContainer>
     </Schema>

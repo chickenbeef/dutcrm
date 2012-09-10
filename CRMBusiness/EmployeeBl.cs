@@ -16,6 +16,12 @@ namespace CRMBusiness
             return _crm.vEmployees.ToList();
         }
 
+        public vEmployee GetEmployeeById(int? empid)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.vEmployees.Where(e => e.EMP_ID == empid).ToList()[0];
+        } 
+
         public List<vEmployee> GetEmployeeByName(string name)
         {
             _crm = new CRMEntities(_uri);
