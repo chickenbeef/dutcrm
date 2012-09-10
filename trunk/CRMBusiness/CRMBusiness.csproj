@@ -54,7 +54,6 @@
     <Compile Include="CompanyBl.cs" />
     <Compile Include="ComTemplateBl.cs" />
     <Compile Include="EmailProblemBl.cs" />
-    <Compile Include="EmailProblemGuiBl.cs" />
     <Compile Include="EmployeeBl.cs" />
     <Compile Include="EscalationBl.cs" />
     <Compile Include="ImageBl.cs" />

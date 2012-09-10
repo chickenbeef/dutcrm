@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/09/04 01:28:46 PM
+// Generation date: 2012/09/10 09:30:08 PM
 namespace CRMBusiness.CRM
 {
     
@@ -21,7 +21,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// Initialize a new CRMEntities object.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public CRMEntities(global::System.Uri serviceRoot) : 
                 base(serviceRoot)
         {
@@ -35,7 +35,7 @@ namespace CRMBusiness.CRM
         /// in Visual Studio is different from the one indicated in the
         /// server schema, use type-mappers to map between the two.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected global::System.Type ResolveTypeFromName(string typeName)
         {
             if (typeName.StartsWith("CRMModel", global::System.StringComparison.Ordinal))
@@ -49,7 +49,7 @@ namespace CRMBusiness.CRM
         /// in Visual Studio is different from the one indicated in the
         /// server schema, use type-mappers to map between the two.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected string ResolveNameFromType(global::System.Type clientType)
         {
             if (clientType.Namespace.Equals("CRMBusiness.CRM", global::System.StringComparison.Ordinal))
@@ -61,7 +61,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Branches in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Branch> Branches
         {
             get
@@ -73,12 +73,12 @@ namespace CRMBusiness.CRM
                 return this._Branches;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Branch> _Branches;
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<ClientProblemsLog> ClientProblemsLogs
         {
             get
@@ -90,12 +90,12 @@ namespace CRMBusiness.CRM
                 return this._ClientProblemsLogs;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<ClientProblemsLog> _ClientProblemsLogs;
         /// <summary>
         /// There are no comments for Clients in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Client> Clients
         {
             get
@@ -107,12 +107,12 @@ namespace CRMBusiness.CRM
                 return this._Clients;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Client> _Clients;
         /// <summary>
         /// There are no comments for Companies in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Company> Companies
         {
             get
@@ -124,12 +124,12 @@ namespace CRMBusiness.CRM
                 return this._Companies;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Company> _Companies;
         /// <summary>
         /// There are no comments for ComTemplates in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<ComTemplate> ComTemplates
         {
             get
@@ -141,12 +141,12 @@ namespace CRMBusiness.CRM
                 return this._ComTemplates;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<ComTemplate> _ComTemplates;
         /// <summary>
         /// There are no comments for EmailProblems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<EmailProblem> EmailProblems
         {
             get
@@ -158,12 +158,12 @@ namespace CRMBusiness.CRM
                 return this._EmailProblems;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<EmailProblem> _EmailProblems;
         /// <summary>
         /// There are no comments for Employees in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Employee> Employees
         {
             get
@@ -175,12 +175,12 @@ namespace CRMBusiness.CRM
                 return this._Employees;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Employee> _Employees;
         /// <summary>
         /// There are no comments for Escalations in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Escalation> Escalations
         {
             get
@@ -192,12 +192,12 @@ namespace CRMBusiness.CRM
                 return this._Escalations;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Escalation> _Escalations;
         /// <summary>
         /// There are no comments for Images in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Image> Images
         {
             get
@@ -209,12 +209,12 @@ namespace CRMBusiness.CRM
                 return this._Images;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Image> _Images;
         /// <summary>
         /// There are no comments for Notes in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Note> Notes
         {
             get
@@ -226,12 +226,12 @@ namespace CRMBusiness.CRM
                 return this._Notes;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Note> _Notes;
         /// <summary>
         /// There are no comments for Problems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Problem> Problems
         {
             get
@@ -243,12 +243,12 @@ namespace CRMBusiness.CRM
                 return this._Problems;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Problem> _Problems;
         /// <summary>
         /// There are no comments for Sales in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Sale> Sales
         {
             get
@@ -260,12 +260,12 @@ namespace CRMBusiness.CRM
                 return this._Sales;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Sale> _Sales;
         /// <summary>
         /// There are no comments for Solutions in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<Solution> Solutions
         {
             get
@@ -277,12 +277,12 @@ namespace CRMBusiness.CRM
                 return this._Solutions;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Solution> _Solutions;
         /// <summary>
         /// There are no comments for vClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<vClientProblemsLog> vClientProblemsLogs
         {
             get
@@ -294,12 +294,12 @@ namespace CRMBusiness.CRM
                 return this._vClientProblemsLogs;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<vClientProblemsLog> _vClientProblemsLogs;
         /// <summary>
         /// There are no comments for vClients in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<vClient> vClients
         {
             get
@@ -311,12 +311,12 @@ namespace CRMBusiness.CRM
                 return this._vClients;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<vClient> _vClients;
         /// <summary>
         /// There are no comments for vEmployees in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceQuery<vEmployee> vEmployees
         {
             get
@@ -328,12 +328,12 @@ namespace CRMBusiness.CRM
                 return this._vEmployees;
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<vEmployee> _vEmployees;
         /// <summary>
         /// There are no comments for Branches in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToBranches(Branch branch)
         {
             base.AddObject("Branches", branch);
@@ -341,7 +341,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToClientProblemsLogs(ClientProblemsLog clientProblemsLog)
         {
             base.AddObject("ClientProblemsLogs", clientProblemsLog);
@@ -349,7 +349,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Clients in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToClients(Client client)
         {
             base.AddObject("Clients", client);
@@ -357,7 +357,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Companies in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToCompanies(Company company)
         {
             base.AddObject("Companies", company);
@@ -365,7 +365,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for ComTemplates in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToComTemplates(ComTemplate comTemplate)
         {
             base.AddObject("ComTemplates", comTemplate);
@@ -373,7 +373,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for EmailProblems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToEmailProblems(EmailProblem emailProblem)
         {
             base.AddObject("EmailProblems", emailProblem);
@@ -381,7 +381,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Employees in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToEmployees(Employee employee)
         {
             base.AddObject("Employees", employee);
@@ -389,7 +389,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Escalations in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToEscalations(Escalation escalation)
         {
             base.AddObject("Escalations", escalation);
@@ -397,7 +397,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Images in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToImages(Image image)
         {
             base.AddObject("Images", image);
@@ -405,7 +405,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Notes in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToNotes(Note note)
         {
             base.AddObject("Notes", note);
@@ -413,7 +413,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Problems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToProblems(Problem problem)
         {
             base.AddObject("Problems", problem);
@@ -421,7 +421,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Sales in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToSales(Sale sale)
         {
             base.AddObject("Sales", sale);
@@ -429,7 +429,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Solutions in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddToSolutions(Solution solution)
         {
             base.AddObject("Solutions", solution);
@@ -437,7 +437,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for vClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddTovClientProblemsLogs(vClientProblemsLog vClientProblemsLog)
         {
             base.AddObject("vClientProblemsLogs", vClientProblemsLog);
@@ -445,7 +445,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for vClients in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddTovClients(vClient vClient)
         {
             base.AddObject("vClients", vClient);
@@ -453,7 +453,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for vEmployees in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public void AddTovEmployees(vEmployee vEmployee)
         {
             base.AddObject("vEmployees", vEmployee);
@@ -480,7 +480,7 @@ namespace CRMBusiness.CRM
         /// <param name="fax">Initial value of Fax.</param>
         /// <param name="email">Initial value of Email.</param>
         /// <param name="dateCreated">Initial value of DateCreated.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Branch CreateBranch(int bRH_ID, int cPY_ID, string name, string physicalAddress1, string tel, string fax, string email, global::System.DateTime dateCreated)
         {
             Branch branch = new Branch();
@@ -497,7 +497,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property BRH_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int BRH_ID
         {
             get
@@ -512,14 +512,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("BRH_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _BRH_ID;
         partial void OnBRH_IDChanging(int value);
         partial void OnBRH_IDChanged();
         /// <summary>
         /// There are no comments for Property CPY_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CPY_ID
         {
             get
@@ -534,14 +534,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CPY_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CPY_ID;
         partial void OnCPY_IDChanging(int value);
         partial void OnCPY_IDChanged();
         /// <summary>
         /// There are no comments for Property DocexAddress in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string DocexAddress
         {
             get
@@ -556,14 +556,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DocexAddress");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _DocexAddress;
         partial void OnDocexAddressChanging(string value);
         partial void OnDocexAddressChanged();
         /// <summary>
         /// There are no comments for Property RoutingID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<int> RoutingID
         {
             get
@@ -578,14 +578,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("RoutingID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<int> _RoutingID;
         partial void OnRoutingIDChanging(global::System.Nullable<int> value);
         partial void OnRoutingIDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -600,14 +600,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property PhysicalAddress1 in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string PhysicalAddress1
         {
             get
@@ -622,14 +622,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PhysicalAddress1");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _PhysicalAddress1;
         partial void OnPhysicalAddress1Changing(string value);
         partial void OnPhysicalAddress1Changed();
         /// <summary>
         /// There are no comments for Property PhysicalAddress2 in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string PhysicalAddress2
         {
             get
@@ -644,14 +644,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PhysicalAddress2");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _PhysicalAddress2;
         partial void OnPhysicalAddress2Changing(string value);
         partial void OnPhysicalAddress2Changed();
         /// <summary>
         /// There are no comments for Property Suburb in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Suburb
         {
             get
@@ -666,14 +666,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Suburb");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Suburb;
         partial void OnSuburbChanging(string value);
         partial void OnSuburbChanged();
         /// <summary>
         /// There are no comments for Property City in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string City
         {
             get
@@ -688,14 +688,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("City");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _City;
         partial void OnCityChanging(string value);
         partial void OnCityChanged();
         /// <summary>
         /// There are no comments for Property PostalAddress1 in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string PostalAddress1
         {
             get
@@ -710,14 +710,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PostalAddress1");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _PostalAddress1;
         partial void OnPostalAddress1Changing(string value);
         partial void OnPostalAddress1Changed();
         /// <summary>
         /// There are no comments for Property PostalAddress2 in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string PostalAddress2
         {
             get
@@ -732,14 +732,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PostalAddress2");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _PostalAddress2;
         partial void OnPostalAddress2Changing(string value);
         partial void OnPostalAddress2Changed();
         /// <summary>
         /// There are no comments for Property PostalCode in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string PostalCode
         {
             get
@@ -754,14 +754,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PostalCode");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _PostalCode;
         partial void OnPostalCodeChanging(string value);
         partial void OnPostalCodeChanged();
         /// <summary>
         /// There are no comments for Property Tel in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Tel
         {
             get
@@ -776,14 +776,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Tel");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Tel;
         partial void OnTelChanging(string value);
         partial void OnTelChanged();
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Fax
         {
             get
@@ -798,14 +798,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Fax");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Fax;
         partial void OnFaxChanging(string value);
         partial void OnFaxChanged();
         /// <summary>
         /// There are no comments for Property Email in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Email
         {
             get
@@ -820,14 +820,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Email");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Email;
         partial void OnEmailChanging(string value);
         partial void OnEmailChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -842,14 +842,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateModified in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateModified
         {
             get
@@ -864,14 +864,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateModified");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateModified;
         partial void OnDateModifiedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateModifiedChanged();
         /// <summary>
         /// There are no comments for Property IntegrationKey in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string IntegrationKey
         {
             get
@@ -886,14 +886,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("IntegrationKey");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _IntegrationKey;
         partial void OnIntegrationKeyChanging(string value);
         partial void OnIntegrationKeyChanged();
         /// <summary>
         /// There are no comments for Branches1 in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Branch Branches1
         {
             get
@@ -906,12 +906,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Branches1");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Branch _Branches1;
         /// <summary>
         /// There are no comments for Branch1 in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Branch Branch1
         {
             get
@@ -924,12 +924,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Branch1");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Branch _Branch1;
         /// <summary>
         /// There are no comments for Company in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Company Company
         {
             get
@@ -942,11 +942,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Company");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Company _Company;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -974,8 +974,9 @@ namespace CRMBusiness.CRM
         /// <param name="pROB_ID">Initial value of PROB_ID.</param>
         /// <param name="eMP_ID">Initial value of EMP_ID.</param>
         /// <param name="priority">Initial value of Priority.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ClientProblemsLog CreateClientProblemsLog(int cPR_ID, bool solved, int cLIENT_ID, int pROB_ID, int eMP_ID, string priority)
+        /// <param name="solvedOnCreate">Initial value of SolvedOnCreate.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ClientProblemsLog CreateClientProblemsLog(int cPR_ID, bool solved, int cLIENT_ID, int pROB_ID, int eMP_ID, string priority, bool solvedOnCreate)
         {
             ClientProblemsLog clientProblemsLog = new ClientProblemsLog();
             clientProblemsLog.CPR_ID = cPR_ID;
@@ -984,12 +985,13 @@ namespace CRMBusiness.CRM
             clientProblemsLog.PROB_ID = pROB_ID;
             clientProblemsLog.EMP_ID = eMP_ID;
             clientProblemsLog.Priority = priority;
+            clientProblemsLog.SolvedOnCreate = solvedOnCreate;
             return clientProblemsLog;
         }
         /// <summary>
         /// There are no comments for Property CPR_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CPR_ID
         {
             get
@@ -1004,14 +1006,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CPR_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CPR_ID;
         partial void OnCPR_IDChanging(int value);
         partial void OnCPR_IDChanged();
         /// <summary>
         /// There are no comments for Property Solved in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public bool Solved
         {
             get
@@ -1026,14 +1028,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Solved");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private bool _Solved;
         partial void OnSolvedChanging(bool value);
         partial void OnSolvedChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateCreated
         {
             get
@@ -1048,14 +1050,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateCreated;
         partial void OnDateCreatedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateSolved in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateSolved
         {
             get
@@ -1070,14 +1072,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateSolved");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateSolved;
         partial void OnDateSolvedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateSolvedChanged();
         /// <summary>
         /// There are no comments for Property ComTypeTel in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<bool> ComTypeTel
         {
             get
@@ -1092,14 +1094,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ComTypeTel");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<bool> _ComTypeTel;
         partial void OnComTypeTelChanging(global::System.Nullable<bool> value);
         partial void OnComTypeTelChanged();
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CLIENT_ID
         {
             get
@@ -1114,14 +1116,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLIENT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CLIENT_ID;
         partial void OnCLIENT_IDChanging(int value);
         partial void OnCLIENT_IDChanged();
         /// <summary>
         /// There are no comments for Property PROB_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int PROB_ID
         {
             get
@@ -1136,14 +1138,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PROB_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _PROB_ID;
         partial void OnPROB_IDChanging(int value);
         partial void OnPROB_IDChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -1158,14 +1160,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property SOL_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<int> SOL_ID
         {
             get
@@ -1180,14 +1182,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("SOL_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<int> _SOL_ID;
         partial void OnSOL_IDChanging(global::System.Nullable<int> value);
         partial void OnSOL_IDChanged();
         /// <summary>
         /// There are no comments for Property Priority in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Priority
         {
             get
@@ -1202,14 +1204,36 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Priority");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Priority;
         partial void OnPriorityChanging(string value);
         partial void OnPriorityChanged();
         /// <summary>
+        /// There are no comments for Property SolvedOnCreate in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool SolvedOnCreate
+        {
+            get
+            {
+                return this._SolvedOnCreate;
+            }
+            set
+            {
+                this.OnSolvedOnCreateChanging(value);
+                this._SolvedOnCreate = value;
+                this.OnSolvedOnCreateChanged();
+                this.OnPropertyChanged("SolvedOnCreate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _SolvedOnCreate;
+        partial void OnSolvedOnCreateChanging(bool value);
+        partial void OnSolvedOnCreateChanged();
+        /// <summary>
         /// There are no comments for Client in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Client Client
         {
             get
@@ -1222,12 +1246,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Client");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Client _Client;
         /// <summary>
         /// There are no comments for Notes in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Note> Notes
         {
             get
@@ -1240,12 +1264,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Notes");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Note> _Notes = new global::System.Data.Services.Client.DataServiceCollection<Note>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Note> _Notes = new global::System.Data.Services.Client.DataServiceCollection<Note>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Employee in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Employee Employee
         {
             get
@@ -1258,12 +1282,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Employee");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Employee _Employee;
         /// <summary>
         /// There are no comments for Escalation in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Escalation Escalation
         {
             get
@@ -1276,12 +1300,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Escalation");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Escalation _Escalation;
         /// <summary>
         /// There are no comments for Problem in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Problem Problem
         {
             get
@@ -1294,12 +1318,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Problem");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Problem _Problem;
         /// <summary>
         /// There are no comments for Solution in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Solution Solution
         {
             get
@@ -1312,11 +1336,29 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Solution");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Solution _Solution;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        /// <summary>
+        /// There are no comments for Images in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<Image> Images
+        {
+            get
+            {
+                return this._Images;
+            }
+            set
+            {
+                this._Images = value;
+                this.OnPropertyChanged("Images");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Image> _Images = new global::System.Data.Services.Client.DataServiceCollection<Image>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -1344,7 +1386,7 @@ namespace CRMBusiness.CRM
         /// <param name="dateOfBirth">Initial value of DateOfBirth.</param>
         /// <param name="bRH_ID">Initial value of BRH_ID.</param>
         /// <param name="userId">Initial value of UserId.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Client CreateClient(int cLIENT_ID, string name, string surname, global::System.DateTime dateOfBirth, int bRH_ID, global::System.Guid userId)
         {
             Client client = new Client();
@@ -1359,7 +1401,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CLIENT_ID
         {
             get
@@ -1374,14 +1416,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLIENT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CLIENT_ID;
         partial void OnCLIENT_IDChanging(int value);
         partial void OnCLIENT_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -1396,14 +1438,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Surname in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Surname
         {
             get
@@ -1418,14 +1460,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Surname");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Surname;
         partial void OnSurnameChanging(string value);
         partial void OnSurnameChanged();
         /// <summary>
         /// There are no comments for Property DateOfBirth in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateOfBirth
         {
             get
@@ -1440,14 +1482,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateOfBirth");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateOfBirth;
         partial void OnDateOfBirthChanging(global::System.DateTime value);
         partial void OnDateOfBirthChanged();
         /// <summary>
         /// There are no comments for Property Telephone in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Telephone
         {
             get
@@ -1462,14 +1504,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Telephone");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Telephone;
         partial void OnTelephoneChanging(string value);
         partial void OnTelephoneChanged();
         /// <summary>
         /// There are no comments for Property Cell in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Cell
         {
             get
@@ -1484,14 +1526,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Cell");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Cell;
         partial void OnCellChanging(string value);
         partial void OnCellChanged();
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Fax
         {
             get
@@ -1506,14 +1548,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Fax");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Fax;
         partial void OnFaxChanging(string value);
         partial void OnFaxChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateCreated
         {
             get
@@ -1528,14 +1570,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateCreated;
         partial void OnDateCreatedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateModified in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateModified
         {
             get
@@ -1550,14 +1592,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateModified");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateModified;
         partial void OnDateModifiedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateModifiedChanged();
         /// <summary>
         /// There are no comments for Property BRH_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int BRH_ID
         {
             get
@@ -1572,14 +1614,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("BRH_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _BRH_ID;
         partial void OnBRH_IDChanging(int value);
         partial void OnBRH_IDChanged();
         /// <summary>
         /// There are no comments for Property UserId in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Guid UserId
         {
             get
@@ -1594,14 +1636,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("UserId");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Guid _UserId;
         partial void OnUserIdChanging(global::System.Guid value);
         partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> ClientProblemsLogs
         {
             get
@@ -1614,12 +1656,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientProblemsLogs");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for EmailProblems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<EmailProblem> EmailProblems
         {
             get
@@ -1632,12 +1674,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EmailProblems");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<EmailProblem> _EmailProblems = new global::System.Data.Services.Client.DataServiceCollection<EmailProblem>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<EmailProblem> _EmailProblems = new global::System.Data.Services.Client.DataServiceCollection<EmailProblem>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Sales in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Sale> Sales
         {
             get
@@ -1650,11 +1692,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Sales");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Sale> _Sales = new global::System.Data.Services.Client.DataServiceCollection<Sale>(null, System.Data.Services.Client.TrackingMode.None);
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Sale> _Sales = new global::System.Data.Services.Client.DataServiceCollection<Sale>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -1685,7 +1727,7 @@ namespace CRMBusiness.CRM
         /// <param name="vATRegistered">Initial value of VATRegistered.</param>
         /// <param name="vATRegNo">Initial value of VATRegNo.</param>
         /// <param name="createdDate">Initial value of CreatedDate.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Company CreateCompany(int cPY_ID, string name, int type, int registerType, int registerCompanyType, string registerNo, bool vATRegistered, string vATRegNo, global::System.DateTime createdDate)
         {
             Company company = new Company();
@@ -1703,7 +1745,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property CPY_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CPY_ID
         {
             get
@@ -1718,14 +1760,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CPY_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CPY_ID;
         partial void OnCPY_IDChanging(int value);
         partial void OnCPY_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -1740,14 +1782,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Type in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int Type
         {
             get
@@ -1762,14 +1804,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Type");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _Type;
         partial void OnTypeChanging(int value);
         partial void OnTypeChanged();
         /// <summary>
         /// There are no comments for Property RegisterType in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int RegisterType
         {
             get
@@ -1784,14 +1826,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("RegisterType");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _RegisterType;
         partial void OnRegisterTypeChanging(int value);
         partial void OnRegisterTypeChanged();
         /// <summary>
         /// There are no comments for Property RegisterCompanyType in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int RegisterCompanyType
         {
             get
@@ -1806,14 +1848,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("RegisterCompanyType");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _RegisterCompanyType;
         partial void OnRegisterCompanyTypeChanging(int value);
         partial void OnRegisterCompanyTypeChanged();
         /// <summary>
         /// There are no comments for Property RegisterNo in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string RegisterNo
         {
             get
@@ -1828,14 +1870,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("RegisterNo");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _RegisterNo;
         partial void OnRegisterNoChanging(string value);
         partial void OnRegisterNoChanged();
         /// <summary>
         /// There are no comments for Property AuditorFirmName in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string AuditorFirmName
         {
             get
@@ -1850,14 +1892,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("AuditorFirmName");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _AuditorFirmName;
         partial void OnAuditorFirmNameChanging(string value);
         partial void OnAuditorFirmNameChanged();
         /// <summary>
         /// There are no comments for Property AuditorFirmQualification in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string AuditorFirmQualification
         {
             get
@@ -1872,14 +1914,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("AuditorFirmQualification");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _AuditorFirmQualification;
         partial void OnAuditorFirmQualificationChanging(string value);
         partial void OnAuditorFirmQualificationChanged();
         /// <summary>
         /// There are no comments for Property AuditorFirmAuditor in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string AuditorFirmAuditor
         {
             get
@@ -1894,14 +1936,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("AuditorFirmAuditor");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _AuditorFirmAuditor;
         partial void OnAuditorFirmAuditorChanging(string value);
         partial void OnAuditorFirmAuditorChanged();
         /// <summary>
         /// There are no comments for Property VATRegistered in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public bool VATRegistered
         {
             get
@@ -1916,14 +1958,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("VATRegistered");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private bool _VATRegistered;
         partial void OnVATRegisteredChanging(bool value);
         partial void OnVATRegisteredChanged();
         /// <summary>
         /// There are no comments for Property VATRegNo in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string VATRegNo
         {
             get
@@ -1938,14 +1980,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("VATRegNo");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _VATRegNo;
         partial void OnVATRegNoChanging(string value);
         partial void OnVATRegNoChanged();
         /// <summary>
         /// There are no comments for Property CreatedDate in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime CreatedDate
         {
             get
@@ -1960,14 +2002,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CreatedDate");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _CreatedDate;
         partial void OnCreatedDateChanging(global::System.DateTime value);
         partial void OnCreatedDateChanged();
         /// <summary>
         /// There are no comments for Property ModifiedDate in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> ModifiedDate
         {
             get
@@ -1982,14 +2024,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ModifiedDate");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _ModifiedDate;
         partial void OnModifiedDateChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnModifiedDateChanged();
         /// <summary>
         /// There are no comments for Branches in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Branch> Branches
         {
             get
@@ -2002,11 +2044,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Branches");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Branch> _Branches = new global::System.Data.Services.Client.DataServiceCollection<Branch>(null, System.Data.Services.Client.TrackingMode.None);
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Branch> _Branches = new global::System.Data.Services.Client.DataServiceCollection<Branch>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2031,7 +2073,7 @@ namespace CRMBusiness.CRM
         /// <param name="cT_ID">Initial value of CT_ID.</param>
         /// <param name="name">Initial value of Name.</param>
         /// <param name="paragraph">Initial value of Paragraph.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static ComTemplate CreateComTemplate(short cT_ID, string name, string paragraph)
         {
             ComTemplate comTemplate = new ComTemplate();
@@ -2043,7 +2085,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property CT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public short CT_ID
         {
             get
@@ -2058,14 +2100,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private short _CT_ID;
         partial void OnCT_IDChanging(short value);
         partial void OnCT_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -2080,14 +2122,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Paragraph in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Paragraph
         {
             get
@@ -2102,13 +2144,13 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Paragraph");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Paragraph;
         partial void OnParagraphChanging(string value);
         partial void OnParagraphChanged();
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2135,8 +2177,10 @@ namespace CRMBusiness.CRM
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="attended">Initial value of Attended.</param>
         /// <param name="cLIENT_ID">Initial value of CLIENT_ID.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static EmailProblem CreateEmailProblem(int eP_ID, string description, global::System.DateTime dateCreated, bool attended, int cLIENT_ID)
+        /// <param name="from">Initial value of From.</param>
+        /// <param name="subject">Initial value of Subject.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static EmailProblem CreateEmailProblem(int eP_ID, string description, global::System.DateTime dateCreated, bool attended, int cLIENT_ID, string from, string subject)
         {
             EmailProblem emailProblem = new EmailProblem();
             emailProblem.EP_ID = eP_ID;
@@ -2144,12 +2188,14 @@ namespace CRMBusiness.CRM
             emailProblem.DateCreated = dateCreated;
             emailProblem.Attended = attended;
             emailProblem.CLIENT_ID = cLIENT_ID;
+            emailProblem.From = from;
+            emailProblem.Subject = subject;
             return emailProblem;
         }
         /// <summary>
         /// There are no comments for Property EP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EP_ID
         {
             get
@@ -2164,14 +2210,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EP_ID;
         partial void OnEP_IDChanging(int value);
         partial void OnEP_IDChanged();
         /// <summary>
         /// There are no comments for Property Description in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Description
         {
             get
@@ -2186,14 +2232,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Description");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Description;
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -2208,14 +2254,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property Attended in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public bool Attended
         {
             get
@@ -2230,14 +2276,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Attended");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private bool _Attended;
         partial void OnAttendedChanging(bool value);
         partial void OnAttendedChanged();
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CLIENT_ID
         {
             get
@@ -2252,14 +2298,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLIENT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CLIENT_ID;
         partial void OnCLIENT_IDChanging(int value);
         partial void OnCLIENT_IDChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<int> EMP_ID
         {
             get
@@ -2274,14 +2320,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<int> _EMP_ID;
         partial void OnEMP_IDChanging(global::System.Nullable<int> value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property Mail_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Mail_ID
         {
             get
@@ -2296,14 +2342,58 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Mail_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Mail_ID;
         partial void OnMail_IDChanging(string value);
         partial void OnMail_IDChanged();
         /// <summary>
+        /// There are no comments for Property From in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string From
+        {
+            get
+            {
+                return this._From;
+            }
+            set
+            {
+                this.OnFromChanging(value);
+                this._From = value;
+                this.OnFromChanged();
+                this.OnPropertyChanged("From");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _From;
+        partial void OnFromChanging(string value);
+        partial void OnFromChanged();
+        /// <summary>
+        /// There are no comments for Property Subject in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Subject
+        {
+            get
+            {
+                return this._Subject;
+            }
+            set
+            {
+                this.OnSubjectChanging(value);
+                this._Subject = value;
+                this.OnSubjectChanged();
+                this.OnPropertyChanged("Subject");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Subject;
+        partial void OnSubjectChanging(string value);
+        partial void OnSubjectChanged();
+        /// <summary>
         /// There are no comments for Client in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Client Client
         {
             get
@@ -2316,12 +2406,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Client");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Client _Client;
         /// <summary>
         /// There are no comments for Images in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Image> Images
         {
             get
@@ -2334,12 +2424,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Images");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Image> _Images = new global::System.Data.Services.Client.DataServiceCollection<Image>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Image> _Images = new global::System.Data.Services.Client.DataServiceCollection<Image>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Employee in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Employee Employee
         {
             get
@@ -2352,11 +2442,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Employee");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Employee _Employee;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2383,7 +2473,7 @@ namespace CRMBusiness.CRM
         /// <param name="surname">Initial value of Surname.</param>
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="userId">Initial value of UserId.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Employee CreateEmployee(int eMP_ID, string name, string surname, global::System.DateTime dateCreated, global::System.Guid userId)
         {
             Employee employee = new Employee();
@@ -2397,7 +2487,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -2412,14 +2502,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -2434,14 +2524,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Surname in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Surname
         {
             get
@@ -2456,14 +2546,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Surname");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Surname;
         partial void OnSurnameChanging(string value);
         partial void OnSurnameChanged();
         /// <summary>
         /// There are no comments for Property Telephone in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Telephone
         {
             get
@@ -2478,14 +2568,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Telephone");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Telephone;
         partial void OnTelephoneChanging(string value);
         partial void OnTelephoneChanged();
         /// <summary>
         /// There are no comments for Property Cell in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Cell
         {
             get
@@ -2500,14 +2590,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Cell");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Cell;
         partial void OnCellChanging(string value);
         partial void OnCellChanged();
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Fax
         {
             get
@@ -2522,14 +2612,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Fax");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Fax;
         partial void OnFaxChanging(string value);
         partial void OnFaxChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -2544,14 +2634,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateModified in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateModified
         {
             get
@@ -2566,14 +2656,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateModified");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateModified;
         partial void OnDateModifiedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateModifiedChanged();
         /// <summary>
         /// There are no comments for Property UserId in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Guid UserId
         {
             get
@@ -2588,14 +2678,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("UserId");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Guid _UserId;
         partial void OnUserIdChanging(global::System.Guid value);
         partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> ClientProblemsLogs
         {
             get
@@ -2608,12 +2698,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientProblemsLogs");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for EmailProblems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<EmailProblem> EmailProblems
         {
             get
@@ -2626,12 +2716,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EmailProblems");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<EmailProblem> _EmailProblems = new global::System.Data.Services.Client.DataServiceCollection<EmailProblem>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<EmailProblem> _EmailProblems = new global::System.Data.Services.Client.DataServiceCollection<EmailProblem>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Notes in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Note> Notes
         {
             get
@@ -2644,12 +2734,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Notes");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Note> _Notes = new global::System.Data.Services.Client.DataServiceCollection<Note>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Note> _Notes = new global::System.Data.Services.Client.DataServiceCollection<Note>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Problems in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Problem> Problems
         {
             get
@@ -2662,12 +2752,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Problems");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Problem> _Problems = new global::System.Data.Services.Client.DataServiceCollection<Problem>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Problem> _Problems = new global::System.Data.Services.Client.DataServiceCollection<Problem>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Sales in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Sale> Sales
         {
             get
@@ -2680,12 +2770,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Sales");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Sale> _Sales = new global::System.Data.Services.Client.DataServiceCollection<Sale>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Sale> _Sales = new global::System.Data.Services.Client.DataServiceCollection<Sale>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Solutions in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Solution> Solutions
         {
             get
@@ -2698,11 +2788,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Solutions");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Solution> _Solutions = new global::System.Data.Services.Client.DataServiceCollection<Solution>(null, System.Data.Services.Client.TrackingMode.None);
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Solution> _Solutions = new global::System.Data.Services.Client.DataServiceCollection<Solution>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2726,7 +2816,7 @@ namespace CRMBusiness.CRM
         /// </summary>
         /// <param name="priority">Initial value of Priority.</param>
         /// <param name="duration">Initial value of Duration.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Escalation CreateEscalation(string priority, short duration)
         {
             Escalation escalation = new Escalation();
@@ -2737,7 +2827,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property Priority in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Priority
         {
             get
@@ -2752,14 +2842,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Priority");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Priority;
         partial void OnPriorityChanging(string value);
         partial void OnPriorityChanged();
         /// <summary>
         /// There are no comments for Property Duration in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public short Duration
         {
             get
@@ -2774,14 +2864,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Duration");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private short _Duration;
         partial void OnDurationChanging(short value);
         partial void OnDurationChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> ClientProblemsLogs
         {
             get
@@ -2794,11 +2884,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientProblemsLogs");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, System.Data.Services.Client.TrackingMode.None);
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2823,7 +2913,7 @@ namespace CRMBusiness.CRM
         /// <param name="iMG_ID">Initial value of IMG_ID.</param>
         /// <param name="imageFile">Initial value of ImageFile.</param>
         /// <param name="eP_ID">Initial value of EP_ID.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Image CreateImage(int iMG_ID, byte[] imageFile, int eP_ID)
         {
             Image image = new Image();
@@ -2835,7 +2925,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property IMG_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int IMG_ID
         {
             get
@@ -2850,14 +2940,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("IMG_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _IMG_ID;
         partial void OnIMG_IDChanging(int value);
         partial void OnIMG_IDChanged();
         /// <summary>
         /// There are no comments for Property ImageFile in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public byte[] ImageFile
         {
             get
@@ -2879,14 +2969,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ImageFile");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private byte[] _ImageFile;
         partial void OnImageFileChanging(byte[] value);
         partial void OnImageFileChanged();
         /// <summary>
         /// There are no comments for Property EP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EP_ID
         {
             get
@@ -2901,14 +2991,36 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EP_ID;
         partial void OnEP_IDChanging(int value);
         partial void OnEP_IDChanged();
         /// <summary>
+        /// There are no comments for Property CPR_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> CPR_ID
+        {
+            get
+            {
+                return this._CPR_ID;
+            }
+            set
+            {
+                this.OnCPR_IDChanging(value);
+                this._CPR_ID = value;
+                this.OnCPR_IDChanged();
+                this.OnPropertyChanged("CPR_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _CPR_ID;
+        partial void OnCPR_IDChanging(global::System.Nullable<int> value);
+        partial void OnCPR_IDChanged();
+        /// <summary>
         /// There are no comments for EmailProblem in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public EmailProblem EmailProblem
         {
             get
@@ -2921,11 +3033,29 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EmailProblem");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private EmailProblem _EmailProblem;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        /// <summary>
+        /// There are no comments for ClientProblemsLog in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public ClientProblemsLog ClientProblemsLog
+        {
+            get
+            {
+                return this._ClientProblemsLog;
+            }
+            set
+            {
+                this._ClientProblemsLog = value;
+                this.OnPropertyChanged("ClientProblemsLog");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private ClientProblemsLog _ClientProblemsLog;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -2952,7 +3082,7 @@ namespace CRMBusiness.CRM
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="cPR_ID">Initial value of CPR_ID.</param>
         /// <param name="eMP_ID">Initial value of EMP_ID.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Note CreateNote(int nOTE_ID, string description, global::System.DateTime dateCreated, int cPR_ID, int eMP_ID)
         {
             Note note = new Note();
@@ -2966,7 +3096,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property NOTE_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int NOTE_ID
         {
             get
@@ -2981,14 +3111,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("NOTE_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _NOTE_ID;
         partial void OnNOTE_IDChanging(int value);
         partial void OnNOTE_IDChanged();
         /// <summary>
         /// There are no comments for Property Description in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Description
         {
             get
@@ -3003,14 +3133,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Description");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Description;
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -3025,14 +3155,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property CPR_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CPR_ID
         {
             get
@@ -3047,14 +3177,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CPR_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CPR_ID;
         partial void OnCPR_IDChanging(int value);
         partial void OnCPR_IDChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -3069,14 +3199,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLog in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public ClientProblemsLog ClientProblemsLog
         {
             get
@@ -3089,12 +3219,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientProblemsLog");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private ClientProblemsLog _ClientProblemsLog;
         /// <summary>
         /// There are no comments for Employee in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Employee Employee
         {
             get
@@ -3107,11 +3237,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Employee");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Employee _Employee;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -3137,7 +3267,7 @@ namespace CRMBusiness.CRM
         /// <param name="description">Initial value of Description.</param>
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="eMP_ID">Initial value of EMP_ID.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Problem CreateProblem(int pROB_ID, string description, global::System.DateTime dateCreated, int eMP_ID)
         {
             Problem problem = new Problem();
@@ -3150,7 +3280,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property PROB_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int PROB_ID
         {
             get
@@ -3165,14 +3295,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PROB_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _PROB_ID;
         partial void OnPROB_IDChanging(int value);
         partial void OnPROB_IDChanged();
         /// <summary>
         /// There are no comments for Property Description in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Description
         {
             get
@@ -3187,14 +3317,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Description");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Description;
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -3209,14 +3339,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -3231,14 +3361,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> ClientProblemsLogs
         {
             get
@@ -3251,12 +3381,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientProblemsLogs");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Employee in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Employee Employee
         {
             get
@@ -3269,12 +3399,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Employee");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Employee _Employee;
         /// <summary>
         /// There are no comments for Solutions in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<Solution> Solutions
         {
             get
@@ -3287,11 +3417,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Solutions");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<Solution> _Solutions = new global::System.Data.Services.Client.DataServiceCollection<Solution>(null, System.Data.Services.Client.TrackingMode.None);
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<Solution> _Solutions = new global::System.Data.Services.Client.DataServiceCollection<Solution>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -3317,7 +3447,7 @@ namespace CRMBusiness.CRM
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="cLIENT_ID">Initial value of CLIENT_ID.</param>
         /// <param name="eMP_ID">Initial value of EMP_ID.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Sale CreateSale(int sALE_ID, global::System.DateTime dateCreated, int cLIENT_ID, int eMP_ID)
         {
             Sale sale = new Sale();
@@ -3330,7 +3460,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property SALE_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int SALE_ID
         {
             get
@@ -3345,14 +3475,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("SALE_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _SALE_ID;
         partial void OnSALE_IDChanging(int value);
         partial void OnSALE_IDChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -3367,14 +3497,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CLIENT_ID
         {
             get
@@ -3389,14 +3519,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLIENT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CLIENT_ID;
         partial void OnCLIENT_IDChanging(int value);
         partial void OnCLIENT_IDChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -3411,14 +3541,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Client in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Client Client
         {
             get
@@ -3431,12 +3561,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Client");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Client _Client;
         /// <summary>
         /// There are no comments for Employee in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Employee Employee
         {
             get
@@ -3449,11 +3579,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Employee");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Employee _Employee;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -3478,7 +3608,7 @@ namespace CRMBusiness.CRM
         /// <param name="sOL_ID">Initial value of SOL_ID.</param>
         /// <param name="description">Initial value of Description.</param>
         /// <param name="dateCreated">Initial value of DateCreated.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static Solution CreateSolution(int sOL_ID, string description, global::System.DateTime dateCreated)
         {
             Solution solution = new Solution();
@@ -3490,7 +3620,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property SOL_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int SOL_ID
         {
             get
@@ -3505,14 +3635,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("SOL_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _SOL_ID;
         partial void OnSOL_IDChanging(int value);
         partial void OnSOL_IDChanged();
         /// <summary>
         /// There are no comments for Property Description in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Description
         {
             get
@@ -3527,14 +3657,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Description");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Description;
         partial void OnDescriptionChanging(string value);
         partial void OnDescriptionChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -3549,14 +3679,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateModified in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateModified
         {
             get
@@ -3571,14 +3701,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateModified");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateModified;
         partial void OnDateModifiedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateModifiedChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<int> EMP_ID
         {
             get
@@ -3593,14 +3723,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<int> _EMP_ID;
         partial void OnEMP_IDChanging(global::System.Nullable<int> value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property PROB_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<int> PROB_ID
         {
             get
@@ -3615,14 +3745,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PROB_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<int> _PROB_ID;
         partial void OnPROB_IDChanging(global::System.Nullable<int> value);
         partial void OnPROB_IDChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> ClientProblemsLogs
         {
             get
@@ -3635,12 +3765,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientProblemsLogs");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog> _ClientProblemsLogs = new global::System.Data.Services.Client.DataServiceCollection<ClientProblemsLog>(null, global::System.Data.Services.Client.TrackingMode.None);
         /// <summary>
         /// There are no comments for Employee in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Employee Employee
         {
             get
@@ -3653,12 +3783,12 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Employee");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Employee _Employee;
         /// <summary>
         /// There are no comments for Problem in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public Problem Problem
         {
             get
@@ -3671,11 +3801,11 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Problem");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private Problem _Problem;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -3699,9 +3829,13 @@ namespace CRMBusiness.CRM
     /// SOL_ID
     /// SolutionDescription
     /// Priority
+    /// SolvedOnCreate
+    /// EmployeeSurname
+    /// ClientSurname
+    /// ClientUsername
     /// </KeyProperties>
     [global::System.Data.Services.Common.EntitySetAttribute("vClientProblemsLogs")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("CPR_ID", "Solved", "CLIENT_ID", "ClientName", "EMP_ID", "EmployeeName", "PROB_ID", "ProblemDescription", "SOL_ID", "SolutionDescription", "Priority")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("CPR_ID", "Solved", "CLIENT_ID", "ClientName", "EMP_ID", "EmployeeName", "PROB_ID", "ProblemDescription", "SOL_ID", "SolutionDescription", "Priority", "SolvedOnCreate", "EmployeeSurname", "ClientSurname", "ClientUsername")]
     public partial class vClientProblemsLog : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
@@ -3718,8 +3852,12 @@ namespace CRMBusiness.CRM
         /// <param name="sOL_ID">Initial value of SOL_ID.</param>
         /// <param name="solutionDescription">Initial value of SolutionDescription.</param>
         /// <param name="priority">Initial value of Priority.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static vClientProblemsLog CreatevClientProblemsLog(int cPR_ID, bool solved, int cLIENT_ID, string clientName, int eMP_ID, string employeeName, int pROB_ID, string problemDescription, int sOL_ID, string solutionDescription, string priority)
+        /// <param name="solvedOnCreate">Initial value of SolvedOnCreate.</param>
+        /// <param name="employeeSurname">Initial value of EmployeeSurname.</param>
+        /// <param name="clientSurname">Initial value of ClientSurname.</param>
+        /// <param name="clientUsername">Initial value of ClientUsername.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static vClientProblemsLog CreatevClientProblemsLog(int cPR_ID, bool solved, int cLIENT_ID, string clientName, int eMP_ID, string employeeName, int pROB_ID, string problemDescription, int sOL_ID, string solutionDescription, string priority, bool solvedOnCreate, string employeeSurname, string clientSurname, string clientUsername)
         {
             vClientProblemsLog vClientProblemsLog = new vClientProblemsLog();
             vClientProblemsLog.CPR_ID = cPR_ID;
@@ -3733,12 +3871,16 @@ namespace CRMBusiness.CRM
             vClientProblemsLog.SOL_ID = sOL_ID;
             vClientProblemsLog.SolutionDescription = solutionDescription;
             vClientProblemsLog.Priority = priority;
+            vClientProblemsLog.SolvedOnCreate = solvedOnCreate;
+            vClientProblemsLog.EmployeeSurname = employeeSurname;
+            vClientProblemsLog.ClientSurname = clientSurname;
+            vClientProblemsLog.ClientUsername = clientUsername;
             return vClientProblemsLog;
         }
         /// <summary>
         /// There are no comments for Property CPR_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CPR_ID
         {
             get
@@ -3753,14 +3895,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CPR_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CPR_ID;
         partial void OnCPR_IDChanging(int value);
         partial void OnCPR_IDChanged();
         /// <summary>
         /// There are no comments for Property Solved in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public bool Solved
         {
             get
@@ -3775,14 +3917,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Solved");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private bool _Solved;
         partial void OnSolvedChanging(bool value);
         partial void OnSolvedChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateCreated
         {
             get
@@ -3797,14 +3939,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateCreated;
         partial void OnDateCreatedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateSolved in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateSolved
         {
             get
@@ -3819,14 +3961,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateSolved");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateSolved;
         partial void OnDateSolvedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateSolvedChanged();
         /// <summary>
         /// There are no comments for Property ComTypeTel in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<bool> ComTypeTel
         {
             get
@@ -3841,14 +3983,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ComTypeTel");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<bool> _ComTypeTel;
         partial void OnComTypeTelChanging(global::System.Nullable<bool> value);
         partial void OnComTypeTelChanged();
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CLIENT_ID
         {
             get
@@ -3863,14 +4005,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLIENT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CLIENT_ID;
         partial void OnCLIENT_IDChanging(int value);
         partial void OnCLIENT_IDChanged();
         /// <summary>
         /// There are no comments for Property ClientName in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string ClientName
         {
             get
@@ -3885,14 +4027,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ClientName");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _ClientName;
         partial void OnClientNameChanging(string value);
         partial void OnClientNameChanged();
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -3907,14 +4049,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property EmployeeName in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string EmployeeName
         {
             get
@@ -3929,14 +4071,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EmployeeName");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _EmployeeName;
         partial void OnEmployeeNameChanging(string value);
         partial void OnEmployeeNameChanged();
         /// <summary>
         /// There are no comments for Property PROB_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int PROB_ID
         {
             get
@@ -3951,14 +4093,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("PROB_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _PROB_ID;
         partial void OnPROB_IDChanging(int value);
         partial void OnPROB_IDChanged();
         /// <summary>
         /// There are no comments for Property ProblemDescription in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string ProblemDescription
         {
             get
@@ -3973,14 +4115,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("ProblemDescription");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _ProblemDescription;
         partial void OnProblemDescriptionChanging(string value);
         partial void OnProblemDescriptionChanged();
         /// <summary>
         /// There are no comments for Property SOL_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int SOL_ID
         {
             get
@@ -3995,14 +4137,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("SOL_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _SOL_ID;
         partial void OnSOL_IDChanging(int value);
         partial void OnSOL_IDChanged();
         /// <summary>
         /// There are no comments for Property SolutionDescription in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string SolutionDescription
         {
             get
@@ -4017,14 +4159,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("SolutionDescription");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _SolutionDescription;
         partial void OnSolutionDescriptionChanging(string value);
         partial void OnSolutionDescriptionChanged();
         /// <summary>
         /// There are no comments for Property Priority in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Priority
         {
             get
@@ -4039,13 +4181,101 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Priority");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Priority;
         partial void OnPriorityChanging(string value);
         partial void OnPriorityChanged();
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        /// <summary>
+        /// There are no comments for Property SolvedOnCreate in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool SolvedOnCreate
+        {
+            get
+            {
+                return this._SolvedOnCreate;
+            }
+            set
+            {
+                this.OnSolvedOnCreateChanging(value);
+                this._SolvedOnCreate = value;
+                this.OnSolvedOnCreateChanged();
+                this.OnPropertyChanged("SolvedOnCreate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _SolvedOnCreate;
+        partial void OnSolvedOnCreateChanging(bool value);
+        partial void OnSolvedOnCreateChanged();
+        /// <summary>
+        /// There are no comments for Property EmployeeSurname in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string EmployeeSurname
+        {
+            get
+            {
+                return this._EmployeeSurname;
+            }
+            set
+            {
+                this.OnEmployeeSurnameChanging(value);
+                this._EmployeeSurname = value;
+                this.OnEmployeeSurnameChanged();
+                this.OnPropertyChanged("EmployeeSurname");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _EmployeeSurname;
+        partial void OnEmployeeSurnameChanging(string value);
+        partial void OnEmployeeSurnameChanged();
+        /// <summary>
+        /// There are no comments for Property ClientSurname in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ClientSurname
+        {
+            get
+            {
+                return this._ClientSurname;
+            }
+            set
+            {
+                this.OnClientSurnameChanging(value);
+                this._ClientSurname = value;
+                this.OnClientSurnameChanged();
+                this.OnPropertyChanged("ClientSurname");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ClientSurname;
+        partial void OnClientSurnameChanging(string value);
+        partial void OnClientSurnameChanged();
+        /// <summary>
+        /// There are no comments for Property ClientUsername in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ClientUsername
+        {
+            get
+            {
+                return this._ClientUsername;
+            }
+            set
+            {
+                this.OnClientUsernameChanging(value);
+                this._ClientUsername = value;
+                this.OnClientUsernameChanged();
+                this.OnPropertyChanged("ClientUsername");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ClientUsername;
+        partial void OnClientUsernameChanging(string value);
+        partial void OnClientUsernameChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -4080,7 +4310,7 @@ namespace CRMBusiness.CRM
         /// <param name="bRH_ID">Initial value of BRH_ID.</param>
         /// <param name="userId">Initial value of UserId.</param>
         /// <param name="userName">Initial value of UserName.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static vClient CreatevClient(int cLIENT_ID, string name, string surname, global::System.DateTime dateOfBirth, int bRH_ID, global::System.Guid userId, string userName)
         {
             vClient vClient = new vClient();
@@ -4096,7 +4326,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property CLIENT_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int CLIENT_ID
         {
             get
@@ -4111,14 +4341,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLIENT_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _CLIENT_ID;
         partial void OnCLIENT_IDChanging(int value);
         partial void OnCLIENT_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -4133,14 +4363,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Surname in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Surname
         {
             get
@@ -4155,14 +4385,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Surname");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Surname;
         partial void OnSurnameChanging(string value);
         partial void OnSurnameChanged();
         /// <summary>
         /// There are no comments for Property DateOfBirth in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateOfBirth
         {
             get
@@ -4177,14 +4407,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateOfBirth");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateOfBirth;
         partial void OnDateOfBirthChanging(global::System.DateTime value);
         partial void OnDateOfBirthChanged();
         /// <summary>
         /// There are no comments for Property Telephone in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Telephone
         {
             get
@@ -4199,14 +4429,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Telephone");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Telephone;
         partial void OnTelephoneChanging(string value);
         partial void OnTelephoneChanged();
         /// <summary>
         /// There are no comments for Property Cell in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Cell
         {
             get
@@ -4221,14 +4451,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Cell");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Cell;
         partial void OnCellChanging(string value);
         partial void OnCellChanged();
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Fax
         {
             get
@@ -4243,14 +4473,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Fax");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Fax;
         partial void OnFaxChanging(string value);
         partial void OnFaxChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateCreated
         {
             get
@@ -4265,14 +4495,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateCreated;
         partial void OnDateCreatedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property CLEINT_DateModified in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> CLEINT_DateModified
         {
             get
@@ -4287,14 +4517,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("CLEINT_DateModified");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _CLEINT_DateModified;
         partial void OnCLEINT_DateModifiedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnCLEINT_DateModifiedChanged();
         /// <summary>
         /// There are no comments for Property BRH_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int BRH_ID
         {
             get
@@ -4309,14 +4539,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("BRH_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _BRH_ID;
         partial void OnBRH_IDChanging(int value);
         partial void OnBRH_IDChanged();
         /// <summary>
         /// There are no comments for Property UserId in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Guid UserId
         {
             get
@@ -4331,14 +4561,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("UserId");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Guid _UserId;
         partial void OnUserIdChanging(global::System.Guid value);
         partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for Property UserName in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string UserName
         {
             get
@@ -4353,14 +4583,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("UserName");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _UserName;
         partial void OnUserNameChanging(string value);
         partial void OnUserNameChanged();
         /// <summary>
         /// There are no comments for Property Email in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Email
         {
             get
@@ -4375,13 +4605,13 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Email");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Email;
         partial void OnEmailChanging(string value);
         partial void OnEmailChanged();
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))
@@ -4414,7 +4644,7 @@ namespace CRMBusiness.CRM
         /// <param name="dateCreated">Initial value of DateCreated.</param>
         /// <param name="userId">Initial value of UserId.</param>
         /// <param name="userName">Initial value of UserName.</param>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public static vEmployee CreatevEmployee(int eMP_ID, string name, string surname, global::System.DateTime dateCreated, global::System.Guid userId, string userName)
         {
             vEmployee vEmployee = new vEmployee();
@@ -4429,7 +4659,7 @@ namespace CRMBusiness.CRM
         /// <summary>
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public int EMP_ID
         {
             get
@@ -4444,14 +4674,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("EMP_ID");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private int _EMP_ID;
         partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Name
         {
             get
@@ -4466,14 +4696,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Name");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Name;
         partial void OnNameChanging(string value);
         partial void OnNameChanged();
         /// <summary>
         /// There are no comments for Property Surname in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Surname
         {
             get
@@ -4488,14 +4718,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Surname");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Surname;
         partial void OnSurnameChanging(string value);
         partial void OnSurnameChanged();
         /// <summary>
         /// There are no comments for Property Telephone in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Telephone
         {
             get
@@ -4510,14 +4740,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Telephone");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Telephone;
         partial void OnTelephoneChanging(string value);
         partial void OnTelephoneChanged();
         /// <summary>
         /// There are no comments for Property Cell in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Cell
         {
             get
@@ -4532,14 +4762,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Cell");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Cell;
         partial void OnCellChanging(string value);
         partial void OnCellChanged();
         /// <summary>
         /// There are no comments for Property Fax in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Fax
         {
             get
@@ -4554,14 +4784,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Fax");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Fax;
         partial void OnFaxChanging(string value);
         partial void OnFaxChanged();
         /// <summary>
         /// There are no comments for Property DateCreated in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.DateTime DateCreated
         {
             get
@@ -4576,14 +4806,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateCreated");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.DateTime _DateCreated;
         partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
         /// <summary>
         /// There are no comments for Property DateModified in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Nullable<global::System.DateTime> DateModified
         {
             get
@@ -4598,14 +4828,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("DateModified");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Nullable<global::System.DateTime> _DateModified;
         partial void OnDateModifiedChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateModifiedChanged();
         /// <summary>
         /// There are no comments for Property UserId in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public global::System.Guid UserId
         {
             get
@@ -4620,14 +4850,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("UserId");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Guid _UserId;
         partial void OnUserIdChanging(global::System.Guid value);
         partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for Property UserName in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string UserName
         {
             get
@@ -4642,14 +4872,14 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("UserName");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _UserName;
         partial void OnUserNameChanging(string value);
         partial void OnUserNameChanged();
         /// <summary>
         /// There are no comments for Property Email in the schema.
         /// </summary>
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public string Email
         {
             get
@@ -4664,13 +4894,13 @@ namespace CRMBusiness.CRM
                 this.OnPropertyChanged("Email");
             }
         }
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private string _Email;
         partial void OnEmailChanging(string value);
         partial void OnEmailChanged();
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         protected virtual void OnPropertyChanged(string property)
         {
             if ((this.PropertyChanged != null))

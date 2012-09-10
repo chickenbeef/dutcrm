@@ -33,5 +33,18 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.Images.Where(i => i.EP_ID == epid).Count();
         }
+
+        //Gets all images for a specific Ticket(CPR_ID) - clientproblemslog
+        public List<Image> GetImagesForTicket(int cprid)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.Images.Where(i => i.EP_ID == cprid).ToList();
+        }
+
+        public int GetImageCountForTicket(int cprid)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.Images.Where(i => i.EP_ID == cprid).Count();
+        }
     }
 }

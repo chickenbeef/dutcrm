@@ -26,15 +26,19 @@
       [vClientProblemsLog].[DateCreated] AS [DateCreated], 
       [vClientProblemsLog].[DateSolved] AS [DateSolved], 
       [vClientProblemsLog].[ComTypeTel] AS [ComTypeTel], 
-      [vClientProblemsLog].[CLIENT_ID] AS [CLIENT_ID], 
-      [vClientProblemsLog].[ClientName] AS [ClientName], 
       [vClientProblemsLog].[EMP_ID] AS [EMP_ID], 
       [vClientProblemsLog].[EmployeeName] AS [EmployeeName], 
+      [vClientProblemsLog].[EmployeeSurname] AS [EmployeeSurname], 
       [vClientProblemsLog].[PROB_ID] AS [PROB_ID], 
       [vClientProblemsLog].[ProblemDescription] AS [ProblemDescription], 
       [vClientProblemsLog].[SOL_ID] AS [SOL_ID], 
       [vClientProblemsLog].[SolutionDescription] AS [SolutionDescription], 
-      [vClientProblemsLog].[Priority] AS [Priority]
+      [vClientProblemsLog].[Priority] AS [Priority], 
+      [vClientProblemsLog].[SolvedOnCreate] AS [SolvedOnCreate], 
+      [vClientProblemsLog].[CLIENT_ID] AS [CLIENT_ID], 
+      [vClientProblemsLog].[ClientName] AS [ClientName], 
+      [vClientProblemsLog].[ClientSurname] AS [ClientSurname], 
+      [vClientProblemsLog].[ClientUsername] AS [ClientUsername]
       FROM [dbo].[vClientProblemsLog] AS [vClientProblemsLog]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vClients" EntityType="CRMModel.Store.vClients" store:Type="Views" store:Schema="dbo" store:Name="vClients">
@@ -125,6 +129,10 @@
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Branches" EntitySet="Branches" />
           </AssociationSet>
+          <AssociationSet Name="FK_ClientProblemsLog_Images" Association="CRMModel.Store.FK_ClientProblemsLog_Images">
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
           <AssociationSet Name="Problems_ClientProblemsLog_FK1" Association="CRMModel.Store.Problems_ClientProblemsLog_FK1">
             <End Role="Problems" EntitySet="Problems" />
             <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
@@ -175,6 +183,7 @@
           <Property Name="EMP_ID" Type="int" Nullable="false" />
           <Property Name="SOL_ID" Type="int" />
           <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SolvedOnCreate" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Clients">
           <Key>
@@ -216,14 +225,16 @@
           </Key>
           <Property Name="CT_ID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="Paragraph" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Paragraph" Type="varchar" Nullable="false" MaxLength="2000" />
         </EntityType>
         <EntityType Name="EmailProblems">
           <Key>
             <PropertyRef Name="EP_ID" />
           </Key>
           <Property Name="EP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="From" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="Attended" Type="bit" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
@@ -258,13 +269,14 @@
           <Property Name="IMG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ImageFile" Type="varbinary(max)" Nullable="false" />
           <Property Name="EP_ID" Type="int" Nullable="false" />
+          <Property Name="CPR_ID" Type="int" />
         </EntityType>
         <EntityType Name="Notes">
           <Key>
             <PropertyRef Name="NOTE_ID" />
           </Key>
           <Property Name="NOTE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="CPR_ID" Type="int" Nullable="false" />
           <Property Name="EMP_ID" Type="int" Nullable="false" />
@@ -274,7 +286,7 @@
             <PropertyRef Name="PROB_ID" />
           </Key>
           <Property Name="PROB_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="EMP_ID" Type="int" Nullable="false" />
         </EntityType>
@@ -292,7 +304,7 @@
             <PropertyRef Name="SOL_ID" />
           </Key>
           <Property Name="SOL_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="DateModified" Type="date" />
           <Property Name="EMP_ID" Type="int" />
@@ -305,30 +317,38 @@
           <Key>
             <PropertyRef Name="CPR_ID" />
             <PropertyRef Name="Solved" />
-            <PropertyRef Name="CLIENT_ID" />
-            <PropertyRef Name="ClientName" />
             <PropertyRef Name="EMP_ID" />
             <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="EmployeeSurname" />
             <PropertyRef Name="PROB_ID" />
             <PropertyRef Name="ProblemDescription" />
             <PropertyRef Name="SOL_ID" />
             <PropertyRef Name="SolutionDescription" />
             <PropertyRef Name="Priority" />
+            <PropertyRef Name="SolvedOnCreate" />
+            <PropertyRef Name="CLIENT_ID" />
+            <PropertyRef Name="ClientName" />
+            <PropertyRef Name="ClientSurname" />
+            <PropertyRef Name="ClientUsername" />
           </Key>
           <Property Name="CPR_ID" Type="int" Nullable="false" />
           <Property Name="Solved" Type="bit" Nullable="false" />
           <Property Name="DateCreated" Type="date" />
           <Property Name="DateSolved" Type="date" />
           <Property Name="ComTypeTel" Type="bit" />
-          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
-          <Property Name="ClientName" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="EMP_ID" Type="int" Nullable="false" />
           <Property Name="EmployeeName" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="EmployeeSurname" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="PROB_ID" Type="int" Nullable="false" />
-          <Property Name="ProblemDescription" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="ProblemDescription" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="SOL_ID" Type="int" Nullable="false" />
-          <Property Name="SolutionDescription" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="SolutionDescription" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SolvedOnCreate" Type="bit" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="ClientName" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ClientSurname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ClientUsername" Type="nvarchar" Nullable="false" MaxLength="256" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'CRM.dbo.vClients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -549,6 +569,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ClientProblemsLog_Images">
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="0..1" />
+          <End Role="Images" Type="CRMModel.Store.Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientProblemsLog">
+              <PropertyRef Name="CPR_ID" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="CPR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Problems_ClientProblemsLog_FK1">
           <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="1" />
           <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
@@ -674,6 +706,10 @@
             <End Role="Problems" EntitySet="Problems" />
             <End Role="Solutions" EntitySet="Solutions" />
           </AssociationSet>
+          <AssociationSet Name="FK_ClientProblemsLog_Images" Association="CRMModel.FK_ClientProblemsLog_Images">
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+            <End Role="Image" EntitySet="Images" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Branch">
           <Key>
@@ -721,6 +757,8 @@
           <NavigationProperty Name="Escalation" Relationship="CRMModel.Escalation_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Escalation" />
           <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Problems" />
           <NavigationProperty Name="Solution" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Solutions" />
+          <Property Type="Boolean" Name="SolvedOnCreate" Nullable="false" />
+          <NavigationProperty Name="Images" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="ClientProblemsLog" ToRole="Image" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -782,6 +820,8 @@
           <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
           <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
           <Property Type="String" Name="Mail_ID" Nullable="true" />
+          <Property Type="String" Name="From" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -815,10 +855,12 @@
           <Key>
             <PropertyRef Name="IMG_ID" />
           </Key>
-          <Property Name="IMG_ID" Type="Int32" Nullable="false" />
+          <Property Name="IMG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ImageFile" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="EP_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EmailProblem" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="Images" ToRole="EmailProblems" />
+          <Property Type="Int32" Name="CPR_ID" />
+          <NavigationProperty Name="ClientProblemsLog" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="Image" ToRole="ClientProblemsLog" />
         </EntityType>
         <EntityType Name="Note">
           <Key>
@@ -882,6 +924,10 @@
             <PropertyRef Name="SOL_ID" />
             <PropertyRef Name="SolutionDescription" />
             <PropertyRef Name="Priority" />
+            <PropertyRef Name="SolvedOnCreate" />
+            <PropertyRef Name="EmployeeSurname" />
+            <PropertyRef Name="ClientSurname" />
+            <PropertyRef Name="ClientUsername" />
           </Key>
           <Property Name="CPR_ID" Type="Int32" Nullable="false" />
           <Property Name="Solved" Type="Boolean" Nullable="false" />
@@ -897,6 +943,10 @@
           <Property Name="SOL_ID" Type="Int32" Nullable="false" />
           <Property Name="SolutionDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="Priority" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Type="Boolean" Name="SolvedOnCreate" Nullable="false" />
+          <Property Type="String" Name="EmployeeSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClientSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClientUsername" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vClient">
           <Key>
@@ -1147,6 +1197,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ClientProblemsLog_Images">
+          <End Type="CRMModel.ClientProblemsLog" Role="ClientProblemsLog" Multiplicity="0..1" />
+          <End Type="CRMModel.Image" Role="Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientProblemsLog">
+              <PropertyRef Name="CPR_ID" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="CPR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1174,7 +1236,8 @@
             <ScalarProperty Name="IntegrationKey" ColumnName="IntegrationKey" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="ClientProblemsLogs"><EntityTypeMapping TypeName="CRMModel.ClientProblemsLog"><MappingFragment StoreEntitySet="ClientProblemsLog">
-            <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+            <ScalarProperty Name="SolvedOnCreate" ColumnName="SolvedOnCreate" />
+                <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
             <ScalarProperty Name="Solved" ColumnName="Solved" />
             <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
             <ScalarProperty Name="DateSolved" ColumnName="DateSolved" />
@@ -1219,7 +1282,9 @@
             <ScalarProperty Name="Paragraph" ColumnName="Paragraph" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="EmailProblems"><EntityTypeMapping TypeName="CRMModel.EmailProblem"><MappingFragment StoreEntitySet="EmailProblems">
-            <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
+            <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
                 <ScalarProperty Name="EP_ID" ColumnName="EP_ID" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
@@ -1243,7 +1308,8 @@
             <ScalarProperty Name="Duration" ColumnName="Duration" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Images"><EntityTypeMapping TypeName="CRMModel.Image"><MappingFragment StoreEntitySet="Images">
-            <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+            <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+                <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
             <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
             <ScalarProperty Name="EP_ID" ColumnName="EP_ID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -1275,7 +1341,11 @@
             <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="vClientProblemsLogs"><EntityTypeMapping TypeName="CRMModel.vClientProblemsLog"><MappingFragment StoreEntitySet="vClientProblemsLog">
-            <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+            <ScalarProperty Name="ClientUsername" ColumnName="ClientUsername" />
+                <ScalarProperty Name="ClientSurname" ColumnName="ClientSurname" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="SolvedOnCreate" ColumnName="SolvedOnCreate" />
+                <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
             <ScalarProperty Name="Solved" ColumnName="Solved" />
             <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
             <ScalarProperty Name="DateSolved" ColumnName="DateSolved" />
@@ -1366,32 +1436,32 @@
           <ConnectorPoint PointX="11" PointY="5.7304996744791659" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Clients_ClientProblemsLog_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.875" PointY="4.4609993489583335" />
-          <ConnectorPoint PointX="4.875" PointY="12.96875" />
-          <ConnectorPoint PointX="5.25" PointY="12.96875" />
+          <ConnectorPoint PointX="4.78125" PointY="4.4609993489583335" />
+          <ConnectorPoint PointX="4.78125" PointY="13.1006982421875" />
+          <ConnectorPoint PointX="5.25" PointY="13.1006982421875" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.CPL_Notes_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="16.141297200520832" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="16.141297200520832" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="16.141297200520832" />
-          <ConnectorPoint PointX="9.90625" PointY="16.141297200520832" />
+          <ConnectorPoint PointX="6.75" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="9.90625" PointY="16.333598632812503" />
           <ConnectorPoint PointX="9.90625" PointY="11.739889322916667" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Employees_ClientProblemsLog_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="12.52830078125" />
-          <ConnectorPoint PointX="1.5" PointY="15.876892903645832" />
-          <ConnectorPoint PointX="1.8229191666666667" PointY="15.876892903645832" />
-          <ConnectorPoint PointX="1.9895858333333332" PointY="15.876892903645832" />
-          <ConnectorPoint PointX="5.25" PointY="15.876892903645832" />
+          <ConnectorPoint PointX="1.29687375" PointY="12.52830078125" />
+          <ConnectorPoint PointX="1.29687375" PointY="16.069194335937503" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="16.069194335937503" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="16.069194335937503" />
+          <ConnectorPoint PointX="5.25" PointY="16.069194335937503" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Escalation_ClientProblemsLog_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="14.422841796875" />
           <ConnectorPoint PointX="5.25" PointY="14.422841796875" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Problems_ClientProblemsLog_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="18.932444661458334" />
-          <ConnectorPoint PointX="6" PointY="18.932444661458334" />
-          <ConnectorPoint PointX="6" PointY="16.470602213541664" />
+          <ConnectorPoint PointX="4.5" PointY="19.243682076822918" />
+          <ConnectorPoint PointX="6" PointY="19.243682076822918" />
+          <ConnectorPoint PointX="6" PointY="16.855205078125003" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Solutions_ClientProblemsLog_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="8.25" PointY="14.374746093750002" />
@@ -1404,28 +1474,40 @@
         <AssociationConnector Association="CRMModel.Clients_Sales_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="5.0625025" PointY="4.4609993489583335" />
           <ConnectorPoint PointX="5.0625025" PointY="8.84375" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="8.84375" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="8.84375" />
           <ConnectorPoint PointX="6" PointY="8.84375" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.EmailProblems_Images_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="3.5312475" PointY="9.25" />
-          <ConnectorPoint PointX="3.5312475" PointY="6.6439925130208337" />
-          <ConnectorPoint PointX="4.041666666666667" PointY="6.6439925130208328" />
-          <ConnectorPoint PointX="4.208333333333333" PointY="6.6439925130208337" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="6.6439925130208328" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="6.6439925130208337" />
-          <ConnectorPoint PointX="4.9791691666666669" PointY="6.6439925130208328" />
-          <ConnectorPoint PointX="5.1458358333333329" PointY="6.6439925130208337" />
-          <ConnectorPoint PointX="5.25" PointY="6.6439925130208337" />
+          <ConnectorPoint PointX="3.5312475" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="4.041666666666667" PointY="6.8362939453124989" />
+          <ConnectorPoint PointX="4.208333333333333" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="6.8362939453124989" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="4.9791691666666669" PointY="6.8362939453124989" />
+          <ConnectorPoint PointX="5.1458358333333329" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="5.25" PointY="6.8362939453125" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Employees_EmailProblems_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="10.62474609375" />
-          <ConnectorPoint PointX="3" PointY="10.62474609375" />
+          <ConnectorPoint PointX="2.25" PointY="11.091453857421875" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="11.091453857421875" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="11.091453857421875" />
+          <ConnectorPoint PointX="3" PointY="11.091453857421875" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Employees_Notes_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="12.18724609375" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.18724609375" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="12.18724609375" />
-          <ConnectorPoint PointX="9.1718725" PointY="12.18724609375" />
+          <ConnectorPoint PointX="2.25" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="8.6276034166666644" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="8.7942700833333323" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="9.1718725" PointY="12.283396809895834" />
           <ConnectorPoint PointX="9.1718725" PointY="11.739889322916667" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Employees_Problems_FK1" ManuallyRouted="false">
@@ -1439,16 +1521,24 @@
           <ConnectorPoint PointX="3.6145808333333336" PointY="9.078125" />
           <ConnectorPoint PointX="4.041666666666667" PointY="9.078125" />
           <ConnectorPoint PointX="4.208333333333333" PointY="9.078125" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="9.078125" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="9.078125" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="9.078125" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="9.078125" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="9.078125" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="9.078125" />
           <ConnectorPoint PointX="6" PointY="9.078125" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Employees_Solutions_FK1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="12.281125546875" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.281125546875" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="12.281125546875" />
-          <ConnectorPoint PointX="8.34375" PointY="12.281125546875" />
-          <ConnectorPoint PointX="8.34375" PointY="13" />
+          <ConnectorPoint PointX="2.25" PointY="9.8995109049479169" />
+          <ConnectorPoint PointX="2.75" PointY="9.8995109049479169" />
+          <ConnectorPoint PointX="2.75" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="5" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="5" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="8.7109367499999983" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="8.7109367499999983" PointY="13" />
         </AssociationConnector>
         <AssociationConnector Association="CRMModel.Problems_Solutions_FK1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="18.309969830729166" />
@@ -1456,6 +1546,10 @@
           <ConnectorPoint PointX="6.083333333333333" PointY="18.309969830729166" />
           <ConnectorPoint PointX="9" PointY="18.309969830729166" />
           <ConnectorPoint PointX="9" PointY="15.749492187500003" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.FK_ClientProblemsLog_Images" >
+          <ConnectorPoint PointX="5.59375" PointY="12.375" />
+          <ConnectorPoint PointX="5.59375" PointY="7.922587890625" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
