@@ -12,21 +12,22 @@ namespace CRMBusiness
         //METHODS
 
         //SAVE
-        public bool AddEmailProblem(string description, DateTime datecreated, int clientid, int employeeid, string mailid)
+        public int AddEmailProblem(string description, DateTime datecreated, int clientid, string mailid)
         {
-            if(description.Equals("") || clientid.Equals(0)) return false;
+            if(description.Equals("") || clientid.Equals(0)) return 0;
             _crm = new CRMEntities(_uri);
             var objep = new EmailProblem
                             {
                                 Description = description,
                                 DateCreated = datecreated,
                                 CLIENT_ID = clientid,
-                                EMP_ID = employeeid,
                                 Mail_ID = mailid
                             };
             _crm.AddToEmailProblems(objep);
             _crm.SaveChanges();
-            return true;
+            var epid = objep.EP_ID;
+
+            return epid;
         }
 
         //UPDATE
