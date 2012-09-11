@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using AjaxControlToolkit;
 using CRMBusiness;
 using Ext.Net;
 
@@ -10,49 +9,55 @@ namespace CRMUI.Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtName.Text = (string)(Session["txtName.Text"]);
+            txtFrom.Text = (string)(Session["From"]);
             txtClID.Text = (string)(Session["txtClientID.Text"]);
         }
 
         protected void btnSend_OnDirectClick(object sender, DirectEventArgs e)
         {
-            var objEp = new EmailProblemBl();
-            var fileId = (string[])(Session["fileId"]);
-            var ct = (string[])(Session["fileContentType"]);
-            var content = (byte[][])(Session["fileContents"]);
-            var count = (int) (Session["count"]);
-            var objI = new ImageBl();
-            var id = objEp.AddEmailProblem(heDesc.Text, DateTime.Now, Convert.ToInt32(txtClID.Text), null);
-            if (id != 0)
+            try
             {
-                if (fileId!= null)
+                var objEp = new EmailProblemBl();
+                var fileId = (string[])(Session["fileId"]);
+                var ct = (string[])(Session["fileContentType"]);
+                var content = (byte[][])(Session["fileContents"]);
+                var count = (int)(Session["count"]);
+                var objI = new ImageBl();
+                var id = objEp.AddEmailProblem(txtFrom.Text,txtSubject.Text,heDesc.Text, DateTime.Now, Convert.ToInt32(txtClID.Text), null);
+                if (id != 0)
                 {
-                    for (var i = 0; i <= count; i++)
+                    if (fileId != null)
                     {
-                        if (ct[i].Contains("jpg") || ct[i].Contains("gif") || ct[i].Contains("png") || ct[i].Contains("jpeg"))
+                        for (var i = 0; i <= count; i++)
                         {
-                            objI.AddImage(content[i], id);
-                        }
+                            if (ct[i].Contains("jpg") || ct[i].Contains("gif") || ct[i].Contains("png") ||
+                                ct[i].Contains("jpeg"))
+                            {
+                                objI.AddImage(content[i], id);
+                            }
 
+                        }
                     }
+
+                    ExtNet.Msg.Notify("Success", "Your message has been sent").Show();
                 }
 
-
-
-
-                ExtNet.Msg.Notify("Success", "Your message has been sent").Show();
+                else
+                {
+                    ExtNet.Msg.Notify("Error", "Unable to send message, please try again").Show();
+                }
+                Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
             }
-
-            else
+            catch (Exception ex)
             {
-                ExtNet.Msg.Notify("Error", "Unable to send message, please try again").Show();
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }
 
         protected void btnCancel_OnDirectClick(object sender, DirectEventArgs e)
         {
             Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
-            
+
         }
     }
 }

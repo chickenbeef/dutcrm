@@ -13,12 +13,13 @@
                     <ext:Panel ID="pnlDetails" runat="server" Height="314" Flex="2" Layout="vboxLayout"
                         Border="false">
                         <Items>
-                            <ext:TextField ID="txtName" runat="server" FieldLabel="Client Name " Margins="30 0 10 30"
+                            <ext:TextField ID="txtClID" runat="server" FieldLabel="Client ID " Margins="30 0 10 30"
+                                ReadOnly="True"/>
+                            <ext:TextField ID="txtFrom" runat="server" FieldLabel="From " Margins="10 0 10 30"
                                 ReadOnly="True" />
-                            <ext:TextField ID="txtClID" runat="server" FieldLabel="Client ID " Margins="10 0 10 30"
-                                ReadOnly="True" />
+                            <ext:TextField ID="txtSubject" runat="server" FieldLabel="Subject" Margins="20 0 10 30" Width="600" Grow="True" />
                             <ext:Label ID="Label1" runat="server" Text="Description:" Margins="10 0 0 30" />
-                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="250" />
+                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="200" AutoFocus="True" />
                         </Items>
                     </ext:Panel>
                     <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1"
@@ -32,7 +33,7 @@
                     </ext:Panel>
                 </Items>
             </ext:Panel>
-            <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="150 0 10 0" Border="false">
+            <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="200 0 10 0" Border="false">
                 <Content>
                     <iframe name="ifUploadImg" height="250" width="400" seamless="seamless" src="upload.aspx">
                     </iframe>
