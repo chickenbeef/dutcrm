@@ -13,7 +13,7 @@
         <Items>
             <ext:Panel ID="pnlDetails" runat="server" Flex="1" Border="false" Layout="VBoxLayout">
                 <Items>
-                    <ext:TextField ID="txtName" runat="server" FieldLabel="Name" Width="300" Margins="30 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your Name" A/>
+                    <ext:TextField ID="txtName" runat="server" FieldLabel="Name" Width="300" Margins="30 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your Name" AutoFocus="True"/>
                     <ext:TextField ID="txtSurname" runat="server" FieldLabel="Surname" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your surname " />
                     <ext:DateField ID="dfDob" runat="server" Vtype="daterange" FieldLabel="Date Of Birth"
                         EnableKeyEvents="true" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please enter your date of birth"/>

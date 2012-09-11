@@ -18,7 +18,8 @@ namespace CRMUI.Client
                  
                     if(!IsPostBack)
                     {
-                        Session["txtName.Text"] = objCl[0].Name;
+                    
+                        Session["From"] = objCl[0].Name + " "+objCl[0].Surname;
                         txtName.Text = objCl[0].Name;
                         txtSurname.Text = objCl[0].Surname;
                         dfDob.Text = objCl[0].DateOfBirth.ToString(CultureInfo.InvariantCulture);
@@ -54,6 +55,7 @@ namespace CRMUI.Client
             txtTel.ReadOnly = false;
             txtCell.ReadOnly = false;
             txtFax.ReadOnly = false;
+
             
         }
 
@@ -94,8 +96,11 @@ namespace CRMUI.Client
             try
             {
                 var objC = new ClientBl();
+                
+                    
                if( objC.UpdateClient(Convert.ToInt32(txtClientID.Text), txtName.Text, txtSurname.Text, Convert.ToDateTime(dfDob.Text), txtTel.Text, txtCell.Text, txtFax.Text, DateTime.Now))
                {
+                   
                    txtName.ReadOnly = true;
                    txtSurname.ReadOnly = true;
                    dfDob.ReadOnly = true;
@@ -116,5 +121,8 @@ namespace CRMUI.Client
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }
+       
+        }
+       
     }
- }
+ 
