@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/09/10 09:30:08 PM
+// Generation date: 2012/09/11 05:59:47 PM
 namespace CRMBusiness.CRM
 {
     
@@ -3608,13 +3608,17 @@ namespace CRMBusiness.CRM
         /// <param name="sOL_ID">Initial value of SOL_ID.</param>
         /// <param name="description">Initial value of Description.</param>
         /// <param name="dateCreated">Initial value of DateCreated.</param>
+        /// <param name="eMP_ID">Initial value of EMP_ID.</param>
+        /// <param name="pROB_ID">Initial value of PROB_ID.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static Solution CreateSolution(int sOL_ID, string description, global::System.DateTime dateCreated)
+        public static Solution CreateSolution(int sOL_ID, string description, global::System.DateTime dateCreated, int eMP_ID, int pROB_ID)
         {
             Solution solution = new Solution();
             solution.SOL_ID = sOL_ID;
             solution.Description = description;
             solution.DateCreated = dateCreated;
+            solution.EMP_ID = eMP_ID;
+            solution.PROB_ID = pROB_ID;
             return solution;
         }
         /// <summary>
@@ -3709,7 +3713,7 @@ namespace CRMBusiness.CRM
         /// There are no comments for Property EMP_ID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<int> EMP_ID
+        public int EMP_ID
         {
             get
             {
@@ -3724,14 +3728,14 @@ namespace CRMBusiness.CRM
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<int> _EMP_ID;
-        partial void OnEMP_IDChanging(global::System.Nullable<int> value);
+        private int _EMP_ID;
+        partial void OnEMP_IDChanging(int value);
         partial void OnEMP_IDChanged();
         /// <summary>
         /// There are no comments for Property PROB_ID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<int> PROB_ID
+        public int PROB_ID
         {
             get
             {
@@ -3746,8 +3750,8 @@ namespace CRMBusiness.CRM
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<int> _PROB_ID;
-        partial void OnPROB_IDChanging(global::System.Nullable<int> value);
+        private int _PROB_ID;
+        partial void OnPROB_IDChanging(int value);
         partial void OnPROB_IDChanged();
         /// <summary>
         /// There are no comments for ClientProblemsLogs in the schema.

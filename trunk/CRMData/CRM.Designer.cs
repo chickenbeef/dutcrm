@@ -33,8 +33,8 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("CRMModel", "Employees_Notes_FK", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Employee), "Notes", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Note), true)]
 [assembly: EdmRelationshipAttribute("CRMModel", "Employees_Problems_FK1", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Employee), "Problems", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Problem), true)]
 [assembly: EdmRelationshipAttribute("CRMModel", "Employees_Sales_FK1", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Employee), "Sales", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Sale), true)]
-[assembly: EdmRelationshipAttribute("CRMModel", "Employees_Solutions_FK1", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(CRMData.Employee), "Solutions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Solution), true)]
-[assembly: EdmRelationshipAttribute("CRMModel", "Problems_Solutions_FK1", "Problems", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(CRMData.Problem), "Solutions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Solution), true)]
+[assembly: EdmRelationshipAttribute("CRMModel", "Employees_Solutions_FK1", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Employee), "Solutions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Solution), true)]
+[assembly: EdmRelationshipAttribute("CRMModel", "Problems_Solutions_FK1", "Problems", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Problem), "Solutions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Solution), true)]
 [assembly: EdmRelationshipAttribute("CRMModel", "FK_ClientProblemsLog_Images", "ClientProblemsLog", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(CRMData.ClientProblemsLog), "Image", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Image), true)]
 
 #endregion
@@ -4235,12 +4235,16 @@ namespace CRMData
         /// <param name="sOL_ID">Initial value of the SOL_ID property.</param>
         /// <param name="description">Initial value of the Description property.</param>
         /// <param name="dateCreated">Initial value of the DateCreated property.</param>
-        public static Solution CreateSolution(global::System.Int32 sOL_ID, global::System.String description, global::System.DateTime dateCreated)
+        /// <param name="eMP_ID">Initial value of the EMP_ID property.</param>
+        /// <param name="pROB_ID">Initial value of the PROB_ID property.</param>
+        public static Solution CreateSolution(global::System.Int32 sOL_ID, global::System.String description, global::System.DateTime dateCreated, global::System.Int32 eMP_ID, global::System.Int32 pROB_ID)
         {
             Solution solution = new Solution();
             solution.SOL_ID = sOL_ID;
             solution.Description = description;
             solution.DateCreated = dateCreated;
+            solution.EMP_ID = eMP_ID;
+            solution.PROB_ID = pROB_ID;
             return solution;
         }
 
@@ -4349,9 +4353,9 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> EMP_ID
+        public global::System.Int32 EMP_ID
         {
             get
             {
@@ -4366,16 +4370,16 @@ namespace CRMData
                 OnEMP_IDChanged();
             }
         }
-        private Nullable<global::System.Int32> _EMP_ID;
-        partial void OnEMP_IDChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _EMP_ID;
+        partial void OnEMP_IDChanging(global::System.Int32 value);
         partial void OnEMP_IDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> PROB_ID
+        public global::System.Int32 PROB_ID
         {
             get
             {
@@ -4390,8 +4394,8 @@ namespace CRMData
                 OnPROB_IDChanged();
             }
         }
-        private Nullable<global::System.Int32> _PROB_ID;
-        partial void OnPROB_IDChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _PROB_ID;
+        partial void OnPROB_IDChanging(global::System.Int32 value);
         partial void OnPROB_IDChanged();
 
         #endregion

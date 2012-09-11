@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\AjaxControlToolkit.Binary.NET4_2\AjaxControlToolkitSampleSite\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Ext.Net">
-      <HintPath>..\CRMUI\bin\Ext.Net.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Ext.NET.Pro.2.0.0\lib\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Ext.NET.Pro.2.0.0\lib\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Ext.NET.Pro.2.0.0\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +55,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Transformer.NET">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Ext.NET.Pro.2.0.0\lib\Transformer.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BranchesBl.cs" />
