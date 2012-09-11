@@ -195,8 +195,8 @@
         <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
         <Property Name="DateCreated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="DateModified" Type="Edm.DateTime" Nullable="true" />
-        <Property Name="EMP_ID" Type="Edm.Int32" Nullable="true" />
-        <Property Name="PROB_ID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="EMP_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="PROB_ID" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="Solutions" ToRole="ClientProblemsLog" />
         <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Solutions_FK1" FromRole="Solutions" ToRole="Employees" />
         <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_Solutions_FK1" FromRole="Solutions" ToRole="Problems" />
@@ -464,7 +464,7 @@
         </ReferentialConstraint>
       </Association>
       <Association Name="Employees_Solutions_FK1">
-        <End Role="Employees" Type="CRMModel.Employee" Multiplicity="0..1" />
+        <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
         <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="*" />
         <ReferentialConstraint>
           <Principal Role="Employees">
@@ -476,7 +476,7 @@
         </ReferentialConstraint>
       </Association>
       <Association Name="Problems_Solutions_FK1">
-        <End Role="Problems" Type="CRMModel.Problem" Multiplicity="0..1" />
+        <End Role="Problems" Type="CRMModel.Problem" Multiplicity="1" />
         <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="*" />
         <ReferentialConstraint>
           <Principal Role="Problems">

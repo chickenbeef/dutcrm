@@ -137,80 +137,34 @@
     <ext:Panel ID="pnlEmailSupport" runat="server" MinHeight="615" Title="Home" TitleAlign="Center"
         Enabled="False" Visible="False">
         <LayoutConfig>
-            <ext:VBoxLayoutConfig  Align="Stretch"/>
+            <ext:TableLayoutConfig Columns="2"/>
         </LayoutConfig>
         <Items>
-            <%--LEFT PANEL--%>
-            <ext:Panel runat="server" ID="pnlLeft" Flex="1" Title="Email Problems" MinHeight="590"
-                ActiveIndex="0">
-                <LayoutConfig>
-                    <ext:VBoxLayoutConfig  Align="Stretch"/>
-                </LayoutConfig>
-                <Items>
-                    
-                </Items>
-            </ext:Panel>
-            <%--RIGHT PANEL--%>
-            <ext:Panel ID="pnlRight2" runat="server" Border="false" ColumnWidth="0.5" MinHeight="590">
-                <LayoutConfig>
-                    <ext:VBoxLayoutConfig Align="Stretch" />
-                </LayoutConfig>
-                <Items>
-                    <%--TOP RIGHT PANEL--%>
-                    <ext:Panel runat="server" ID="pnlTopRight2" Title="Create Ticket" Icon="TagBlueAdd"
-                        Height="250" BodyPadding="10">
-                        <Items>
-                            <ext:FormPanel runat="server" ID="FormPanel2" Border="false" Padding="5">
-                                <Items>
-                                    <ext:TextField runat="server" ID="txtClientId2" InputType="Hidden" />
-                                    <ext:TextField runat="server" ID="txtEmployeeId2" InputType="Hidden" />
-                                    <ext:TextField runat="server" ID="txtClientName2" FieldLabel="Client Name" AnchorHorizontal="70%" />
-                                    <ext:TextField runat="server" ID="txtEmployeeName2" FieldLabel="Employee Name" AnchorHorizontal="70%" />
-                                    <ext:TextField runat="server" ID="txtProblemId2" FieldLabel="Problem ID" AnchorHorizontal="70%" />
-                                    <ext:TextField runat="server" ID="txtSolutionId2" FieldLabel="Solution ID" AnchorHorizontal="70%" />
-                                    <ext:ComboBox runat="server" ID="cmbPriority2" FieldLabel="Priority" AnchorHorizontal="40%" />
-                                </Items>
-                                <Buttons>
-                                    <ext:Button runat="server" ID="btnCreateTicket2" Text="Create Ticket" Padding="5"
-                                        Margins="0 5 0 0" Icon="Disk">
-                                    </ext:Button>
-                                </Buttons>
-                            </ext:FormPanel>
-                        </Items>
-                    </ext:Panel>
-                    <%--BOTTOM RIGHT PANEL--%>
-                    <ext:Panel runat="server" ID="pnlBottomRight2" Title="Search For Solution" MinHeight="340"
-                        Icon="BookMagnify" Border="false">
-                        <LayoutConfig>
-                            <ext:VBoxLayoutConfig Align="Stretch" />
-                        </LayoutConfig>
-                        <Items>
-                            <ext:Panel runat="server" ID="pnlSearch2" Height="50">
-                                <LayoutConfig>
-                                    <ext:HBoxLayoutConfig Align="Middle" />
-                                </LayoutConfig>
-                                <Items>
-                                    <ext:TextField runat="server" ID="txtProblemSearch2" Width="450" FieldLabel="Description"
-                                        Margins="0 0 0 15" />
-                                    <ext:Button runat="server" ID="btnProbSearch2" Text="Search" Icon="Magnifier"
-                                        Margins="0 0 0 10">
-                                        <Listeners>
-                                            <Click Handler="App.direct.ShowSolutions();"></Click>
-                                        </Listeners>
-                                    </ext:Button>
-                                </Items>
-                            </ext:Panel>
-                            <ext:Panel runat="server" ID="pnlProblemSolution2" ActiveIndex="0" MinHeight="507">
-                                <LayoutConfig>
-                                    <ext:CardLayoutConfig  DeferredRender="True"/>
-                                </LayoutConfig>
-                                <Items>
-                                </Items>
-                            </ext:Panel>
-                        </Items>
-                    </ext:Panel>
-                </Items>
-            </ext:Panel>
+           <ext:GridPanel runat="server" ID="pnlETopLeft" Title="Email Problems Inbox" Icon="Email" Collapsible="True" CollapseDirection="Top">
+               <Store>
+                   <ext:Store runat="server" ID="streEmailProbs" PageSize="5000" Buffered="True" IgnoreExtraFields="True">
+                       <Model>
+                           <ext:Model runat="server">
+                               <Fields>
+                                   <ext:ModelField Name="From"/>
+                                   <ext:ModelField Name="Subject"/>
+                                   <ext:ModelField Name="Description"/>
+                                   <ext:ModelField Name="DateCreated"/>
+                                   <ext:ModelField Name="CLIENT_ID"/>
+                               </Fields>
+                           </ext:Model>
+                       </Model>
+                   </ext:Store>
+               </Store>
+               <ColumnModel>
+                   <Columns>
+                       <ext:RowNumbererColumn runat="server" Width="20" Sortable="False"/>
+                       <ext:Column runat="server" Text="From" Width="150" DataIndex="From"/>
+                       <ext:Column runat="server" Text="Subject" Width="300" DataIndex="Subject"/>
+                       <ext:Column runat="server" Text="Date Created" DataIndex="DateCreated"/>
+                   </Columns>
+               </ColumnModel>
+           </ext:GridPanel>
         </Items>
     </ext:Panel>
 </asp:Content>

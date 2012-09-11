@@ -307,8 +307,8 @@
           <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="DateModified" Type="date" />
-          <Property Name="EMP_ID" Type="int" />
-          <Property Name="PROB_ID" Type="int" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="PROB_ID" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'CRM.dbo.vClientProblemsLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -534,7 +534,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Employees_Solutions_FK1">
-          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="0..1" />
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="1" />
           <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -594,7 +594,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Problems_Solutions_FK1">
-          <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="0..1" />
+          <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="1" />
           <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Problems">
@@ -905,8 +905,8 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="DateCreated" Type="DateTime" Nullable="false" />
           <Property Name="DateModified" Type="DateTime" />
-          <Property Name="EMP_ID" Type="Int32" />
-          <Property Name="PROB_ID" Type="Int32" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="PROB_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="Solutions" ToRole="ClientProblemsLog" />
           <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Solutions_FK1" FromRole="Solutions" ToRole="Employees" />
           <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_Solutions_FK1" FromRole="Solutions" ToRole="Problems" />
@@ -1174,7 +1174,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Employees_Solutions_FK1">
-          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="0..1" />
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
           <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
@@ -1186,7 +1186,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Problems_Solutions_FK1">
-          <End Role="Problems" Type="CRMModel.Problem" Multiplicity="0..1" />
+          <End Role="Problems" Type="CRMModel.Problem" Multiplicity="1" />
           <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Problems">
