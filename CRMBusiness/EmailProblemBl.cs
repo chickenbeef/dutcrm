@@ -58,12 +58,13 @@ namespace CRMBusiness
         }
 
         //delete an email problem
-        public void DeleteEmailProblem(int epid)
+        public bool DeleteEmailProblem(int epid)
         {
             _crm = new CRMEntities(_uri);
             var objep = _crm.EmailProblems.Where(ep => ep.EP_ID == epid).ToList()[0]; 
             _crm.DeleteObject(objep);
             _crm.SaveChanges();
+            return true;
         }
     }
 }
