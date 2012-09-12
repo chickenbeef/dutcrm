@@ -35,7 +35,7 @@ namespace CRMUI.CallCentreManager
                         ssltype = false;
                         break;
                 }
-
+               
                Configuration config = WebConfigurationManager.OpenWebConfiguration("~/");
                 var mailsection = config.GetSectionGroup("system.net/mailSettings") as MailSettingsSectionGroup;
                 if (mailsection != null)
@@ -50,7 +50,6 @@ namespace CRMUI.CallCentreManager
                     config.Save(ConfigurationSaveMode.Modified);
 
                     ExtNet.MessageBox.Notify("Save Status", "Email Settings updated successfuly!").Show();
-
                     Disablecontrols();
                     
                 }
