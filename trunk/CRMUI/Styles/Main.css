@@ -167,3 +167,19 @@ h5, h6
     width: 100%;
     height: 65px;
 }
+
+/*Colour form each priority*/
+.high {
+    color: red;
+    font-weight: bold;
+}
+
+.medium {
+    color: orangered;
+    font-weight: bold;
+}
+
+.low {
+    color: orange;
+    font-weight: bold;
+}

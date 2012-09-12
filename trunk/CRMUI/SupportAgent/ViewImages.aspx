@@ -3,7 +3,7 @@
     <ext:ResourceManager ID="ResourceManager1" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cplBody" runat="server">
-    <ext:Panel runat="server" ID="pnlImages" Title="Images" Frame="True" MinHeight="638">
+    <ext:Panel runat="server" ID="pnlImages" Title="Images" Frame="True" Width="800" Height="600">
             <LayoutConfig>
                 <ext:VBoxLayoutConfig Align="Center"/>
             </LayoutConfig>
