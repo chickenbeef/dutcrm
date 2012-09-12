@@ -166,15 +166,6 @@ namespace CRMUI.RelationshipManager {
         protected global::Ext.Net.Column txtUsername;
         
         /// <summary>
-        /// txtDateOfBirth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.DateColumn txtDateOfBirth;
-        
-        /// <summary>
         /// txtTelephone control.
         /// </summary>
         /// <remarks>
@@ -209,6 +200,24 @@ namespace CRMUI.RelationshipManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Panel pnlConfirm;
+        
+        /// <summary>
+        /// txtClientname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtClientname;
+        
+        /// <summary>
+        /// txtEmpName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtEmpName;
         
         /// <summary>
         /// txtClientId control.
