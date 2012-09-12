@@ -27,7 +27,7 @@ namespace CRMUI.Login
 
                      if (Roles.IsUserInRole(txtUserName.Text, "Relationship Manager"))
                      {
-                         Response.Redirect("~/RelationshipManager/Home.aspx");
+                         Response.Redirect("~/RelationshipManager/Home.aspx=" + txtUserName.Text);
 
                      }
 
