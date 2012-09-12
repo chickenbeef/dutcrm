@@ -23,7 +23,7 @@ namespace CRMUI.CallCentreManager
         {
             try
             {
-                Validate();
+                ValidateInputs();
                 bool ssltype = false;
 
                 switch (chkEnableSSL.Checked)
@@ -51,7 +51,7 @@ namespace CRMUI.CallCentreManager
 
                     ExtNet.MessageBox.Notify("Save Status", "Email Settings updated successfuly!").Show();
 
-                    disablecontrols();
+                    Disablecontrols();
                     
                 }
                 else
@@ -67,7 +67,7 @@ namespace CRMUI.CallCentreManager
             }
         }
 
-        protected void Validate()
+        protected void ValidateInputs()
         {
             if(txtServer.Text == null)
             {
@@ -100,7 +100,7 @@ namespace CRMUI.CallCentreManager
             }
         }
 
-        protected void disablecontrols()
+        protected void Disablecontrols()
         {
             txtServer.ReadOnly = true;
             txtUsername.ReadOnly = true;
