@@ -18,10 +18,10 @@ namespace CRMUI.SupportAgent
 
 			// get empid
 
-			//string nm =  Membership.GetUser().UserName.ToString(CultureInfo.InvariantCulture);
-		    //var em = new CRMBusiness.EmployeeBl().GetEmployeeByName(nm);		
-		    //txtEmpId.Text = em[0].EMP_ID.ToString(CultureInfo.InvariantCulture);
-            //int empid = em[0].EMP_ID;
+			string nm =  Membership.GetUser().UserName.ToString(CultureInfo.InvariantCulture);
+		  var em = new CRMBusiness.EmployeeBl().GetEmployeeByName(nm);		
+		  txtEmpId.Text = em[0].EMP_ID.ToString(CultureInfo.InvariantCulture);
+      int empid = em[0].EMP_ID;
 
 
 
