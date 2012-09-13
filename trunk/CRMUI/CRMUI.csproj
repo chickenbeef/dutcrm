@@ -25,20 +25,6 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>
       <Objects>
-        <ObjectGroup Name="CRMEntities-Deployment" Order="1">
-          <Destination Path="" />
-          <Object Type="dbFullSql">
-            <PreSource Path="Data Source=.\SQLExpress%3bInitial Catalog=CRM%3bPersist Security Info=True%3bUser ID=sa%3bPassword=Server01" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Debug\AutoScripts\CRMEntities-Deployment_SchemaOnly.sql" Transacted="True" />
-          </Object>
-        </ObjectGroup>
-        <ObjectGroup Name="CRM-Deployment" Order="2">
-          <Destination Path="" />
-          <Object Type="dbFullSql">
-            <PreSource Path="Data Source=.\SQLExress%3bInitial Catalog=CRM%3bPersist Security Info=True%3bUser ID=sa%3bPassword=Server01" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Debug\AutoScripts\CRM-Deployment_SchemaOnly.sql" Transacted="True" />
-          </Object>
-        </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
   </PropertyGroup>
@@ -49,6 +35,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <DeployIisAppPath>/CRMUI_deploy</DeployIisAppPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
@@ -116,7 +107,6 @@
     <Content Include="SupportAgent\UpdateTicket.aspx" />
     <Content Include="SupportAgent\SolveTicket.aspx" />
     <Content Include="SupportAgent\UpdateSolutionReference.aspx" />
-    <Content Include="SupportAgent\ViewImages.aspx" />
     <Content Include="User Controls\ProblemsPerAgentUserControl.ascx" />
     <Content Include="User Controls\SalesDayUserControl.ascx" />
     <Content Include="User Controls\SalesMonthUserControl.ascx" />
@@ -299,13 +289,6 @@
     </Compile>
     <Compile Include="SupportAgent\UpdateSolutionReference.aspx.designer.cs">
       <DependentUpon>UpdateSolutionReference.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SupportAgent\ViewImages.aspx.cs">
-      <DependentUpon>ViewImages.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SupportAgent\ViewImages.aspx.designer.cs">
-      <DependentUpon>ViewImages.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Controls\ProblemsPerAgentUserControl.ascx.cs">
       <DependentUpon>ProblemsPerAgentUserControl.ascx</DependentUpon>

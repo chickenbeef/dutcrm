@@ -187,25 +187,25 @@
                                 </ext:CommandColumn>
                             </Columns>
                         </ColumnModel>
+                        <DirectEvents>
+                            <Select OnEvent="EmailProblemSelected"></Select>
+                        </DirectEvents>
                     </ext:GridPanel>
                     <%--TOP RIGHT FORMPANEL--%>
                     <ext:FormPanel runat="server" ID="pnlEmailDetails" Title="Email Details" Icon="EmailOpen"
-                        BodyPadding="10" AutoScroll="True" Flex="3">
+                        BodyPadding="10" AutoScroll="True" Flex="3" ButtonAlign="Left" Border="false">
                         <Items>
-                            <ext:Hidden runat="server" ID="hClientId"/>
-                            <ext:Hidden runat="server" ID="hEPId" />
+                            <ext:Hidden runat="server" ID="hEClientId"/>
+                            <ext:Hidden runat="server" ID="hEPId"/>
                             <ext:Label runat="server" ID="lblSubject" />
                             <ext:Label runat="server" ID="lblFrom" />
                             <ext:Label runat="server" ID="lblDate" />
-                            <ext:Label runat="server" ID="lblEmailDesc" />
-                            <ext:Button runat="server" ID="btnEViewImages" Text="View Images" Icon="Images" Visible="False"
-                                Disabled="True">
-                                <Listeners>
-                                    <Click Handler="#{wndImageViewer}.show()">
-                                    </Click>
-                                </Listeners>
-                            </ext:Button>
+                            <ext:Label runat="server" ID="lblEmailDesc" />          
                         </Items>
+                        <Buttons>
+                            <ext:Button runat="server" ID="btnEViewImages" Text="View Images" Icon="Images" Disabled="True" OnDirectClick="BtnViewImagesClick">
+                            </ext:Button>
+                        </Buttons>
                     </ext:FormPanel>
                 </Items>
             </ext:Container>
@@ -236,14 +236,15 @@
                                         </Listeners>
                                     </ext:TextField>
                                     <ext:Button runat="server" ID="btnESearchSolutions" Text="Search" Icon="Magnifier"
-                                        Margins="0 0 0 10" Padding="2" Disabled="True">
+                                        Margins="0 0 0 10" Padding="2" Disabled="True" OnDirectClick="BtnESearchSolClick">
+                          
                                     </ext:Button>
                                 </Items>
                             </ext:Container>
                             <%--BOTTOM LEFT GRID PANEL--%>
                             <ext:GridPanel runat="server" ID="gpSolutions" Flex="1">
                                 <Store>
-                                    <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True">
+                                    <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
                                         <Model>
                                             <ext:Model ID="Model2" runat="server">
                                                 <Fields>
@@ -251,6 +252,7 @@
                                                     <ext:ModelField Name="Description" />
                                                     <ext:ModelField Name="DateCreated" />
                                                     <ext:ModelField Name="DateModified" />
+                                                    <ext:ModelField Name="EMP_ID"/>
                                                     <ext:ModelField Name="PROB_ID" />
                                                 </Fields>
                                             </ext:Model>
@@ -272,24 +274,34 @@
                                             DataIndex="PROB_ID" />
                                     </Columns>
                                 </ColumnModel>
+                                <DirectEvents>
+                                    <select OnEvent="GpESolutionSelected">
+                                        <ExtraParams>
+                                            <ext:Parameter Name="record" Value="record.data" Mode="Raw"/>
+                                        </ExtraParams>
+                                    </select>
+                                </DirectEvents>
                             </ext:GridPanel>
                         </Items>
                     </ext:Panel>
                     <%--BOTTOM RIGHT PANEL--%>
-                    <ext:Panel runat="server" ID="pnlESolutionDetails" Title="Solution Details" Icon="FolderLightbulb"
-                        Flex="3" Layout="VBoxLayout" BodyPadding="10" AutoScroll="True">
+                    <ext:FormPanel runat="server" ID="pnlESolutionDetails" Title="Solution Details" Icon="FolderLightbulb"
+                        Flex="3" BodyPadding="10" AutoScroll="True">
                         <Items>
                             <ext:Hidden runat="server" ID="hEProbId" />
                             <ext:Hidden runat="server" ID="hESolId" />
-                            <ext:Label runat="server" ID="lblEClientFullName" />
+                            <ext:Label runat="server" ID="lblEEmployeeFullName" />
+                            <ext:Label runat="server" Html="<br/>"/>
                             <ext:Label runat="server" ID="lblEDateCreated" />
                             <ext:Label runat="server" ID="lblEDateModified" />
-                            <ext:FieldSet runat="server" Title="Problem Description" Visible="False">
+                            <ext:Label ID="Label2" runat="server" Html="<br/><hr/><br/>"/>
+                            <ext:FieldSet runat="server" ID="fsEProbDesc" Title="Problem Description" Visible="False">
                                 <Items>
                                     <ext:Label runat="server" ID="lblEProbDesc" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:FieldSet runat="server" Title="Solution Description" Visible="False">
+                            <ext:Label ID="Label1" runat="server" Html="<br/>"/>
+                            <ext:FieldSet runat="server" ID="fsESolDesc" Title="Solution Description" Visible="False">
                                 <Items>
                                     <ext:Label runat="server" ID="lblESolDesc" />
                                 </Items>
@@ -310,6 +322,9 @@
                                     <ext:ToolbarSpacer runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketSol" Text="Create Ticket With Solution"
                                         Icon="Lightbulb" Disabled="True">
+                                        <DirectEvents>
+                                            <Click OnEvent="BtnECreateTicketSolClick"></Click>
+                                        </DirectEvents>
                                     </ext:Button>
                                     <ext:ToolbarSeparator runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketNoSol" Text="Create Ticket Without Solution"
@@ -318,7 +333,7 @@
                                 </Items>
                             </ext:Toolbar>
                         </BottomBar>
-                    </ext:Panel>
+                    </ext:FormPanel>
                 </Items>
             </ext:Container>
         </Items>
@@ -346,9 +361,6 @@
     </ext:Window>
     <%--POPUP VIEW IMAGES--%>
     <ext:Window runat="server" ID="wndImageViewer" Title="View Images" Icon="EmailOpenImage"
-        Width="800" Height="600" AutoScroll="True" Hidden="True">
-        <Loader runat="server" Url="ViewImages.aspx?epid=3" Mode="Frame">
-           <LoadMask ShowMask="True"></LoadMask>
-        </Loader>
+        MinWidth="800" MinHeight="600" AutoScroll="True" Hidden="True" Maximizable="true">
     </ext:Window>
 </asp:Content>
