@@ -65,37 +65,30 @@
                                 </Store>
                                 <ColumnModel>
                                     <Columns>
-                                        <ext:Column runat="server" ID="txtPROB_ID" Text="PROB_ID" DataIndex="PROB_ID" Width = 72 />
-                                        <ext:Column runat="server" ID="txtDescription" Text="Description" DataIndex="Description" Width = 550 />
+                                        <ext:Column runat="server" ID="txtPROB_ID" Text="PROB_ID" DataIndex="PROB_ID" Width = 60 />
+                                        <ext:Column runat="server" ID="txtDescription" Text="Description" DataIndex="Description" Width = 425 />
                                         <ext:DateColumn runat="server" ID="txtDateCreated" Text="Date Created" Format = "dd MMM yyyy" DataIndex="DateCreated" />
-                                        <ext:Column runat="server" ID="EMPID" Text="EMP_ID" DataIndex="EMP_ID" Width = 60 />
+                                        <ext:Column runat="server" ID="EMPID" Text="EMP_ID" DataIndex="EMP_ID" Width = 55 />
                                     </Columns>
                                 </ColumnModel>
 
-                                <Buttons>
-																
-									 <ext:Button runat="server" ID="btnAccept" Text="Accept" Padding="5" Icon="ArrowEw" OnDirectClick = "PassValue">
-																		  
-											<DirectEvents>
-																		 	
-													<Click onEvent = "PassValue">
-															<ExtraParams>
-																					
-																 <ext:Parameter Name = "Values" Value = "Ext.encode(#{gpProblems}.getRowsValues({selectedOnly:true}))" Mode = "Raw" />
-
-															</ExtraParams>
-
-													 </Click>
-
-											</DirectEvents>
-
-									</ext:Button>
-																
-
-                                </Buttons>
 																
 										<SelectionModel>
 											<ext:RowSelectionModel ID="RowSelectionModel2" runat="server"  Mode = "Single" >
+												
+												    <DirectEvents>
+                                                     
+                                  <Select OnEvent="PassValue">
+                                                    
+                                        <ExtraParams>
+																					
+													                     <ext:Parameter Name = "Values" Value = "Ext.encode(#{gpProblems}.getRowsValues({selectedOnly:true}))" Mode = "Raw" />
+
+													              </ExtraParams>
+                                                            
+                                    </Select>
+																		 	
+							              </DirectEvents>
 															
 										</ext:RowSelectionModel>
 
@@ -129,15 +122,18 @@
                                     </ext:Model>
                                </Model>
                            </ext:Store>
-
 											</Store>
+											
+											  <Listeners>
+                            <Change Handler = "#{newSolDesc}.setValue();"></Change>
+                        </Listeners>
 											
 										</ext:ComboBox>
 
 
                     <ext:Label ID="Label1" runat="server" Text="Description:"  Margins="20 0 10 30"></ext:Label>
-                    <ext:HtmlEditor ID="newSolDesc" runat="server" Margins="10 0 10 30" Width="610" Height="250" />
-                    <ext:Button runat="server" ID="btnUpdate" Text="Update Solution" Padding="5" Margins="0 0 0 530" Icon="PageSave"  OnClick = "UpdateSolution" AutoPostBack = "True"/>
+                    <ext:HtmlEditor ID="newSolDesc" runat="server" Margins="10 0 10 30" Width="500" Height="250" />
+                    <ext:Button runat="server" ID="btnUpdate" Text="Update Solution" Padding="5" Margins="0 0 0 410" Icon="PageSave"  OnClick = "UpdateSolution" AutoPostBack = "True"/>
                 </Items>
             </ext:Panel>
             
