@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using OpenPop.Mime;
-using OpenPop.Pop3;
+﻿using System.Collections.Generic;
 using System.Net.Mail;
-using System.Configuration;
 
 namespace CRMBusiness
 {
