@@ -73,6 +73,12 @@ namespace CRMBusiness
             return _crm.vClients.Where(x => x.UserName == cUserName).ToList();
         }
 
+        //get client by client id
+        public vClient GetClientByClientId(int cid)
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.vClients.Where(x => x.CLIENT_ID == cid).ToList()[0];
+        }
 
         //get all clients
         public List<vClient> GetAllClients()
