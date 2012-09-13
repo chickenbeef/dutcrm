@@ -105,27 +105,23 @@
                                         <ext:Column runat="server" ID="txtCell" Text="Cell" DataIndex="Cell" Width = 80 />
                                     </Columns>
                                 </ColumnModel>
-                                <Buttons>
-                                	 <ext:Button runat="server" ID= "btnAccept" Text="Accept" Padding="5" Icon="ArrowEw">
-																		
-								                  <DirectEvents>
+																
+										<SelectionModel>
+											<ext:RowSelectionModel runat="server"  Mode = "Single"  >
+												
+												          <DirectEvents>
 																		 	
-										                 <Click onEvent = "PassValue">
+										                 <Select onEvent = "PassValue">
 														           <ExtraParams>
 																					
 													               <ext:Parameter Name = "Values" Value = "Ext.encode(#{gpClient}.getRowsValues({selectedOnly:true}))" Mode = "Raw" />
 
 													             </ExtraParams>
-										                </Click>
+										                </Select>
 
 							                    </DirectEvents>
- 						                	     
-                                    </ext:Button> 																								
-																																											
-                                </Buttons>
-																
-										<SelectionModel>
-											<ext:RowSelectionModel runat="server"  Mode = "Single"  ></ext:RowSelectionModel>
+												
+											</ext:RowSelectionModel>
 
 										</SelectionModel>
             

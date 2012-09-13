@@ -184,15 +184,6 @@ namespace CRMUI.RelationshipManager {
         protected global::Ext.Net.Column txtCell;
         
         /// <summary>
-        /// btnAccept control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnAccept;
-        
-        /// <summary>
         /// pnlConfirm control.
         /// </summary>
         /// <remarks>
