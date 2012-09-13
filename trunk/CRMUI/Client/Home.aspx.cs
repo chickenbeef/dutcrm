@@ -96,9 +96,20 @@ namespace CRMUI.Client
             try
             {
                 var objC = new ClientBl();
-                
-                    
-               if( objC.UpdateClient(Convert.ToInt32(txtClientID.Text), txtName.Text, txtSurname.Text, Convert.ToDateTime(dfDob.Text), txtTel.Text, txtCell.Text, txtFax.Text, DateTime.Now))
+               
+               if(txtName.Text=="")
+               {
+                   txtName.Focus();
+               }
+               else if(txtSurname.Text=="")
+               {
+                   txtSurname.Focus();
+               }
+               else if(dfDob.Text=="")
+               {
+                   dfDob.Focus();
+               }
+               else if( objC.UpdateClient(Convert.ToInt32(txtClientID.Text), txtName.Text, txtSurname.Text, Convert.ToDateTime(dfDob.Text), txtTel.Text, txtCell.Text, txtFax.Text, DateTime.Now))
                {
                    
                    txtName.ReadOnly = true;
@@ -121,6 +132,7 @@ namespace CRMUI.Client
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }
+       
        
         }
        
