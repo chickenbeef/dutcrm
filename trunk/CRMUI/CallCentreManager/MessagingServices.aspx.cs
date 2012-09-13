@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CRMBusiness;
 using Ext.Net;
-using System.Web.Script.Serialization;
-using Newtonsoft.Json;
 
 namespace CRMUI.CallCentreManager
 {
@@ -39,11 +31,9 @@ namespace CRMUI.CallCentreManager
                 
                 string val = e.ExtraParams["Values"];
 
-                Dictionary<string, string> [] clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
+                var clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
 
-                List<string> emails;
-
-                emails = new List<string>();
+                List<string> emails = new List<string>();
 
                 foreach (Dictionary<string, string> row in clients)
                 {
@@ -57,12 +47,11 @@ namespace CRMUI.CallCentreManager
                     }
                  }
 
-                //add emails to
-                foreach (var email in emails)
-                {
-                    editrPara.Html += email.ToString(CultureInfo.InvariantCulture);
-                    editrPara.Html += "</br>";
-                }
+                //List<string> custommail = new List<string>();
+                //custommail.Add("nnn.williamson@gmail.com");
+                //custommail.Add("ruvz21@gmail.com");
+
+               Composemailmessage(emails);
                 
             }
             catch (Exception ex)
@@ -71,6 +60,29 @@ namespace CRMUI.CallCentreManager
             }
         }
 
-      
+        protected void Composemailmessage(List<string> mailadresses )
+        {
+            try
+            {
+                //CODE TO ADD EMAILS AND GENERATE EMAIL
+                var objmailmessage = new EmailBl
+                                             {
+                                                Bcc = mailadresses, Subject = cmbComTemplate.SelectedItem.Text, Body= editrPara.Text
+                                             };
+
+                if (objmailmessage.SendEmail())
+                {
+                    ExtNet.MessageBox.Notify(" Mail Message", "Message successfully sent to recipients").Show();
+                }
+                else
+                {
+                    ExtNet.MessageBox.Notify(" Mail Message Error", objmailmessage.Error).Show();
+                }
+            }
+            catch(Exception msgex)
+            {
+                ExtNet.MessageBox.Alert("Error", msgex.Message).Show();
+            }
+        }
     }
 }

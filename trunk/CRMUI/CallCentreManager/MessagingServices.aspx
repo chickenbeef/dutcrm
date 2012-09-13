@@ -85,9 +85,12 @@
                                         
                                     </Columns>
                                 </ColumnModel>
+                                
                                 <SelectionModel>
                                     <ext:RowSelectionModel runat="server" Mode="Multi"/>
                                 </SelectionModel>
+                                
+                               
                                 <Buttons>
                                     <ext:Button runat="server" Margins="2 300 2 5" ID="btnSend" Text="Send" Padding="5" Icon="ArrowEw" Flex="1" MaxWidth="80">
                                         <DirectEvents>
