@@ -148,15 +148,6 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Column EMPID;
         
         /// <summary>
-        /// btnAccept control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnAccept;
-        
-        /// <summary>
         /// RowSelectionModel2 control.
         /// </summary>
         /// <remarks>

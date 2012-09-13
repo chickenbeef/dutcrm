@@ -17,17 +17,13 @@ namespace CRMUI.SupportAgent
 		{
 
 			// get empid
-
 			string nm =  Membership.GetUser().UserName.ToString(CultureInfo.InvariantCulture);
 		  var em = new CRMBusiness.EmployeeBl().GetEmployeeByName(nm);		
 		  txtEmpId.Text = em[0].EMP_ID.ToString(CultureInfo.InvariantCulture);
-      int empid = em[0].EMP_ID;
 
 
-
-			//string nm = (string) (Session["UserName"]);
- 
-			btnAccept.Disabled = true;
+			btnUpdate.Disabled = true;
+			
 		}
 
 
@@ -50,8 +46,6 @@ namespace CRMUI.SupportAgent
 
 				streProblems.DataSource = prob;
 				streProblems.DataBind();
-
-				btnAccept.Disabled = false;
 
 			}
 
@@ -90,7 +84,7 @@ namespace CRMUI.SupportAgent
 
 
 				 int probid = Convert.ToInt32(txtprobid.Text);
-			     var sol = new CRMBusiness.SolutionBl().GetSolutions(probid);
+			   var sol = new CRMBusiness.SolutionBl().GetSolutions(probid);
 
 
 				strSolutions.DataSource = sol;
@@ -101,7 +95,7 @@ namespace CRMUI.SupportAgent
 				sol[0].Description = cmbSolutions.Value.ToString();
 
 
-				btnAccept.Disabled = false;
+				btnUpdate.Disabled = false;
 
 			}
 
@@ -119,6 +113,7 @@ namespace CRMUI.SupportAgent
 		//pass selected description to textarea
 		protected void PassDescription(object sender, DirectEventArgs e)
 		{
+
 			try
 			{
 
@@ -151,12 +146,6 @@ namespace CRMUI.SupportAgent
                 ExtNet.Msg.Notify("Update", "Solution Added").Show();
 
 
-                txtProbDesc.Text = string.Empty;
-                txtprobid.Text = string.Empty;
-                txtEmpId.Text = string.Empty;
-                newSolDesc.Text = string.Empty;
-
-
             }
 
             catch (Exception ex)
@@ -165,6 +154,15 @@ namespace CRMUI.SupportAgent
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
 
             }
+
+
+						txtProbDesc.Text = string.Empty;
+						txtprobid.Text = string.Empty;
+						txtEmpId.Text = string.Empty;
+						newSolDesc.Text = string.Empty;
+
+
+						btnUpdate.Disabled = true;
 
 	    }
 	}
