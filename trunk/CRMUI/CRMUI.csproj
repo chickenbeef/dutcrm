@@ -37,9 +37,25 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>
       <Objects>
+        <ObjectGroup Name="CRMEntities-Deployment" Order="1" xmlns="">
+          <Destination Path="Data Source=itstudents.dut.ac.za%3bInitial Catalog=201201%3bPersist Security Info=True%3bUser ID=201201%3bPassword=Dutcrm12" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLExpress%3bInitial Catalog=CRM%3bPersist Security Info=True%3bUser ID=sa%3bPassword=Server01" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\CRMEntities-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="CRM-Deployment" Order="2" xmlns="">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLExpress%3bInitial Catalog=CRM%3bPersist Security Info=True%3bUser ID=sa%3bPassword=Server01" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\CRM-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
-    <DeployIisAppPath>/CRMUI_deploy</DeployIisAppPath>
+    <DeployIisAppPath>LawPropertyCRM/CRMUI_deploy</DeployIisAppPath>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
