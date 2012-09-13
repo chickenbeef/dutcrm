@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCMBody" runat="server">
     <ext:Panel ID="pnlMain" runat="server" Height="615" Title="Email Support" Layout="hboxLayout">
         <Items>
-            <ext:Panel ID="pnlSub1" Height="614" runat="server" Layout="vboxLayout" Flex="1"
+            <ext:Panel ID="pnlSub1" Height="614" runat="server" Layout="vboxLayout" Flex="2"
                 Border="false">
                 <Items>
                     <ext:Panel ID="pnlDetails" runat="server" Height="314" Flex="2" Layout="vboxLayout"
@@ -19,7 +19,7 @@
                                 ReadOnly="True" />
                             <ext:TextField ID="txtSubject" runat="server" FieldLabel="Subject" Margins="20 0 10 30" Width="600" Grow="True" />
                             <ext:Label ID="Label1" runat="server" Text="Description:" Margins="10 0 0 30" />
-                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="200" AutoFocus="True" />
+                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="190" AutoFocus="True" />
                         </Items>
                     </ext:Panel>
                     <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1"
