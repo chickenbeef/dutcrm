@@ -17,7 +17,6 @@ namespace CRMUI.RelationshipManager
         protected void Page_Load(object sender, EventArgs e)
         {
 
-			      btnAccept.Disabled = true;
 			      btnConfirm.Disabled = true;
 
 
@@ -70,7 +69,6 @@ namespace CRMUI.RelationshipManager
 
                 streClient.DataBind();
 
-            	btnAccept.Disabled = false;
 
             }
 
@@ -108,7 +106,6 @@ namespace CRMUI.RelationshipManager
                streClient.DataBind();
 
 
-							 btnAccept.Disabled = false;
 
             }
 
