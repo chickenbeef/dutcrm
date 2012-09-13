@@ -29,7 +29,7 @@
                         <Items>
                             <ext:Label runat="server" ID="lblpriorty" Text="Set escalation for unsolved tickets per priority" Margins="10 0 10 0"/> 
 
-                                <ext:ComboBox ID="cmbPriorities" runat="server"  FieldLabel="Priorityriority to update" Margins="20 0 10 0"
+                                <ext:ComboBox ID="cmbPriorities" runat="server"  FieldLabel="Priority to update" Margins="20 0 10 0"
                                     DisplayField="Priority" ValueField="Duration" Editable="False">
                                    <Store>
                                     <ext:Store ID="strEscalation" runat="server">
