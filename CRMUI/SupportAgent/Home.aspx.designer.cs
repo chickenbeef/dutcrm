@@ -436,13 +436,13 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.FormPanel pnlEmailDetails;
         
         /// <summary>
-        /// hClientId control.
+        /// hEClientId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Hidden hClientId;
+        protected global::Ext.Net.Hidden hEClientId;
         
         /// <summary>
         /// hEPId control.
@@ -604,7 +604,7 @@ namespace CRMUI.SupportAgent {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel pnlESolutionDetails;
+        protected global::Ext.Net.FormPanel pnlESolutionDetails;
         
         /// <summary>
         /// hEProbId control.
@@ -625,13 +625,13 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Hidden hESolId;
         
         /// <summary>
-        /// lblEClientFullName control.
+        /// lblEEmployeeFullName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Label lblEClientFullName;
+        protected global::Ext.Net.Label lblEEmployeeFullName;
         
         /// <summary>
         /// lblEDateCreated control.
@@ -652,6 +652,24 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Label lblEDateModified;
         
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label Label2;
+        
+        /// <summary>
+        /// fsEProbDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.FieldSet fsEProbDesc;
+        
+        /// <summary>
         /// lblEProbDesc control.
         /// </summary>
         /// <remarks>
@@ -659,6 +677,24 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Label lblEProbDesc;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label Label1;
+        
+        /// <summary>
+        /// fsESolDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.FieldSet fsESolDesc;
         
         /// <summary>
         /// lblESolDesc control.
