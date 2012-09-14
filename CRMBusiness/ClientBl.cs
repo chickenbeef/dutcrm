@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using CRMBusiness.CRM;
 
@@ -9,7 +10,7 @@ namespace CRMBusiness
     {
         
         private CRMEntities _crm    ;
-        private readonly Uri _uri = new Uri("http://localhost:1677/CRMService.svc");
+        private readonly Uri _uri = new Uri(ConfigurationManager.AppSettings["WCFUri"]);
 
 
         //methods

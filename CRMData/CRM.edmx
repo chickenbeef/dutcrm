@@ -235,7 +235,7 @@
           <Property Name="From" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
-          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
           <Property Name="Attended" Type="bit" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
           <Property Name="EMP_ID" Type="int" />
@@ -268,7 +268,7 @@
           </Key>
           <Property Name="IMG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ImageFile" Type="varbinary(max)" Nullable="false" />
-          <Property Name="EP_ID" Type="int" Nullable="false" />
+          <Property Name="EP_ID" Type="int" />
           <Property Name="CPR_ID" Type="int" />
         </EntityType>
         <EntityType Name="Notes">
@@ -462,7 +462,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="EmailProblems_Images_FK1">
-          <End Role="EmailProblems" Type="CRMModel.Store.EmailProblems" Multiplicity="1" />
+          <End Role="EmailProblems" Type="CRMModel.Store.EmailProblems" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Images" Type="CRMModel.Store.Images" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmailProblems">

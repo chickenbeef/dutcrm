@@ -328,6 +328,42 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Panel pnlBottomRight;
         
         /// <summary>
+        /// streESolutions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store streESolutions;
+        
+        /// <summary>
+        /// mdlESolutions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlESolutions;
+        
+        /// <summary>
+        /// streEProblems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store streEProblems;
+        
+        /// <summary>
+        /// mdlEProblems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlEProblems;
+        
+        /// <summary>
         /// pnlEmailSupport control.
         /// </summary>
         /// <remarks>
@@ -526,24 +562,6 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.GridPanel gpSolutions;
         
         /// <summary>
-        /// streESolutions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Store streESolutions;
-        
-        /// <summary>
-        /// Model2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Model Model2;
-        
-        /// <summary>
         /// RowNumbererColumn2 control.
         /// </summary>
         /// <remarks>
@@ -553,49 +571,49 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.RowNumbererColumn RowNumbererColumn2;
         
         /// <summary>
-        /// DateColumn2 control.
+        /// clmEDateCreated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.DateColumn DateColumn2;
+        protected global::Ext.Net.DateColumn clmEDateCreated;
         
         /// <summary>
-        /// DateColumn3 control.
+        /// clmEModified control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.DateColumn DateColumn3;
+        protected global::Ext.Net.DateColumn clmEModified;
         
         /// <summary>
-        /// Column6 control.
+        /// clmESolution control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Column Column6;
+        protected global::Ext.Net.Column clmESolution;
         
         /// <summary>
-        /// Column7 control.
+        /// clmESolId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Column Column7;
+        protected global::Ext.Net.Column clmESolId;
         
         /// <summary>
-        /// Column8 control.
+        /// clmEProbId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Column Column8;
+        protected global::Ext.Net.Column clmEProbId;
         
         /// <summary>
         /// pnlESolutionDetails control.

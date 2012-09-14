@@ -15,10 +15,10 @@
                 Border="False" Frame="True">
                 <Items>
                     <ext:TextField ID="txtUserName" runat="server" FieldLabel="Username" Margins="40 0 5 30"
-                        Width="300" AllowBlank="False" BlankText="Please enter your username" />
-                    <ext:TextField ID="txtPassword" runat="server" FieldLabel="Password" Margins="5 0 0 30"
+                        Width="300" AllowBlank="False" BlankText="Please enter your username" MsgTarget="Side" />
+                    <ext:TextField ID="txtPassword" runat="server" FieldLabel="Password" Margins="5 0 0 30" MsgTarget="Side"
                         Width="300" InputType="Password" AllowBlank="False" BlankText="Please enter your password" />
-                    <ext:Label ID="lblError" runat="server" Margins="5 0 5 30" StyleSpec="color:red" />
+                    <ext:Label ID="lblError" runat="server" Margins="5 0 5 30" StyleSpec="color:red"/>
                     <ext:Button ID="btnSignIn" runat="server" Text="Sign In" Padding="5" Margins="5 0 0 135"
                         Icon="ComputerConnect" OnDirectClick="BtnSignInClick" />
                     <ext:HyperLink ID="hlForgotPassword" runat="server" Text="Forgot your password?"

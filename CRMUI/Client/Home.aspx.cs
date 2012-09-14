@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Web.Security;
 using System.Web.UI;
 using CRMBusiness;
 using Ext.Net;
@@ -12,7 +13,7 @@ namespace CRMUI.Client
         {
             try
             {
-                string userName = Request.QueryString["UserName"];
+                string userName = Membership.GetUser().UserName;
                 Session["UserName"] = userName;
                 var objCl = new ClientBl().GetClientUserName(userName);
                  
