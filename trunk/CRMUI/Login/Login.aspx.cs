@@ -21,14 +21,13 @@ namespace CRMUI.Login
 
                      if (Roles.IsUserInRole(txtUserName.Text, "Client"))
                      {
-                         Response.Redirect("~/Client/Home.aspx?UserName=" + txtUserName.Text);
+                         Response.Redirect("~/Client/Home.aspx");
 
                      }
 
                      if (Roles.IsUserInRole(txtUserName.Text, "Relationship Manager"))
                      {
-                         Response.Redirect("~/RelationshipManager/Home.aspx?UserName=" + txtUserName.Text);
-
+                         Response.Redirect("~/RelationshipManager/Home.aspx");
                      }
 
                      if (Roles.IsUserInRole(txtUserName.Text, "Sales Manager"))

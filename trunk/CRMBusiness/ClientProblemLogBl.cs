@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using CRMBusiness.CRM;
 
@@ -12,7 +13,7 @@ namespace CRMBusiness
         #region variables
 
         private CRMEntities _crm;
-        private readonly Uri _uri = new Uri("http://localhost:1677/CRMService.svc");
+        private readonly Uri _uri = new Uri(ConfigurationManager.AppSettings["WCFUri"]);
 
         #endregion
 
@@ -90,6 +91,12 @@ namespace CRMBusiness
             _crm.UpdateObject(objCpl);
             _crm.SaveChanges();
             return true;
+        }
+
+        public int GetReferenceNumber()
+        {
+            _crm = new CRMEntities(_uri);
+            return _crm.vClientProblemsLogs.Max(x => x.CPR_ID);
         }
 
         #endregion

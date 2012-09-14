@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using CRMBusiness.CRM; 
 
 
@@ -8,7 +9,7 @@ namespace CRMBusiness
 	{
 
 		private CRMEntities _crm;
-		private readonly Uri _uri = new Uri("http://localhost:1677/CRMService.svc");
+        private readonly Uri _uri = new Uri(ConfigurationManager.AppSettings["WCFUri"]);
 
 		public bool SaveSale(DateTime datecreated, int cid, int eid)
 		{

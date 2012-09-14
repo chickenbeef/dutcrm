@@ -34,10 +34,7 @@
                 </Items>
             </ext:Panel>
             <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="200 0 10 0" Border="false">
-                <Content>
-                    <iframe name="ifUploadImg" height="250" width="400" seamless="seamless" src="upload.aspx">
-                    </iframe>
-                </Content>
+                <Loader runat="server" Url="upload.aspx" Mode="Frame"/>
             </ext:Panel>
         </Items>
     </ext:Panel>

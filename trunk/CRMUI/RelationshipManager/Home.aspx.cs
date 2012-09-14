@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CRMBusiness;
@@ -12,64 +13,62 @@ namespace CRMUI.RelationshipManager
 {
     public partial class Home : Page
     {
-   
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
 			      btnConfirm.Disabled = true;
 
+            try
+            {
 
-        	try
-        	{
+                txtEmpName.Text = Membership.GetUser().UserName;
 
-						string userName = Request.QueryString["UserName"];
-        		txtEmpName.Text = userName;
- 
 
-						var em = new EmployeeBl().GetEmployee(userName);
+                var em = new EmployeeBl().GetEmployee(txtEmpName.Text);
 
-						if (!IsPostBack)
-						{
-			
-							txtEmpId.Text = em.EMP_ID.ToString(CultureInfo.InvariantCulture);
+                if (!IsPostBack)
+                {
 
-						}
+                    txtEmpId.Text = em.EMP_ID.ToString(CultureInfo.InvariantCulture);
 
-        	}
+                }
 
-        	catch (Exception ex)
-        	{
+            }
 
-						ExtNet.Msg.Alert("Error", ex.Message).Show();
-        		
-        	}
+            catch (Exception ex)
+            {
+
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+
+            }
 
         }
 
 
 
-				// UserName search
+        // UserName search
         protected void SearchByUserName(object sender, DirectEventArgs e)
         {
 
-           try
+            try
             {
 
                 var cl = new ClientBl().GetClientUserName(txtSUsername.Text);
 
-								if (cl.Count == 0)
-								{
+                if (cl.Count == 0)
+                {
 
-									ExtNet.Msg.Alert("No Result", "Please Enter Valid UserName").Show();
+                    ExtNet.Msg.Alert("No Result", "Please Enter Valid UserName").Show();
 
-								}
+                }
 
                 streClient.DataSource = cl;
 
                 streClient.DataBind();
 
-
             }
 
             catch (Exception ex)
@@ -85,27 +84,25 @@ namespace CRMUI.RelationshipManager
 
 
 
-				// Name search
+        // Name search
         protected void SearchByName(object sender, DirectEventArgs e)
         {
-          
+
             try
             {
 
-               var cl = new ClientBl().GetClientName(txtSName.Text);
+                var cl = new ClientBl().GetClientName(txtSName.Text);
 
 
-							 if (cl.Count == 0)
-							 {
+                if (cl.Count == 0)
+                {
 
-								 ExtNet.Msg.Alert("No Result", "Please Enter Valid Name").Show();
+                    ExtNet.Msg.Alert("No Result", "Please Enter Valid Name").Show();
 
-							 }
+                }
 
-               streClient.DataSource = cl;
-               streClient.DataBind();
-
-
+                streClient.DataSource = cl;
+                streClient.DataBind();
 
             }
 
@@ -123,54 +120,54 @@ namespace CRMUI.RelationshipManager
 
 
 
-       // Pass Client ID
-	     protected void PassValue(object sender, DirectEventArgs e)
-    	{
+        // Pass Client ID
+        protected void PassValue(object sender, DirectEventArgs e)
+        {
 
-    		try
-    		{
-					string val = e.ExtraParams["Values"];
-
-
-					Dictionary<string, string>[] clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
+            try
+            {
+                string val = e.ExtraParams["Values"];
 
 
-    			string cname = " ";
-    			int cid;
+                Dictionary<string, string>[] clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
 
 
-					foreach (Dictionary<string, string> row in clients)
-					{
+                string cname = " ";
+                int cid;
 
-						foreach (KeyValuePair<string, string> keyValuePair in row)
-						{
 
-							if (keyValuePair.Key == "CLIENT_ID")
-							{
-								 cid =  Convert.ToInt32(keyValuePair.Value);
-								 txtClientId.Text = cid.ToString(CultureInfo.InvariantCulture);
-							}
-				
-							if (keyValuePair.Key == "Name" )
-							{
+                foreach (Dictionary<string, string> row in clients)
+                {
 
-								cname = keyValuePair.Value;
-								txtClientname.Text = cname;
+                    foreach (KeyValuePair<string, string> keyValuePair in row)
+                    {
 
-							}
-						}
-					}
-			
-    			btnConfirm.Disabled = false;
-    		}
+                        if (keyValuePair.Key == "CLIENT_ID")
+                        {
+                            cid = Convert.ToInt32(keyValuePair.Value);
+                            txtClientId.Text = cid.ToString(CultureInfo.InvariantCulture);
+                        }
 
-    		catch (Exception ex)
-    		{
+                        if (keyValuePair.Key == "Name")
+                        {
 
-					ExtNet.Msg.Alert("Error", ex.Message).Show(); 
-    		}
-				
-    	}
+                            cname = keyValuePair.Value;
+                            txtClientname.Text = cname;
+
+                        }
+                    }
+                }
+
+                btnConfirm.Disabled = false;
+            }
+
+            catch (Exception ex)
+            {
+
+                ExtNet.Msg.Alert("Error", ex.Message).Show();
+            }
+
+        }
 
 
 
@@ -204,7 +201,7 @@ namespace CRMUI.RelationshipManager
             btnConfirm.Disabled = true;
 
 
-      
+
         }
     }
 

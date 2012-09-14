@@ -2,7 +2,7 @@
     CodeBehind="Home.aspx.cs" Inherits="CRMUI.SupportAgent.CallHome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default" DirectMethodNamespace="DM"/>
+    <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default" DirectMethodNamespace="DM" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
     <%--CALL Support Agent--%>
@@ -133,6 +133,34 @@
             </ext:Panel>
         </Items>
     </ext:Panel>
+    <%--STORE FOR SOLUTIONS--%>
+    <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
+        <Model>
+            <ext:Model ID="mdlESolutions" runat="server">
+                <Fields>
+                    <ext:ModelField Name="SOL_ID" />
+                    <ext:ModelField Name="Description" />
+                    <ext:ModelField Name="DateCreated" />
+                    <ext:ModelField Name="DateModified" />
+                    <ext:ModelField Name="EMP_ID" />
+                    <ext:ModelField Name="PROB_ID" />
+                </Fields>
+            </ext:Model>
+        </Model>
+    </ext:Store>
+    <%--STORE FOR PROBLEMS--%>
+    <ext:Store runat="server" ID="streEProblems" PageSize="10" Buffered="True" IgnoreExtraFields="True">
+        <Model>
+            <ext:Model ID="mdlEProblems" runat="server">
+                <Fields>
+                    <ext:ModelField Name="PROB_ID" />
+                    <ext:ModelField Name="Description" />
+                    <ext:ModelField Name="DateCreated" />
+                    <ext:ModelField Name="EMP_ID" />
+                </Fields>
+            </ext:Model>
+        </Model>
+    </ext:Store>
     <%--EMAIL Support Agent--%>
     <ext:Panel ID="pnlEmailSupport" runat="server" MinHeight="615" Title="Home" TitleAlign="Center"
         Enabled="False" Visible="False">
@@ -182,28 +210,30 @@
                                         </ext:GridCommand>
                                     </Commands>
                                     <Listeners>
-                                        <Command Handler="DM.DeleteEmail(record.data.EP_ID);"/>
+                                        <Command Handler="DM.DeleteEmail(record.data.EP_ID);" />
                                     </Listeners>
                                 </ext:CommandColumn>
                             </Columns>
                         </ColumnModel>
                         <DirectEvents>
-                            <Select OnEvent="EmailProblemSelected"></Select>
+                            <Select OnEvent="EmailProblemSelected">
+                            </Select>
                         </DirectEvents>
                     </ext:GridPanel>
                     <%--TOP RIGHT FORMPANEL--%>
                     <ext:FormPanel runat="server" ID="pnlEmailDetails" Title="Email Details" Icon="EmailOpen"
                         BodyPadding="10" AutoScroll="True" Flex="3" ButtonAlign="Left" Border="false">
                         <Items>
-                            <ext:Hidden runat="server" ID="hEClientId"/>
-                            <ext:Hidden runat="server" ID="hEPId"/>
+                            <ext:Hidden runat="server" ID="hEClientId" />
+                            <ext:Hidden runat="server" ID="hEPId" />
                             <ext:Label runat="server" ID="lblSubject" />
                             <ext:Label runat="server" ID="lblFrom" />
                             <ext:Label runat="server" ID="lblDate" />
-                            <ext:Label runat="server" ID="lblEmailDesc" />          
+                            <ext:Label runat="server" ID="lblEmailDesc" />
                         </Items>
                         <Buttons>
-                            <ext:Button runat="server" ID="btnEViewImages" Text="View Images" Icon="Images" Disabled="True" OnDirectClick="BtnViewImagesClick">
+                            <ext:Button runat="server" ID="btnEViewImages" Text="View Images" Icon="Images" Disabled="True"
+                                OnDirectClick="BtnViewImagesClick">
                             </ext:Button>
                         </Buttons>
                     </ext:FormPanel>
@@ -237,49 +267,33 @@
                                     </ext:TextField>
                                     <ext:Button runat="server" ID="btnESearchSolutions" Text="Search" Icon="Magnifier"
                                         Margins="0 0 0 10" Padding="2" Disabled="True" OnDirectClick="BtnESearchSolClick">
-                          
                                     </ext:Button>
                                 </Items>
                             </ext:Container>
                             <%--BOTTOM LEFT GRID PANEL--%>
-                            <ext:GridPanel runat="server" ID="gpSolutions" Flex="1">
-                                <Store>
-                                    <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
-                                        <Model>
-                                            <ext:Model ID="Model2" runat="server">
-                                                <Fields>
-                                                    <ext:ModelField Name="SOL_ID" />
-                                                    <ext:ModelField Name="Description" />
-                                                    <ext:ModelField Name="DateCreated" />
-                                                    <ext:ModelField Name="DateModified" />
-                                                    <ext:ModelField Name="EMP_ID"/>
-                                                    <ext:ModelField Name="PROB_ID" />
-                                                </Fields>
-                                            </ext:Model>
-                                        </Model>
-                                    </ext:Store>
-                                </Store>
+                            <ext:GridPanel runat="server" ID="gpSolutions" Flex="1" StoreID="streESolutions">
                                 <ColumnModel>
                                     <Columns>
                                         <ext:RowNumbererColumn ID="RowNumbererColumn2" runat="server" Width="30" Align="Center"
                                             Sortable="False" />
-                                        <ext:DateColumn ID="DateColumn2" runat="server" Text="Created" Align="Center" Width="77"
-                                            DataIndex="DateCreated" Format="dd MMM yy" />
-                                        <ext:DateColumn ID="DateColumn3" runat="server" Text="Modified" Align="Center" Width="77"
+                                        <ext:DateColumn ID="clmEDateCreated" runat="server" Text="Created" Align="Center"
+                                            Width="77" DataIndex="DateCreated" Format="dd MMM yy" />
+                                        <ext:DateColumn ID="clmEModified" runat="server" Text="Modified" Align="Center" Width="77"
                                             DataIndex="DateModified" Format="dd MMM yy" />
-                                        <ext:Column ID="Column6" runat="server" Text="Solution Description" Width="198" DataIndex="Description" />
-                                        <ext:Column ID="Column7" runat="server" Text="SolutionID" Align="Center" Width="77"
+                                        <ext:Column ID="clmESolution" runat="server" Text="Solution Description" Width="198"
+                                            DataIndex="Description" />
+                                        <ext:Column ID="clmESolId" runat="server" Text="SolutionID" Align="Center" Width="77"
                                             DataIndex="SOL_ID" />
-                                        <ext:Column ID="Column8" runat="server" Text="ProblemID" Align="Center" Width="77"
+                                        <ext:Column ID="clmEProbId" runat="server" Text="ProblemID" Align="Center" Width="77"
                                             DataIndex="PROB_ID" />
                                     </Columns>
                                 </ColumnModel>
                                 <DirectEvents>
-                                    <select OnEvent="GpESolutionSelected">
+                                    <Select OnEvent="GpESolutionSelected">
                                         <ExtraParams>
-                                            <ext:Parameter Name="record" Value="record.data" Mode="Raw"/>
+                                            <ext:Parameter Name="record" Value="record.data" Mode="Raw" />
                                         </ExtraParams>
-                                    </select>
+                                    </Select>
                                 </DirectEvents>
                             </ext:GridPanel>
                         </Items>
@@ -291,16 +305,16 @@
                             <ext:Hidden runat="server" ID="hEProbId" />
                             <ext:Hidden runat="server" ID="hESolId" />
                             <ext:Label runat="server" ID="lblEEmployeeFullName" />
-                            <ext:Label runat="server" Html="<br/>"/>
+                            <ext:Label runat="server" Html="<br/>" />
                             <ext:Label runat="server" ID="lblEDateCreated" />
                             <ext:Label runat="server" ID="lblEDateModified" />
-                            <ext:Label ID="Label2" runat="server" Html="<br/><hr/><br/>"/>
+                            <ext:Label ID="Label2" runat="server" Html="<br/><hr/><br/>" />
                             <ext:FieldSet runat="server" ID="fsEProbDesc" Title="Problem Description" Visible="False">
                                 <Items>
                                     <ext:Label runat="server" ID="lblEProbDesc" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:Label ID="Label1" runat="server" Html="<br/>"/>
+                            <ext:Label ID="Label1" runat="server" Html="<br/>" />
                             <ext:FieldSet runat="server" ID="fsESolDesc" Title="Solution Description" Visible="False">
                                 <Items>
                                     <ext:Label runat="server" ID="lblESolDesc" />
@@ -323,12 +337,17 @@
                                     <ext:Button runat="server" ID="btnECreateTicketSol" Text="Create Ticket With Solution"
                                         Icon="Lightbulb" Disabled="True">
                                         <DirectEvents>
-                                            <Click OnEvent="BtnECreateTicketSolClick"></Click>
+                                            <Click OnEvent="BtnECreateTicketSolClick">
+                                            </Click>
                                         </DirectEvents>
                                     </ext:Button>
                                     <ext:ToolbarSeparator runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketNoSol" Text="Create Ticket Without Solution"
                                         Icon="LightbulbOff" Disabled="True">
+                                        <DirectEvents>
+                                            <Click OnEvent="BtnECreateTicketNoSol">
+                                            </Click>
+                                        </DirectEvents>
                                     </ext:Button>
                                 </Items>
                             </ext:Toolbar>
@@ -338,6 +357,7 @@
             </ext:Container>
         </Items>
     </ext:Panel>
+    
     <%--POPUP CREATE TICKET WITH NO SOLUTION--%>
     <ext:Window runat="server" ID="wndCreateTicketNoSol" Title="Create Ticket Without Solution"
         Hidden="True" Icon="TagBlueAdd" Width="400" Height="200" BodyPadding="10">
