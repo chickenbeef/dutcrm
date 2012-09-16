@@ -140,7 +140,7 @@
                 	<ext:TextField runat="server" ID = "txtEmpName" FieldLabel = "Employee Name" Margins = "30 0 10 30" Width = "300" ReadOnly = "True"/>
                     <ext:TextField runat="server" ID="txtClientId" FieldLabel="Client ID" Margins="30 0 10 30" Width="300" ReadOnly="True"    Hidden="True" />
                     <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" Margins="10 0 10 30" Width="300" ReadOnly = "True"  Hidden="True" />
-                    <ext:Button runat="server" ID="btnConfirm" Text="Record Sale" Padding="5" Margins="10 0 0 236" Icon="PageSave" OnClick = "SaveSave" AutoPostBack = "True"/>
+                    <ext:Button runat="server" ID="btnConfirm" Text="Record Sale" Padding="5" Margins="10 0 0 236" Icon="PageSave" OnDirectClick = "SaveSaves"/>
                 </Items>
             </ext:Panel>
         </Items>

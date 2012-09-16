@@ -105,11 +105,11 @@
                     <ext:VBoxLayoutConfig/>
                 </LayoutConfig>
                 <Items>
-                    <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" ReadOnly="True" Margins="30 0 10 30" Width="300" Hidden="True" />
-										<ext:TextField runat="server" ID="txtprobid" FieldLabel="PROB_ID" ReadOnly="True" Margins="10 0 10 30" Width="300" Hidden="False" />
+                    <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" ReadOnly="True" Margins="30 0 10 30" Width="900" Hidden="True" />
+										<ext:TextField runat="server" ID="txtprobid" FieldLabel="PROB_ID" ReadOnly="True" Margins="10 0 10 30" Width="300" Hidden="True" />
 
 										<ext:ComboBox ID="cmbSolutions" runat="server"  FieldLabel="Solution ID" Margins="40 0 10 30"
-                                    Editable="False" DisplayField = "SOL_ID" ValueField = "Description" OnDirectSelect = "PassDescription">
+                                    Editable="False" DisplayField = "SOL_ID" ValueField = "Description" OnDirectSelect = "PassDescription" > <%-- --%>
 											
 											<Store>
 												   <ext:Store ID="strSolutions" runat="server">
@@ -133,7 +133,7 @@
 
                     <ext:Label ID="Label1" runat="server" Text="Description:"  Margins="20 0 10 30"></ext:Label>
                     <ext:HtmlEditor ID="newSolDesc" runat="server" Margins="10 0 10 30" Width="500" Height="250" />
-                    <ext:Button runat="server" ID="btnUpdate" Text="Update Solution" Padding="5" Margins="0 0 0 410" Icon="PageSave"  OnClick = "UpdateSolution" AutoPostBack = "True"/>
+                    <ext:Button runat="server" ID="btnUpdate" Text="Update Solution" Padding="5" Margins="0 0 0 410" Icon="PageSave"  OnDirectClick = "UpdateSolutions"/>
                 </Items>
             </ext:Panel>
             
