@@ -33,9 +33,9 @@
         </Key>
         <Property Name="CPR_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Solved" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="DateCreated" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="DateCreated" Type="Edm.DateTime" Nullable="false" />
         <Property Name="DateSolved" Type="Edm.DateTime" Nullable="true" />
-        <Property Name="ComTypeTel" Type="Edm.Boolean" Nullable="true" />
+        <Property Name="ComTypeTel" Type="Edm.Boolean" Nullable="false" />
         <Property Name="CLIENT_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="PROB_ID" Type="Edm.Int32" Nullable="false" />
         <Property Name="EMP_ID" Type="Edm.Int32" Nullable="false" />
@@ -95,6 +95,8 @@
         <Property Name="CT_ID" Type="Edm.Int16" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
         <Property Name="Paragraph" Type="Edm.String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+        <Property Name="CAT_ID" Type="Edm.Int32" Nullable="false" />
+        <NavigationProperty Name="Categories" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="ComTemplate" ToRole="Category" />
       </EntityType>
       <EntityType Name="EmailProblem">
         <Key>
@@ -282,6 +284,14 @@
         <Property Name="UserId" Type="Edm.Guid" Nullable="false" />
         <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
         <Property Name="Email" Type="Edm.String" Nullable="true" MaxLength="256" Unicode="true" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="Category">
+        <Key>
+          <PropertyRef Name="CAT_ID" />
+        </Key>
+        <Property Name="CAT_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        <NavigationProperty Name="ComTemplates" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="Category" ToRole="ComTemplate" />
       </EntityType>
       <Association Name="Branches_Clients_FK1">
         <End Role="Branches" Type="CRMModel.Branch" Multiplicity="1" />
@@ -499,6 +509,18 @@
           </Dependent>
         </ReferentialConstraint>
       </Association>
+      <Association Name="FK_ComTemplate_Categories">
+        <End Role="Category" Type="CRMModel.Category" Multiplicity="1" />
+        <End Role="ComTemplate" Type="CRMModel.ComTemplate" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Category">
+            <PropertyRef Name="CAT_ID" />
+          </Principal>
+          <Dependent Role="ComTemplate">
+            <PropertyRef Name="CAT_ID" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
     </Schema>
     <Schema Namespace="CRMData" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
       <EntityContainer Name="CRMEntities" p7:LazyLoadingEnabled="true" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
@@ -518,6 +540,7 @@
         <EntitySet Name="vClientProblemsLogs" EntityType="CRMModel.vClientProblemsLog" />
         <EntitySet Name="vClients" EntityType="CRMModel.vClient" />
         <EntitySet Name="vEmployees" EntityType="CRMModel.vEmployee" />
+        <EntitySet Name="Categories" EntityType="CRMModel.Category" />
         <AssociationSet Name="Branches_Clients_FK1" Association="CRMModel.Branches_Clients_FK1">
           <End Role="Branches" EntitySet="Branches" />
           <End Role="Branches1" EntitySet="Branches" />
@@ -589,6 +612,10 @@
         <AssociationSet Name="FK_ClientProblemsLog_Images" Association="CRMModel.FK_ClientProblemsLog_Images">
           <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
           <End Role="Image" EntitySet="Images" />
+        </AssociationSet>
+        <AssociationSet Name="FK_ComTemplate_Categories" Association="CRMModel.FK_ComTemplate_Categories">
+          <End Role="Category" EntitySet="Categories" />
+          <End Role="ComTemplate" EntitySet="ComTemplates" />
         </AssociationSet>
       </EntityContainer>
     </Schema>

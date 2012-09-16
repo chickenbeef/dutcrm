@@ -36,6 +36,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("CRMModel", "Employees_Solutions_FK1", "Employees", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Employee), "Solutions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Solution), true)]
 [assembly: EdmRelationshipAttribute("CRMModel", "Problems_Solutions_FK1", "Problems", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Problem), "Solutions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Solution), true)]
 [assembly: EdmRelationshipAttribute("CRMModel", "FK_ClientProblemsLog_Images", "ClientProblemsLog", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(CRMData.ClientProblemsLog), "Image", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.Image), true)]
+[assembly: EdmRelationshipAttribute("CRMModel", "FK_ComTemplate_Categories", "Category", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(CRMData.Category), "ComTemplate", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(CRMData.ComTemplate), true)]
 
 #endregion
 
@@ -342,6 +343,22 @@ namespace CRMData
             }
         }
         private ObjectSet<vEmployee> _vEmployees;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Category> Categories
+        {
+            get
+            {
+                if ((_Categories == null))
+                {
+                    _Categories = base.CreateObjectSet<Category>("Categories");
+                }
+                return _Categories;
+            }
+        }
+        private ObjectSet<Category> _Categories;
 
         #endregion
         #region AddTo Methods
@@ -472,6 +489,14 @@ namespace CRMData
         public void AddTovEmployees(vEmployee vEmployee)
         {
             base.AddObject("vEmployees", vEmployee);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Categories EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCategories(Category category)
+        {
+            base.AddObject("Categories", category);
         }
 
         #endregion
@@ -1079,6 +1104,112 @@ namespace CRMData
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="CRMModel", Name="Category")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Category : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Category object.
+        /// </summary>
+        /// <param name="cAT_ID">Initial value of the CAT_ID property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        public static Category CreateCategory(global::System.Int32 cAT_ID, global::System.String name)
+        {
+            Category category = new Category();
+            category.CAT_ID = cAT_ID;
+            category.Name = name;
+            return category;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CAT_ID
+        {
+            get
+            {
+                return _CAT_ID;
+            }
+            set
+            {
+                if (_CAT_ID != value)
+                {
+                    OnCAT_IDChanging(value);
+                    ReportPropertyChanging("CAT_ID");
+                    _CAT_ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CAT_ID");
+                    OnCAT_IDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _CAT_ID;
+        partial void OnCAT_IDChanging(global::System.Int32 value);
+        partial void OnCAT_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("CRMModel", "FK_ComTemplate_Categories", "ComTemplate")]
+        public EntityCollection<ComTemplate> ComTemplates
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ComTemplate>("CRMModel.FK_ComTemplate_Categories", "ComTemplate");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ComTemplate>("CRMModel.FK_ComTemplate_Categories", "ComTemplate", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="CRMModel", Name="Client")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -1465,16 +1596,20 @@ namespace CRMData
         /// </summary>
         /// <param name="cPR_ID">Initial value of the CPR_ID property.</param>
         /// <param name="solved">Initial value of the Solved property.</param>
+        /// <param name="dateCreated">Initial value of the DateCreated property.</param>
+        /// <param name="comTypeTel">Initial value of the ComTypeTel property.</param>
         /// <param name="cLIENT_ID">Initial value of the CLIENT_ID property.</param>
         /// <param name="pROB_ID">Initial value of the PROB_ID property.</param>
         /// <param name="eMP_ID">Initial value of the EMP_ID property.</param>
         /// <param name="priority">Initial value of the Priority property.</param>
         /// <param name="solvedOnCreate">Initial value of the SolvedOnCreate property.</param>
-        public static ClientProblemsLog CreateClientProblemsLog(global::System.Int32 cPR_ID, global::System.Boolean solved, global::System.Int32 cLIENT_ID, global::System.Int32 pROB_ID, global::System.Int32 eMP_ID, global::System.String priority, global::System.Boolean solvedOnCreate)
+        public static ClientProblemsLog CreateClientProblemsLog(global::System.Int32 cPR_ID, global::System.Boolean solved, global::System.DateTime dateCreated, global::System.Boolean comTypeTel, global::System.Int32 cLIENT_ID, global::System.Int32 pROB_ID, global::System.Int32 eMP_ID, global::System.String priority, global::System.Boolean solvedOnCreate)
         {
             ClientProblemsLog clientProblemsLog = new ClientProblemsLog();
             clientProblemsLog.CPR_ID = cPR_ID;
             clientProblemsLog.Solved = solved;
+            clientProblemsLog.DateCreated = dateCreated;
+            clientProblemsLog.ComTypeTel = comTypeTel;
             clientProblemsLog.CLIENT_ID = cLIENT_ID;
             clientProblemsLog.PROB_ID = pROB_ID;
             clientProblemsLog.EMP_ID = eMP_ID;
@@ -1540,9 +1675,9 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> DateCreated
+        public global::System.DateTime DateCreated
         {
             get
             {
@@ -1557,8 +1692,8 @@ namespace CRMData
                 OnDateCreatedChanged();
             }
         }
-        private Nullable<global::System.DateTime> _DateCreated;
-        partial void OnDateCreatedChanging(Nullable<global::System.DateTime> value);
+        private global::System.DateTime _DateCreated;
+        partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
     
         /// <summary>
@@ -1588,9 +1723,9 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> ComTypeTel
+        public global::System.Boolean ComTypeTel
         {
             get
             {
@@ -1605,8 +1740,8 @@ namespace CRMData
                 OnComTypeTelChanged();
             }
         }
-        private Nullable<global::System.Boolean> _ComTypeTel;
-        partial void OnComTypeTelChanging(Nullable<global::System.Boolean> value);
+        private global::System.Boolean _ComTypeTel;
+        partial void OnComTypeTelChanging(global::System.Boolean value);
         partial void OnComTypeTelChanged();
     
         /// <summary>
@@ -2394,12 +2529,14 @@ namespace CRMData
         /// <param name="cT_ID">Initial value of the CT_ID property.</param>
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="paragraph">Initial value of the Paragraph property.</param>
-        public static ComTemplate CreateComTemplate(global::System.Int16 cT_ID, global::System.String name, global::System.String paragraph)
+        /// <param name="cAT_ID">Initial value of the CAT_ID property.</param>
+        public static ComTemplate CreateComTemplate(global::System.Int16 cT_ID, global::System.String name, global::System.String paragraph, global::System.Int32 cAT_ID)
         {
             ComTemplate comTemplate = new ComTemplate();
             comTemplate.CT_ID = cT_ID;
             comTemplate.Name = name;
             comTemplate.Paragraph = paragraph;
+            comTemplate.CAT_ID = cAT_ID;
             return comTemplate;
         }
 
@@ -2480,9 +2617,74 @@ namespace CRMData
         private global::System.String _Paragraph;
         partial void OnParagraphChanging(global::System.String value);
         partial void OnParagraphChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CAT_ID
+        {
+            get
+            {
+                return _CAT_ID;
+            }
+            set
+            {
+                OnCAT_IDChanging(value);
+                ReportPropertyChanging("CAT_ID");
+                _CAT_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CAT_ID");
+                OnCAT_IDChanged();
+            }
+        }
+        private global::System.Int32 _CAT_ID;
+        partial void OnCAT_IDChanging(global::System.Int32 value);
+        partial void OnCAT_IDChanged();
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("CRMModel", "FK_ComTemplate_Categories", "Category")]
+        public Category Categories
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("CRMModel.FK_ComTemplate_Categories", "Category").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("CRMModel.FK_ComTemplate_Categories", "Category").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Category> CategoriesReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("CRMModel.FK_ComTemplate_Categories", "Category");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("CRMModel.FK_ComTemplate_Categories", "Category", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>

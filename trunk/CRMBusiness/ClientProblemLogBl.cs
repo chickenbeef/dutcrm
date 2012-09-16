@@ -19,8 +19,8 @@ namespace CRMBusiness
 
         #region methods
 
-        public bool AddClientProblem(bool cprSolved, DateTime dCreated, DateTime dSolved, bool comTel,
-            Int32 cId, Int32 eId, Int32 pId, Int32 sId, string p)
+        public bool AddClientProblem(bool cprSolved, DateTime dCreated, DateTime? dSolved, bool comTel,
+            Int32 cId, Int32 eId, Int32 pId, Int32? sId, string p)
         {
             if (cId.Equals(0) || eId.Equals(0) || pId.Equals(0) || p.Equals("")) return false;
             _crm = new CRMEntities(_uri);
@@ -93,10 +93,9 @@ namespace CRMBusiness
             return true;
         }
 
-        public int GetReferenceNumber()
+        public int GetLastCprId()
         {
-            _crm = new CRMEntities(_uri);
-            return _crm.vClientProblemsLogs.Max(x => x.CPR_ID);
+            return new CRMEntities(_uri).ClientProblemsLogs.ToList().Max(cpl => cpl.CPR_ID);
         }
 
         #endregion

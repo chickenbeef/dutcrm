@@ -121,8 +121,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CallCentreManager\AutomationSettings.aspx" />
+    <Content Include="CallCentreManager\Charts.aspx" />
     <Content Include="CallCentreManager\EmailSettings.aspx" />
     <Content Include="CallCentreManager\Home.aspx" />
+    <Content Include="CallCentreManager\MessagingServices.aspx" />
     <Content Include="CallCentreManager\SupportReports.aspx" />
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
@@ -172,6 +174,13 @@
     <Compile Include="CallCentreManager\CCM.Master.designer.cs">
       <DependentUpon>CCM.Master</DependentUpon>
     </Compile>
+    <Compile Include="CallCentreManager\Charts.aspx.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\Charts.aspx.designer.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CallCentreManager\EmailSettings.aspx.cs">
       <DependentUpon>EmailSettings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,6 +194,13 @@
     </Compile>
     <Compile Include="CallCentreManager\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\MessagingServices.aspx.cs">
+      <DependentUpon>MessagingServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\MessagingServices.aspx.designer.cs">
+      <DependentUpon>MessagingServices.aspx</DependentUpon>
     </Compile>
     <Compile Include="CallCentreManager\SupportReports.aspx.cs">
       <DependentUpon>SupportReports.aspx</DependentUpon>

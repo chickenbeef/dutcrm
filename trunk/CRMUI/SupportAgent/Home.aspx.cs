@@ -19,31 +19,28 @@ namespace CRMUI.SupportAgent
     {
         public static string Role;
         private string _evtViewEmailHandler;
-        private static bool _newProblem;
+        private static bool _haveProblem;
+        private static bool _haveSolution;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //enables options of email support agent
-            pnlEmailSupport.Visible = true;
-            pnlEmailSupport.Enabled = true;
-
-            //#region Redirect based on role
-            //if (!IsPostBack)
-            //{
-            //    if (Roles.IsUserInRole("Email Support Agent"))
-            //    {
-            //        //enables options of email support agent
-            //        pnlEmailSupport.Visible = true;
-            //        pnlEmailSupport.Enabled = true;
-            //    }
-            //    else if (Roles.IsUserInRole("Call Support Agent"))
-            //    {
-            //        //enables options of call support agent
-            //        pnlCallSupport.Visible = true;
-            //        pnlCallSupport.Enabled = true;
-            //    }
-            //}
-            //#endregion
+            #region Redirect based on role
+            if (!IsPostBack)
+            {
+                if (Roles.IsUserInRole("Email Support Agent"))
+                {
+                    //enables options of email support agent
+                    pnlEmailSupport.Visible = true;
+                    pnlEmailSupport.Enabled = true;
+                }
+                else if (Roles.IsUserInRole("Call Support Agent"))
+                {
+                    //enables options of call support agent
+                    pnlCallSupport.Visible = true;
+                    pnlCallSupport.Enabled = true;
+                }
+            }
+            #endregion
 
             #region Populate GridPanel With emails
             var ep = new EmailProblemBl().GetAllUnAttendedEmailProblems();
@@ -126,34 +123,48 @@ namespace CRMUI.SupportAgent
         {
             try
             {
+                cmbEPriority.Disabled = true;
+                btnECreateTicketNoSol.Disabled = true;
+                btnECreateTicketSol.Disabled = true;
                 var probs = new ProblemBl().GetProblems(txtEProbDesc.Text);
                 //no problem found
                 if (probs.Count <= 0)
                 {
-                    CheckTicketButtons(true);
-                    ExtNet.Msg.Alert("No solution found", "Problem not in database, please create a ticket without solution.").Show();
+                    _haveProblem = false;
+                    _haveSolution = false;
+                    taEProbDesc.Text = txtEProbDesc.Text;
+                    wndAddProblem.Show();
                     streESolutions.Reload();
                 }
                 //found 1 problem
                 else if (probs.Count == 1)
                 {
+                    _haveProblem = true;
                     var sols = new SolutionBl().GetSolutions(probs[0].PROB_ID);
                     if (sols.Count > 0)
                     {
+                        _haveSolution = true;
+                        clmEModified.Show();
+                        clmESolId.Show();
+                        clmESolution.Text = "Solution Description";
                         streESolutions.DataSource = sols;
                         streESolutions.DataBind();
-                        CheckTicketButtons(false);
                     }
                     else
                     {
+                        _haveSolution = false;
+                        hEProbId.Value = probs[0].PROB_ID;
                         lblEProbDesc.Text = probs[0].Description;
-                        CheckTicketButtons(true);
-                        ExtNet.Msg.Alert("No solution found", "A problem was found but no solution exists for it. please create a ticket without solution").Show();
+                        fsEProbDesc.Visible = true;
+                        CheckTicketButtons(_haveSolution);
+                        pnlESolutionDetails.UpdateContent();
+                        ExtNet.Msg.Alert("No solution found", "1 problem was found but no solution exists for it. please create a ticket without solution").Show();
                     }
                 }
                 //found more than 1 problem that mathes keywords
                 else
                 {
+                    _haveProblem = true;
                     var listOfSols = new List<Solution>();
                     foreach (var problem in probs)
                     {
@@ -164,29 +175,21 @@ namespace CRMUI.SupportAgent
                     //if solutions exist
                     if (listOfSols.Count > 0)
                     {
-                        //
+                        _haveSolution = true;
                         streESolutions.DataSource = listOfSols;
                         streESolutions.DataBind();
-                        CheckTicketButtons(false);
                     }
                     //if no solutions found for problems that exist in database
                     else
                     {
-
-                        //CheckTicketButtons(true);
+                        _haveSolution = false;
                         ExtNet.Msg.Alert("No solution found", "More than 1 problem was found but no solution exists for them. please create a ticket without solution").Show();
-
-                        //TO TRY
-                        //bind the problems source to the store and for each problem chosen show
-                        //probdesc on the probdesc label on right
-                        //NOTE: this method might not run at all because the way the search algorithm is done:
-                        //LIKE %description%
-
                         clmEModified.Hide();
+                        clmESolId.Hide();
                         clmESolution.Text = "Problem Description";
-                        gpSolutions.StoreID = "streEProblems";
-                        streEProblems.DataSource = probs;
-                        streEProblems.DataBind();
+                        mdlESolutions.Fields.RemoveAt(0);
+                        streESolutions.DataSource = probs;
+                        streESolutions.DataBind();
                     }
                 }
             }
@@ -196,7 +199,7 @@ namespace CRMUI.SupportAgent
             }
         }
 
-        //selected a solution *
+        //selected a solution
         protected void GpESolutionSelected(object sender, DirectEventArgs e)
         {
             try
@@ -204,22 +207,7 @@ namespace CRMUI.SupportAgent
                 //get selected row details
                 var selRow = e.ExtraParams["record"];
 
-                if (gpSolutions.StoreID == "streEProblems")
-                {
-                    //convert it to problem object
-                    var probRow = JSON.Deserialize(selRow, typeof(Problem)) as Problem;
-                    //set details to allow creation of ticket with no solution
-                    if (probRow != null)
-                    {
-                        hEProbId.Value = probRow.PROB_ID;
-                        lblEProbDesc.Text = probRow.Description;
-                        lblEDateCreated.Text = "Problem Created By: " +
-                                               probRow.DateCreated.Date.ToString("dd MMMM yyyy");
-                        //show controls
-                        fsEProbDesc.Visible = true;
-                    }
-                }
-                else
+                if (_haveSolution)
                 {
                     //convert to solution object
                     var solRow = JSON.Deserialize(selRow, typeof(Solution)) as Solution;
@@ -245,12 +233,31 @@ namespace CRMUI.SupportAgent
                             lblEEmployeeFullName.Text = "Created By: " + emp.Name + " " + emp.Surname;
                             lblEDateCreated.Text = "Date Created: " + solRow.DateCreated.ToString("dd MMMM yyyy");
                         }
+                        lblESpacer.Html = "<br/><hr/><br/>";
                         lblEProbDesc.Text = prob.Description;
                         lblESolDesc.Html = solRow.Description;
+                        CheckTicketButtons(_haveSolution);
 
                         //show controls
                         fsEProbDesc.Visible = true;
                         fsESolDesc.Visible = true;
+                    }
+                }
+                else
+                {
+                    if (_haveProblem)
+                    {
+                        //convert it to problem object
+                        var probRow = JSON.Deserialize(selRow, typeof(Dictionary<string, string>)) as Dictionary<string, string>;
+                        //set details to allow creation of ticket with no solution
+                        if (probRow != null)
+                        {
+                            CheckTicketButtons(_haveSolution);
+                            hEProbId.Value = probRow["PROB_ID"];
+                            lblEProbDesc.Text = probRow["Description"];
+                            //show controls
+                            fsEProbDesc.Visible = true;
+                        }
                     }
                 }
 
@@ -282,23 +289,23 @@ namespace CRMUI.SupportAgent
                     }
                     else
                     {
-                        ////get details of currently logged in employee
-                        //var username = Membership.GetUser().UserName;
-                        //var emp = new EmployeeBl().GetEmployee(username);
-                        //var cid = Convert.ToInt32(hEClientId.Value);
-                        //var solid = Convert.ToInt32(hESolId.Value);
-                        //var probid = Convert.ToInt32(hEProbId.Value);
-                        //var date = DateTime.Now.Date;
-                        //var priority = cmbEPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
+                        //get details of currently logged in employee
+                        var username = Membership.GetUser().UserName;
+                        var emp = new EmployeeBl().GetEmployee(username);
+                        var cid = Convert.ToInt32(hEClientId.Value);
+                        var solid = Convert.ToInt32(hESolId.Value);
+                        var probid = Convert.ToInt32(hEProbId.Value);
+                        var date = DateTime.Now.Date;
+                        var priority = cmbEPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
 
-                        ////get details of client
-                        //var client = new ClientBl().GetClientByClientId(cid);
+                        //get details of client
+                        var client = new ClientBl().GetClientByClientId(cid);
 
-                        //var cpl = new ClientProblemLogBl();
-                        //cpl.AddClientProblem(true, date, date, false, cid, emp.EMP_ID, probid, solid, priority);
-                        //ExtNet.Msg.Notify("Completed Successfully","The ticket has been created").Show();
+                        var cpl = new ClientProblemLogBl();
+                        cpl.AddClientProblem(true, date, date, false, cid, emp.EMP_ID, probid, solid, priority);
+                        ExtNet.Msg.Notify("Ticket Created", "The ticket has been created").Show();
 
-                        //TODO: allow agent to contact client via email
+                        //TODO: display popup to email client
                     }
 
                 }
@@ -328,7 +335,22 @@ namespace CRMUI.SupportAgent
                     }
                     else
                     {
-                        //TODO: create ticket with no sol and allow agent to contact client via email
+                        //get details of currently logged in employee
+                        var username = Membership.GetUser().UserName;
+                        var emp = new EmployeeBl().GetEmployee(username);
+                        var cid = Convert.ToInt32(hEClientId.Value);
+                        var probid = Convert.ToInt32(hEProbId.Value);
+                        var date = DateTime.Now.Date;
+                        var priority = cmbEPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
+
+                        //get details of client
+                        var client = new ClientBl().GetClientByClientId(cid);
+
+                        var cpl = new ClientProblemLogBl();
+                        cpl.AddClientProblem(false, date, null, false, cid, emp.EMP_ID, probid, null, priority);
+                        ExtNet.Msg.Notify("Ticket Created", "The ticket has been created").Show();
+
+                        //TODO: display popup to email client
                     }
 
                 }
@@ -339,24 +361,51 @@ namespace CRMUI.SupportAgent
             }
         }
 
+        protected void WndAddProblemClosed(object sender, DirectEventArgs e)
+        {
+            taEProbDesc.Clear();
+        }
+
+        protected void BtnEAddProblemClick(object sender, DirectEventArgs e)
+        {
+            try
+            {
+                var username = Membership.GetUser().UserName;
+                var empid = new EmployeeBl().GetEmployee(username).EMP_ID;
+                var prob = new ProblemBl();
+                var lastProbId = new ProblemBl().GetLastId();
+                prob.AddProblem(taEProbDesc.Text, DateTime.Now, empid);
+                hEProbId.Value = lastProbId + 1;
+                lblEProbDesc.Text = taEProbDesc.Text;
+                fsEProbDesc.Visible = true;
+                pnlESolutionDetails.UpdateContent();
+                CheckTicketButtons(_haveSolution);
+                wndAddProblem.Close();
+            }
+            catch (Exception ex)
+            {
+                ExtNet.Msg.Alert("Error", ex.Message);
+            }
+        }
+
         #endregion
 
         #region helper methods
 
         //enables and disables bottombar buttons(createTicket and comobox buttons)
-        private void CheckTicketButtons(bool noSolution)
+        private void CheckTicketButtons(bool haveSolution)
         {
             cmbEPriority.Disabled = false;
 
-            if (noSolution)
-            {
-                btnECreateTicketNoSol.Disabled = false;
-                btnECreateTicketSol.Disabled = true;
-            }
-            else
+            if (haveSolution)
             {
                 btnECreateTicketSol.Disabled = false;
                 btnECreateTicketNoSol.Disabled = true;
+            }
+            else
+            {
+                btnECreateTicketNoSol.Disabled = false;
+                btnECreateTicketSol.Disabled = true;
             }
         }
         #endregion

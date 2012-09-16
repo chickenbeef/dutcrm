@@ -40,5 +40,11 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.Problems.Where(p => p.Description.Contains(description)).ToList();          
         }
+
+        //Get id of last problem
+        public int GetLastId()
+        {
+            return new CRMEntities(_uri).Problems.ToList().Max(p => p.PROB_ID);
+        }
     }
 }

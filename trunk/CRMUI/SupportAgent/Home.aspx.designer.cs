@@ -328,42 +328,6 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Panel pnlBottomRight;
         
         /// <summary>
-        /// streESolutions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Store streESolutions;
-        
-        /// <summary>
-        /// mdlESolutions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Model mdlESolutions;
-        
-        /// <summary>
-        /// streEProblems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Store streEProblems;
-        
-        /// <summary>
-        /// mdlEProblems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Model mdlEProblems;
-        
-        /// <summary>
         /// pnlEmailSupport control.
         /// </summary>
         /// <remarks>
@@ -562,6 +526,24 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.GridPanel gpSolutions;
         
         /// <summary>
+        /// streESolutions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store streESolutions;
+        
+        /// <summary>
+        /// mdlESolutions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlESolutions;
+        
+        /// <summary>
         /// RowNumbererColumn2 control.
         /// </summary>
         /// <remarks>
@@ -670,13 +652,13 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Label lblEDateModified;
         
         /// <summary>
-        /// Label2 control.
+        /// lblESpacer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Label Label2;
+        protected global::Ext.Net.Label lblESpacer;
         
         /// <summary>
         /// fsEProbDesc control.
@@ -751,13 +733,13 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Button btnECreateTicketNoSol;
         
         /// <summary>
-        /// wndCreateTicketNoSol control.
+        /// wndAddProblem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Window wndCreateTicketNoSol;
+        protected global::Ext.Net.Window wndAddProblem;
         
         /// <summary>
         /// taEProbDesc control.
@@ -769,13 +751,13 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.TextArea taEProbDesc;
         
         /// <summary>
-        /// btnESubmit control.
+        /// btnEAddProblem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Button btnESubmit;
+        protected global::Ext.Net.Button btnEAddProblem;
         
         /// <summary>
         /// wndImageViewer control.

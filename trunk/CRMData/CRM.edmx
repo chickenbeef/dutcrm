@@ -7,6 +7,7 @@
     <Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="CRMModelStoreContainer">
           <EntitySet Name="Branches" EntityType="CRMModel.Store.Branches" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="CRMModel.Store.Categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ClientProblemsLog" EntityType="CRMModel.Store.ClientProblemsLog" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Clients" EntityType="CRMModel.Store.Clients" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Companies" EntityType="CRMModel.Store.Companies" store:Type="Tables" Schema="dbo" />
@@ -133,6 +134,10 @@
             <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
             <End Role="Images" EntitySet="Images" />
           </AssociationSet>
+          <AssociationSet Name="FK_ComTemplate_Categories" Association="CRMModel.Store.FK_ComTemplate_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="ComTemplate" EntitySet="ComTemplate" />
+          </AssociationSet>
           <AssociationSet Name="Problems_ClientProblemsLog_FK1" Association="CRMModel.Store.Problems_ClientProblemsLog_FK1">
             <End Role="Problems" EntitySet="Problems" />
             <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
@@ -169,15 +174,22 @@
           <Property Name="DateModified" Type="date" />
           <Property Name="IntegrationKey" Type="varchar" MaxLength="8" />
         </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
         <EntityType Name="ClientProblemsLog">
           <Key>
             <PropertyRef Name="CPR_ID" />
           </Key>
           <Property Name="CPR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Solved" Type="bit" Nullable="false" />
-          <Property Name="DateCreated" Type="date" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="DateSolved" Type="date" />
-          <Property Name="ComTypeTel" Type="bit" />
+          <Property Name="ComTypeTel" Type="bit" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
           <Property Name="PROB_ID" Type="int" Nullable="false" />
           <Property Name="EMP_ID" Type="int" Nullable="false" />
@@ -223,9 +235,10 @@
           <Key>
             <PropertyRef Name="CT_ID" />
           </Key>
-          <Property Name="CT_ID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="CT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="Paragraph" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="CAT_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EmailProblems">
           <Key>
@@ -583,6 +596,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ComTemplate_Categories">
+          <End Role="Categories" Type="CRMModel.Store.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComTemplate" Type="CRMModel.Store.ComTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CAT_ID" />
+            </Principal>
+            <Dependent Role="ComTemplate">
+              <PropertyRef Name="CAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Problems_ClientProblemsLog_FK1">
           <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="1" />
           <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
@@ -712,6 +739,11 @@
             <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
             <End Role="Image" EntitySet="Images" />
           </AssociationSet>
+          <EntitySet Name="Categories" EntityType="CRMModel.Category" />
+          <AssociationSet Name="FK_ComTemplate_Categories" Association="CRMModel.FK_ComTemplate_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="ComTemplate" EntitySet="ComTemplates" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Branch">
           <Key>
@@ -745,13 +777,13 @@
           </Key>
           <Property Name="CPR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Solved" Type="Boolean" Nullable="false" />
-          <Property Name="DateCreated" Type="DateTime" />
-          <Property Name="DateSolved" Type="DateTime" />
-          <Property Name="ComTypeTel" Type="Boolean" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateSolved" Type="DateTime" Nullable="true" />
+          <Property Name="ComTypeTel" Type="Boolean" Nullable="false" />
           <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
           <Property Name="PROB_ID" Type="Int32" Nullable="false" />
           <Property Name="EMP_ID" Type="Int32" Nullable="false" />
-          <Property Name="SOL_ID" Type="Int32" />
+          <Property Name="SOL_ID" Type="Int32" Nullable="true" />
           <Property Name="Priority" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Client" Relationship="CRMModel.Clients_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Clients" />
           <NavigationProperty Name="Notes" Relationship="CRMModel.CPL_Notes_FK" FromRole="ClientProblemsLog" ToRole="Notes" />
@@ -807,6 +839,8 @@
           <Property Name="CT_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="Paragraph" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="ComTemplate" ToRole="Category" />
         </EntityType>
         <EntityType Name="EmailProblem">
           <Key>
@@ -1211,6 +1245,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ComTemplates" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="Category" ToRole="ComTemplate" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_ComTemplate_Categories">
+          <End Type="CRMModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="CRMModel.ComTemplate" Role="ComTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CAT_ID" />
+            </Principal>
+            <Dependent Role="ComTemplate">
+              <PropertyRef Name="CAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1279,7 +1333,8 @@
             <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="ComTemplates"><EntityTypeMapping TypeName="CRMModel.ComTemplate"><MappingFragment StoreEntitySet="ComTemplate">
-            <ScalarProperty Name="CT_ID" ColumnName="CT_ID" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+                <ScalarProperty Name="CT_ID" ColumnName="CT_ID" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="Paragraph" ColumnName="Paragraph" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -1390,6 +1445,14 @@
             <ScalarProperty Name="UserName" ColumnName="UserName" />
             <ScalarProperty Name="Email" ColumnName="Email" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="CRMModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1410,12 +1473,12 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="CRM">
+      <Diagram Name="CRM" ZoomLevel="80">
         <EntityTypeShape EntityType="CRMModel.Branch" Width="1.5" PointX="11" PointY="3.125" Height="5.0571093749999987" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.ClientProblemsLog" Width="1.5" PointX="5.25" PointY="12.375" Height="4.0956022135416639" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Client" Width="1.5" PointX="3.75" PointY="0.75" Height="3.7109993489583335" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Company" Width="1.5" PointX="8.75" PointY="3.875" Height="3.7109993489583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.ComTemplate" Width="1.5" PointX="0.75" PointY="2.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.ComTemplate" Width="1.5" PointX="0.75" PointY="2.875" Height="1.9802864583333335" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.EmailProblem" Width="1.5" PointX="3" PointY="9.25" Height="2.7494921874999996" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Employee" Width="1.5" PointX="0.75" PointY="8.625" Height="3.9033007812499996" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Escalation" Width="1.5" PointX="3" PointY="13.625" Height="1.5956835937499996" IsExpanded="true" />
@@ -1552,6 +1615,11 @@
         <AssociationConnector Association="CRMModel.FK_ClientProblemsLog_Images" >
           <ConnectorPoint PointX="5.59375" PointY="12.375" />
           <ConnectorPoint PointX="5.59375" PointY="7.922587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CRMModel.Category" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" />
+        <AssociationConnector Association="CRMModel.FK_ComTemplate_Categories" >
+          <ConnectorPoint PointX="1.5" PointY="2.34568359375" />
+          <ConnectorPoint PointX="1.5" PointY="2.875" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
