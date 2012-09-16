@@ -305,16 +305,21 @@
         </TablixRowHierarchy>
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <FixedColumnHeaders>true</FixedColumnHeaders>
+        <KeepTogether>true</KeepTogether>
         <DataSetName>ProblemsPerAgent</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>4.60594cm</Top>
         <Left>3.58266cm</Left>
         <Height>1.22646cm</Height>
-        <Width>13.46194cm</Width>
+        <Width>13.46195cm</Width>
         <Style>
           <Border>
             <Color>MidnightBlue</Color>
             <Style>None</Style>
           </Border>
+          <TextAlign>Center</TextAlign>
         </Style>
       </Tablix>
       <Textbox Name="Textbox9">
