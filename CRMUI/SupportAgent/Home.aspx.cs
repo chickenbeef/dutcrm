@@ -388,6 +388,21 @@ namespace CRMUI.SupportAgent
             }
         }
 
+        //TODO: CODE BELOW
+        protected void BtnSendEmailClick(object sender, DirectEventArgs e)
+        {
+            
+        }
+
+        protected void CmbCategorySelectedItem(object sender, DirectEventArgs e)
+        {
+            
+        }
+
+        protected void CmbTemplateSelectedItem(object sender, DirectEventArgs e)
+        {
+
+        }
         #endregion
 
         #region helper methods
@@ -407,6 +422,12 @@ namespace CRMUI.SupportAgent
                 btnECreateTicketNoSol.Disabled = false;
                 btnECreateTicketSol.Disabled = true;
             }
+        }
+
+        //fills category and template comboxes with data
+        private void PopulateTemplateComboboxes()
+        {
+            
         }
         #endregion
     }
