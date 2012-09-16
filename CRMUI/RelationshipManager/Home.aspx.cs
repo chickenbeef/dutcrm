@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using CRMBusiness;
 using Ext.Net;
-using ParameterCollection = System.Web.UI.WebControls.ParameterCollection;
 
 namespace CRMUI.RelationshipManager
 {
@@ -18,24 +15,15 @@ namespace CRMUI.RelationshipManager
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
 			      btnConfirm.Disabled = true;
 
             try
             {
 
                 txtEmpName.Text = Membership.GetUser().UserName;
-
-
                 var em = new EmployeeBl().GetEmployee(txtEmpName.Text);
-
-                if (!IsPostBack)
-                {
-
-                    txtEmpId.Text = em.EMP_ID.ToString(CultureInfo.InvariantCulture);
-
-                }
-
+                txtEmpId.Text = em.EMP_ID.ToString(CultureInfo.InvariantCulture);
+              
             }
 
             catch (Exception ex)
@@ -53,6 +41,8 @@ namespace CRMUI.RelationshipManager
         protected void SearchByUserName(object sender, DirectEventArgs e)
         {
 
+        	txtSName.Reset();
+
             try
             {
 
@@ -62,11 +52,11 @@ namespace CRMUI.RelationshipManager
                 {
 
                     ExtNet.Msg.Alert("No Result", "Please Enter Valid UserName").Show();
+                	  txtSUsername.Reset();
 
                 }
 
                 streClient.DataSource = cl;
-
                 streClient.DataBind();
 
             }
@@ -84,9 +74,12 @@ namespace CRMUI.RelationshipManager
 
 
 
+
         // Name search
         protected void SearchByName(object sender, DirectEventArgs e)
         {
+
+        	txtSUsername.Reset();
 
             try
             {
@@ -98,6 +91,7 @@ namespace CRMUI.RelationshipManager
                 {
 
                     ExtNet.Msg.Alert("No Result", "Please Enter Valid Name").Show();
+                	  txtSName.Reset();
 
                 }
 
@@ -114,6 +108,7 @@ namespace CRMUI.RelationshipManager
             }
 
         }
+
 
 
 
@@ -127,12 +122,10 @@ namespace CRMUI.RelationshipManager
             try
             {
                 string val = e.ExtraParams["Values"];
-
-
                 Dictionary<string, string>[] clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
 
 
-                string cname = " ";
+                string cname;
                 int cid;
 
 
@@ -172,37 +165,35 @@ namespace CRMUI.RelationshipManager
 
 
 
-        //save Sale
-        protected void SaveSave(object sender, EventArgs e)
-        {
+      //save Sale
+    	protected void SaveSaves(object sender, DirectEventArgs e)
+    	{
 
-            try
-            {
+				try
+				{
+					 new SaleBl().SaveSale(DateTime.Now, Convert.ToInt32(txtClientId.Text), Convert.ToInt32(txtEmpId.Text));
 
-                var sale = new SaleBl().SaveSale(DateTime.Now, Convert.ToInt32(txtClientId.Text), Convert.ToInt32(txtEmpId.Text));
+					ExtNet.Msg.Notify("Sale", "Sale Added").Show();
+				}
 
-                ExtNet.Msg.Notify("Sale", "Sale Added").Show();
+				catch (Exception ex)
+				{
 
+					ExtNet.Msg.Alert("Error", ex.Message).Show();
 
-            }
+				}
 
-            catch (Exception ex)
-            {
-
-                ExtNet.Msg.Alert("Error", ex.Message).Show();
-
-            }
-
-            txtSName.Text = "";
-            txtSUsername.Text = "";
+				txtSName.Reset();
+				txtSUsername.Reset();
 
 
-            txtClientname.Text = string.Empty;
-            btnConfirm.Disabled = true;
+				txtClientname.Text = string.Empty;
+				btnConfirm.Disabled = true;
+
+    		streClient.RemoveAll();
 
 
-
-        }
+    	}
     }
 
 }

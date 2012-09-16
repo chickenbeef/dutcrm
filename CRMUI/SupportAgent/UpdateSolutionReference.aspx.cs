@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using CRMBusiness.CRM;
 using Ext.Net;
-using System.Web.Security; 
+using System.Web.Security;
+using System.Text.RegularExpressions; 
 
 namespace CRMUI.SupportAgent
 {
@@ -41,6 +38,11 @@ namespace CRMUI.SupportAgent
 				{
 
 					ExtNet.Msg.Alert("No Result", "Please Enter Valid Problem").Show();
+					txtProbDesc.Reset();
+					txtprobid.Reset();
+					newSolDesc.Reset();
+					strSolutions.RemoveAll();
+					cmbSolutions.Reset();
 
 				}
 
@@ -56,6 +58,7 @@ namespace CRMUI.SupportAgent
 			}
 
 		}
+
 
 
 
@@ -80,11 +83,20 @@ namespace CRMUI.SupportAgent
 							txtprobid.Text = keyValuePair.Value;
 						}								
 					}
+
 				}
 
 
-				 int probid = Convert.ToInt32(txtprobid.Text);
-			   var sol = new CRMBusiness.SolutionBl().GetSolutions(probid);
+
+
+				int probid = Convert.ToInt32(txtprobid.Text);
+				var sol = new CRMBusiness.SolutionBl().GetSolutions(probid);
+
+
+				foreach (Solution t in sol)
+				{
+					t.Description = Regex.Replace(t.Description, "<(.|\n)*?>", "");
+				}
 
 
 				strSolutions.DataSource = sol;
@@ -92,7 +104,8 @@ namespace CRMUI.SupportAgent
 
 
 				cmbSolutions.Text = sol[0].SOL_ID.ToString(CultureInfo.InvariantCulture);
-				sol[0].Description = cmbSolutions.Value.ToString();
+
+				newSolDesc.Text = sol[0].Description;
 
 
 				btnUpdate.Disabled = false;
@@ -118,7 +131,9 @@ namespace CRMUI.SupportAgent
 			{
 
 				newSolDesc.Text = cmbSolutions.SelectedItem.Value;
+
 				btnUpdate.Disabled = false;
+
 			}
 
 			catch (Exception ex)
@@ -128,42 +143,51 @@ namespace CRMUI.SupportAgent
 
 		}
 
+		
+
 
 
 
 
 		//save updated solution
-	    protected void UpdateSolution(object sender, EventArgs e)
-	    {
+		protected void UpdateSolutions(object sender, DirectEventArgs e)
+		{
 
-            try
-            {
+			try
+			{
+				new CRMBusiness.SolutionBl().UpdateSolution(Convert.ToInt32(cmbSolutions.SelectedItem.Text),
+																										newSolDesc.Text, DateTime.Now,
+																										Convert.ToInt32(txtprobid.Text),
+																										Convert.ToInt32(txtEmpId.Text));
 
-                var savSol = new CRMBusiness.SolutionBl().UpdateSolution(Convert.ToInt32(cmbSolutions.SelectedItem.Text),
-                                                                                                                 newSolDesc.Text, DateTime.Now,
-                                                                                                                 Convert.ToInt32(txtprobid.Text),
-                                                                                                                 Convert.ToInt32(txtEmpId.Text));
-                ExtNet.Msg.Notify("Update", "Solution Added").Show();
+				ExtNet.Msg.Notify("Update", "Solution Added").Show();
+			}
 
+			catch (Exception ex)
+			{
 
-            }
+				ExtNet.Msg.Alert("Error", ex.Message).Show();
 
-            catch (Exception ex)
-            {
-
-                ExtNet.Msg.Alert("Error", ex.Message).Show();
-
-            }
+			}
 
 
-						txtProbDesc.Text = string.Empty;
-						txtprobid.Text = string.Empty;
-						txtEmpId.Text = string.Empty;
-						newSolDesc.Text = string.Empty;
+			txtProbDesc.Reset();
 
 
-						btnUpdate.Disabled = true;
+			txtprobid.Text = string.Empty;
+			txtEmpId.Text = string.Empty;
+			newSolDesc.Text = string.Empty;
 
-	    }
+
+			streProblems.RemoveAll();
+			strSolutions.RemoveAll();
+			cmbSolutions.Reset();
+
+
+			btnUpdate.Disabled = true;
+		
+		}
+
+
 	}
 }
