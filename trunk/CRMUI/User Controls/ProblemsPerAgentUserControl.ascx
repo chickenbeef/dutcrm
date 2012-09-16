@@ -7,14 +7,15 @@
     SizeToReportContent="True">
 	<LocalReport ReportPath="Reports\ProblemsPerAgent.rdlc">
 		<DataSources>
-			<rsweb:ReportDataSource DataSourceId="odsProblemsPerAgent" 
+			<rsweb:ReportDataSource DataSourceId="ObjectDataSource1" 
 				Name="ProblemsPerAgent" />
 		</DataSources>
 	</LocalReport>
 </rsweb:ReportViewer>
-<asp:ObjectDataSource ID="odsProblemsPerAgent" runat="server" 
-	OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-	TypeName="CRMUI.Reports.CRMDataSetTableAdapters.ProblemsPerAgentTableAdapter">
+<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+    OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+    TypeName="CRMUI.Reports.CRMDataSetTableAdapters.ProblemsPerAgentTableAdapter">
 </asp:ObjectDataSource>
+
 
 
