@@ -122,6 +122,7 @@
   <ItemGroup>
     <Content Include="CallCentreManager\AutomationSettings.aspx" />
     <Content Include="CallCentreManager\Charts.aspx" />
+    <Content Include="CallCentreManager\CreateTemplate.aspx" />
     <Content Include="CallCentreManager\EmailSettings.aspx" />
     <Content Include="CallCentreManager\Home.aspx" />
     <Content Include="CallCentreManager\MessagingServices.aspx" />
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="CallCentreManager\Charts.aspx.designer.cs">
       <DependentUpon>Charts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\CreateTemplate.aspx.cs">
+      <DependentUpon>CreateTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\CreateTemplate.aspx.designer.cs">
+      <DependentUpon>CreateTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="CallCentreManager\EmailSettings.aspx.cs">
       <DependentUpon>EmailSettings.aspx</DependentUpon>
