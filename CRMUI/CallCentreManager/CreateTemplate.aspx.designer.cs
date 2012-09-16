@@ -31,31 +31,13 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlMain;
         
         /// <summary>
-        /// Container1 control.
+        /// pnlMessageBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Container Container1;
-        
-        /// <summary>
-        /// pnlPriority control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Panel pnlPriority;
-        
-        /// <summary>
-        /// pnlSub1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Panel pnlSub1;
+        protected global::Ext.Net.Panel pnlMessageBody;
         
         /// <summary>
         /// fdsetradios control.
@@ -157,6 +139,15 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Model mdlComTemplate;
         
         /// <summary>
+        /// txtTemplateName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtTemplateName;
+        
+        /// <summary>
         /// editrPara control.
         /// </summary>
         /// <remarks>
@@ -193,6 +184,15 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Button btnSaveMessage;
         
         /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnDelete;
+        
+        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>
@@ -200,14 +200,5 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Button btnCancel;
-        
-        /// <summary>
-        /// cont4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Container cont4;
     }
 }
