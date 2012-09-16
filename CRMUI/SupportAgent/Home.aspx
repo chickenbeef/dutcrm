@@ -133,34 +133,6 @@
             </ext:Panel>
         </Items>
     </ext:Panel>
-    <%--STORE FOR SOLUTIONS--%>
-    <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
-        <Model>
-            <ext:Model ID="mdlESolutions" runat="server">
-                <Fields>
-                    <ext:ModelField Name="SOL_ID" />
-                    <ext:ModelField Name="Description" />
-                    <ext:ModelField Name="DateCreated" />
-                    <ext:ModelField Name="DateModified" />
-                    <ext:ModelField Name="EMP_ID" />
-                    <ext:ModelField Name="PROB_ID" />
-                </Fields>
-            </ext:Model>
-        </Model>
-    </ext:Store>
-    <%--STORE FOR PROBLEMS--%>
-    <ext:Store runat="server" ID="streEProblems" PageSize="10" Buffered="True" IgnoreExtraFields="True">
-        <Model>
-            <ext:Model ID="mdlEProblems" runat="server">
-                <Fields>
-                    <ext:ModelField Name="PROB_ID" />
-                    <ext:ModelField Name="Description" />
-                    <ext:ModelField Name="DateCreated" />
-                    <ext:ModelField Name="EMP_ID" />
-                </Fields>
-            </ext:Model>
-        </Model>
-    </ext:Store>
     <%--EMAIL Support Agent--%>
     <ext:Panel ID="pnlEmailSupport" runat="server" MinHeight="615" Title="Home" TitleAlign="Center"
         Enabled="False" Visible="False">
@@ -271,7 +243,23 @@
                                 </Items>
                             </ext:Container>
                             <%--BOTTOM LEFT GRID PANEL--%>
-                            <ext:GridPanel runat="server" ID="gpSolutions" Flex="1" StoreID="streESolutions">
+                            <ext:GridPanel runat="server" ID="gpSolutions" Flex="1">
+                                <Store>
+                                    <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
+                                        <Model>
+                                            <ext:Model ID="mdlESolutions" runat="server">
+                                                <Fields>
+                                                    <ext:ModelField Name="SOL_ID" />
+                                                    <ext:ModelField Name="Description" />
+                                                    <ext:ModelField Name="DateCreated" />
+                                                    <ext:ModelField Name="DateModified" />
+                                                    <ext:ModelField Name="EMP_ID" />
+                                                    <ext:ModelField Name="PROB_ID" />
+                                                </Fields>
+                                            </ext:Model>
+                                        </Model>
+                                    </ext:Store>
+                                </Store>
                                 <ColumnModel>
                                     <Columns>
                                         <ext:RowNumbererColumn ID="RowNumbererColumn2" runat="server" Width="30" Align="Center"
@@ -308,7 +296,7 @@
                             <ext:Label runat="server" Html="<br/>" />
                             <ext:Label runat="server" ID="lblEDateCreated" />
                             <ext:Label runat="server" ID="lblEDateModified" />
-                            <ext:Label ID="Label2" runat="server" Html="<br/><hr/><br/>" />
+                            <ext:Label ID="lblESpacer" runat="server" Html="<br/><br/>" />
                             <ext:FieldSet runat="server" ID="fsEProbDesc" Title="Problem Description" Visible="False">
                                 <Items>
                                     <ext:Label runat="server" ID="lblEProbDesc" />
@@ -357,27 +345,31 @@
             </ext:Container>
         </Items>
     </ext:Panel>
-    
-    <%--POPUP CREATE TICKET WITH NO SOLUTION--%>
-    <ext:Window runat="server" ID="wndCreateTicketNoSol" Title="Create Ticket Without Solution"
-        Hidden="True" Icon="TagBlueAdd" Width="400" Height="200" BodyPadding="10">
+    <%--POPUP ADD PROBLEM TO DATABASE--%>
+    <ext:Window runat="server" ID="wndAddProblem" Title="Add Problem"
+        Hidden="True" Icon="TagBlueAdd" Width="400" Height="210" BodyPadding="10">
         <LayoutConfig>
             <ext:VBoxLayoutConfig Align="Stretch" />
         </LayoutConfig>
         <Items>
+            <ext:Label runat="server" Html="The problem does not exist, Use this window to add it."></ext:Label>
             <ext:TextArea runat="server" ID="taEProbDesc" Height="110" FieldLabel="Problem Description"
                 LabelAlign="Top" AllowBlank="False" MsgTarget="Under">
                 <Listeners>
-                    <ValidityChange Handler="#{btnESubmit}.setDisabled(!isValid);" />
+                    <ValidityChange Handler="#{btnEAddProblem}.setDisabled(!isValid);" />
                 </Listeners>
             </ext:TextArea>
         </Items>
         <Buttons>
-            <ext:Button runat="server" ID="btnESubmit" Text="Done" Disabled="True">
+            <ext:Button runat="server" ID="btnEAddProblem" Text="Add Problem" Disabled="True">
                 <DirectEvents>
-                    <%--TO DO--%></DirectEvents>
+                    <Click OnEvent="BtnEAddProblemClick"></Click>
+                </DirectEvents>
             </ext:Button>
         </Buttons>
+        <DirectEvents>
+            <Close OnEvent="WndAddProblemClosed"></Close>
+        </DirectEvents>
     </ext:Window>
     <%--POPUP VIEW IMAGES--%>
     <ext:Window runat="server" ID="wndImageViewer" Title="View Images" Icon="EmailOpenImage"
