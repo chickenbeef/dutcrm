@@ -49,6 +49,33 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlSub1;
         
         /// <summary>
+        /// cmbCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ComboBox cmbCategory;
+        
+        /// <summary>
+        /// strCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store strCategory;
+        
+        /// <summary>
+        /// mdlCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model mdlCategory;
+        
+        /// <summary>
         /// cmbComTemplate control.
         /// </summary>
         /// <remarks>

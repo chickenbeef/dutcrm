@@ -16,8 +16,23 @@
             <Items>
             <ext:Panel id="pnlSub1" Height="614" runat="server" Layout="vboxLayout" Flex="2" Border="false">
             <Items >
+                            <ext:ComboBox runat="server" ID="cmbCategory" FieldLabel="Category" Text="Choose a Category.." AllowBlank="False" LabelAlign="Top" 
+                            Editable="False" Margins="10 0 10 20" DisplayField="Name" ValueField="CAT_ID" OnDirectSelect="cmbCategorySelected">
+                                <Store>
+                                    <ext:Store ID="strCategory" runat="server">
+                                        <Model>
+                                            <ext:Model ID="mdlCategory" runat="server">
+                                                <fields>
+                                                    <ext:ModelField Name="CAT_ID"/>
+                                                    <ext:ModelField Name="Name"/>
+                                                </fields>
+                                            </ext:Model>
+                                        </Model>
+                                    </ext:Store>
+                                   </Store>
+                            </ext:ComboBox>
                 
-                            <ext:ComboBox ID="cmbComTemplate" runat="server"  FieldLabel="Select a template" Margins="10 0 10 20"
+                            <ext:ComboBox ID="cmbComTemplate" runat="server"  Text="Select a template" Margins="10 0 10 20" FieldLabel="Template Name"
                                     DisplayField="Name" ValueField="Paragraph" AllowBlank="False" Editable="False" LabelAlign="Top">
                                    <Store>
                                     <ext:Store ID="streComTemplate" runat="server">

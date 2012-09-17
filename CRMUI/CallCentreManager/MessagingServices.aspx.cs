@@ -9,18 +9,19 @@ namespace CRMUI.CallCentreManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var comms = new ComTemplateBl().GetAllTemplates();
+            var cats = new CategoriesBl().GetAllCategories();
             var cl = new ClientBl().GetAllClients();
             
                     if (!IsPostBack)
                     {
-                            streComTemplate.DataSource = comms;
-                            streComTemplate.DataBind();
-            
-
-                            streClient.DataSource = cl;
-                            streClient.DataBind();
+                        strCategory.DataSource = cats;
+                        strCategory.DataBind();
+                        
+                        streClient.DataSource = cl;
+                        streClient.DataBind();
                     }
+                
+                cmbComTemplate.Enable(false);
         }
 
 
@@ -47,6 +48,7 @@ namespace CRMUI.CallCentreManager
                     }
                  }
 
+                //for testing mechanism
                 //List<string> custommail = new List<string>();
                 //custommail.Add("nnn.williamson@gmail.com");
                 //custommail.Add("ruvz21@gmail.com");
@@ -83,6 +85,17 @@ namespace CRMUI.CallCentreManager
             {
                 ExtNet.MessageBox.Alert("Error", msgex.Message).Show();
             }
+        }
+
+        //gets selected item for category..passes and returns all templates
+        protected void cmbCategorySelected(object sender, DirectEventArgs e)
+        {
+            var comms = new ComTemplateBl().GetAllTemplates(Convert.ToInt32(cmbCategory.SelectedItem.Value));
+            streComTemplate.DataSource = comms;
+            streComTemplate.DataBind();
+
+            cmbComTemplate.Enable(true);
+
         }
     }
 }
