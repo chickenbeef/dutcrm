@@ -103,6 +103,15 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Button btnNameSearch;
         
         /// <summary>
+        /// gpEmployees control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.GridPanel gpEmployees;
+        
+        /// <summary>
         /// streEmployee control.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Model mdlEmployee;
+        
+        /// <summary>
+        /// txtEMP_ID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Column txtEMP_ID;
         
         /// <summary>
         /// txtName control.
@@ -148,13 +166,13 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Column txtUsername;
         
         /// <summary>
-        /// btnAccept control.
+        /// RowSelectionModel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Button btnAccept;
+        protected global::Ext.Net.RowSelectionModel RowSelectionModel1;
         
         /// <summary>
         /// pnlSetRole control.
@@ -173,6 +191,24 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.TextField txtEmpId;
+        
+        /// <summary>
+        /// txtCurrentRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtCurrentRole;
+        
+        /// <summary>
+        /// txtUname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtUname;
         
         /// <summary>
         /// radGrpRoles control.

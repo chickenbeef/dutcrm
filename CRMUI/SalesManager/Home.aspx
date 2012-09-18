@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SalesManager/SM.Master" AutoEventWireup="true"
     CodeBehind="Home.aspx.cs" Inherits="CRMUI.SalesManager.WebForm1" %>
 
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+    Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
 <%@ Register Src="~/User Controls/SalesDayUserControl.ascx" TagName="SalesDayUserControl"
     TagPrefix="uc1" %>
 <%@ Register Src="~/User Controls/SalesWeekUserControl.ascx" TagName="SalesWeekUserControl"
@@ -64,4 +67,6 @@
 
         </Items>
     </ext:Panel>
+    <rsweb:ReportViewer ID="ReportViewer1" runat="server">
+    </rsweb:ReportViewer>
 </asp:Content>

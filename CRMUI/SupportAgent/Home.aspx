@@ -380,22 +380,22 @@
     </ext:Window>
     <%--POPUP SEND EMAIL--%>
     <ext:Window runat="server" ID="wndSendEmail" Width="800" Height="600" BodyPadding="20"
-         Hidden="False" Maximizable="true" Icon="EmailGo" Title="Send Email">
+         Hidden="True" Maximizable="true" Icon="EmailGo" Title="Send Email">
         <LayoutConfig>
             <ext:VBoxLayoutConfig Align="Stretch" />
         </LayoutConfig>
         <Items>
             <ext:FormPanel runat="server" Border="false" Frame="True" BodyPadding="20">
                 <Items>
-                    <ext:ComboBox runat="server" ID="cmbCategory" LabelWidth="70" FieldLabel="Category" Text="Choose a Category.." AnchorHorizontal="30%">
-                        <DirectEvents>
+                    <ext:ComboBox runat="server" ID="cmbCategory" LabelWidth="70" FieldLabel="Category" OnDirectSelect="CmbCategorySelectedItem" Text="Choose a Category.." AnchorHorizontal="30%">
+                        <%--<DirectEvents>
                             <Select OnEvent="CmbCategorySelectedItem"></Select>
-                        </DirectEvents>
+                        </DirectEvents>--%>
                     </ext:ComboBox>
-                    <ext:ComboBox runat="server" ID="cmbTemplate" LabelWidth="70" FieldLabel="Template" Text="Choose a Template.." Disabled="True" AnchorHorizontal="50%">
-                        <DirectEvents>
+                    <ext:ComboBox runat="server" ID="cmbTemplate" LabelWidth="70" FieldLabel="Template" OnDirectSelect="CmbTemplateSelectedItem" Text="Choose a Template.." Disabled="True" AnchorHorizontal="50%">
+                        <%--<DirectEvents>
                             <Select OnEvent="CmbTemplateSelectedItem"></Select>
-                        </DirectEvents>
+                        </DirectEvents>--%>
                     </ext:ComboBox>
                     <ext:TextField runat="server" ID="txtSubject" LabelWidth="70" FieldLabel="Subject" AnchorHorizontal="70%">
                     </ext:TextField>
@@ -403,10 +403,10 @@
                     </ext:HtmlEditor>
                 </Items>
                 <Buttons>
-                    <ext:Button runat="server" ID="btnSendEmail" Text="Send" Icon="EmailStart" Margins="0 12 0 0">
-                        <DirectEvents>
+                    <ext:Button runat="server" ID="btnSendEmail" Text="Send" Icon="EmailStart" OnDirectClick="BtnSendEmailClick" Margins="0 12 0 0">
+                        <%--<DirectEvents>
                             <Click OnEvent="BtnSendEmailClick"></Click>
-                        </DirectEvents>
+                        </DirectEvents>--%>
                     </ext:Button>
                 </Buttons>
             </ext:FormPanel>
