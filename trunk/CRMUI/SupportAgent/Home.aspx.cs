@@ -388,7 +388,6 @@ namespace CRMUI.SupportAgent
             }
         }
 
-        //TODO: CODE BELOW
         protected void BtnSendEmailClick(object sender, DirectEventArgs e)
         {
             
@@ -401,8 +400,9 @@ namespace CRMUI.SupportAgent
 
         protected void CmbTemplateSelectedItem(object sender, DirectEventArgs e)
         {
-
+            
         }
+
         #endregion
 
         #region helper methods
@@ -430,5 +430,7 @@ namespace CRMUI.SupportAgent
             
         }
         #endregion
+
+       
     }
 }
