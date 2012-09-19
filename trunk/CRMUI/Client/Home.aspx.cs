@@ -65,7 +65,7 @@ namespace CRMUI.Client
         {
             try
             {
-                string userName = Request.QueryString["UserName"];
+                string userName = Membership.GetUser().UserName;
                 var objCl = new ClientBl().GetClientUserName(userName);
 
                 txtName.Value = objCl[0].Name;
