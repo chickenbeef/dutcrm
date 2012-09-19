@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using CRMBusiness;
 using Ext.Net;
 
@@ -21,10 +22,10 @@ namespace CRMUI.CallCentreManager
                         streClient.DataBind();
                     }
                 
-                cmbComTemplate.Enable(false);
+                
         }
 
-
+        #region Direct Events
         protected void SendMessage(object sender, DirectEventArgs e)
         {
             try
@@ -43,52 +44,29 @@ namespace CRMUI.CallCentreManager
                     {
                         if (keyValuePair.Key == "Email")
                         {
-                                emails.Add(keyValuePair.Value);
+                            emails.Add(keyValuePair.Value);
                         }
                     }
-                 }
+                }
 
                 //for testing mechanism
                 //List<string> custommail = new List<string>();
-                //custommail.Add("nnn.williamson@gmail.com");
-                //custommail.Add("ruvz21@gmail.com");
+                //custommail.Add("akoob.iftekhar@gmail.com");
+                //custommail.Add("zombiebunny01@gmail.com");
 
                Composemailmessage(emails);
                 
             }
             catch (Exception ex)
             {
-                ExtNet.MessageBox.Alert("Error Occured", ex.Message).Show();
+                ExtNet.Msg.Alert("Error Occured", ex.Message).Show();
             }
         }
 
-        protected void Composemailmessage(List<string> mailadresses )
-        {
-            try
-            {
-                //CODE TO ADD EMAILS AND GENERATE EMAIL
-                var objmailmessage = new EmailBl
-                                             {
-                                                Bcc = mailadresses, Subject = cmbComTemplate.SelectedItem.Text, Body= editrPara.Text
-                                             };
-
-                if (objmailmessage.SendEmail())
-                {
-                    ExtNet.MessageBox.Notify(" Mail Message", "Message successfully sent to recipients").Show();
-                }
-                else
-                {
-                    ExtNet.MessageBox.Notify(" Mail Message Error", objmailmessage.Error).Show();
-                }
-            }
-            catch(Exception msgex)
-            {
-                ExtNet.MessageBox.Alert("Error", msgex.Message).Show();
-            }
-        }
+        
 
         //gets selected item for category..passes and returns all templates
-        protected void cmbCategorySelected(object sender, DirectEventArgs e)
+        protected void CmbCategorySelected(object sender, DirectEventArgs e)
         {
             var comms = new ComTemplateBl().GetAllTemplates(Convert.ToInt32(cmbCategory.SelectedItem.Value));
             streComTemplate.DataSource = comms;
@@ -96,6 +74,57 @@ namespace CRMUI.CallCentreManager
 
             cmbComTemplate.Enable(true);
 
+        }
+
+        protected void BtnCancelClicked(object sender, DirectEventArgs e)
+        {
+            Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
+        }
+
+        //protected void OnMsgBodyChanged(object sender, DirectEventArgs e)
+        //{
+           
+        //}
+
+
+        #endregion
+
+        #region Helper Methods
+
+        protected void Composemailmessage(List<string> mailadresses)
+        {
+            try
+            {
+                //CODE TO ADD EMAILS AND GENERATE EMAIL
+                var objmailmessage = new EmailBl
+                {
+                    Bcc = mailadresses,
+                    Subject = cmbComTemplate.SelectedItem.Text,
+                    Body = editrPara.Text
+                };
+
+                if (objmailmessage.SendEmail())
+                {
+                    ExtNet.Msg.Alert(" Mail Message", "Message successfully sent to recipients").Show();
+                }
+                else
+                {
+                    ExtNet.Msg.Alert(" Mail Message Error", objmailmessage.Error).Show();
+                }
+            }
+            catch (Exception msgex)
+            {
+                ExtNet.Msg.Alert("Error", msgex.Message).Show();
+            }
+        }
+
+        #endregion
+
+        //validation to do
+        protected void OnTextChange(object sender, EventArgs e)
+        {
+            cmbComTemplate.Disable(true);
+            btnCancel.Enable(true);
         }
     }
 }

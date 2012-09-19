@@ -121,15 +121,6 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.Panel pnlbuttons;
         
         /// <summary>
-        /// btnSave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnSave;
-        
-        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>
@@ -137,15 +128,6 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Button btnCancel;
-        
-        /// <summary>
-        /// lblnames control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Label lblnames;
         
         /// <summary>
         /// pnlMessageClients control.
