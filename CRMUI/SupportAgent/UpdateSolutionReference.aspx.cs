@@ -9,23 +9,36 @@ using System.Text.RegularExpressions;
 namespace CRMUI.SupportAgent
 {
     public partial class UpdateSolutionReference : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
+		{
+			  #region Get Employee ID
+			protected void Page_Load(object sender, EventArgs e)
         {
 
-            // get empid
-            string nm = Membership.GetUser().UserName.ToString(CultureInfo.InvariantCulture);
-            var em = new CRMBusiness.EmployeeBl().GetEmployee(nm);
-            txtEmpId.Text = em.EMP_ID.ToString(CultureInfo.InvariantCulture);
+					btnUpdate.Disabled = true;
 
+        	try
+        	{
 
-            btnUpdate.Disabled = true;
+						// get empid
+						string nm = Membership.GetUser().UserName.ToString(CultureInfo.InvariantCulture);
+						var em = new CRMBusiness.EmployeeBl().GetEmployee(nm);
+						txtEmpId.Text = em.EMP_ID.ToString(CultureInfo.InvariantCulture);
 
+        	}
+
+        	catch (Exception ex)
+        	{
+
+						ExtNet.Msg.Alert("Error", ex.Message).Show();
+        		
+        	}
+ 
         }
+			#endregion
 
 
-
-        //problem search
+       #region Problem Search
+			//problem search
         protected void SearchProb(object sender, DirectEventArgs e)
         {
 
@@ -34,20 +47,41 @@ namespace CRMUI.SupportAgent
 
                 var prob = new CRMBusiness.ProblemBl().GetProblems(txtProbDesc.Text);
 
-                if (prob.Count == 0)
-                {
 
-                    ExtNet.Msg.Alert("No Result", "Please Enter Valid Problem").Show();
-                    txtProbDesc.Reset();
-                    txtprobid.Reset();
-                    newSolDesc.Reset();
-                    strSolutions.RemoveAll();
-                    cmbSolutions.Reset();
+								if (prob.Count == 0)
+								{
 
-                }
+									ExtNet.Msg.Alert("No Result", "Please Enter Valid Problem Description").Show();
+									txtProbDesc.Reset();
+									txtprobid.Reset();
+									newSolDesc.Reset();
+									strSolutions.RemoveAll();
+									cmbSolutions.Reset();
 
-                streProblems.DataSource = prob;
-                streProblems.DataBind();
+								}
+
+
+
+							//Remove Problems With No Solutions
+              var lstprob = new List<Problem>();
+
+							for(var i = 0; i<prob.Count; i++)
+							{
+
+								var sol = new CRMBusiness.SolutionBl().GetSolutions(prob[i].PROB_ID);
+
+								if(sol.Count > 0)
+								{
+
+									lstprob.AddRange(new[] {prob[i]});
+								}
+
+							}
+
+
+							streProblems.DataSource = lstprob;
+							streProblems.DataBind();
+
 
             }
 
@@ -58,11 +92,12 @@ namespace CRMUI.SupportAgent
             }
 
         }
+#endregion
 
 
 
-
-        //pass selected prob_id
+			#region Grid Panel Row Details
+				//pass selected prob_id
         protected void PassValue(object sender, DirectEventArgs e)
         {
             try
@@ -87,12 +122,10 @@ namespace CRMUI.SupportAgent
                 }
 
 
-
-
                 int probid = Convert.ToInt32(txtprobid.Text);
                 var sol = new CRMBusiness.SolutionBl().GetSolutions(probid);
-
-
+							 
+							  
                 foreach (Solution t in sol)
                 {
                     t.Description = Regex.Replace(t.Description, "<(.|\n)*?>", "");
@@ -119,11 +152,12 @@ namespace CRMUI.SupportAgent
             }
 
         }
+				#endregion
 
 
 
-
-        //pass selected description to textarea
+				#region ComboBox
+				//pass selected description to textarea
         protected void PassDescription(object sender, DirectEventArgs e)
         {
 
@@ -142,6 +176,7 @@ namespace CRMUI.SupportAgent
             }
 
         }
+				#endregion
 
 
 
@@ -149,7 +184,8 @@ namespace CRMUI.SupportAgent
 
 
 
-        //save updated solution
+				#region Update Solution
+				//save updated solution
         protected void UpdateSolutions(object sender, DirectEventArgs e)
         {
 
@@ -186,8 +222,9 @@ namespace CRMUI.SupportAgent
 
             btnUpdate.Disabled = true;
 
-        }
+				}
+				#endregion
 
 
-    }
+		}
 }
