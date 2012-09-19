@@ -6,18 +6,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
     
 
-    <ext:Panel ID="pnlMain" runat="server" Height="610" Title="Messaging Services" >
+    <ext:Panel ID="pnlMain" runat="server" Height="610" Title="Messaging Services" AutoHeight="True">
          <LayoutConfig>
-            <ext:HBoxLayoutConfig Align="Stretch" />
+            <ext:HBoxLayoutConfig Align="Stretch"/>
         </LayoutConfig>
        <Items>
            <%--LEFT PANEL FOR CONFIGURE MESSAGE--%>
-           <ext:Panel ID="Panel1" runat="server" Height="615" Title="Message Settings" Layout="HBoxLayout" Flex="50" Padding="2" Icon="Mail">
+           <ext:Panel ID="Panel1" runat="server" Height="615" Title="Message Settings" Layout="HBoxLayout" Flex="50" Padding="2" Icon="EmailEdit">
             <Items>
             <ext:Panel id="pnlSub1" Height="614" runat="server" Layout="vboxLayout" Flex="2" Border="false">
             <Items >
                             <ext:ComboBox runat="server" ID="cmbCategory" FieldLabel="Category" Text="Choose a Category.." AllowBlank="False" LabelAlign="Top" 
-                            Editable="False" Margins="10 0 10 20" DisplayField="Name" ValueField="CAT_ID" OnDirectSelect="cmbCategorySelected">
+                            Editable="False" Margins="10 0 10 20" DisplayField="Name" ValueField="CAT_ID" OnDirectSelect="CmbCategorySelected">
                                 <Store>
                                     <ext:Store ID="strCategory" runat="server">
                                         <Model>
@@ -33,7 +33,7 @@
                             </ext:ComboBox>
                 
                             <ext:ComboBox ID="cmbComTemplate" runat="server"  Text="Select a template" Margins="10 0 10 20" FieldLabel="Template Name"
-                                    DisplayField="Name" ValueField="Paragraph" AllowBlank="False" Editable="False" LabelAlign="Top">
+                                    DisplayField="Name" ValueField="Paragraph" AllowBlank="False" Editable="False" LabelAlign="Top" Disabled="True">
                                    <Store>
                                     <ext:Store ID="streComTemplate" runat="server">
                                         <Model>
@@ -51,13 +51,11 @@
                                        <Select Handler="#{editrPara}.setValue(#{cmbComTemplate}.getValue());"/>
                                    </listeners>
                                 </ext:ComboBox>
-                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="610" Height="250"/>
+                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="610" Height="250" FieldLabel="Email Message Body" LabelAlign="Top" OnTextChanged="OnTextChange"/>
                 
-                <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1" Border="false" >
+                <ext:Panel ID="pnlbuttons" runat="server" Layout="HBoxLayout" Height="300" Flex="1" Border="false" >
                     <Items >
-                        <ext:Button ID="btnSave" runat="server" Text="Save" Margins="10 0 0 135" Padding="5" Width="50" />
-                        <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="10 0 0 20" />  
-                        <ext:Label runat="server" ID="lblnames"></ext:Label>
+                        <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" OnDirectClick="BtnCancelClicked" Icon="Cancel" Margins="10 0 10 20" Disabled="True"/>
                     </Items>
 
                 </ext:Panel>
@@ -107,7 +105,7 @@
                                 
                                
                                 <Buttons>
-                                    <ext:Button runat="server" Margins="2 300 2 5" ID="btnSend" Text="Send" Padding="5" Icon="ArrowEw" Flex="1" MaxWidth="80">
+                                    <ext:Button runat="server" Margins="2 300 2 5" ID="btnSend" Text="Send" Padding="5" Icon="EmailGo" Flex="1" MaxWidth="80">
                                         <DirectEvents>
                                             <Click OnEvent="SendMessage">
                                                 <ExtraParams>
