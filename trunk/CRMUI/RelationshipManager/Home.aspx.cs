@@ -9,10 +9,10 @@ using Ext.Net;
 namespace CRMUI.RelationshipManager
 {
     public partial class Home : Page
-    {
+		{
 
-
-        protected void Page_Load(object sender, EventArgs e)
+			#region Get Employee UserName
+			protected void Page_Load(object sender, EventArgs e)
         {
 
 			      btnConfirm.Disabled = true;
@@ -30,14 +30,16 @@ namespace CRMUI.RelationshipManager
             {
 
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
+            	  txtEmpName.Reset();
 
             }
 
         }
+			#endregion
 
 
-
-        // UserName search
+			#region Search by Client UserName 
+			// UserName search
         protected void SearchByUserName(object sender, DirectEventArgs e)
         {
 
@@ -51,13 +53,15 @@ namespace CRMUI.RelationshipManager
                 if (cl.Count == 0)
                 {
 
-                    ExtNet.Msg.Alert("No Result", "Please Enter Valid UserName").Show();
+                    ExtNet.Msg.Alert("No Result", "Please Enter Valid Client UserName").Show();
                 	  txtSUsername.Reset();
-
                 }
 
-                streClient.DataSource = cl;
-                streClient.DataBind();
+								else
+                {
+									streClient.DataSource = cl;
+									streClient.DataBind();
+                }
 
             }
 
@@ -65,17 +69,19 @@ namespace CRMUI.RelationshipManager
             {
 
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
+            	  txtSUsername.Reset();
 
             }
 
         }
+			#endregion
 
 
 
 
 
-
-        // Name search
+			#region Search by Client Name
+				// Name search
         protected void SearchByName(object sender, DirectEventArgs e)
         {
 
@@ -90,13 +96,16 @@ namespace CRMUI.RelationshipManager
                 if (cl.Count == 0)
                 {
 
-                    ExtNet.Msg.Alert("No Result", "Please Enter Valid Name").Show();
+                    ExtNet.Msg.Alert("No Result", "Please Enter Valid Client Name").Show();
                 	  txtSName.Reset();
 
                 }
 
-                streClient.DataSource = cl;
-                streClient.DataBind();
+                else
+                {
+									streClient.DataSource = cl;
+									streClient.DataBind();
+                }
 
             }
 
@@ -108,14 +117,15 @@ namespace CRMUI.RelationshipManager
             }
 
         }
+				#endregion
 
 
 
 
 
 
-
-        // Pass Client ID
+			#region Grid Panel Row Details
+				// Pass Client ID
         protected void PassValue(object sender, DirectEventArgs e)
         {
 
@@ -161,11 +171,12 @@ namespace CRMUI.RelationshipManager
             }
 
         }
+				#endregion
 
 
 
-
-      //save Sale
+			#region Add Sale
+				//save Sale
     	protected void SaveSaves(object sender, DirectEventArgs e)
     	{
 
@@ -173,7 +184,7 @@ namespace CRMUI.RelationshipManager
 				{
 					 new SaleBl().SaveSale(DateTime.Now, Convert.ToInt32(txtClientId.Text), Convert.ToInt32(txtEmpId.Text));
 
-					ExtNet.Msg.Notify("Sale", "Sale Added").Show();
+					ExtNet.Msg.Notify("Sale Details", "Sale Added").Show();
 				}
 
 				catch (Exception ex)
@@ -193,7 +204,8 @@ namespace CRMUI.RelationshipManager
     		streClient.RemoveAll();
 
 
-    	}
-    }
+			}
+				#endregion
+		}
 
 }
