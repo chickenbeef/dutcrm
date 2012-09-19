@@ -112,15 +112,6 @@ namespace CRMUI.Client {
         protected global::Ext.Net.Button btnSend;
         
         /// <summary>
-        /// btnCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Button btnCancel;
-        
-        /// <summary>
         /// pnlUploadImg control.
         /// </summary>
         /// <remarks>

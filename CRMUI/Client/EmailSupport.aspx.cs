@@ -23,6 +23,10 @@ namespace CRMUI.Client
                 var content = (byte[][])(Session["fileContents"]);
                 var count = (int)(Session["count"]);
                 var objI = new ImageBl();
+                if(txtSubject.Text=="")
+                {
+                    txtSubject.Text = "No Subject";
+                }
                 var id = objEp.AddEmailProblem(txtFrom.Text,txtSubject.Text,heDesc.Text, DateTime.Now, Convert.ToInt32(txtClID.Text), null);
                 if (id != 0)
                 {
@@ -38,7 +42,7 @@ namespace CRMUI.Client
 
                         }
                     }
-
+                   
                     ExtNet.Msg.Notify("Success", "Your message has been sent").Show();
                 }
 
@@ -46,7 +50,7 @@ namespace CRMUI.Client
                 {
                     ExtNet.Msg.Notify("Error", "Unable to send message, please try again").Show();
                 }
-                Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
+               
             }
             catch (Exception ex)
             {
@@ -54,10 +58,6 @@ namespace CRMUI.Client
             }
         }
 
-        protected void btnCancel_OnDirectClick(object sender, DirectEventArgs e)
-        {
-            Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
-
-        }
+       
     }
 }

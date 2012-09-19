@@ -14,12 +14,14 @@
                         Border="false">
                         <Items>
                             <ext:TextField ID="txtClID" runat="server" FieldLabel="Client ID " Margins="30 0 10 30"
-                                ReadOnly="True"/>
+                                ReadOnly="True" />
                             <ext:TextField ID="txtFrom" runat="server" FieldLabel="From " Margins="10 0 10 30"
                                 ReadOnly="True" />
-                            <ext:TextField ID="txtSubject" runat="server" FieldLabel="Subject" Margins="20 0 10 30" Width="600" Grow="True" />
+                            <ext:TextField ID="txtSubject" runat="server" FieldLabel="Subject" Margins="20 0 10 30"
+                                Width="600" Grow="True" />
                             <ext:Label ID="Label1" runat="server" Text="Description:" Margins="10 0 0 30" />
-                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="190" AutoFocus="True" />
+                            <ext:HtmlEditor ID="heDesc" runat="server" Margins="10 0 10 30" Width="610" Height="190"
+                                AutoFocus="True" />
                         </Items>
                     </ext:Panel>
                     <ext:Panel ID="pnlbuttons" runat="server" Layout="hboxLayout" Height="300" Flex="1"
@@ -27,14 +29,14 @@
                         <Items>
                             <ext:Button ID="btnSend" runat="server" Text="Send" Margins="10 0 0 135" Padding="5"
                                 Icon="EmailGo" OnDirectClick="btnSend_OnDirectClick" />
-                            <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" Margins="10 0 0 10"
-                                OnDirectClick="btnCancel_OnDirectClick" Icon="Cancel" />
                         </Items>
                     </ext:Panel>
                 </Items>
             </ext:Panel>
             <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="200 0 10 0" Border="false">
-                <Loader runat="server" Url="upload.aspx" Mode="Frame"/>
+                <Content>
+                    <iframe seamless="true" src="upload.aspx" runat="server" width="400" height="250" />
+                </Content>
             </ext:Panel>
         </Items>
     </ext:Panel>
