@@ -51,12 +51,8 @@
                                 <ext:FieldSet runat="server">
                                     <Items>
                                         <ext:NumberField runat="server" ID="txtHours" FieldLabel="Number of hours" Width="150" 
-                                        Padding="5" Margins="10 0 10 0" MinValue="1" MaxValue="84" Editable="False" AllowBlank="False">
-                                            
+                                        Padding="5" Margins="10 0 10 0" MinValue="1" MaxValue="84" Editable="False" AllowBlank="False" OnDirectChange="HoursChanged">
                                            </ext:NumberField>
-                                        
-                                        
-                                        
                                     </Items>
                                 </ext:FieldSet>
                         </Items>
@@ -69,7 +65,8 @@
                                 <ext:FieldSet runat="server" ID="fdstHours" Margins="5 0 10 0">
                                     <Items>
                                         <ext:NumberField runat="server" ID="txtMins" FieldLabel="Unattended Minutes allowed" Width="150" 
-                                                         Padding="5" Margins="10 0 10 0" MinValue="1" AllowDecimals="False" MaxValue="84" Editable="False" AllowBlank="false"/>
+                                                         Padding="5" Margins="10 0 10 0" MinValue="1" AllowDecimals="False" MaxValue="84" 
+                                                         Editable="False" AllowBlank="false" OnDirectChange="MinsChanged"/>
                                                                    
                                        
                                     </Items>
@@ -78,7 +75,8 @@
                     </ext:Container>
                     <ext:Container ID="Container1" runat="server" Margins="5 0 10 0">
                         <Items>
-                            <ext:Button runat="server" ID="btnConfirm" Text="Save" Padding="5" Icon="PageSave" OnDirectClick="SaveSettings"/>
+                            <ext:Button runat="server" ID="btnConfirm" Text="Save" Padding="5" Icon="PageSave" OnDirectClick="SaveSettings" Disabled="True"/>
+                            <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" OnDirectClick="CancelClicked" Icon="Cancel" Margin="10"/>
                         </Items>
                     </ext:Container>
                 </Items>

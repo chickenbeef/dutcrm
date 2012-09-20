@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CRMBusiness;
 using Ext.Net;
 
@@ -29,9 +25,9 @@ namespace CRMUI.CallCentreManager
             }
         }
 
-     
-         
-       protected void SaveSettings(object sender, EventArgs e)
+        #region DIRECT EVENTS
+        //SAVE/UPDATE AUTOMATION SETTINGS IN DATABASE
+        protected void SaveSettings(object sender, EventArgs e)
        {
 
            var elsave = new EscalationBl();
@@ -58,6 +54,26 @@ namespace CRMUI.CallCentreManager
                ExtNet.Msg.Alert("Error", ex.Message).Show();
            }
        }
-        
+        //REDIRECT TO HOME PAGE ON CANCEL CLICK
+        protected void CancelClicked(object sender, DirectEventArgs e)
+        {
+            Response.Redirect("~/CallCentreManager/Home.aspx");
+        }
+
+        #endregion
+
+        #region VALIDATION 
+        protected void HoursChanged(object sender, DirectEventArgs e)
+        {
+            btnConfirm.Enable(true);
+        }
+
+        protected void MinsChanged(object sender, DirectEventArgs e)
+        {
+            btnConfirm.Enable(true);
+        }
+        #endregion
+
+
     }
 }
