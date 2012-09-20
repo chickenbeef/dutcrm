@@ -41,7 +41,7 @@ namespace CRMUI.SupportAgent
 			//problem search
         protected void SearchProb(object sender, DirectEventArgs e)
         {
-
+					 				 
             try
             {
 
@@ -124,22 +124,19 @@ namespace CRMUI.SupportAgent
 
                 int probid = Convert.ToInt32(txtprobid.Text);
                 var sol = new CRMBusiness.SolutionBl().GetSolutions(probid);
-							 
-							  
-                foreach (Solution t in sol)
-                {
-                    t.Description = Regex.Replace(t.Description, "<(.|\n)*?>", "");
-                }
-
+							 							  
 
                 strSolutions.DataSource = sol;
                 strSolutions.DataBind();
 
 
-                cmbSolutions.Text = sol[0].SOL_ID.ToString(CultureInfo.InvariantCulture);
 
-                newSolDesc.Text = sol[0].Description;
 
+            	  cmbSolutions.Text = sol[0].SOL_ID.ToString(CultureInfo.InvariantCulture);
+
+           	    var encSol = new CRMBusiness.SolutionBl().GetSolutions(probid);
+
+            	  newSolDesc.Text = sol[0].Description;  
 
                 btnUpdate.Disabled = false;
 
@@ -164,7 +161,21 @@ namespace CRMUI.SupportAgent
             try
             {
 
-                newSolDesc.Text = cmbSolutions.SelectedItem.Value;
+            	  var soldesc = new CRMBusiness.SolutionBl().GetSolutions(Convert.ToInt32(txtprobid.Text));
+
+            	foreach (var solution in soldesc)
+            	{
+            		
+								if (Convert.ToInt32(cmbSolutions.SelectedItem.Value) == solution.SOL_ID)
+								{
+
+									newSolDesc.Text = solution.Description;
+
+								}
+
+            	}
+
+							 
 
                 btnUpdate.Disabled = false;
 
@@ -196,7 +207,7 @@ namespace CRMUI.SupportAgent
                                                                                                         Convert.ToInt32(txtprobid.Text),
                                                                                                         Convert.ToInt32(txtEmpId.Text));
 
-                ExtNet.Msg.Notify("Update", "Solution Added").Show();
+                ExtNet.Msg.Notify("Update", "Solution Updated").Show();
             }
 
             catch (Exception ex)
