@@ -109,7 +109,7 @@
 										<ext:TextField runat="server" ID="txtprobid" FieldLabel="PROB_ID" ReadOnly="True" Margins="10 0 10 30" Width="300" Hidden="True" />
 
 										<ext:ComboBox ID="cmbSolutions" runat="server"  FieldLabel="Solution ID" Margins="40 0 10 30"
-                                    Editable="False" DisplayField = "SOL_ID" ValueField = "Description" OnDirectSelect = "PassDescription" > <%-- --%>
+                                    Editable="False" DisplayField = "SOL_ID" ValueField = "SOL_ID" OnDirectSelect = "PassDescription" > <%-- --%>
 											
 											<Store>
 												   <ext:Store ID="strSolutions" runat="server">

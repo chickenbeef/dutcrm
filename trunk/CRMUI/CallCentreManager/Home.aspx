@@ -30,7 +30,7 @@
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Employee Username" Width="300" Margins="0 0 0 30" BlankText = "Please Enter Client Username" MinLength = 3 MaxLength = 13>
+                                    <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Employee Username" Width="300" Margins="0 0 0 30" BlankText = "Please Enter Client Username" MinLength = 3 MaxLength = 13 LabelWidth="125">
                                      
                                         <Listeners>
                                             <ValidityChange Handler = "#{btnUsernameSearch}.setDisabled(!isValid)"></ValidityChange>
@@ -53,7 +53,7 @@
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
                                 <Items>
-                                    <ext:TextField runat="server" ID="txtSName" FieldLabel="Employee Name" Width="300" Margins="0 0 0 30" BlankText = "Please Enter Name" MinLength = 3 MaxLength = 13>
+                                    <ext:TextField runat="server" ID="txtSName" FieldLabel="Employee Name" Width="300" Margins="0 0 0 30" BlankText = "Please Enter Employee Name" MinLength = 3 MaxLength = 13>
                                     
                                          <Listeners>
                                             <ValidityChange Handler = "#{btnNameSearch}.setDisabled(!isValid)"></ValidityChange>
@@ -131,16 +131,17 @@
                     
                     <ext:TextField runat="server" ID="txtCurrentRole" FieldLabel="Current Role" ReadOnly="True" Margins="10 0 10 30" Width="300"/>
                     
-                    <ext:TextField runat="server" ID="txtUname" FieldLabel= "Value" ReadOnly="True" Margins="10 0 10 30" Width="300"/>
+                    <ext:TextField runat="server" ID="txtUname" FieldLabel= "UName" ReadOnly="True" Margins="10 0 10 30" Width="300" Hidden = "True"/>
 
-                    <ext:FieldSet runat="server" Title="Current role is selected" Margins="10 0 10 135" Width="350">
+                    <ext:FieldSet runat="server" Title="Roles" Margins="10 0 10 135" Width="350">
                         <Items>
-                                <ext:RadioGroup ID="radGrpRoles" FieldLabel="Please select a new role" runat="server"   GroupName="Available Roles" Height="250" ColumnsNumber="1" Layout="AnchorLayout" DefaultAnchor="100%" OnDirectChange = "ChangeRoleValue">
+                                <ext:RadioGroup ID="radGrpRoles" FieldLabel="Please select a new role" runat="server"   GroupName="Available Roles" Height="250" ColumnsNumber="1" Layout="AnchorLayout" DefaultAnchor="100%" OnDirectChange = "ChangeRoleValue" LabelWidth="150">
                                     <Items>
-                                        <ext:Radio runat="server" ID="radbtnEmailSupport" FieldLabel="Email Support Agent" Name="Roles" />
-                                        <ext:Radio runat="server" ID="radbtnCallSupport" FieldLabel="Call Support Agent" Name="Roles" />
-                                        <ext:Radio runat="server" ID="radbtnRM" FieldLabel="Relationship Manager" Name="Roles" />
-                                        <ext:Radio runat="server" ID="radbtnSalesManager" FieldLabel="SalesManager" Name="Roles"/>
+                                        <ext:Radio runat="server" ID="radbtnEmailSupport" FieldLabel="Email Support Agent" Name="Roles" InputValue = "Email Support Agent" LabelWidth="150" Height="25" />
+                                        <ext:Radio runat="server" ID="radbtnCallSupport" FieldLabel="Call Support Agent" Name="Roles" InputValue = "Call Support Agent" LabelWidth="150"  Height="25"/>
+                                        <ext:Radio runat="server" ID="radbtnRM" FieldLabel="Relationship Manager" Name="Roles"  InputValue = "Relationship Manager" LabelWidth="150"  Height="25"/>
+                                        <ext:Radio runat="server" ID="radbtnSalesManager" FieldLabel="Sales Manager" Name="Roles" InputValue = "Sales Manager" LabelWidth="150"  Height="25"/>
+																				<ext:Radio runat="server" ID="radbtnTeamLeader" FieldLabel="Team Leader" Name="Roles" InputValue = "Team Leader" LabelWidth="150"  Height="25"/>
                                     </Items>
                                 </ext:RadioGroup>
                     </Items>

@@ -202,6 +202,7 @@ namespace CRMUI.RelationshipManager
 				btnConfirm.Disabled = true;
 
     		streClient.RemoveAll();
+				//
 
 
 			}

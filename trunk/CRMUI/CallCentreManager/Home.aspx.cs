@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.ApplicationServices;
 using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CRMBusiness;
 using CRMBusiness.CRM;
 using Ext.Net;
@@ -14,54 +8,74 @@ using Ext.Net;
 namespace CRMUI.CallCentreManager
 {
     public partial class Home : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
+		{
+			#region page
+			protected void Page_Load(object sender, EventArgs e)
         {
-
-            btnUpdateRole.Disabled = true;
-
-
+        	btnUpdateRole.Disabled = true;
         }
+			#endregion
 
 
 
-        //UserName Search
+			#region Search By UserName
+			//UserName Search
         protected void SearchByUserName(object sender, DirectEventArgs e)
         {
+					
+					txtSName.Reset();
 
 					try
-					{
-
+					 {	
+				  						
 						var emp = new EmployeeBl().GetEmployee(txtSUsername.Text);
-						txtSName.Reset();
 
-
-						if (emp == null)
+					 	if(emp == null)
 						{
-							ExtNet.Msg.Alert("No Result", "Please Enter Valid Name").Show();
+							ExtNet.Msg.Alert("No Result", "Please Enter Valid Employee UserName").Show();
 							txtSUsername.Reset();
-                            
 						}
-					    var le = new List<vEmployee> {emp};
-					    streEmployee.DataSource = le;
-                        streEmployee.DataBind();
+
+					 else
+						{
+							var lst = new List<vEmployee> {emp};
+
+							if (lst.Count == 0)
+							{
+						
+								ExtNet.Msg.Alert("No Result", "Please Enter Valid Employee UserName").Show();
+								txtSUsername.Reset();
+							}
+
+							else
+							{
+								streEmployee.DataSource = lst;
+								streEmployee.DataBind();
+							}
+
+						}
+
+				    
 					}
 
 					catch (Exception ex)
 					{
 
 						ExtNet.Msg.Alert("Error", ex.Message).Show();
+						txtSUsername.Reset();
+
 
 					}
-
+					
         }
+				#endregion
 
 
 
 
 
-
-        //Name Search
+			 #region Search By Name
+				//Name Search
         protected void SearchByName(object sender, DirectEventArgs e)
         {
 
@@ -75,15 +89,16 @@ namespace CRMUI.CallCentreManager
 						if (emp.Count == 0)
 						{
 
-							ExtNet.Msg.Alert("No Result", "Please Enter Valid UserName").Show();
+							ExtNet.Msg.Alert("No Result", "Please Enter Valid Employee Name").Show();
 							txtSName.Reset();
 
 						}
 
-						streEmployee.DataSource = emp;
-
-						streEmployee.DataBind();
-
+						else
+						{
+							streEmployee.DataSource = emp;
+   						streEmployee.DataBind();
+						}
 
 					}
 
@@ -91,15 +106,17 @@ namespace CRMUI.CallCentreManager
 					{
 
 						ExtNet.Msg.Alert("Error", ex.Message).Show();
+						txtSName.Reset();
 
 					}
 
-  
         }
+				#endregion
 
+			
 
-
-        // Pass EMP ID
+				#region Grid Panel Row Details
+				// Pass Row Details
         protected void PassValue(object sender, DirectEventArgs e)
         {
 
@@ -116,31 +133,48 @@ namespace CRMUI.CallCentreManager
 
                     foreach (KeyValuePair<string, string> keyValuePair in row)
                     {
+											 
 
                         if (keyValuePair.Key == "EMP_ID")
-                        {
-                            //empid = Convert.ToInt32(keyValuePair.Value);
+                        {                         
                             txtEmpId.Text = keyValuePair.Value;
                         }
 
                         if (keyValuePair.Key == "UserName")
-
                         {
 
                             txtUname.Text = keyValuePair.Value;
-
                         }
-
-                    }
-
-										var rol = Roles.GetRolesForUser(txtUname.Text);
-
-                    txtCurrentRole.Text = rol[0];
-            
+                    }       
                 }
 
 
-                btnUpdateRole.Disabled = false;  
+								var current = Roles.GetRolesForUser(txtUname.Text);
+	
+							  txtCurrentRole.Text = current[0];
+
+							  if(txtCurrentRole.Text == "Call Centre Manager")
+							  {
+
+							  	ExtNet.Msg.Alert("Roles", "Role Cannot Be Updated").Show();
+							  	radGrpRoles.Reset();
+							  	radGrpRoles.Disabled = true;
+							  	btnUpdateRole.Disabled = true;
+							  	streEmployee.RemoveAll();
+
+
+							  	txtCurrentRole.Reset();
+							  	txtEmpId.Reset();
+							  	txtSName.Reset();
+							  	txtSUsername.Reset();
+
+							  }
+
+							  else
+							  {
+							  	radGrpRoles.Reset();
+							  	radGrpRoles.Disabled = false; 
+							  }
             }
 
             catch (Exception ex)
@@ -150,75 +184,154 @@ namespace CRMUI.CallCentreManager
             }
 
         }
+				#endregion
 
 
-
-			  //change Role Selected
+				#region Radio
+				//change Role Selected
 				protected void ChangeRoleValue(object sender, DirectEventArgs e)
 				{
 
 					btnUpdateRole.Disabled = false;
-
+			
 				}
+				#endregion
 
 
-
-        protected void UpdateRole(object sender, DirectEventArgs e)
+				#region Update Role
+				protected void UpdateRole(object sender, DirectEventArgs e)
         {
-
-	     	//var current = Roles.GetRolesForUser(txtCurrentRole.Text);
-			//var added = new List<string>();
-			//var removed = new List<string>();
-
-        	//Roles.RemoveUserFromRole(txtName.Text, txtCurrentRole.Text);
-
 
         	try
         	{
 
-        	    //Membership.CreateUser("BOB", "BOB###1");
+						if (radbtnCallSupport.Checked)
+						{
 
-        	    Roles.AddUserToRole("kim", "AAAAA");
+							if (radbtnCallSupport.InputValue == txtCurrentRole.Text)
+
+								ExtNet.Msg.Alert("Warning", "User Already Assigned To Role").Show();
+
+							else
+							{
+
+								Roles.RemoveUserFromRole(txtUname.Text, txtCurrentRole.Text);
+								Roles.AddUserToRole(txtUname.Text, radbtnCallSupport.InputValue);
+
+								ExtNet.Msg.Notify("New Role", "User Assigned New Role").Show();
+
+							}
+
+						}
 
 
-        	    ExtNet.Msg.Notify("New Role", "Added to db").Show();
 
-        	    //ExtNet.Msg.Notify("New User", "User Added to DB").Show();
+						if (radbtnEmailSupport.Checked)
+						{
 
-        	    //ExtNet.Msg.Notify("New Role", "Role Added to DB").Show();
+							if (radbtnEmailSupport.InputValue == txtCurrentRole.Text)
+
+								ExtNet.Msg.Alert("Warning", "User Already Assigned To Role").Show();
+
+							else
+							{
+
+								Roles.RemoveUserFromRole(txtUname.Text, txtCurrentRole.Text);
+								Roles.AddUserToRole(txtUname.Text, radbtnEmailSupport.InputValue);
+
+								ExtNet.Msg.Notify("New Role", "User Assigned New Role").Show();
+
+							}
+
+						}
+
+
+
+						if (radbtnRM.Checked)
+						{
+
+							if (radbtnRM.InputValue == txtCurrentRole.Text)
+
+								ExtNet.Msg.Alert("Warning", "User Already Assigned To Role").Show();
+
+							else
+							{
+
+								Roles.RemoveUserFromRole(txtUname.Text, txtCurrentRole.Text);
+								Roles.AddUserToRole(txtUname.Text, radbtnRM.InputValue);
+
+								ExtNet.Msg.Notify("New Role", "User Assigned New Role").Show();
+
+							}
+
+						}
+
+
+						if (radbtnSalesManager.Checked)
+						{
+
+							if (radbtnSalesManager.InputValue == txtCurrentRole.Text)
+
+								ExtNet.Msg.Alert("Warning", "User Already Assigned To Role").Show();
+
+							else
+							{
+
+								Roles.RemoveUserFromRole(txtUname.Text, txtCurrentRole.Text);
+								Roles.AddUserToRole(txtUname.Text, radbtnSalesManager.InputValue);
+
+								ExtNet.Msg.Notify("New Role", "User Assigned New Role").Show();
+
+							}
+
+						}
+
+
+
+						if (radbtnTeamLeader.Checked)
+						{
+
+							if (radbtnTeamLeader.InputValue == txtCurrentRole.Text)
+
+								ExtNet.Msg.Alert("Warning", "User Already Assigned To Role").Show();
+
+							else
+							{
+
+								Roles.RemoveUserFromRole(txtUname.Text, txtCurrentRole.Text);
+								Roles.AddUserToRole(txtUname.Text, radbtnTeamLeader.InputValue);
+
+								ExtNet.Msg.Notify("New Role", "User Assigned New Role").Show();
+
+							}
+
+						}
+
+
+        		txtSName.Reset();
+        		txtSUsername.Reset();
+        		txtCurrentRole.Reset();
+        		txtUname.Reset();
+        		txtEmpId.Reset();
+
+        		radGrpRoles.Reset();
+        		radGrpRoles.Disabled = true;
+        		streEmployee.RemoveAll();
+
+        		btnUpdateRole.Disabled = true;
 
         	}
-
-
 
         	catch (Exception ex)
         	{
-				ExtNet.Msg.Alert("Error", ex.Message).Show();
+				     ExtNet.Msg.Alert("Error", ex.Message).Show();
         		
         	}
 
+				}
+				#endregion
 
 
 
-					/*if (radGrpRoles.CheckedItems.Equals(txtCurrentRole.Text) && !current.Contains(txtCurrentRole.Text))
-					{
-						added.Add(radGrpRoles.CheckedItems.ToString());
-					}
-
-
-
-					if (added.Count > 0)
-					{
-						Roles.AddUsersToRoles(new[] { txtCurrentRole.Text }, added.ToArray());
-						ExtNet.Msg.Alert("Roles", "Role Updated").Show();
-
-					}
-					 */
-
-
-        }
-
-
-
-    }
+		}
 }
