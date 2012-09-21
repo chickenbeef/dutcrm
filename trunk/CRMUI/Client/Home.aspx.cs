@@ -13,13 +13,14 @@ namespace CRMUI.Client
         {
             try
             {
+                //getting the user name of a user to populate their details
                 string userName = Membership.GetUser().UserName;
                 Session["UserName"] = userName;
                 var objCl = new ClientBl().GetClientUserName(userName);
                  
                     if(!IsPostBack)
                     {
-                    
+                        // loading the clients details when they login
                         Session["From"] = objCl[0].Name + " "+objCl[0].Surname;
                         txtName.Text = objCl[0].Name;
                         txtSurname.Text = objCl[0].Surname;
@@ -50,6 +51,7 @@ namespace CRMUI.Client
         
         protected void BtnEditClick(object sender, DirectEventArgs e)
         {
+            //setting readonly to false so the user can edit their details
             txtName.ReadOnly = false;
             txtSurname.ReadOnly = false;
             dfDob.ReadOnly = false;
@@ -65,7 +67,10 @@ namespace CRMUI.Client
         {
             try
             {
-                string userName = Request.QueryString["UserName"];
+
+                //cancelling changes before they are updated
+                string userName = Membership.GetUser().UserName;
+
                 var objCl = new ClientBl().GetClientUserName(userName);
 
                 txtName.Value = objCl[0].Name;
@@ -97,7 +102,7 @@ namespace CRMUI.Client
             try
             {
                 var objC = new ClientBl();
-               
+               // checking if the data entered is correct and updating it accordingly
                if(txtName.Text=="")
                {
                    txtName.Focus();
@@ -110,6 +115,7 @@ namespace CRMUI.Client
                {
                    dfDob.Focus();
                }
+                  
                else if( objC.UpdateClient(Convert.ToInt32(txtClientID.Text), txtName.Text, txtSurname.Text, Convert.ToDateTime(dfDob.Text), txtTel.Text, txtCell.Text, txtFax.Text, DateTime.Now))
                {
                    
