@@ -40,15 +40,6 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.FormPanel pnlEmailSettings;
         
         /// <summary>
-        /// txtServer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.TextField txtServer;
-        
-        /// <summary>
         /// txtUsername control.
         /// </summary>
         /// <remarks>
@@ -76,22 +67,76 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.TextField txtConfirmPassword;
         
         /// <summary>
-        /// txtPort control.
+        /// fdstIncomingConfigs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.TextField txtPort;
+        protected global::Ext.Net.FieldSet fdstIncomingConfigs;
         
         /// <summary>
-        /// chkEnableSSL control.
+        /// txtInServer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Checkbox chkEnableSSL;
+        protected global::Ext.Net.TextField txtInServer;
+        
+        /// <summary>
+        /// txtInPort control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtInPort;
+        
+        /// <summary>
+        /// chkEnableInSSL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Checkbox chkEnableInSSL;
+        
+        /// <summary>
+        /// fdstOutgoingConfigs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.FieldSet fdstOutgoingConfigs;
+        
+        /// <summary>
+        /// txtOtServer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtOtServer;
+        
+        /// <summary>
+        /// txtOtPort control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.TextField txtOtPort;
+        
+        /// <summary>
+        /// chkEnableOtSSL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Checkbox chkEnableOtSSL;
         
         /// <summary>
         /// BtnSave control.
