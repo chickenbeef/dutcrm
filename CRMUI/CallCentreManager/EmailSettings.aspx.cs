@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Globalization;
-using System.Net.Configuration;
 using Ext.Net;
-using System.Web.Configuration;
-using System.Configuration;
+using CRMBusiness;
 
 
 namespace CRMUI.CallCentreManager
@@ -14,118 +12,158 @@ namespace CRMUI.CallCentreManager
         {
             try
             {
-                Configuration config = WebConfigurationManager.OpenWebConfiguration("~/");
-                var mailsection = config.GetSectionGroup("system.net/mailSettings") as MailSettingsSectionGroup;
-                
-
-
-                if(!IsPostBack)
+                if (!IsPostBack)
                 {
-                    if (mailsection != null)
-                    {
-                        var loadsmtp = mailsection.Smtp;
-                        txtServer.Text = loadsmtp.Network.Host.ToString(CultureInfo.InvariantCulture);
-                        txtUsername.Text = loadsmtp.Network.UserName;
-                        txtPort.Text = loadsmtp.Network.Port.ToString(CultureInfo.InvariantCulture);
-                        chkEnableSSL.Checked = loadsmtp.Network.EnableSsl;
-
-                    }
+                    Loadcurrentconfig();
                 }
             }
             catch (Exception loadex)
             {
-
                 ExtNet.MessageBox.Alert("Error", loadex.Message).Show();
             }
-            
+
         }
 
+        #region DIRECT EVENTS
         protected void SaveSettings(object sender, DirectEventArgs e)
         {
-            try
-            {
-                //declarations
-                            //mailsettings
-                Configuration config = WebConfigurationManager.OpenWebConfiguration("~/");
-                var mailsection = config.GetSectionGroup("system.net/mailSettings") as MailSettingsSectionGroup;
-                            //check ssl
-                bool ssltype = false;
+            //try
+            //{
 
-                switch (chkEnableSSL.Checked)
-                {
-                    case true:
-                        ssltype = true;
-                        break;
-                    case false:
-                        ssltype = false;
-                        break;
-                }
                 //validate text input controls
-                //-----------------------
-                if (txtServer.Text == null)
+                //----------------------------
+                //if (txtInServer.Text == null)
+                //{
+                //    txtInServer.Focus();
+                //}
+                //else if (txtUsername.Text == "")
+                //{
+                //    txtUsername.Focus();
+                //}
+                //else if (txtPassword.Text == "")
+                //{
+                //    txtPassword.Focus();
+                //}
+                //else if (txtInPort.Text == "")
+                //{
+                //    txtInPort.Focus();
+                //}
+                //else if (txtPassword.Text == txtConfirmPassword.Text)
+                //{
+                //    txtPassword.IndicatorIcon = Icon.Tick;
+                //    txtConfirmPassword.IndicatorIcon = Icon.Tick;
+                //}
+                //else if (txtConfirmPassword != txtPassword)
+                //{
+                //    txtPassword.IndicatorIcon = Icon.Exclamation;
+                //    txtConfirmPassword.IndicatorIcon = Icon.Exclamation;
+                //    txtConfirmPassword.IndicatorText = "Password do not match";
+                //    txtPassword.Focus();
+                //}
+                if (Savealldata())
                 {
-                    txtServer.Focus();
-                }
-                else if (txtUsername.Text == "")
-                {
-                    txtUsername.Focus();
-                }
-                else if (txtPassword.Text == "")
-                {
-                    txtPassword.Focus();
-                }
-                else if (txtPort.Text == "")
-                {
-                    txtPort.Focus();
-                }
+                    //var sslin = chkEnableInSSL.Checked;
+                    //var sslout = chkEnableOtSSL.Checked;
+                    //var saveconfigs = new ConfigurationSettingsBl();
 
-                else if (txtPassword.Text == txtConfirmPassword.Text)
-                {
-                    txtPassword.IndicatorIcon = Icon.Tick;
-                    txtConfirmPassword.IndicatorIcon = Icon.Tick;
-                }
-                else if (txtConfirmPassword!=txtPassword)
-                {
-                    txtPassword.IndicatorIcon = Icon.Exclamation;
-                    txtConfirmPassword.IndicatorIcon = Icon.Exclamation;
-                    txtConfirmPassword.IndicatorText = "Password do not match";
-                    txtPassword.Focus();
-                }
-                else if(mailsection != null)
-                {
-                    var smtpSection = mailsection.Smtp;
-
-                    smtpSection.Network.Host = txtServer.Text;
-                    smtpSection.Network.UserName = txtUsername.Text;
-                    smtpSection.Network.Password = txtConfirmPassword.Text;
-                    smtpSection.Network.Port = Convert.ToInt32(txtPort.Text);
-                    smtpSection.Network.EnableSsl = ssltype;
-                    config.Save(ConfigurationSaveMode.Modified);
+                    //saveconfigs.UpdateSetting("SMTPUser", txtUsername.Text);
+                    //saveconfigs.UpdateSetting("SMTPPassword", txtConfirmPassword.Text);
+                    //saveconfigs.UpdateSetting("SMTPClient", txtOtServer.Text);
+                    //saveconfigs.UpdateSetting("SMTPPort", txtOtPort.Text);
+                    //saveconfigs.UpdateSetting("SMTPSSL", sslout.ToString(CultureInfo.InvariantCulture));
+                    //saveconfigs.UpdateSetting("MailServer", txtInServer.Text);
+                    //saveconfigs.UpdateSetting("Port", txtInPort.ToString());
+                    //saveconfigs.UpdateSetting("Encryption", sslin.ToString(CultureInfo.InvariantCulture));
 
                     ExtNet.MessageBox.Notify("Save Status", "Email Settings updated successfuly!").Show();
                     Disablecontrols();
+                    //ExtNet.MessageBox.Notify("Save Status", "Update incomplete!").Show();
                 }
-                else
-                {
-                    ExtNet.MessageBox.Notify("Save Status", "Update incomplete!").Show();
-                }
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                ExtNet.MessageBox.Alert("Error", ex.Message).Show();
-                
-            }
+            //    ExtNet.MessageBox.Alert("Error", ex.Message).Show();
+
+            //}
         }
 
+        #endregion
+
+        #region HELPER METHODS
         protected void Disablecontrols()
         {
-            txtServer.ReadOnly = true;
+            txtInServer.ReadOnly = true;
             txtUsername.ReadOnly = true;
             txtPassword.ReadOnly = true;
             txtConfirmPassword.ReadOnly = true;
-            txtPort.ReadOnly = true;
-            chkEnableSSL.ReadOnly = true;
+            txtInPort.ReadOnly = true;
+            chkEnableInSSL.ReadOnly = true;
+            txtOtServer.ReadOnly = true;
+            txtOtPort.ReadOnly = true;
+            chkEnableOtSSL.ReadOnly = true;
         }
+
+        protected void Loadcurrentconfig()
+        {
+            var allsets = new ConfigurationSettingsBl().GetAllSettings();
+
+            foreach (var t in allsets)
+            {
+                switch (t.Setting)
+                {
+                    case "SMTPUser":
+                        txtUsername.Text = t.Value;
+                        break;
+
+                    case "SMTPPassword":
+                        txtPassword.Text = t.Value;
+                        txtConfirmPassword.Text = t.Value;
+                        break;
+
+                    case "SMTPClient":
+                        txtOtServer.Text = t.Value;
+                        break;
+
+                    case "SMTPPort":
+                        txtOtPort.Text = t.Value;
+                        break;
+
+                    case "SMTPSSL":
+                        chkEnableOtSSL.Checked = Convert.ToBoolean(t.Value);
+                        break;
+
+                    case "MailServer":
+                        txtInServer.Text = t.Value;
+                        break;
+
+                    case "Port":
+                        txtInPort.Text = t.Value;
+                        break;
+
+                    case "Encryption":
+                        chkEnableInSSL.Checked = Convert.ToBoolean(t.Value);
+                        break;
+                }
+            }
+        }
+
+        protected bool Savealldata()
+        {
+            var sslin = chkEnableInSSL.Checked;
+            var sslout = chkEnableOtSSL.Checked;
+            var saveconfigs = new ConfigurationSettingsBl();
+
+            saveconfigs.UpdateSetting("SMTPUser", txtUsername.Text);
+            saveconfigs.UpdateSetting("SMTPPassword", txtConfirmPassword.Text);
+            saveconfigs.UpdateSetting("SMTPClient", txtOtServer.Text);
+            saveconfigs.UpdateSetting("SMTPPort", txtOtPort.Text);
+            saveconfigs.UpdateSetting("SMTPSSL", sslout.ToString(CultureInfo.InvariantCulture));
+            saveconfigs.UpdateSetting("MailServer", txtInServer.Text);
+            saveconfigs.UpdateSetting("Port", txtInPort.ToString());
+            saveconfigs.UpdateSetting("Encryption", sslin.ToString(CultureInfo.InvariantCulture));
+            return true;
+        }
+        #endregion
     }
 }
