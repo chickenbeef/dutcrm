@@ -51,5 +51,17 @@ namespace CRMBusiness
             _crm.SaveChanges();
             return true;
         }
+
+        public ComTemplate GetTemplateById(int id)
+        {
+            try
+            {
+                return new CRMEntities(_uri).ComTemplates.Where(x => x.CT_ID == id).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
