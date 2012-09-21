@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login/UserLogin.Master" AutoEventWireup="true"
-    CodeBehind="Login.aspx.cs" Inherits="CRMUI.Login.Login" %>
+    CodeBehind="Default.aspx.cs" Inherits="CRMUI.Login.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default">
@@ -22,7 +22,7 @@
                     <ext:Button ID="btnSignIn" runat="server" Text="Sign In" Padding="5" Margins="5 0 0 135"
                         Icon="ComputerConnect" OnDirectClick="BtnSignInClick" />
                     <ext:HyperLink ID="hlForgotPassword" runat="server" Text="Forgot your password?"
-                        Margins="5 0 0 135" NavigateUrl="PasswordRecovery.aspx" />
+                        Margins="5 0 0 135" NavigateUrl="~/Login/PasswordRecovery.aspx" />
                 </Items>
             </ext:Panel>
         </Items>

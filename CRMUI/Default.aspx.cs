@@ -4,7 +4,7 @@ using Ext.Net;
 
 namespace CRMUI.Login
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         protected void BtnSignInClick(object sender, DirectEventArgs e)
         {
