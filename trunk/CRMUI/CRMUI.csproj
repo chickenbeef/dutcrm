@@ -134,7 +134,7 @@
     <Content Include="Images\Header1.png" />
     <Content Include="Images\Header2.png" />
     <Content Include="Images\Logo.png" />
-    <Content Include="Login\Login.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Login\PasswordRecovery.aspx" />
     <Content Include="RelationshipManager\Home.aspx" />
     <Content Include="SalesManager\Home.aspx" />
@@ -142,6 +142,7 @@
     <Content Include="Styles\Main.css" />
     <Content Include="Styles\xtheme-gray-extend.css" />
     <Content Include="SupportAgent\Home.aspx" />
+    <Content Include="SupportAgent\ManageTemplates.aspx" />
     <Content Include="SupportAgent\UpdateTicket.aspx" />
     <Content Include="SupportAgent\SolveTicket.aspx" />
     <Content Include="SupportAgent\UpdateSolutionReference.aspx" />
@@ -246,12 +247,12 @@
     <Compile Include="Client\Upload.aspx.designer.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\PasswordRecovery.aspx.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
@@ -321,6 +322,13 @@
     </Compile>
     <Compile Include="SupportAgent\ImageView.Master.designer.cs">
       <DependentUpon>ImageView.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\ManageTemplates.aspx.cs">
+      <DependentUpon>ManageTemplates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\ManageTemplates.aspx.designer.cs">
+      <DependentUpon>ManageTemplates.aspx</DependentUpon>
     </Compile>
     <Compile Include="SupportAgent\UpdateTicket.aspx.cs">
       <DependentUpon>UpdateTicket.aspx</DependentUpon>

@@ -16,7 +16,7 @@
                     <asp:PasswordRecovery ID="PasswordRecovery1" runat="server" Height="200" Width="300"
                         SubmitButtonStyle-Height="30" SubmitButtonStyle-Width="80">
                     </asp:PasswordRecovery>
-                    <asp:HyperLink ID="HyperLink1" runat="server" Text="Back To Login" NavigateUrl="Login.aspx" />
+                    <asp:HyperLink ID="HyperLink1" runat="server" Text="Back To Login" NavigateUrl="../Default.aspx" />
                 </Content>
             </ext:Panel>
         </Items>

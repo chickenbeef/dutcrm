@@ -10,7 +10,7 @@
 namespace CRMUI.Login {
     
     
-    public partial class Login {
+    public partial class Default {
         
         /// <summary>
         /// ResourceManager1 control.

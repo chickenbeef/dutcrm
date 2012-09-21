@@ -59,11 +59,11 @@
                                 PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
                             <ext:ToolbarSpacer ID="ToolbarSpacer3" runat="server" />
                             <ext:LinkButton ID="lnkManageTemplates" runat="server" Text="Manage Templates" AutoPostBack="True"
-                                PostBackUrl="" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                                PostBackUrl="~/SupportAgent/ManageTemplates.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
                             <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
                             <ext:ToolbarFill ID="ToolbarFill1" runat="server" />
                             <ext:ToolbarSeparator runat="server" />
-                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Login/Login.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Default.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
                         </Items>
                     </ext:Toolbar>
                 </td>
