@@ -77,8 +77,15 @@ namespace CRMBusiness
         //get client by client id
         public vClient GetClientByClientId(int cid)
         {
-            _crm = new CRMEntities(_uri);
-            return _crm.vClients.Where(x => x.CLIENT_ID == cid).ToList()[0];
+            try
+            {
+                _crm = new CRMEntities(_uri);
+                return _crm.vClients.Where(x => x.CLIENT_ID == cid).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         //get all clients

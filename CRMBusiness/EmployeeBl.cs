@@ -19,8 +19,15 @@ namespace CRMBusiness
 
         public vEmployee GetEmployeeById(int? empid)
         {
-            _crm = new CRMEntities(_uri);
-            return _crm.vEmployees.Where(e => e.EMP_ID == empid).ToList()[0];
+            try
+            {
+                _crm = new CRMEntities(_uri);
+                return _crm.vEmployees.Where(e => e.EMP_ID == empid).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         } 
 
         public List<vEmployee> GetEmployeeByName(string name)
@@ -31,8 +38,15 @@ namespace CRMBusiness
 
         public vEmployee GetEmployee(string username)
         {
-            _crm = new CRMEntities(_uri);
-            return _crm.vEmployees.Where(x => x.UserName.Contains(username)).ToList()[0];
+            try
+            {
+                _crm = new CRMEntities(_uri);
+                return _crm.vEmployees.Where(x => x.UserName.Contains(username)).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public bool AddEmployee(string name, string surname, string telephone, string cell, string fax, DateTime datecreated, Guid userid)

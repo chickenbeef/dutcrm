@@ -12,6 +12,7 @@
           <EntitySet Name="Clients" EntityType="CRMModel.Store.Clients" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Companies" EntityType="CRMModel.Store.Companies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ComTemplate" EntityType="CRMModel.Store.ComTemplate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConfigurationSetting" EntityType="CRMModel.Store.ConfigurationSetting" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="EmailProblems" EntityType="CRMModel.Store.EmailProblems" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Employees" EntityType="CRMModel.Store.Employees" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Escalation" EntityType="CRMModel.Store.Escalation" store:Type="Tables" Schema="dbo" />
@@ -239,6 +240,14 @@
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="Paragraph" Type="varchar" Nullable="false" MaxLength="2000" />
           <Property Name="CAT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConfigurationSetting">
+          <Key>
+            <PropertyRef Name="CONFIG_ID" />
+          </Key>
+          <Property Name="CONFIG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Setting" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="EmailProblems">
           <Key>
@@ -744,6 +753,7 @@
             <End Role="Category" EntitySet="Categories" />
             <End Role="ComTemplate" EntitySet="ComTemplates" />
           </AssociationSet>
+          <EntitySet Name="ConfigurationSettings" EntityType="CRMModel.ConfigurationSetting" />
         </EntityContainer>
         <EntityType Name="Branch">
           <Key>
@@ -1265,6 +1275,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ConfigurationSetting">
+          <Key>
+            <PropertyRef Name="CONFIG_ID" />
+          </Key>
+          <Property Type="Int32" Name="CONFIG_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Setting" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1453,6 +1471,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ConfigurationSettings">
+            <EntityTypeMapping TypeName="CRMModel.ConfigurationSetting">
+              <MappingFragment StoreEntitySet="ConfigurationSetting">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Setting" ColumnName="Setting" />
+                <ScalarProperty Name="CONFIG_ID" ColumnName="CONFIG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1621,6 +1648,7 @@
           <ConnectorPoint PointX="1.5" PointY="2.34568359375" />
           <ConnectorPoint PointX="1.5" PointY="2.875" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="CRMModel.ConfigurationSetting" Width="1.5" PointX="0.75" PointY="5.75" Height="1.5956835937500031" />
       </Diagram>
     </Diagrams>
   </Designer>

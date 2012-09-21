@@ -81,11 +81,11 @@ namespace CRMUI.CallCentreManager
             Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
         }
 
-        //protected void OnMsgBodyChanged(object sender, DirectEventArgs e)
-        //{
-           
-        //}
-
+        protected void CmbComTemplateSelectedItem(object sender, DirectEventArgs e)
+        {
+            var template = new ComTemplateBl().GetTemplateById(Convert.ToInt32(cmbComTemplate.SelectedItem.Value));
+            editrPara.Value = template.Paragraph;
+        }
 
         #endregion
 

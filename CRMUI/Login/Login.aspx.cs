@@ -13,7 +13,7 @@ namespace CRMUI.Login
                  if (Membership.ValidateUser(txtUserName.Text, txtPassword.Text))
                  {
                      FormsAuthentication.SetAuthCookie(txtUserName.Text, true);
-                     if (Roles.IsUserInRole(txtUserName.Text, "Call Center Manager"))
+                     if (Roles.IsUserInRole(txtUserName.Text, "Call Centre Manager"))
                      {
                          Response.Redirect("~/CallCentreManager/Home.aspx");
 

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Mail;
-using CRMBusiness;
-using System.Net.Mail;
-using CRMBusiness.CRM;
-
 
 namespace CRMBusiness
 {
@@ -25,44 +20,21 @@ namespace CRMBusiness
         #endregion
 
         //
+
         #region Send Emails
 
         public bool SendEmail()
         {
             try
             {
-                var cs = new ConfigurationSettingsBl().GetAllSettings();
-                var c = new SmtpClient();
-                var ucredentials = new System.Net.NetworkCredential();
-
-                //var configs = Smtpconfigs();
-                #region SMTP SETTINGS
-                //get smtp settings
-                foreach (var t in cs)
-                {
-                    switch (t.Setting)
-                    {
-                        case "SMTPClient":
-                            c.Host = t.Value;
-                            break;
-                        case "SMTPPort":
-                            c.Port = Convert.ToInt32(t.Value);
-                            break;
-                        case "SMTPUser":
-                            ucredentials.UserName = t.Value;
-                            break;
-                        case "SMTPPassword":
-                            ucredentials.Password = t.Value;
-                            break;
-                        case "SMTPSSL":
-                            c.EnableSsl =Convert.ToBoolean(t.Value);
-                            
-
-                            break;
-                    }
-                }
-                c.Credentials = ucredentials;
-                #endregion
+                var c = new SmtpClient(ConfigurationManager.AppSettings["SMTPClient"])
+                             {
+                                 Port = int.Parse(ConfigurationManager.AppSettings["SMTPPort"]),
+                                 Credentials =
+                                     new System.Net.NetworkCredential(ConfigurationManager.AppSettings["SMTPUser"],
+                                                                      ConfigurationManager.AppSettings["SMTPPassword"]),
+                                 EnableSsl = bool.Parse(ConfigurationManager.AppSettings["SMTPSSL"])
+                             };
 
                 var m = new MailMessage();
 
@@ -81,7 +53,7 @@ namespace CRMBusiness
 
                 m.Subject = Subject;
                 m.Body = Body;
-                m.From = new MailAddress(ucredentials.UserName);
+                m.From = new MailAddress(ConfigurationManager.AppSettings["EmailAddr"]);
                 m.IsBodyHtml = IsHtml;
                 c.Send(m);
                 return true;
@@ -94,7 +66,6 @@ namespace CRMBusiness
         }
         #endregion
 
-        
     }
     #endregion
 }

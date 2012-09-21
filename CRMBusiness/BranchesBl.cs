@@ -77,7 +77,14 @@ namespace CRMBusiness
 
         public Branch GetBranch(int brhid)
         {
-            return _crm.Branches.SingleOrDefault(x => x.BRH_ID == brhid);
+            try
+            {
+                return _crm.Branches.SingleOrDefault(x => x.BRH_ID == brhid);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
         #endregion
     }

@@ -10,11 +10,12 @@ namespace CRMUI.Client
         static string[] arrfile = new string[10];
         static string[] arrType = new string[10];
         static byte[][] arrcontent = new byte[10][];
-       
+       static int[] arrsize=new int[10];
         protected void AjaxFileUpload_OnUploadComplete(object sender, AjaxFileUploadEventArgs file)
         {
             
             var ct = file.ContentType;
+            var size = file.FileSize;
             var cont = file.GetContents();
             var id = file.FileId;
            
@@ -22,9 +23,11 @@ namespace CRMUI.Client
             arrfile[_count] = id;
             arrType[_count] = ct;
             arrcontent[_count] = cont;
+            arrsize[_count] = size;
             Session["fileId"] = arrfile;
             Session["fileContentType"] = arrType;
             Session["fileContents"] = arrcontent;
+            Session["size"] = arrsize;
             Session["count"] = _count;
             _count += 1;
         }

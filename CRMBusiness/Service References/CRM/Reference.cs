@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/09/16 10:44:05 PM
+// Generation date: 2012/09/21 11:46:00 AM
 namespace CRMBusiness.CRM
 {
     
@@ -348,6 +348,23 @@ namespace CRMBusiness.CRM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Category> _Categories;
         /// <summary>
+        /// There are no comments for ConfigurationSettings in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<ConfigurationSetting> ConfigurationSettings
+        {
+            get
+            {
+                if ((this._ConfigurationSettings == null))
+                {
+                    this._ConfigurationSettings = base.CreateQuery<ConfigurationSetting>("ConfigurationSettings");
+                }
+                return this._ConfigurationSettings;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<ConfigurationSetting> _ConfigurationSettings;
+        /// <summary>
         /// There are no comments for Branches in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -482,6 +499,14 @@ namespace CRMBusiness.CRM
         public void AddToCategories(Category category)
         {
             base.AddObject("Categories", category);
+        }
+        /// <summary>
+        /// There are no comments for ConfigurationSettings in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToConfigurationSettings(ConfigurationSetting configurationSetting)
+        {
+            base.AddObject("ConfigurationSettings", configurationSetting);
         }
     }
     /// <summary>
@@ -5069,6 +5094,106 @@ namespace CRMBusiness.CRM
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<ComTemplate> _ComTemplates = new global::System.Data.Services.Client.DataServiceCollection<ComTemplate>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for CRMModel.ConfigurationSetting in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// CONFIG_ID
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("ConfigurationSettings")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("CONFIG_ID")]
+    public partial class ConfigurationSetting : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new ConfigurationSetting object.
+        /// </summary>
+        /// <param name="cONFIG_ID">Initial value of CONFIG_ID.</param>
+        /// <param name="setting">Initial value of Setting.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static ConfigurationSetting CreateConfigurationSetting(int cONFIG_ID, string setting)
+        {
+            ConfigurationSetting configurationSetting = new ConfigurationSetting();
+            configurationSetting.CONFIG_ID = cONFIG_ID;
+            configurationSetting.Setting = setting;
+            return configurationSetting;
+        }
+        /// <summary>
+        /// There are no comments for Property CONFIG_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int CONFIG_ID
+        {
+            get
+            {
+                return this._CONFIG_ID;
+            }
+            set
+            {
+                this.OnCONFIG_IDChanging(value);
+                this._CONFIG_ID = value;
+                this.OnCONFIG_IDChanged();
+                this.OnPropertyChanged("CONFIG_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _CONFIG_ID;
+        partial void OnCONFIG_IDChanging(int value);
+        partial void OnCONFIG_IDChanged();
+        /// <summary>
+        /// There are no comments for Property Setting in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Setting
+        {
+            get
+            {
+                return this._Setting;
+            }
+            set
+            {
+                this.OnSettingChanging(value);
+                this._Setting = value;
+                this.OnSettingChanged();
+                this.OnPropertyChanged("Setting");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Setting;
+        partial void OnSettingChanging(string value);
+        partial void OnSettingChanged();
+        /// <summary>
+        /// There are no comments for Property Value in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Value
+        {
+            get
+            {
+                return this._Value;
+            }
+            set
+            {
+                this.OnValueChanging(value);
+                this._Value = value;
+                this.OnValueChanged();
+                this.OnPropertyChanged("Value");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Value;
+        partial void OnValueChanging(string value);
+        partial void OnValueChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

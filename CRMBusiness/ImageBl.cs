@@ -47,5 +47,14 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.Images.Where(i => i.EP_ID == cprid).Count();
         }
+
+        public void UpdateImage(int imgid, int cprid)
+        {
+            _crm = new CRMEntities(_uri);
+            var image = _crm.Images.Where(i => i.IMG_ID == imgid).ToList()[0];
+            image.CPR_ID = cprid;
+            _crm.UpdateObject(image);
+            _crm.SaveChanges();
+        }
     }
 }

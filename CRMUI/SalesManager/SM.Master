@@ -44,7 +44,7 @@
                         <td>
                             <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
                                 <Items>
-                                    <ext:LinkButton runat="server" ID="lnkSupportReports" Text="Support Reports" AutoPostBack="True" PostBackUrl="~/SalesManager/Home.aspx" />
+                                    <ext:LinkButton runat="server" ID="lnkSupportReports" Text="Sales Reports" AutoPostBack="True" PostBackUrl="~/SalesManager/Home.aspx" />
                                     <ext:ToolbarFill runat="server"/>
                                     <ext:ToolbarSeparator runat="server"/>
                                     <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Login/Login.aspx"/>

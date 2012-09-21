@@ -85,6 +85,24 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.LinkButton lnkUpdateSolution;
         
         /// <summary>
+        /// ToolbarSpacer3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolbarSpacer ToolbarSpacer3;
+        
+        /// <summary>
+        /// lnkManageTemplates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.LinkButton lnkManageTemplates;
+        
+        /// <summary>
         /// ToolbarSpacer2 control.
         /// </summary>
         /// <remarks>

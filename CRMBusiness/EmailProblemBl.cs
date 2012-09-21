@@ -67,6 +67,18 @@ namespace CRMBusiness
             _crm.SaveChanges();
             return true;
         }
+
+        public EmailProblem GetEmailProblemById(int epid)
+        {
+            try
+            {
+                return new CRMEntities(_uri).EmailProblems.Where(x => x.EP_ID == epid).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
 

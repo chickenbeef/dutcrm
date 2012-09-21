@@ -19,8 +19,15 @@ namespace CRMBusiness
 
 		public Company GetCompany(int cpyid)
 		{
-		    _crm = new CRMEntities(_uri);
-		    return _crm.Companies.Where(co => co.CPY_ID == cpyid).ToList()[0];
+		    try
+		    {
+                _crm = new CRMEntities(_uri);
+                return _crm.Companies.Where(co => co.CPY_ID == cpyid).ToList()[0];
+		    }
+		    catch (Exception)
+		    {
+		        return null;
+		    }
 		}
 
 		public bool AddCompany(string name, int type, int regtype, int regcomptype, string regno, string audfirmname, string audfirmqual, string audfirmaudit, bool vatregist, string vatregno, DateTime datecreated)
