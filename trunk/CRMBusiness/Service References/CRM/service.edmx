@@ -293,6 +293,14 @@
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
         <NavigationProperty Name="ComTemplates" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="Category" ToRole="ComTemplate" />
       </EntityType>
+      <EntityType Name="ConfigurationSetting">
+        <Key>
+          <PropertyRef Name="CONFIG_ID" />
+        </Key>
+        <Property Name="CONFIG_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="Setting" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        <Property Name="Value" Type="Edm.String" Nullable="true" MaxLength="200" Unicode="false" FixedLength="false" />
+      </EntityType>
       <Association Name="Branches_Clients_FK1">
         <End Role="Branches" Type="CRMModel.Branch" Multiplicity="1" />
         <End Role="Branches1" Type="CRMModel.Branch" Multiplicity="0..1" />
@@ -541,6 +549,7 @@
         <EntitySet Name="vClients" EntityType="CRMModel.vClient" />
         <EntitySet Name="vEmployees" EntityType="CRMModel.vEmployee" />
         <EntitySet Name="Categories" EntityType="CRMModel.Category" />
+        <EntitySet Name="ConfigurationSettings" EntityType="CRMModel.ConfigurationSetting" />
         <AssociationSet Name="Branches_Clients_FK1" Association="CRMModel.Branches_Clients_FK1">
           <End Role="Branches" EntitySet="Branches" />
           <End Role="Branches1" EntitySet="Branches" />

@@ -55,5 +55,23 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.Solutions.Where(s => s.PROB_ID == probid).ToList();
         }
+
+        public Solution GetSolutionBySolId(int solid)
+        {
+            try
+            {
+                return new CRMEntities(_uri).Solutions.Where(x => x.SOL_ID == solid).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        //get last solution id
+        public int GetLastSolId()
+        {
+            return new CRMEntities(_uri).Solutions.ToList().Max(s => s.SOL_ID);
+        } 
     }
 }

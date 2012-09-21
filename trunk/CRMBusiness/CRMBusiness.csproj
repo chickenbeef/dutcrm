@@ -67,6 +67,7 @@
     <Compile Include="ClientProblemLogBl.cs" />
     <Compile Include="CompanyBl.cs" />
     <Compile Include="ComTemplateBl.cs" />
+    <Compile Include="ConfigurationSettingsBl.cs" />
     <Compile Include="EmailBl.cs" />
     <Compile Include="EmailProblemBl.cs" />
     <Compile Include="EmployeeBl.cs" />

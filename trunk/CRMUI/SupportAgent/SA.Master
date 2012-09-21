@@ -57,6 +57,9 @@
                             <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
                             <ext:LinkButton ID="lnkUpdateSolution" runat="server" Text="Update Solution" AutoPostBack="True"
                                 PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
+                            <ext:ToolbarSpacer ID="ToolbarSpacer3" runat="server" />
+                            <ext:LinkButton ID="lnkManageTemplates" runat="server" Text="Manage Templates" AutoPostBack="True"
+                                PostBackUrl="" StyleSpec="font: normal large Berlin Sans FB; padding: 5px;"/>
                             <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
                             <ext:ToolbarFill ID="ToolbarFill1" runat="server" />
                             <ext:ToolbarSeparator runat="server" />

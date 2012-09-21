@@ -23,8 +23,8 @@ namespace CRMBusiness
 
             var objc = _crm.ConfigurationSettings.Where(x => x.Setting == setting).ToList()[0];
             if (objc == null) return false;
-            objc.Setting = value;
             objc.Value = value;
+            _crm.UpdateObject(objc);
             _crm.SaveChanges();
             return true;
         }

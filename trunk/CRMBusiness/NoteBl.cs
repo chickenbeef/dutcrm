@@ -34,5 +34,17 @@ namespace CRMBusiness
             _crm = new CRMEntities(_uri);
             return _crm.Notes.Where(n => n.CPR_ID == cprid).ToList();        
         } 
+
+        public Note GetNoteById(int noteid)
+        {
+            try
+            {
+                return new CRMEntities(_uri).Notes.Where(x => x.NOTE_ID == noteid).ToList()[0];
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

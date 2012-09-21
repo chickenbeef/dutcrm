@@ -203,43 +203,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox12">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Fields!NumberOfProblemsPerDay.Value</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Calisto MT</FontFamily>
-                  <FontSize>16pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>8.49104cm</Top>
-        <Left>9.93888cm</Left>
-        <Height>0.81167cm</Height>
-        <Width>7.3066cm</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Chart Name="Chart1">
         <ChartCategoryHierarchy>
           <ChartMembers>
@@ -538,7 +501,7 @@
         <Left>4.06577cm</Left>
         <Height>6.95792cm</Height>
         <Width>12.04201cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -573,7 +536,7 @@
         <Left>0.71437cm</Left>
         <Height>0.81167cm</Height>
         <Width>5.98778cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -610,7 +573,7 @@
         <Left>6.70215cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.945cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -647,7 +610,7 @@
         <Left>0.71437cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.65937cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -684,6 +647,36 @@
         <Left>7.37375cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.945cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NumberOfProblemsPerDay">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!NumberOfProblemsPerDay.Value, "SupportData")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NumberOfProblemsPerDay</rd:DefaultName>
+        <Top>8.49104cm</Top>
+        <Left>10.46903cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -696,7 +689,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>29.7cm</Height>
+    <Height>29cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
