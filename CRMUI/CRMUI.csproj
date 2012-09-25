@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -135,12 +135,11 @@
     <Content Include="Images\Header2.png" />
     <Content Include="Images\Logo.png" />
     <Content Include="Default.aspx" />
-    <Content Include="Login\PasswordRecovery.aspx" />
+    <Content Include="PasswordRecovery.aspx" />
     <Content Include="RelationshipManager\Home.aspx" />
     <Content Include="SalesManager\Home.aspx" />
     <Content Include="SalesManager\SM.Master" />
     <Content Include="Styles\Main.css" />
-    <Content Include="Styles\xtheme-gray-extend.css" />
     <Content Include="SupportAgent\Home.aspx" />
     <Content Include="SupportAgent\ManageTemplates.aspx" />
     <Content Include="SupportAgent\UpdateTicket.aspx" />
@@ -254,18 +253,18 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login\PasswordRecovery.aspx.cs">
+    <Compile Include="PasswordRecovery.aspx.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login\PasswordRecovery.aspx.designer.cs">
+    <Compile Include="PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login\UserLogin.Master.cs">
+    <Compile Include="UserLogin.Master.cs">
       <DependentUpon>UserLogin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login\UserLogin.Master.designer.cs">
+    <Compile Include="UserLogin.Master.designer.cs">
       <DependentUpon>UserLogin.Master</DependentUpon>
     </Compile>
     <Compile Include="RelationshipManager\Home.aspx.cs">
@@ -406,7 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RelationshipManager\RM.Master" />
-    <Content Include="Login\UserLogin.Master" />
+    <Content Include="UserLogin.Master" />
     <Content Include="CallCentreManager\CCM.Master" />
     <Content Include="Client\CM.Master" />
     <Content Include="SupportAgent\SA.Master" />
@@ -432,6 +431,7 @@
     <EmbeddedResource Include="Reports\SalesWeek.rdlc" />
     <EmbeddedResource Include="Reports\SupportReport.rdlc" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
