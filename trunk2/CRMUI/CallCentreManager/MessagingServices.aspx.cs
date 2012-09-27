@@ -30,32 +30,41 @@ namespace CRMUI.CallCentreManager
         {
             try
             {
-                
-                string val = e.ExtraParams["Values"];
-
-                var clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
-
-                List<string> emails = new List<string>();
-
-                foreach (Dictionary<string, string> row in clients)
+                if (!ValidData())
                 {
-                    //for each fow in clients grid
-                    foreach (KeyValuePair<string, string> keyValuePair in row)
+                    ExtNet.Msg.Alert("Error Occured", "Ensure you have selected a template and entered a paragraph!").
+                        Show();
+                }
+                else
+                {
+                    var val = e.ExtraParams["Values"];
+                    if (val == "[]")
                     {
-                        if (keyValuePair.Key == "Email")
+                        ExtNet.Msg.Alert("Error Occured", "Please select one or more clients!").
+                            Show();
+                    }
+                    else
+                    {
+                       
+                        var clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
+
+                        List<string> emails = new List<string>();
+
+                        foreach (Dictionary<string, string> row in clients)
                         {
-                            emails.Add(keyValuePair.Value);
+                            //for each fow in clients grid
+                            foreach (KeyValuePair<string, string> keyValuePair in row)
+                            {
+                                if (keyValuePair.Key == "Email")
+                                {
+                                    emails.Add(keyValuePair.Value);
+                                }
+                            }
                         }
+
+                        Composemailmessage(emails);
                     }
                 }
-
-                //for testing mechanism
-                //List<string> custommail = new List<string>();
-                //custommail.Add("akoob.iftekhar@gmail.com");
-                //custommail.Add("zombiebunny01@gmail.com");
-
-               Composemailmessage(emails);
-                
             }
             catch (Exception ex)
             {
@@ -72,6 +81,7 @@ namespace CRMUI.CallCentreManager
             streComTemplate.DataSource = comms;
             streComTemplate.DataBind();
 
+            cmbComTemplate.Text = "Select a template";
             cmbComTemplate.Enable(true);
 
         }
@@ -98,6 +108,7 @@ namespace CRMUI.CallCentreManager
                 //CODE TO ADD EMAILS AND GENERATE EMAIL
                 var objmailmessage = new EmailBl
                 {
+                    To = string.Empty,
                     Bcc = mailadresses,
                     Subject = cmbComTemplate.SelectedItem.Text,
                     Body = editrPara.Text
@@ -120,11 +131,29 @@ namespace CRMUI.CallCentreManager
 
         #endregion
 
+        #region VALIDATION
         //validation to do
+        protected bool ValidData()
+        {
+            if (cmbComTemplate.Text=="Select a template")
+            {
+                return false;
+            }
+            else if (editrPara.Text.Length==0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         protected void OnTextChange(object sender, EventArgs e)
         {
-            cmbComTemplate.Disable(true);
-            btnCancel.Enable(true);
+            cmbCategory.Disabled = true;
+            cmbComTemplate.Disabled=true;
+            btnCancel.Disabled=false;
         }
+        #endregion
     }
 }
