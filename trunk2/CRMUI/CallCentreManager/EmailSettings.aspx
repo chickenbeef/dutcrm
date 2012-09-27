@@ -15,7 +15,7 @@
                 Frame="True">
                 <Items>
                     <%--USER CREDENTIALS--%>
-                    <ext:TextField runat="server" ID="txtUsername" FieldLabel="Username" Anchor="80%"
+                    <ext:TextField runat="server" ID="txtUsername" FieldLabel="Username/address" Anchor="80%"
                         IndicatorTip="It is required field" MsgTarget="Side" IsRemoteValidation="True">
                         <RemoteValidation OnValidation="ValidateUsername" />
                     </ext:TextField>
