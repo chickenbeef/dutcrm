@@ -18,6 +18,9 @@
                 <LayoutConfig>
                     <ext:AccordionLayoutConfig />
                 </LayoutConfig>
+                <ToolTips>
+                    <ext:ToolTip runat="server" Html="Search for a client by any of these 3 options<br/>Click on the headings to change option" />
+                </ToolTips>
                 <Items>
                     <ext:Panel ID="pnlUsername" runat="server" Title="SEARCH BY USERNAME" Icon="PageMagnify">
                         <LayoutConfig>
@@ -54,6 +57,9 @@
             <%--TOP RIGHT--%>
             <ext:GridPanel ID="gpClient" Title="Client Details" runat="server" Width="807" Height="200"
                 Icon="Vcard" SortableColumns="True">
+                <ToolTips>
+                    <ext:ToolTip runat="server" Html="Select which client you want to create a ticket for" />
+                </ToolTips>
                 <Store>
                     <ext:Store ID="streClient" runat="server">
                         <Model>
@@ -103,6 +109,9 @@
                         <LayoutConfig>
                             <ext:HBoxLayoutConfig Align="Middle" />
                         </LayoutConfig>
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Use this to search for a solution to a problem" />
+                        </ToolTips>
                         <Items>
                             <ext:TextField runat="server" ID="txtCProbDesc" FieldLabel="Problem Description"
                                 Width="350" LabelWidth="120" Margin="15" AllowBlank="False" BlankText="Description cannot be empty"
@@ -119,6 +128,9 @@
                     </ext:Container>
                     <%--BOTTOM LEFT GRID PANEL--%>
                     <ext:GridPanel runat="server" ID="gpCSolution" Flex="1" SortableColumns="True">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Select any 1 to view full details on right panel" />
+                        </ToolTips>
                         <Store>
                             <ext:Store runat="server" ID="streCSolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
                                 <Model>
@@ -197,10 +209,16 @@
                                     <ext:ListItem Text="Medium" Value="MEDIUM" />
                                     <ext:ListItem Text="Low" Value="LOW" />
                                 </Items>
+                                <ToolTips>
+                                    <ext:ToolTip ID="ToolTip4" runat="server" Html="Select a priority for this problem" />
+                                </ToolTips>
                             </ext:ComboBox>
                             <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
                             <ext:Button runat="server" ID="btnCCreateTicketSol" Text="Create Ticket With Solution"
                                 Icon="Lightbulb" Disabled="True">
+                                <ToolTips>
+                                    <ext:ToolTip ID="ToolTip3" runat="server" Html="Click if you have a solution" />
+                                </ToolTips>
                                 <DirectEvents>
                                     <Click OnEvent="BtnCCreateTicketSolClick">
                                     </Click>
@@ -209,6 +227,9 @@
                             <ext:ToolbarSeparator ID="ToolbarSeparator1" runat="server" />
                             <ext:Button runat="server" ID="btnCCreateTicketNoSol" Text="Create Ticket Without Solution"
                                 Icon="LightbulbOff" Disabled="True">
+                                <ToolTips>
+                                    <ext:ToolTip ID="ToolTip2" runat="server" Html="Click if you do not have a solution" />
+                                </ToolTips>
                                 <DirectEvents>
                                     <Click OnEvent="BtnCCreateTicketNoSol">
                                     </Click>
@@ -236,6 +257,9 @@
                     <%--TOP LEFT GRIDPANEL--%>
                     <ext:GridPanel runat="server" ID="gpEmailProblems" Title="Email Problems Inbox" Icon="Email"
                         Flex="2" SortableColumns="True">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Select an email to view details on right panel" />
+                        </ToolTips>
                         <Store>
                             <ext:Store runat="server" ID="streEmailProbs" PageSize="500" Buffered="True" IgnoreExtraFields="True">
                                 <Model>
@@ -277,7 +301,7 @@
                         <DirectEvents>
                             <Select OnEvent="EmailProblemSelected">
                                 <ExtraParams>
-                                    <ext:Parameter Name="epid" Value="record.data.EP_ID" Mode="Raw"/>
+                                    <ext:Parameter Name="epid" Value="record.data.EP_ID" Mode="Raw" />
                                 </ExtraParams>
                             </Select>
                         </DirectEvents>
@@ -295,7 +319,10 @@
                         </Items>
                         <Buttons>
                             <ext:Button runat="server" ID="btnEViewImages" Text="View Images" Icon="Images" Disabled="True"
-                                OnDirectClick="BtnViewImagesClick" >
+                                OnDirectClick="BtnViewImagesClick">
+                                <ToolTips>
+                                    <ext:ToolTip runat="server" Html="Click to view image attachements" />
+                                </ToolTips>
                             </ext:Button>
                         </Buttons>
                     </ext:FormPanel>
@@ -312,6 +339,9 @@
                         <LayoutConfig>
                             <ext:VBoxLayoutConfig Align="Stretch" />
                         </LayoutConfig>
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Use this to search for solutions to a problem" />
+                        </ToolTips>
                         <Items>
                             <%--BOTTOM LEFT SEARCH PANEL--%>
                             <ext:Container runat="server" Border="False" MaxHeight="60">
@@ -334,6 +364,9 @@
                             </ext:Container>
                             <%--BOTTOM LEFT GRID PANEL--%>
                             <ext:GridPanel runat="server" ID="gpSolutions" Flex="1" SortableColumns="True">
+                                <ToolTips>
+                                    <ext:ToolTip runat="server" Html="Select any 1 to view full details on right panel" />
+                                </ToolTips>
                                 <Store>
                                     <ext:Store runat="server" ID="streESolutions" PageSize="10" Buffered="True" IgnoreExtraFields="True">
                                         <Model>
@@ -406,6 +439,9 @@
                                     <ext:ToolbarFill runat="server" />
                                     <ext:ComboBox ID="cmbEPriority" runat="server" FieldLabel="<b>Priority</b>" LabelWidth="50"
                                         Text="Select a priority..." Disabled="True">
+                                        <ToolTips>
+                                            <ext:ToolTip runat="server" Html="Select a priority for this problem" />
+                                        </ToolTips>
                                         <Items>
                                             <ext:ListItem Text="High" Value="HIGH" />
                                             <ext:ListItem Text="Medium" Value="MEDIUM" />
@@ -415,6 +451,9 @@
                                     <ext:ToolbarSpacer runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketSol" Text="Create Ticket With Solution"
                                         Icon="Lightbulb" Disabled="True">
+                                        <ToolTips>
+                                            <ext:ToolTip runat="server" Html="Click if you have a solution" />
+                                        </ToolTips>
                                         <DirectEvents>
                                             <Click OnEvent="BtnECreateTicketSolClick">
                                             </Click>
@@ -423,6 +462,9 @@
                                     <ext:ToolbarSeparator runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketNoSol" Text="Create Ticket Without Solution"
                                         Icon="LightbulbOff" Disabled="True">
+                                        <ToolTips>
+                                            <ext:ToolTip ID="ToolTip1" runat="server" Html="Click if you do not have a solution" />
+                                        </ToolTips>
                                         <DirectEvents>
                                             <Click OnEvent="BtnECreateTicketNoSol">
                                             </Click>
@@ -510,6 +552,9 @@
                     <ext:ComboBox runat="server" DisplayField="Name" ValueField="CAT_ID" ID="cmbCategory"
                         LabelWidth="70" AllowBlank="False" FieldLabel="Category" Text="Choose a Category.."
                         AnchorHorizontal="30%">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Select a template category"/>
+                        </ToolTips>
                         <Store>
                             <ext:Store runat="server" ID="streCategories">
                                 <Model>
@@ -530,6 +575,9 @@
                     <ext:ComboBox runat="server" ID="cmbTemplate" DisplayField="Name" ValueField="Paragraph"
                         AllowBlank="False" LabelWidth="70" FieldLabel="Template" Text="Choose a Template.."
                         Disabled="True" AnchorHorizontal="50%">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Select a template from the chosen category<br/>to populate the body with."/>
+                        </ToolTips>
                         <Store>
                             <ext:Store ID="streTemplates" runat="server">
                                 <Model>
@@ -549,13 +597,22 @@
                     </ext:ComboBox>
                     <ext:TextField runat="server" ID="txtSubject" AllowBlank="False" LabelWidth="70"
                         FieldLabel="Subject" AnchorHorizontal="70%">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Subject of the email"/>
+                        </ToolTips>
                     </ext:TextField>
                     <ext:HtmlEditor runat="server" ID="heEmailBody" LabelWidth="70" Height="365" FieldLabel="Body"
                         AnchorHorizontal="100%">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Body of the email"/>
+                        </ToolTips>
                     </ext:HtmlEditor>
                 </Items>
                 <Buttons>
                     <ext:Button runat="server" ID="btnSendEmail" Text="Send" Icon="EmailStart" Margins="0 12 0 0">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Click to send the email to the client"/>
+                        </ToolTips>
                         <DirectEvents>
                             <Click OnEvent="BtnSendEmailClick">
                             </Click>

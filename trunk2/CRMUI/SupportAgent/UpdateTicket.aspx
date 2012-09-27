@@ -16,6 +16,9 @@
                 <LayoutConfig>
                     <ext:HBoxLayoutConfig Align="Stretch" />
                 </LayoutConfig>
+                <ToolTips>
+                    <ext:ToolTip runat="server" Html="Search for a ticket by any of the 3 options"/>
+                </ToolTips>
                 <Items>
                     <%--LEFT PANEL--%>
                     <ext:Panel ID="pnlSearchTicket" runat="server" Flex="8">
@@ -74,6 +77,9 @@
                     </ext:Panel>
                     <%--MIDDLE PANEL--%>
                     <ext:GridPanel runat="server" ID="gpTickets" Flex="10" Title="Tickets" AutoScroll="True">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Select a ticket to view the full details, notes and solutions to it"/>
+                        </ToolTips>
                         <Store>
                             <ext:Store runat="server" ID="streTickets" PageSize="500" Buffered="True" IgnoreExtraFields="True">
                                 <Model>
@@ -119,6 +125,9 @@
                     </ext:GridPanel>
                     <%--RIGHT PANEL--%>
                     <ext:GridPanel ID="gpNotes" runat="server" Flex="4" Title="Notes" AutoScroll="True">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Select a note to view full details on bottom"/>
+                        </ToolTips>
                         <Store>
                             <ext:Store ID="streNotes" runat="server" PageSize="10" Buffered="True">
                                 <Model>
@@ -160,6 +169,9 @@
                     <%--LEFT SOLUTIONS PANEL--%>
                     <ext:Panel runat="server" Border="false" Title="Select New Solution" Flex="8" Collapsible="True"
                         CollapseDirection="Left">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="alternate solutions that you would like to add to the ticket"/>
+                        </ToolTips>
                         <LayoutConfig>
                             <ext:VBoxLayoutConfig Align="Stretch" />
                         </LayoutConfig>
@@ -247,6 +259,9 @@
                             <%--NOTE DETAILS--%>
                             <ext:FormPanel runat="server" Flex="1" Title="Note Details" BodyPadding="10" AutoScroll="True"
                                 Collapsible="True" CollapseDirection="Right">
+                                <ToolTips>
+                                    <ext:ToolTip runat="server" Html="View notes here"/>
+                                </ToolTips>
                                 <Items>
                                     <ext:Label runat="server" ID="lblEmployeeNameOfNote"></ext:Label>
                                     <ext:FieldSet runat="server" ID="fsNote" Title="Note Description" AnchorHorizontal="100%">
@@ -255,7 +270,11 @@
                                         </Items>
                                     </ext:FieldSet>
                                     <ext:Label ID="Label1" runat="server" Html="<br/>" />
-                                    <ext:HtmlEditor runat="server" ID="heNote" FieldLabel="Add Note" LabelAlign="Top" AnchorHorizontal="100%" />
+                                    <ext:HtmlEditor runat="server" ID="heNote" FieldLabel="Add Note" LabelAlign="Top" AnchorHorizontal="100%">
+                                        <ToolTips>
+                                            <ext:ToolTip runat="server" Html="Add any extra notes make sure the previous solution is here before saving"/>
+                                        </ToolTips>
+                                    </ext:HtmlEditor>
                                 </Items>
                             </ext:FormPanel>
                         </Items>

@@ -229,6 +229,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.ComboBox cmbCategory;
         
         /// <summary>
+        /// ToolTip1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolTip ToolTip1;
+        
+        /// <summary>
         /// streCategories control.
         /// </summary>
         /// <remarks>
@@ -254,6 +263,15 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.ComboBox cmbTemplate;
+        
+        /// <summary>
+        /// ToolTip2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolTip ToolTip2;
         
         /// <summary>
         /// streTemplates control.
@@ -283,6 +301,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.TextField txtSubject;
         
         /// <summary>
+        /// ToolTip3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolTip ToolTip3;
+        
+        /// <summary>
         /// heEmailBody control.
         /// </summary>
         /// <remarks>
@@ -292,6 +319,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.HtmlEditor heEmailBody;
         
         /// <summary>
+        /// ToolTip4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolTip ToolTip4;
+        
+        /// <summary>
         /// btnSendEmail control.
         /// </summary>
         /// <remarks>
@@ -299,5 +335,14 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Button btnSendEmail;
+        
+        /// <summary>
+        /// ToolTip5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ToolTip ToolTip5;
     }
 }

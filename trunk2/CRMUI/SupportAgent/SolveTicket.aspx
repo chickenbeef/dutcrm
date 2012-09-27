@@ -13,6 +13,9 @@
             <%--LEFT PANEL--%>
             <ext:GridPanel ID="gpTickets" Title="Unsolved Tickets" SortableColumns="True" AutoScroll="True" runat="server"
                 Flex="1" Icon="TagBlueDelete">
+                <ToolTips>
+                    <ext:ToolTip runat="server" Html="Select a ticket here that you have a solution to"/>
+                </ToolTips>
                 <Store>
                     <ext:Store runat="server" ID="streTickets" PageSize="500" Buffered="True" IgnoreExtraFields="True">
                         <Model>
@@ -67,7 +70,11 @@
                         <Items>
                             <ext:Label runat="server" ID="lblProbDesc" />
                             <ext:Label ID="Label1" runat="server" Html="<hr/>" />
-                            <ext:Button runat="server" ID="btnViewImages" Text="ViewImages" Disabled="True" OnDirectClick="BtnViewImagesClick" />
+                            <ext:Button runat="server" ID="btnViewImages" Text="ViewImages" Disabled="True" OnDirectClick="BtnViewImagesClick">
+                                <ToolTips>
+                                    <ext:ToolTip runat="server" Html="View images related to this problem"/>
+                                </ToolTips>
+                            </ext:Button>
                         </Items>
                     </ext:FieldSet>
                     <ext:FieldSet runat="server" ID="fsExtraDetails" Title="Client Contact Details" AnchorHorizontal="100%">
@@ -79,10 +86,16 @@
                     </ext:FieldSet>
                     <ext:HtmlEditor runat="server" ID="heSolutionDesc" FieldLabel="Solution Description"
                         LabelAlign="Top" AnchorHorizontal="100%">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="Type your solution here and click submit to solve the ticket"/>
+                        </ToolTips>
                     </ext:HtmlEditor>
                     <ext:Label runat="server" Html="<hr/>"></ext:Label>
                     <ext:Button runat="server" ID="btnSolveTicket" OnDirectClick="BtnSolveTicketClick"
                         Text="Submit" Icon="Disk">
+                        <ToolTips>
+                            <ext:ToolTip runat="server" Html="When clicked, the typed solution is added to the database aswell."/>
+                        </ToolTips>
                     </ext:Button>
                 </Items>
             </ext:FormPanel>
@@ -106,6 +119,9 @@
                     <ext:ComboBox runat="server" DisplayField="Name" ValueField="CAT_ID" ID="cmbCategory"
                         LabelWidth="70" AllowBlank="False" FieldLabel="Category" Text="Choose a Category.."
                         AnchorHorizontal="30%">
+                        <ToolTips>
+                            <ext:ToolTip ID="ToolTip1" runat="server" Html="Select a template category"/>
+                        </ToolTips>
                         <Store>
                             <ext:Store runat="server" ID="streCategories">
                                 <Model>
@@ -126,6 +142,9 @@
                     <ext:ComboBox runat="server" ID="cmbTemplate" DisplayField="Name" ValueField="Paragraph"
                         AllowBlank="False" LabelWidth="70" FieldLabel="Template" Text="Choose a Template.."
                         Disabled="True" AnchorHorizontal="50%">
+                        <ToolTips>
+                            <ext:ToolTip ID="ToolTip2" runat="server" Html="Select a template from the chosen category<br/>to populate the body with."/>
+                        </ToolTips>
                         <Store>
                             <ext:Store ID="streTemplates" runat="server">
                                 <Model>
@@ -145,13 +164,22 @@
                     </ext:ComboBox>
                     <ext:TextField runat="server" ID="txtSubject" AllowBlank="False" LabelWidth="70"
                         FieldLabel="Subject" AnchorHorizontal="70%">
+                        <ToolTips>
+                            <ext:ToolTip ID="ToolTip3" runat="server" Html="Subject of the email"/>
+                        </ToolTips>
                     </ext:TextField>
                     <ext:HtmlEditor runat="server" ID="heEmailBody" LabelWidth="70" Height="365" FieldLabel="Body"
                         AnchorHorizontal="100%">
+                        <ToolTips>
+                            <ext:ToolTip ID="ToolTip4" runat="server" Html="Body of the email"/>
+                        </ToolTips>
                     </ext:HtmlEditor>
                 </Items>
                 <Buttons>
                     <ext:Button runat="server" ID="btnSendEmail" Text="Send" Icon="EmailStart" Margins="0 12 0 0">
+                        <ToolTips>
+                            <ext:ToolTip ID="ToolTip5" runat="server" Html="send the email to the client"/>
+                        </ToolTips>
                         <DirectEvents>
                             <Click OnEvent="BtnSendEmailClick">
                             </Click>
