@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cplBody" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <ext:Panel ID="pnlMain" runat="server" Height="1212" Title="Reports" AutoScroll="True" MaxWidth="1349">
+    <ext:Panel ID="pnlMain" runat="server" Height="1215" Title="Reports" AutoScroll="True" MaxWidth="1349">
         <LayoutConfig>
             <ext:VBoxLayoutConfig Align="Stretch" />
         </LayoutConfig>

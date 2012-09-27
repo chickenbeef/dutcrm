@@ -3,8 +3,8 @@
 
 
 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
-	Font-Size="8pt" Height="29.7cm" InteractiveDeviceInfos="(Collection)" 
-	WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="21cm" 
+	Font-Size="8pt" Height="310mm" InteractiveDeviceInfos="(Collection)" 
+	WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="211mm" 
 	style="text-align: justify">
 	<LocalReport ReportPath="Reports\SupportReport.rdlc">
 		<DataSources>

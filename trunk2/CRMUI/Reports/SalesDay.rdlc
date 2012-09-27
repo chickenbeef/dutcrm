@@ -301,8 +301,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <KeepTogether>true</KeepTogether>
+        <NoRowsMessage>No Data Available</NoRowsMessage>
         <DataSetName>SalesDay</DataSetName>
-        <Top>4.99216cm</Top>
+        <Top>6.18278cm</Top>
         <Left>4.39208cm</Left>
         <Height>1.22646cm</Height>
         <Width>12.1302cm</Width>
@@ -317,8 +319,8 @@
         <Source>Embedded</Source>
         <Value>LawPropertyLogo</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.52917cm</Top>
-        <Left>0.71438cm</Left>
+        <Top>2.08812cm</Top>
+        <Left>2.30188cm</Left>
         <Height>1.84396cm</Height>
         <Width>6.65937cm</Width>
         <ZIndex>1</ZIndex>
@@ -348,7 +350,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>3.66924cm</Top>
+        <Top>5.01861cm</Top>
         <Left>7.34695cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.73333cm</Width>
@@ -363,8 +365,43 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Sales Report</Value>
+                <Style>
+                  <FontFamily>Calisto MT</FontFamily>
+                  <FontSize>24pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DarkBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox8</rd:DefaultName>
+        <Top>2.08812cm</Top>
+        <Left>11.68417cm</Left>
+        <Height>1.21105cm</Height>
+        <Width>6.31cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>10cm</Height>
+    <Height>29.7cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
@@ -377,8 +414,8 @@
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
     <RightMargin>1cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style>
       <Border>

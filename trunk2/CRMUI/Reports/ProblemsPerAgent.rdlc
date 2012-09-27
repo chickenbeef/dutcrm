@@ -21,7 +21,7 @@
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="NumberOfProblems">
-          <DataField>NumberOfCalls</DataField>
+          <DataField>NumberOfProblems</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -31,7 +31,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>CRMDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Joshua\Documents\DUT 3rd year\DS3\CRM\Implementation\WebApp\CRM\CRMUI\Reports\CRMDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Joshua\Documents\DUT 3rd year\DS3\CRM\Implementation\WebApp\CRM svn\CRMUI\Reports\CRMDataSet.xsd</rd:SchemaPath>
         <rd:TableName>ProblemsPerAgent</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -306,11 +306,9 @@
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <FixedColumnHeaders>true</FixedColumnHeaders>
         <KeepTogether>true</KeepTogether>
+        <NoRowsMessage>No Data Available</NoRowsMessage>
         <DataSetName>ProblemsPerAgent</DataSetName>
-        <PageBreak>
-          <BreakLocation>End</BreakLocation>
-        </PageBreak>
-        <Top>4.60594cm</Top>
+        <Top>5.9024cm</Top>
         <Left>3.58266cm</Left>
         <Height>1.22646cm</Height>
         <Width>13.46195cm</Width>
@@ -344,7 +342,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>3.25917cm</Top>
+        <Top>4.7673cm</Top>
         <Left>5.97959cm</Left>
         <Height>0.81167cm</Height>
         <Width>8.18854cm</Width>
@@ -363,8 +361,8 @@
         <Source>Embedded</Source>
         <Value>LawPropertyLogo</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.52917cm</Top>
-        <Left>0.71438cm</Left>
+        <Top>2.08812cm</Top>
+        <Left>2.30188cm</Left>
         <Height>1.84396cm</Height>
         <Width>6.65937cm</Width>
         <ZIndex>2</ZIndex>
@@ -394,8 +392,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>1.16208cm</Top>
-        <Left>12.26625cm</Left>
+        <Top>2.08812cm</Top>
+        <Left>11.68417cm</Left>
         <Height>1.21105cm</Height>
         <Width>6.31cm</Width>
         <ZIndex>3</ZIndex>
@@ -410,7 +408,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>10cm</Height>
+    <Height>29.7cm</Height>
     <Style>
       <Border>
         <Style>Solid</Style>
@@ -421,10 +419,10 @@
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style>
       <Border>
@@ -442,6 +440,7 @@ AOvSXum6X4ohgebM8cEm6NkYqA39a1oy9nNTktDKtH2kHCL1Mk+G/EpBH/CVSf8AgMv+Nc/4o8MJ4c8H
 Yqf2ZafaDP5C+YSTu56nr9M0tvp1ravut4RGdu35SQCPpVqilzPuPlXYoDRNPGcWqcnJ5PP19acmj2EbMUtkBbIPXoc5Ht1P51dop88u4uSPYpppNlHv2W6Deu09TxnOPpx0qW2tILNGW3jCB23tjufWp6KTk3uxqKWyCiiikMKKKKACiiigAooooAKKKKACiiigAooooA//2Q==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportID>8a329b7b-4e3e-4ff0-a697-1aaf43f77b04</rd:ReportID>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
 </Report>

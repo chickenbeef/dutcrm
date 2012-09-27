@@ -12,7 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <ext:Panel ID="pnlMain" runat="server" Height="1400" Title="Reports" MaxWidth="1349">
+    <ext:Panel ID="pnlMain" runat="server" Height="1215" Title="Reports" MaxWidth="1349">
         <LayoutConfig>
             <ext:VBoxLayoutConfig Align="Stretch"/>
         </LayoutConfig>

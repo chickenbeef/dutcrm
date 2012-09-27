@@ -2,9 +2,9 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <rsweb:ReportViewer ID="SalesWeekReportViewer" runat="server" 
-	Font-Names="Verdana" Font-Size="8pt" Height="29.7cm" 
+	Font-Names="Verdana" Font-Size="8pt" Height="310mm" 
 	InteractiveDeviceInfos="(Collection)" WaitMessageFont-Names="Verdana" 
-	WaitMessageFont-Size="14pt" Width="21cm">
+	WaitMessageFont-Size="14pt" Width="211mm">
 	<LocalReport ReportPath="Reports\SalesWeek.rdlc">
 		<DataSources>
 			<rsweb:ReportDataSource DataSourceId="odsSalesWeek" Name="SalesWeek" />
