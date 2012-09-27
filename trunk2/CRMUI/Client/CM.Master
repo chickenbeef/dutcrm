@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CM.Master.cs" Inherits="CRMUI.Client.CM" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../Styles/Main.css"/>
+    <asp:ContentPlaceHolder ID="cphCMHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formCM" runat="server">
+    <div class="fullwidth">
+                <table class="fullwidth">
+                    <tr>
+                        <td class="bluestripe">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="fullwidth">
+                                <tr>
+                                    <td class="leftgrayheader">
+                                        <img class="logo" src="../Images/Logo.png" alt="Law Property logo"/>
+                                    </td>
+                                    <td>
+                                        <table class="fullwidth">
+                                            <tr>
+                                                <td class="middlegrayheader"></td>
+                                                <td class="rightgrayheader">Law Active Holdings</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blueheader">
+                            Customer Relationship Management System</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ext:Toolbar ID="tblCM" runat="server" MaxWidth="1349">
+                                <Items>
+                                    <ext:LinkButton runat="server" ID="lnkUpdateClient" Text="Update Clients" AutoPostBack="True" PostBackUrl="~/Client/Home.aspx"/>
+                                    <ext:ToolbarSpacer runat="server"/>
+                                    <ext:LinkButton ID="LnkEmailSupport" runat="server" Text="Email Support" AutoPostBack="True" PostBackUrl="~/Client/EmailSupport.aspx" />
+                                    <ext:ToolbarSpacer runat="server"/>
+                                    <ext:ToolbarFill ID="tblfCM" runat="server"/>
+                                    <ext:ToolbarSeparator runat="server"/>
+                                    <ext:LinkButton runat="server" ID="lnkCMLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Default.aspx"/>
+                                </Items>
+                            </ext:Toolbar></td>
+                    </tr>
+                    <tr>
+                        <td class="subheading">Client</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:ContentPlaceHolder ID="cphCMBody" runat="server">
+                            </asp:ContentPlaceHolder></td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            © 2011 LAW Property (Pty) Ltd. All rights reserved</td>
+                    </tr>
+                    <tr>
+                        <td class="bluestripe">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </form>
+</body>
+</html>

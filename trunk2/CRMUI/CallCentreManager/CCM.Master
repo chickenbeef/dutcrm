@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CCM.master.cs" Inherits="CRMUI.CallCentreManager.CCM" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../Styles/Main.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="fullwidth">
+            <tr>
+                <td class="bluestripe">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="fullwidth">
+                        <tr>
+                            <td class="leftgrayheader">
+                                <img class="logo" src="../Images/Logo.png" alt="Law Property logo" />
+                            </td>
+                            <td>
+                                <table class="fullwidth">
+                                    <tr>
+                                        <td class="middlegrayheader">
+                                        </td>
+                                        <td class="rightgrayheader">
+                                            Law Active Holdings
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="blueheader">
+                    Customer Relationship Management System
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
+                        <Items>
+                            <ext:LinkButton runat="server" ID="lnkUpdateRoles" Text="Update Roles" AutoPostBack="True"
+                                PostBackUrl="~/CallCentreManager/Home.aspx" />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton runat="server" ID="lnkMessagingServices" Text="Messaging Services"
+                                AutoPostBack="True" PostBackUrl="~/CallCentreManager/MessagingServices.aspx" />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton runat="server" ID="lnkSupportReports" Text="Support Reports" AutoPostBack="True"
+                                PostBackUrl="~/CallCentreManager/SupportReports.aspx" />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton runat="server" ID="lnkCharts" Text="Charts" AutoPostBack="True" PostBackUrl="~/CallCentreManager/Charts.aspx" />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton ID="LnkAutomationSettings" runat="server" Text="Automation Settings"
+                                AutoPostBack="True" PostBackUrl="~/CallCentreManager/AutomationSettings.aspx" />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton runat="server" ID="lnkEmailSettings" Text="Email Settings" AutoPostBack="True"
+                                PostBackUrl="~/CallCentreManager/EmailSettings.aspx" />
+                            <ext:ToolbarSpacer runat="server" />
+                            <ext:LinkButton ID="lnkManageTemplates" runat="server" Text="Manage Templates" AutoPostBack="True"
+                                PostBackUrl="~/CallCentreManager/CreateTemplate.aspx" />
+                            <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
+                            <ext:ToolbarFill ID="ToolbarFill1" runat="server" />
+                            <ext:ToolbarSeparator runat="server" />
+                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Default.aspx" />
+                        </Items>
+                    </ext:Toolbar>
+                </td>
+            </tr>
+            <tr>
+                <td class="subheading">
+                    Call Centre Manager
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="cphCallCMBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td class="footer">
+                    © 2011 LAW Property (Pty) Ltd. All rights reserved
+                </td>
+            </tr>
+            <tr>
+                <td class="bluestripe">
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

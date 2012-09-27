@@ -1,0 +1,185 @@
+﻿/* File Created: August 23, 2012 */
+
+/* OVERIDDEN HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    color: darkblue;
+    font-weight: 200;
+    margin-bottom: 0px;
+    text-transform: none;
+}
+
+h1
+{
+}
+
+h2
+{
+    font-family: Gabriola;
+    font-size: x-large;
+    text-align: left;
+    font-variant: normal;
+}
+
+h3
+{
+    font-size: larger;
+}
+
+h4
+{
+    font-size: medium;
+}
+
+h5, h6
+{
+    font-size: small;
+}
+
+/*CUSTOM CLASSES
+----------------------------------------------------------*/
+/*Flat blue stripe for top and bottom of page*/
+
+.bluestripe
+{
+    background-color: blue;
+    height: 2px;
+}
+
+/*Displays logo and description of law property*/
+
+.leftgrayheader
+{
+    text-align: left;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABICAYAAAA+hf0SAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wIFxQTJBJV/PwAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAOxJREFUeNrt3IkNgzAURMH4ol7XD7ZJH+xMCaunT6SQlDnn+yNWr7VaQQDEBtBas4IAiA2g926F5ADGGFZwAXABEACBAVzXZQUB4BGAC4AAEAA+A+ACIAA8Avh8AL4McgGs4AIgAARAYABeChWAFQRAbAB+GRQeQCnFCi4ALgACQAAIAAGQE8D7+osgASAABIAAiAvgnGMFFwAXgMwA9t5WEAACIDOAtZYVBIAAyAzgeR4ruAC4AGQGcN+3FQSARwAuAAJAAPgMgAuAAPAIQAB8OwBfBgnACh4BxAbgpVABWCE5AL8MEoAVBECqPysHb2deCPzcAAAAAElFTkSuQmCC);
+    background-repeat: repeat-x;
+    width: 300px;
+    max-height: 72px;
+    padding-left: 5px;
+}
+
+.middlegrayheader
+{
+    text-align: left;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABICAYAAAA+hf0SAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wIFxQTJBJV/PwAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAOxJREFUeNrt3IkNgzAURMH4ol7XD7ZJH+xMCaunT6SQlDnn+yNWr7VaQQDEBtBas4IAiA2g926F5ADGGFZwAXABEACBAVzXZQUB4BGAC4AAEAA+A+ACIAA8Avh8AL4McgGs4AIgAARAYABeChWAFQRAbAB+GRQeQCnFCi4ALgACQAAIAAGQE8D7+osgASAABIAAiAvgnGMFFwAXgMwA9t5WEAACIDOAtZYVBIAAyAzgeR4ruAC4AGQGcN+3FQSARwAuAAJAAPgMgAuAAPAIQAB8OwBfBgnACh4BxAbgpVABWCE5AL8MEoAVBECqPysHb2deCPzcAAAAAElFTkSuQmCC);
+    background-repeat: repeat-x;
+    width: 256px;
+    height: 72px;
+}
+
+.rightgrayheader
+{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: slategrey;
+    text-align: left;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAABICAYAAAA+hf0SAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wIFxQTJBJV/PwAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAOxJREFUeNrt3IkNgzAURMH4ol7XD7ZJH+xMCaunT6SQlDnn+yNWr7VaQQDEBtBas4IAiA2g926F5ADGGFZwAXABEACBAVzXZQUB4BGAC4AAEAA+A+ACIAA8Avh8AL4McgGs4AIgAARAYABeChWAFQRAbAB+GRQeQCnFCi4ALgACQAAIAAGQE8D7+osgASAABIAAiAvgnGMFFwAXgMwA9t5WEAACIDOAtZYVBIAAyAzgeR4ruAC4AGQGcN+3FQSARwAuAAJAAPgMgAuAAPAIQAB8OwBfBgnACh4BxAbgpVABWCE5AL8MEoAVBECqPysHb2deCPzcAAAAAElFTkSuQmCC);
+    background-repeat: repeat-x;
+    max-height: 72px;
+}
+
+/*Blue aero effect header strip*/
+
+.blueheader
+{
+    font-family: Gabriola;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    color: darkblue;
+    font-weight: bold;
+    text-transform: uppercase;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAA5CAYAAAD++yN2AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wIFxQSO4ZGwEgAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAANlJREFUeNrt24ENAiEABMFHtH6b+YpsQwEL2dkSYHLxExzv+3MuZXuOMZxCGcDD/QOgMIBJQHwBAKgvgENIA/AjoA5gAmABZAEUBfCyABZA5QUAwAIIAAGgJIAJQByAz0AABICqANx/HgABbQAmoA3AAACgNICLAAugbN4E1xfg+GtoHMBFgAUQAIoC2JuANgATUAfgENIAFgEACABlASwA0gB+AAAgAFQF8AXAAqi8AD4DLYDKACyABZAFUBXA2g4hDcCLoPwCANBeAPcPgMIAjkehdQAOodwfMjRPAphamdsAAAAASUVORK5CYII=);
+    background-repeat: repeat-x;
+    max-height: 57px;
+    padding-top: 24px;
+}
+
+.subheading
+{
+    font-family: Gabriola;
+    background-color: rgb(240, 240, 240);
+    font-size: x-large;
+    text-align: center;
+    color: rgb(0, 9, 170);
+    padding: 12px 0px 0px 0px;
+    height: 40px;
+}
+
+.footer
+{
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    max-height: 28px;
+    color: rgb(90, 98, 109);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: small;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    orphans: 2;
+    text-align: center;
+    text-indent: 0px;
+    text-transform: none;
+    white-space: normal;
+    word-spacing: 0px;
+    -webkit-text-size-adjust: auto;
+    -webkit-text-stroke-width: 0px;
+    background-color: rgb(244, 244, 244);
+    display: inline !important;
+    float: none;
+    padding: 5px;
+}
+
+/*class for tables*/
+
+.fullwidth
+{
+    border-collapse: collapse;
+    min-width: 1007px;
+    max-width: 1349px;
+    width: 100%;
+}
+
+/*Center text*/
+
+.center
+{
+    text-align: center;
+}
+
+/*Adjust logo to correct size*/
+.logo
+{
+    width: 100%;
+    height: 65px;
+}
+
+/*Colour form each priority*/
+.high {
+    color: red;
+    font-weight: bold;
+}
+
+.medium {
+    color: orangered;
+    font-weight: bold;
+}
+
+.low {
+    color: orange;
+    font-weight: bold;
+}

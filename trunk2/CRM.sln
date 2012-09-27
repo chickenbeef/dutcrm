@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMUI", "CRMUI\CRMUI.csproj", "{F83993DC-98E4-46EA-95CB-41737072058F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMBusiness", "CRMBusiness\CRMBusiness.csproj", "{B17F11B3-5810-4B4B-AACA-102E1FFC04FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMData", "CRMData\CRMData.csproj", "{450612E0-2A2E-4472-B58D-38E816D5C8EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F83993DC-98E4-46EA-95CB-41737072058F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83993DC-98E4-46EA-95CB-41737072058F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83993DC-98E4-46EA-95CB-41737072058F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83993DC-98E4-46EA-95CB-41737072058F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17F11B3-5810-4B4B-AACA-102E1FFC04FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17F11B3-5810-4B4B-AACA-102E1FFC04FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17F11B3-5810-4B4B-AACA-102E1FFC04FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17F11B3-5810-4B4B-AACA-102E1FFC04FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450612E0-2A2E-4472-B58D-38E816D5C8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450612E0-2A2E-4472-B58D-38E816D5C8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450612E0-2A2E-4472-B58D-38E816D5C8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450612E0-2A2E-4472-B58D-38E816D5C8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

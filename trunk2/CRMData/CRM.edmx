@@ -1,0 +1,1655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CRMModelStoreContainer">
+          <EntitySet Name="Branches" EntityType="CRMModel.Store.Branches" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="CRMModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClientProblemsLog" EntityType="CRMModel.Store.ClientProblemsLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Clients" EntityType="CRMModel.Store.Clients" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Companies" EntityType="CRMModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ComTemplate" EntityType="CRMModel.Store.ComTemplate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConfigurationSetting" EntityType="CRMModel.Store.ConfigurationSetting" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmailProblems" EntityType="CRMModel.Store.EmailProblems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employees" EntityType="CRMModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Escalation" EntityType="CRMModel.Store.Escalation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Images" EntityType="CRMModel.Store.Images" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notes" EntityType="CRMModel.Store.Notes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Problems" EntityType="CRMModel.Store.Problems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sales" EntityType="CRMModel.Store.Sales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Solutions" EntityType="CRMModel.Store.Solutions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vClientProblemsLog" EntityType="CRMModel.Store.vClientProblemsLog" store:Type="Views" store:Schema="dbo" store:Name="vClientProblemsLog">
+            <DefiningQuery>SELECT 
+      [vClientProblemsLog].[CPR_ID] AS [CPR_ID], 
+      [vClientProblemsLog].[Solved] AS [Solved], 
+      [vClientProblemsLog].[DateCreated] AS [DateCreated], 
+      [vClientProblemsLog].[DateSolved] AS [DateSolved], 
+      [vClientProblemsLog].[ComTypeTel] AS [ComTypeTel], 
+      [vClientProblemsLog].[EMP_ID] AS [EMP_ID], 
+      [vClientProblemsLog].[EmployeeName] AS [EmployeeName], 
+      [vClientProblemsLog].[EmployeeSurname] AS [EmployeeSurname], 
+      [vClientProblemsLog].[PROB_ID] AS [PROB_ID], 
+      [vClientProblemsLog].[ProblemDescription] AS [ProblemDescription], 
+      [vClientProblemsLog].[SOL_ID] AS [SOL_ID], 
+      [vClientProblemsLog].[SolutionDescription] AS [SolutionDescription], 
+      [vClientProblemsLog].[Priority] AS [Priority], 
+      [vClientProblemsLog].[SolvedOnCreate] AS [SolvedOnCreate], 
+      [vClientProblemsLog].[CLIENT_ID] AS [CLIENT_ID], 
+      [vClientProblemsLog].[ClientName] AS [ClientName], 
+      [vClientProblemsLog].[ClientSurname] AS [ClientSurname], 
+      [vClientProblemsLog].[ClientUsername] AS [ClientUsername]
+      FROM [dbo].[vClientProblemsLog] AS [vClientProblemsLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vClients" EntityType="CRMModel.Store.vClients" store:Type="Views" store:Schema="dbo" store:Name="vClients">
+            <DefiningQuery>SELECT 
+      [vClients].[CLIENT_ID] AS [CLIENT_ID], 
+      [vClients].[Name] AS [Name], 
+      [vClients].[Surname] AS [Surname], 
+      [vClients].[DateOfBirth] AS [DateOfBirth], 
+      [vClients].[Telephone] AS [Telephone], 
+      [vClients].[Cell] AS [Cell], 
+      [vClients].[Fax] AS [Fax], 
+      [vClients].[DateCreated] AS [DateCreated], 
+      [vClients].[CLEINT_DateModified] AS [CLEINT_DateModified], 
+      [vClients].[BRH_ID] AS [BRH_ID], 
+      [vClients].[UserId] AS [UserId], 
+      [vClients].[UserName] AS [UserName], 
+      [vClients].[Email] AS [Email]
+      FROM [dbo].[vClients] AS [vClients]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vEmployees" EntityType="CRMModel.Store.vEmployees" store:Type="Views" store:Schema="dbo" store:Name="vEmployees">
+            <DefiningQuery>SELECT 
+      [vEmployees].[EMP_ID] AS [EMP_ID], 
+      [vEmployees].[Name] AS [Name], 
+      [vEmployees].[Surname] AS [Surname], 
+      [vEmployees].[Telephone] AS [Telephone], 
+      [vEmployees].[Cell] AS [Cell], 
+      [vEmployees].[Fax] AS [Fax], 
+      [vEmployees].[DateCreated] AS [DateCreated], 
+      [vEmployees].[DateModified] AS [DateModified], 
+      [vEmployees].[UserId] AS [UserId], 
+      [vEmployees].[UserName] AS [UserName], 
+      [vEmployees].[Email] AS [Email]
+      FROM [dbo].[vEmployees] AS [vEmployees]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="Branches_Clients_FK1" Association="CRMModel.Store.Branches_Clients_FK1">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Branches1" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="Clients_ClientProblemsLog_FK1" Association="CRMModel.Store.Clients_ClientProblemsLog_FK1">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+          </AssociationSet>
+          <AssociationSet Name="Clients_EmailProblems_FK1" Association="CRMModel.Store.Clients_EmailProblems_FK1">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="EmailProblems" EntitySet="EmailProblems" />
+          </AssociationSet>
+          <AssociationSet Name="Clients_Sales_FK1" Association="CRMModel.Store.Clients_Sales_FK1">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="CPL_Notes_FK" Association="CRMModel.Store.CPL_Notes_FK">
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="EmailProblems_Images_FK1" Association="CRMModel.Store.EmailProblems_Images_FK1">
+            <End Role="EmailProblems" EntitySet="EmailProblems" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_ClientProblemsLog_FK1" Association="CRMModel.Store.Employees_ClientProblemsLog_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_EmailProblems_FK1" Association="CRMModel.Store.Employees_EmailProblems_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmailProblems" EntitySet="EmailProblems" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Notes_FK" Association="CRMModel.Store.Employees_Notes_FK">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Problems_FK1" Association="CRMModel.Store.Employees_Problems_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Problems" EntitySet="Problems" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Sales_FK1" Association="CRMModel.Store.Employees_Sales_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Solutions_FK1" Association="CRMModel.Store.Employees_Solutions_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Solutions" EntitySet="Solutions" />
+          </AssociationSet>
+          <AssociationSet Name="Escalation_ClientProblemsLog_FK1" Association="CRMModel.Store.Escalation_ClientProblemsLog_FK1">
+            <End Role="Escalation" EntitySet="Escalation" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branch_Company" Association="CRMModel.Store.FK_Branch_Company">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Branches" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientProblemsLog_Images" Association="CRMModel.Store.FK_ClientProblemsLog_Images">
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComTemplate_Categories" Association="CRMModel.Store.FK_ComTemplate_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="ComTemplate" EntitySet="ComTemplate" />
+          </AssociationSet>
+          <AssociationSet Name="Problems_ClientProblemsLog_FK1" Association="CRMModel.Store.Problems_ClientProblemsLog_FK1">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+          </AssociationSet>
+          <AssociationSet Name="Problems_Solutions_FK1" Association="CRMModel.Store.Problems_Solutions_FK1">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="Solutions" EntitySet="Solutions" />
+          </AssociationSet>
+          <AssociationSet Name="Solutions_ClientProblemsLog_FK1" Association="CRMModel.Store.Solutions_ClientProblemsLog_FK1">
+            <End Role="Solutions" EntitySet="Solutions" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLog" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Branches">
+          <Key>
+            <PropertyRef Name="BRH_ID" />
+          </Key>
+          <Property Name="BRH_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CPY_ID" Type="int" Nullable="false" />
+          <Property Name="DocexAddress" Type="varchar" MaxLength="50" />
+          <Property Name="RoutingID" Type="int" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PhysicalAddress1" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="PhysicalAddress2" Type="varchar" MaxLength="100" />
+          <Property Name="Suburb" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="PostalAddress1" Type="varchar" MaxLength="250" />
+          <Property Name="PostalAddress2" Type="varchar" MaxLength="250" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="6" />
+          <Property Name="Tel" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="DateModified" Type="date" />
+          <Property Name="IntegrationKey" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ClientProblemsLog">
+          <Key>
+            <PropertyRef Name="CPR_ID" />
+          </Key>
+          <Property Name="CPR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Solved" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="DateSolved" Type="date" />
+          <Property Name="ComTypeTel" Type="bit" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="PROB_ID" Type="int" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="SOL_ID" Type="int" />
+          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SolvedOnCreate" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="10" />
+          <Property Name="Cell" Type="varchar" MaxLength="10" />
+          <Property Name="Fax" Type="varchar" MaxLength="10" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="DateModified" Type="date" />
+          <Property Name="BRH_ID" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CPY_ID" />
+          </Key>
+          <Property Name="CPY_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="RegisterType" Type="int" Nullable="false" />
+          <Property Name="RegisterCompanyType" Type="int" Nullable="false" />
+          <Property Name="RegisterNo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AuditorFirmName" Type="varchar" MaxLength="100" />
+          <Property Name="AuditorFirmQualification" Type="varchar" MaxLength="250" />
+          <Property Name="AuditorFirmAuditor" Type="varchar" MaxLength="250" />
+          <Property Name="VATRegistered" Type="bit" Nullable="false" />
+          <Property Name="VATRegNo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="ComTemplate">
+          <Key>
+            <PropertyRef Name="CT_ID" />
+          </Key>
+          <Property Name="CT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Paragraph" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="CAT_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConfigurationSetting">
+          <Key>
+            <PropertyRef Name="CONFIG_ID" />
+          </Key>
+          <Property Name="CONFIG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Setting" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="EmailProblems">
+          <Key>
+            <PropertyRef Name="EP_ID" />
+          </Key>
+          <Property Name="EP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="From" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Attended" Type="bit" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" />
+          <Property Name="Mail_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+          </Key>
+          <Property Name="EMP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Telephone" Type="varchar" MaxLength="10" />
+          <Property Name="Cell" Type="varchar" MaxLength="10" />
+          <Property Name="Fax" Type="varchar" MaxLength="10" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="DateModified" Type="date" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Escalation">
+          <Key>
+            <PropertyRef Name="Priority" />
+          </Key>
+          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Duration" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="IMG_ID" />
+          </Key>
+          <Property Name="IMG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImageFile" Type="varbinary(max)" Nullable="false" />
+          <Property Name="EP_ID" Type="int" />
+          <Property Name="CPR_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="NOTE_ID" />
+          </Key>
+          <Property Name="NOTE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="CPR_ID" Type="int" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Problems">
+          <Key>
+            <PropertyRef Name="PROB_ID" />
+          </Key>
+          <Property Name="PROB_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="SALE_ID" />
+          </Key>
+          <Property Name="SALE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="smalldatetime" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Solutions">
+          <Key>
+            <PropertyRef Name="SOL_ID" />
+          </Key>
+          <Property Name="SOL_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="DateModified" Type="date" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="PROB_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CRM.dbo.vClientProblemsLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vClientProblemsLog">
+          <Key>
+            <PropertyRef Name="CPR_ID" />
+            <PropertyRef Name="Solved" />
+            <PropertyRef Name="EMP_ID" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="EmployeeSurname" />
+            <PropertyRef Name="PROB_ID" />
+            <PropertyRef Name="ProblemDescription" />
+            <PropertyRef Name="SOL_ID" />
+            <PropertyRef Name="SolutionDescription" />
+            <PropertyRef Name="Priority" />
+            <PropertyRef Name="SolvedOnCreate" />
+            <PropertyRef Name="CLIENT_ID" />
+            <PropertyRef Name="ClientName" />
+            <PropertyRef Name="ClientSurname" />
+            <PropertyRef Name="ClientUsername" />
+          </Key>
+          <Property Name="CPR_ID" Type="int" Nullable="false" />
+          <Property Name="Solved" Type="bit" Nullable="false" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="DateSolved" Type="date" />
+          <Property Name="ComTypeTel" Type="bit" />
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="EmployeeSurname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PROB_ID" Type="int" Nullable="false" />
+          <Property Name="ProblemDescription" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="SOL_ID" Type="int" Nullable="false" />
+          <Property Name="SolutionDescription" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="SolvedOnCreate" Type="bit" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="ClientName" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ClientSurname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ClientUsername" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CRM.dbo.vClients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vClients">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="BRH_ID" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="10" />
+          <Property Name="Cell" Type="varchar" MaxLength="10" />
+          <Property Name="Fax" Type="varchar" MaxLength="10" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="CLEINT_DateModified" Type="date" />
+          <Property Name="BRH_ID" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CRM.dbo.vEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vEmployees">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="DateCreated" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="EMP_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Telephone" Type="varchar" MaxLength="10" />
+          <Property Name="Cell" Type="varchar" MaxLength="10" />
+          <Property Name="Fax" Type="varchar" MaxLength="10" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
+          <Property Name="DateModified" Type="date" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <Association Name="Branches_Clients_FK1">
+          <End Role="Branches" Type="CRMModel.Store.Branches" Multiplicity="1" />
+          <End Role="Branches1" Type="CRMModel.Store.Branches" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BRH_ID" />
+            </Principal>
+            <Dependent Role="Branches1">
+              <PropertyRef Name="BRH_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Clients_ClientProblemsLog_FK1">
+          <End Role="Clients" Type="CRMModel.Store.Clients" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Clients_EmailProblems_FK1">
+          <End Role="Clients" Type="CRMModel.Store.Clients" Multiplicity="1" />
+          <End Role="EmailProblems" Type="CRMModel.Store.EmailProblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="EmailProblems">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Clients_Sales_FK1">
+          <End Role="Clients" Type="CRMModel.Store.Clients" Multiplicity="1" />
+          <End Role="Sales" Type="CRMModel.Store.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CPL_Notes_FK">
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="1" />
+          <End Role="Notes" Type="CRMModel.Store.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientProblemsLog">
+              <PropertyRef Name="CPR_ID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="CPR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmailProblems_Images_FK1">
+          <End Role="EmailProblems" Type="CRMModel.Store.EmailProblems" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Images" Type="CRMModel.Store.Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailProblems">
+              <PropertyRef Name="EP_ID" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="EP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_ClientProblemsLog_FK1">
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_EmailProblems_FK1">
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="0..1" />
+          <End Role="EmailProblems" Type="CRMModel.Store.EmailProblems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="EmailProblems">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Notes_FK">
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="1" />
+          <End Role="Notes" Type="CRMModel.Store.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Problems_FK1">
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="1" />
+          <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Problems">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Sales_FK1">
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="1" />
+          <End Role="Sales" Type="CRMModel.Store.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Solutions_FK1">
+          <End Role="Employees" Type="CRMModel.Store.Employees" Multiplicity="1" />
+          <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Solutions">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Escalation_ClientProblemsLog_FK1">
+          <End Role="Escalation" Type="CRMModel.Store.Escalation" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Escalation">
+              <PropertyRef Name="Priority" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="Priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Branch_Company">
+          <End Role="Companies" Type="CRMModel.Store.Companies" Multiplicity="1" />
+          <End Role="Branches" Type="CRMModel.Store.Branches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CPY_ID" />
+            </Principal>
+            <Dependent Role="Branches">
+              <PropertyRef Name="CPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientProblemsLog_Images">
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="0..1" />
+          <End Role="Images" Type="CRMModel.Store.Images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientProblemsLog">
+              <PropertyRef Name="CPR_ID" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="CPR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComTemplate_Categories">
+          <End Role="Categories" Type="CRMModel.Store.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComTemplate" Type="CRMModel.Store.ComTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CAT_ID" />
+            </Principal>
+            <Dependent Role="ComTemplate">
+              <PropertyRef Name="CAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Problems_ClientProblemsLog_FK1">
+          <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="PROB_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="PROB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Problems_Solutions_FK1">
+          <End Role="Problems" Type="CRMModel.Store.Problems" Multiplicity="1" />
+          <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="PROB_ID" />
+            </Principal>
+            <Dependent Role="Solutions">
+              <PropertyRef Name="PROB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Solutions_ClientProblemsLog_FK1">
+          <End Role="Solutions" Type="CRMModel.Store.Solutions" Multiplicity="0..1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.Store.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solutions">
+              <PropertyRef Name="SOL_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="SOL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRMModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Branches" EntityType="CRMModel.Branch" />
+          <EntitySet Name="ClientProblemsLogs" EntityType="CRMModel.ClientProblemsLog" />
+          <EntitySet Name="Clients" EntityType="CRMModel.Client" />
+          <EntitySet Name="Companies" EntityType="CRMModel.Company" />
+          <EntitySet Name="ComTemplates" EntityType="CRMModel.ComTemplate" />
+          <EntitySet Name="EmailProblems" EntityType="CRMModel.EmailProblem" />
+          <EntitySet Name="Employees" EntityType="CRMModel.Employee" />
+          <EntitySet Name="Escalations" EntityType="CRMModel.Escalation" />
+          <EntitySet Name="Images" EntityType="CRMModel.Image" />
+          <EntitySet Name="Notes" EntityType="CRMModel.Note" />
+          <EntitySet Name="Problems" EntityType="CRMModel.Problem" />
+          <EntitySet Name="Sales" EntityType="CRMModel.Sale" />
+          <EntitySet Name="Solutions" EntityType="CRMModel.Solution" />
+          <EntitySet Name="vClientProblemsLogs" EntityType="CRMModel.vClientProblemsLog" />
+          <EntitySet Name="vClients" EntityType="CRMModel.vClient" />
+          <EntitySet Name="vEmployees" EntityType="CRMModel.vEmployee" />
+          <AssociationSet Name="Branches_Clients_FK1" Association="CRMModel.Branches_Clients_FK1">
+            <End Role="Branches" EntitySet="Branches" />
+            <End Role="Branches1" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Branch_Company" Association="CRMModel.FK_Branch_Company">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Branches" EntitySet="Branches" />
+          </AssociationSet>
+          <AssociationSet Name="Clients_ClientProblemsLog_FK1" Association="CRMModel.Clients_ClientProblemsLog_FK1">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+          </AssociationSet>
+          <AssociationSet Name="CPL_Notes_FK" Association="CRMModel.CPL_Notes_FK">
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_ClientProblemsLog_FK1" Association="CRMModel.Employees_ClientProblemsLog_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+          </AssociationSet>
+          <AssociationSet Name="Escalation_ClientProblemsLog_FK1" Association="CRMModel.Escalation_ClientProblemsLog_FK1">
+            <End Role="Escalation" EntitySet="Escalations" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+          </AssociationSet>
+          <AssociationSet Name="Problems_ClientProblemsLog_FK1" Association="CRMModel.Problems_ClientProblemsLog_FK1">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+          </AssociationSet>
+          <AssociationSet Name="Solutions_ClientProblemsLog_FK1" Association="CRMModel.Solutions_ClientProblemsLog_FK1">
+            <End Role="Solutions" EntitySet="Solutions" />
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+          </AssociationSet>
+          <AssociationSet Name="Clients_EmailProblems_FK1" Association="CRMModel.Clients_EmailProblems_FK1">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="EmailProblems" EntitySet="EmailProblems" />
+          </AssociationSet>
+          <AssociationSet Name="Clients_Sales_FK1" Association="CRMModel.Clients_Sales_FK1">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="EmailProblems_Images_FK1" Association="CRMModel.EmailProblems_Images_FK1">
+            <End Role="EmailProblems" EntitySet="EmailProblems" />
+            <End Role="Images" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_EmailProblems_FK1" Association="CRMModel.Employees_EmailProblems_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmailProblems" EntitySet="EmailProblems" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Notes_FK" Association="CRMModel.Employees_Notes_FK">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Problems_FK1" Association="CRMModel.Employees_Problems_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Problems" EntitySet="Problems" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Sales_FK1" Association="CRMModel.Employees_Sales_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="Employees_Solutions_FK1" Association="CRMModel.Employees_Solutions_FK1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Solutions" EntitySet="Solutions" />
+          </AssociationSet>
+          <AssociationSet Name="Problems_Solutions_FK1" Association="CRMModel.Problems_Solutions_FK1">
+            <End Role="Problems" EntitySet="Problems" />
+            <End Role="Solutions" EntitySet="Solutions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientProblemsLog_Images" Association="CRMModel.FK_ClientProblemsLog_Images">
+            <End Role="ClientProblemsLog" EntitySet="ClientProblemsLogs" />
+            <End Role="Image" EntitySet="Images" />
+          </AssociationSet>
+          <EntitySet Name="Categories" EntityType="CRMModel.Category" />
+          <AssociationSet Name="FK_ComTemplate_Categories" Association="CRMModel.FK_ComTemplate_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="ComTemplate" EntitySet="ComTemplates" />
+          </AssociationSet>
+          <EntitySet Name="ConfigurationSettings" EntityType="CRMModel.ConfigurationSetting" />
+        </EntityContainer>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BRH_ID" />
+          </Key>
+          <Property Name="BRH_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPY_ID" Type="Int32" Nullable="false" />
+          <Property Name="DocexAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RoutingID" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PhysicalAddress1" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="PhysicalAddress2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Suburb" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PostalAddress1" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="PostalAddress2" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="Tel" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="IntegrationKey" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Branches1" Relationship="CRMModel.Branches_Clients_FK1" FromRole="Branches" ToRole="Branches1" />
+          <NavigationProperty Name="Branch1" Relationship="CRMModel.Branches_Clients_FK1" FromRole="Branches1" ToRole="Branches" />
+          <NavigationProperty Name="Company" Relationship="CRMModel.FK_Branch_Company" FromRole="Branches" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="ClientProblemsLog">
+          <Key>
+            <PropertyRef Name="CPR_ID" />
+          </Key>
+          <Property Name="CPR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Solved" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateSolved" Type="DateTime" Nullable="true" />
+          <Property Name="ComTypeTel" Type="Boolean" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="PROB_ID" Type="Int32" Nullable="false" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="SOL_ID" Type="Int32" Nullable="true" />
+          <Property Name="Priority" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Client" Relationship="CRMModel.Clients_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Clients" />
+          <NavigationProperty Name="Notes" Relationship="CRMModel.CPL_Notes_FK" FromRole="ClientProblemsLog" ToRole="Notes" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Employees" />
+          <NavigationProperty Name="Escalation" Relationship="CRMModel.Escalation_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Escalation" />
+          <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Problems" />
+          <NavigationProperty Name="Solution" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="ClientProblemsLog" ToRole="Solutions" />
+          <Property Type="Boolean" Name="SolvedOnCreate" Nullable="false" />
+          <NavigationProperty Name="Images" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="ClientProblemsLog" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Cell" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="BRH_ID" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Clients_ClientProblemsLog_FK1" FromRole="Clients" ToRole="ClientProblemsLog" />
+          <NavigationProperty Name="EmailProblems" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="Clients" ToRole="EmailProblems" />
+          <NavigationProperty Name="Sales" Relationship="CRMModel.Clients_Sales_FK1" FromRole="Clients" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CPY_ID" />
+          </Key>
+          <Property Name="CPY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="RegisterType" Type="Int32" Nullable="false" />
+          <Property Name="RegisterCompanyType" Type="Int32" Nullable="false" />
+          <Property Name="RegisterNo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AuditorFirmName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AuditorFirmQualification" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="AuditorFirmAuditor" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="VATRegistered" Type="Boolean" Nullable="false" />
+          <Property Name="VATRegNo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <NavigationProperty Name="Branches" Relationship="CRMModel.FK_Branch_Company" FromRole="Companies" ToRole="Branches" />
+        </EntityType>
+        <EntityType Name="ComTemplate">
+          <Key>
+            <PropertyRef Name="CT_ID" />
+          </Key>
+          <Property Name="CT_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Paragraph" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="ComTemplate" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="EmailProblem">
+          <Key>
+            <PropertyRef Name="EP_ID" />
+          </Key>
+          <Property Name="EP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="Attended" Type="Boolean" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="EMP_ID" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="CRMModel.Clients_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Clients" />
+          <NavigationProperty Name="Images" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="EmailProblems" ToRole="Images" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="EmailProblems" ToRole="Employees" />
+          <Property Type="String" Name="Mail_ID" Nullable="true" />
+          <Property Type="String" Name="From" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+          </Key>
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Cell" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Employees_ClientProblemsLog_FK1" FromRole="Employees" ToRole="ClientProblemsLog" />
+          <NavigationProperty Name="EmailProblems" Relationship="CRMModel.Employees_EmailProblems_FK1" FromRole="Employees" ToRole="EmailProblems" />
+          <NavigationProperty Name="Notes" Relationship="CRMModel.Employees_Notes_FK" FromRole="Employees" ToRole="Notes" />
+          <NavigationProperty Name="Problems" Relationship="CRMModel.Employees_Problems_FK1" FromRole="Employees" ToRole="Problems" />
+          <NavigationProperty Name="Sales" Relationship="CRMModel.Employees_Sales_FK1" FromRole="Employees" ToRole="Sales" />
+          <NavigationProperty Name="Solutions" Relationship="CRMModel.Employees_Solutions_FK1" FromRole="Employees" ToRole="Solutions" />
+        </EntityType>
+        <EntityType Name="Escalation">
+          <Key>
+            <PropertyRef Name="Priority" />
+          </Key>
+          <Property Name="Priority" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Duration" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Escalation_ClientProblemsLog_FK1" FromRole="Escalation" ToRole="ClientProblemsLog" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="IMG_ID" />
+          </Key>
+          <Property Name="IMG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageFile" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="EP_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EmailProblem" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="Images" ToRole="EmailProblems" />
+          <Property Type="Int32" Name="CPR_ID" />
+          <NavigationProperty Name="ClientProblemsLog" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="Image" ToRole="ClientProblemsLog" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="NOTE_ID" />
+          </Key>
+          <Property Name="NOTE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="CPR_ID" Type="Int32" Nullable="false" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClientProblemsLog" Relationship="CRMModel.CPL_Notes_FK" FromRole="Notes" ToRole="ClientProblemsLog" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Notes_FK" FromRole="Notes" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Problem">
+          <Key>
+            <PropertyRef Name="PROB_ID" />
+          </Key>
+          <Property Name="PROB_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Problems_ClientProblemsLog_FK1" FromRole="Problems" ToRole="ClientProblemsLog" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Problems_FK1" FromRole="Problems" ToRole="Employees" />
+          <NavigationProperty Name="Solutions" Relationship="CRMModel.Problems_Solutions_FK1" FromRole="Problems" ToRole="Solutions" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="SALE_ID" />
+          </Key>
+          <Property Name="SALE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="CRMModel.Clients_Sales_FK1" FromRole="Sales" ToRole="Clients" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Sales_FK1" FromRole="Sales" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Solution">
+          <Key>
+            <PropertyRef Name="SOL_ID" />
+          </Key>
+          <Property Name="SOL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="PROB_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="Solutions" ToRole="ClientProblemsLog" />
+          <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Solutions_FK1" FromRole="Solutions" ToRole="Employees" />
+          <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_Solutions_FK1" FromRole="Solutions" ToRole="Problems" />
+        </EntityType>
+        <EntityType Name="vClientProblemsLog">
+          <Key>
+            <PropertyRef Name="CPR_ID" />
+            <PropertyRef Name="Solved" />
+            <PropertyRef Name="CLIENT_ID" />
+            <PropertyRef Name="ClientName" />
+            <PropertyRef Name="EMP_ID" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="PROB_ID" />
+            <PropertyRef Name="ProblemDescription" />
+            <PropertyRef Name="SOL_ID" />
+            <PropertyRef Name="SolutionDescription" />
+            <PropertyRef Name="Priority" />
+            <PropertyRef Name="SolvedOnCreate" />
+            <PropertyRef Name="EmployeeSurname" />
+            <PropertyRef Name="ClientSurname" />
+            <PropertyRef Name="ClientUsername" />
+          </Key>
+          <Property Name="CPR_ID" Type="Int32" Nullable="false" />
+          <Property Name="Solved" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="DateSolved" Type="DateTime" />
+          <Property Name="ComTypeTel" Type="Boolean" />
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="ClientName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PROB_ID" Type="Int32" Nullable="false" />
+          <Property Name="ProblemDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="SOL_ID" Type="Int32" Nullable="false" />
+          <Property Name="SolutionDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Priority" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Type="Boolean" Name="SolvedOnCreate" Nullable="false" />
+          <Property Type="String" Name="EmployeeSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClientSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClientUsername" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vClient">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="DateOfBirth" />
+            <PropertyRef Name="BRH_ID" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Cell" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" />
+          <Property Name="CLEINT_DateModified" Type="DateTime" />
+          <Property Name="BRH_ID" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vEmployee">
+          <Key>
+            <PropertyRef Name="EMP_ID" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="DateCreated" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Cell" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="Branches_Clients_FK1">
+          <End Role="Branches" Type="CRMModel.Branch" Multiplicity="1" />
+          <End Role="Branches1" Type="CRMModel.Branch" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Branches">
+              <PropertyRef Name="BRH_ID" />
+            </Principal>
+            <Dependent Role="Branches1">
+              <PropertyRef Name="BRH_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Branch_Company">
+          <End Role="Companies" Type="CRMModel.Company" Multiplicity="1" />
+          <End Role="Branches" Type="CRMModel.Branch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CPY_ID" />
+            </Principal>
+            <Dependent Role="Branches">
+              <PropertyRef Name="CPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Clients_ClientProblemsLog_FK1">
+          <End Role="Clients" Type="CRMModel.Client" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CPL_Notes_FK">
+          <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="1" />
+          <End Role="Notes" Type="CRMModel.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientProblemsLog">
+              <PropertyRef Name="CPR_ID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="CPR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_ClientProblemsLog_FK1">
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Escalation_ClientProblemsLog_FK1">
+          <End Role="Escalation" Type="CRMModel.Escalation" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Escalation">
+              <PropertyRef Name="Priority" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="Priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Problems_ClientProblemsLog_FK1">
+          <End Role="Problems" Type="CRMModel.Problem" Multiplicity="1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="PROB_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="PROB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Solutions_ClientProblemsLog_FK1">
+          <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="0..1" />
+          <End Role="ClientProblemsLog" Type="CRMModel.ClientProblemsLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solutions">
+              <PropertyRef Name="SOL_ID" />
+            </Principal>
+            <Dependent Role="ClientProblemsLog">
+              <PropertyRef Name="SOL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Clients_EmailProblems_FK1">
+          <End Role="Clients" Type="CRMModel.Client" Multiplicity="1" />
+          <End Role="EmailProblems" Type="CRMModel.EmailProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="EmailProblems">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Clients_Sales_FK1">
+          <End Role="Clients" Type="CRMModel.Client" Multiplicity="1" />
+          <End Role="Sales" Type="CRMModel.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="CLIENT_ID" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="CLIENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmailProblems_Images_FK1">
+          <End Role="EmailProblems" Type="CRMModel.EmailProblem" Multiplicity="1" />
+          <End Role="Images" Type="CRMModel.Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailProblems">
+              <PropertyRef Name="EP_ID" />
+            </Principal>
+            <Dependent Role="Images">
+              <PropertyRef Name="EP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_EmailProblems_FK1">
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="0..1" />
+          <End Role="EmailProblems" Type="CRMModel.EmailProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="EmailProblems">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Notes_FK">
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
+          <End Role="Notes" Type="CRMModel.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Problems_FK1">
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
+          <End Role="Problems" Type="CRMModel.Problem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Problems">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Sales_FK1">
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
+          <End Role="Sales" Type="CRMModel.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees_Solutions_FK1">
+          <End Role="Employees" Type="CRMModel.Employee" Multiplicity="1" />
+          <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EMP_ID" />
+            </Principal>
+            <Dependent Role="Solutions">
+              <PropertyRef Name="EMP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Problems_Solutions_FK1">
+          <End Role="Problems" Type="CRMModel.Problem" Multiplicity="1" />
+          <End Role="Solutions" Type="CRMModel.Solution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problems">
+              <PropertyRef Name="PROB_ID" />
+            </Principal>
+            <Dependent Role="Solutions">
+              <PropertyRef Name="PROB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientProblemsLog_Images">
+          <End Type="CRMModel.ClientProblemsLog" Role="ClientProblemsLog" Multiplicity="0..1" />
+          <End Type="CRMModel.Image" Role="Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientProblemsLog">
+              <PropertyRef Name="CPR_ID" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="CPR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ComTemplates" Relationship="CRMModel.FK_ComTemplate_Categories" FromRole="Category" ToRole="ComTemplate" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_ComTemplate_Categories">
+          <End Type="CRMModel.Category" Role="Category" Multiplicity="1" />
+          <End Type="CRMModel.ComTemplate" Role="ComTemplate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CAT_ID" />
+            </Principal>
+            <Dependent Role="ComTemplate">
+              <PropertyRef Name="CAT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ConfigurationSetting">
+          <Key>
+            <PropertyRef Name="CONFIG_ID" />
+          </Key>
+          <Property Type="Int32" Name="CONFIG_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Setting" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Value" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities">
+          <EntitySetMapping Name="Branches"><EntityTypeMapping TypeName="CRMModel.Branch"><MappingFragment StoreEntitySet="Branches">
+            <ScalarProperty Name="BRH_ID" ColumnName="BRH_ID" />
+            <ScalarProperty Name="CPY_ID" ColumnName="CPY_ID" />
+            <ScalarProperty Name="DocexAddress" ColumnName="DocexAddress" />
+            <ScalarProperty Name="RoutingID" ColumnName="RoutingID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="PhysicalAddress1" ColumnName="PhysicalAddress1" />
+            <ScalarProperty Name="PhysicalAddress2" ColumnName="PhysicalAddress2" />
+            <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="PostalAddress1" ColumnName="PostalAddress1" />
+            <ScalarProperty Name="PostalAddress2" ColumnName="PostalAddress2" />
+            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+            <ScalarProperty Name="Tel" ColumnName="Tel" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+            <ScalarProperty Name="IntegrationKey" ColumnName="IntegrationKey" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ClientProblemsLogs"><EntityTypeMapping TypeName="CRMModel.ClientProblemsLog"><MappingFragment StoreEntitySet="ClientProblemsLog">
+            <ScalarProperty Name="SolvedOnCreate" ColumnName="SolvedOnCreate" />
+                <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+            <ScalarProperty Name="Solved" ColumnName="Solved" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateSolved" ColumnName="DateSolved" />
+            <ScalarProperty Name="ComTypeTel" ColumnName="ComTypeTel" />
+            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+            <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+            <ScalarProperty Name="SOL_ID" ColumnName="SOL_ID" />
+            <ScalarProperty Name="Priority" ColumnName="Priority" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Clients"><EntityTypeMapping TypeName="CRMModel.Client"><MappingFragment StoreEntitySet="Clients">
+            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+            <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+            <ScalarProperty Name="Cell" ColumnName="Cell" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+            <ScalarProperty Name="BRH_ID" ColumnName="BRH_ID" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Companies"><EntityTypeMapping TypeName="CRMModel.Company"><MappingFragment StoreEntitySet="Companies">
+            <ScalarProperty Name="CPY_ID" ColumnName="CPY_ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+            <ScalarProperty Name="RegisterType" ColumnName="RegisterType" />
+            <ScalarProperty Name="RegisterCompanyType" ColumnName="RegisterCompanyType" />
+            <ScalarProperty Name="RegisterNo" ColumnName="RegisterNo" />
+            <ScalarProperty Name="AuditorFirmName" ColumnName="AuditorFirmName" />
+            <ScalarProperty Name="AuditorFirmQualification" ColumnName="AuditorFirmQualification" />
+            <ScalarProperty Name="AuditorFirmAuditor" ColumnName="AuditorFirmAuditor" />
+            <ScalarProperty Name="VATRegistered" ColumnName="VATRegistered" />
+            <ScalarProperty Name="VATRegNo" ColumnName="VATRegNo" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+            <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ComTemplates"><EntityTypeMapping TypeName="CRMModel.ComTemplate"><MappingFragment StoreEntitySet="ComTemplate">
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+                <ScalarProperty Name="CT_ID" ColumnName="CT_ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Paragraph" ColumnName="Paragraph" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="EmailProblems"><EntityTypeMapping TypeName="CRMModel.EmailProblem"><MappingFragment StoreEntitySet="EmailProblems">
+            <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="Mail_ID" ColumnName="Mail_ID" />
+                <ScalarProperty Name="EP_ID" ColumnName="EP_ID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="Attended" ColumnName="Attended" />
+            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Employees"><EntityTypeMapping TypeName="CRMModel.Employee"><MappingFragment StoreEntitySet="Employees">
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+            <ScalarProperty Name="Cell" ColumnName="Cell" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Escalations"><EntityTypeMapping TypeName="CRMModel.Escalation"><MappingFragment StoreEntitySet="Escalation">
+            <ScalarProperty Name="Priority" ColumnName="Priority" />
+            <ScalarProperty Name="Duration" ColumnName="Duration" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Images"><EntityTypeMapping TypeName="CRMModel.Image"><MappingFragment StoreEntitySet="Images">
+            <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+                <ScalarProperty Name="IMG_ID" ColumnName="IMG_ID" />
+            <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+            <ScalarProperty Name="EP_ID" ColumnName="EP_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Notes"><EntityTypeMapping TypeName="CRMModel.Note"><MappingFragment StoreEntitySet="Notes">
+            <ScalarProperty Name="NOTE_ID" ColumnName="NOTE_ID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Problems"><EntityTypeMapping TypeName="CRMModel.Problem"><MappingFragment StoreEntitySet="Problems">
+            <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sales"><EntityTypeMapping TypeName="CRMModel.Sale"><MappingFragment StoreEntitySet="Sales">
+            <ScalarProperty Name="SALE_ID" ColumnName="SALE_ID" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Solutions"><EntityTypeMapping TypeName="CRMModel.Solution"><MappingFragment StoreEntitySet="Solutions">
+            <ScalarProperty Name="SOL_ID" ColumnName="SOL_ID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+            <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vClientProblemsLogs"><EntityTypeMapping TypeName="CRMModel.vClientProblemsLog"><MappingFragment StoreEntitySet="vClientProblemsLog">
+            <ScalarProperty Name="ClientUsername" ColumnName="ClientUsername" />
+                <ScalarProperty Name="ClientSurname" ColumnName="ClientSurname" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="SolvedOnCreate" ColumnName="SolvedOnCreate" />
+                <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+            <ScalarProperty Name="Solved" ColumnName="Solved" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateSolved" ColumnName="DateSolved" />
+            <ScalarProperty Name="ComTypeTel" ColumnName="ComTypeTel" />
+            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+            <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+            <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+            <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
+            <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+            <ScalarProperty Name="SOL_ID" ColumnName="SOL_ID" />
+            <ScalarProperty Name="SolutionDescription" ColumnName="SolutionDescription" />
+            <ScalarProperty Name="Priority" ColumnName="Priority" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vClients"><EntityTypeMapping TypeName="CRMModel.vClient"><MappingFragment StoreEntitySet="vClients">
+            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+            <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+            <ScalarProperty Name="Cell" ColumnName="Cell" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="CLEINT_DateModified" ColumnName="CLEINT_DateModified" />
+            <ScalarProperty Name="BRH_ID" ColumnName="BRH_ID" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="vEmployees"><EntityTypeMapping TypeName="CRMModel.vEmployee"><MappingFragment StoreEntitySet="vEmployees">
+            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Surname" ColumnName="Surname" />
+            <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+            <ScalarProperty Name="Cell" ColumnName="Cell" />
+            <ScalarProperty Name="Fax" ColumnName="Fax" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="CRMModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfigurationSettings">
+            <EntityTypeMapping TypeName="CRMModel.ConfigurationSetting">
+              <MappingFragment StoreEntitySet="ConfigurationSetting">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Setting" ColumnName="Setting" />
+                <ScalarProperty Name="CONFIG_ID" ColumnName="CONFIG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CRM" ZoomLevel="80">
+        <EntityTypeShape EntityType="CRMModel.Branch" Width="1.5" PointX="11" PointY="3.125" Height="5.0571093749999987" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.ClientProblemsLog" Width="1.5" PointX="5.25" PointY="12.375" Height="4.0956022135416639" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Client" Width="1.5" PointX="3.75" PointY="0.75" Height="3.7109993489583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Company" Width="1.5" PointX="8.75" PointY="3.875" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.ComTemplate" Width="1.5" PointX="0.75" PointY="2.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.EmailProblem" Width="1.5" PointX="3" PointY="9.25" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Employee" Width="1.5" PointX="0.75" PointY="8.625" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Escalation" Width="1.5" PointX="3" PointY="13.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Image" Width="1.5" PointX="5.25" PointY="5.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Note" Width="1.5" PointX="8.5" PointY="9.375" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Problem" Width="1.5" PointX="3" PointY="17.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Sale" Width="1.5" PointX="6" PointY="8.5" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.Solution" Width="1.5" PointX="8.25" PointY="13" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.vClientProblemsLog" Width="1.5" PointX="10.75" PointY="9.875" Height="3.7109993489583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.vClient" Width="1.5" PointX="12.75" PointY="9.875" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMModel.vEmployee" Width="1.5" PointX="10.75" PointY="14.875" Height="3.1340950520833388" IsExpanded="true" />
+        <AssociationConnector Association="CRMModel.Branches_Clients_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.531923076923077" PointY="8.182109375" />
+          <ConnectorPoint PointX="11.531923076923077" PointY="8.432109375" />
+          <ConnectorPoint PointX="11.978461538461538" PointY="8.432109375" />
+          <ConnectorPoint PointX="11.978461538461538" PointY="8.182109375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.FK_Branch_Company" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.25" PointY="5.7304996744791659" />
+          <ConnectorPoint PointX="11" PointY="5.7304996744791659" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Clients_ClientProblemsLog_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.78125" PointY="4.4609993489583335" />
+          <ConnectorPoint PointX="4.78125" PointY="13.1006982421875" />
+          <ConnectorPoint PointX="5.25" PointY="13.1006982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.CPL_Notes_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="9.90625" PointY="16.333598632812503" />
+          <ConnectorPoint PointX="9.90625" PointY="11.739889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Employees_ClientProblemsLog_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.29687375" PointY="12.52830078125" />
+          <ConnectorPoint PointX="1.29687375" PointY="16.069194335937503" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="16.069194335937503" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="16.069194335937503" />
+          <ConnectorPoint PointX="5.25" PointY="16.069194335937503" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Escalation_ClientProblemsLog_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.422841796875" />
+          <ConnectorPoint PointX="5.25" PointY="14.422841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Problems_ClientProblemsLog_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="19.243682076822918" />
+          <ConnectorPoint PointX="6" PointY="19.243682076822918" />
+          <ConnectorPoint PointX="6" PointY="16.855205078125003" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Solutions_ClientProblemsLog_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.25" PointY="14.374746093750002" />
+          <ConnectorPoint PointX="6.75" PointY="14.374746093750002" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Clients_EmailProblems_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.125" PointY="4.4609993489583335" />
+          <ConnectorPoint PointX="4.125" PointY="9.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Clients_Sales_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.0625025" PointY="4.4609993489583335" />
+          <ConnectorPoint PointX="5.0625025" PointY="8.84375" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="8.84375" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="8.84375" />
+          <ConnectorPoint PointX="6" PointY="8.84375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.EmailProblems_Images_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.5312475" PointY="9.25" />
+          <ConnectorPoint PointX="3.5312475" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="4.041666666666667" PointY="6.8362939453124989" />
+          <ConnectorPoint PointX="4.208333333333333" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="6.8362939453124989" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="4.9791691666666669" PointY="6.8362939453124989" />
+          <ConnectorPoint PointX="5.1458358333333329" PointY="6.8362939453125" />
+          <ConnectorPoint PointX="5.25" PointY="6.8362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Employees_EmailProblems_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.091453857421875" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="11.091453857421875" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="11.091453857421875" />
+          <ConnectorPoint PointX="3" PointY="11.091453857421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Employees_Notes_FK" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="8.6276034166666644" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="8.7942700833333323" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="9.1718725" PointY="12.283396809895834" />
+          <ConnectorPoint PointX="9.1718725" PointY="11.739889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Employees_Problems_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="12.52830078125" />
+          <ConnectorPoint PointX="1.9062525" PointY="18.932444661458334" />
+          <ConnectorPoint PointX="3" PointY="18.932444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Employees_Sales_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.078125" />
+          <ConnectorPoint PointX="3.4479141666666666" PointY="9.078125" />
+          <ConnectorPoint PointX="3.6145808333333336" PointY="9.078125" />
+          <ConnectorPoint PointX="4.041666666666667" PointY="9.078125" />
+          <ConnectorPoint PointX="4.208333333333333" PointY="9.078125" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="9.078125" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="9.078125" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="9.078125" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="9.078125" />
+          <ConnectorPoint PointX="6" PointY="9.078125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Employees_Solutions_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.8995109049479169" />
+          <ConnectorPoint PointX="2.75" PointY="9.8995109049479169" />
+          <ConnectorPoint PointX="2.75" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="5" PointY="12.441793619791667" />
+          <ConnectorPoint PointX="5" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="8.7109367499999983" PointY="11.989889322916667" />
+          <ConnectorPoint PointX="8.7109367499999983" PointY="13" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.Problems_Solutions_FK1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.309969830729166" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="18.309969830729166" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="18.309969830729166" />
+          <ConnectorPoint PointX="9" PointY="18.309969830729166" />
+          <ConnectorPoint PointX="9" PointY="15.749492187500003" />
+        </AssociationConnector>
+        <AssociationConnector Association="CRMModel.FK_ClientProblemsLog_Images" >
+          <ConnectorPoint PointX="5.59375" PointY="12.375" />
+          <ConnectorPoint PointX="5.59375" PointY="7.922587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CRMModel.Category" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" />
+        <AssociationConnector Association="CRMModel.FK_ComTemplate_Categories" >
+          <ConnectorPoint PointX="1.5" PointY="2.34568359375" />
+          <ConnectorPoint PointX="1.5" PointY="2.875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CRMModel.ConfigurationSetting" Width="1.5" PointX="0.75" PointY="5.75" Height="1.5956835937500031" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
