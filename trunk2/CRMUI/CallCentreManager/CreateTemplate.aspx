@@ -22,9 +22,9 @@
                             <ext:FieldSet ID="fdsetSelections" runat="server" Margins="10 0 5 0" Width="380"
                                 Layout="HBoxLayout" Title="Select or create a template category">
                                 <Items>
-                                    <ext:ComboBox ID="cmbTemplateCategory" runat="server" Text="Select a category" Margins="10 0 10 20"
+                                    <ext:ComboBox ID="cmbTemplateCategory" runat="server" Margins="10 0 10 20"
                                         DisplayField="Name" ValueField="CAT_ID" AllowBlank="False" Editable="False" LabelAlign="Top"
-                                        OnDirectChange="SelectedCategory" Width="200">
+                                         OnDirectSelect="SelectedCategory" Width="200" FieldLabel="Select Category">
                                         <Store>
                                             <ext:Store ID="strCategory" runat="server">
                                                 <Model>
@@ -43,13 +43,13 @@
                                 </Items>
                             </ext:FieldSet>
                             <ext:TextField ID="txtCatName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False" />
+                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False" OnDirectChange="TxtCategoryNameChanged"/>
                             <%--FIELDSET TEMPLATE DATA--%>
                             <ext:FieldSet runat="server" Margins="5 0 10 0" Width="380" Layout="HBoxLayout" Title="Select or create a template">
                                 <Items>
-                                    <ext:ComboBox ID="cmbComTemplates" runat="server" Text="Select a template" Margins="10 0 10 20"
+                                    <ext:ComboBox ID="cmbComTemplates" runat="server" Margins="10 0 10 20"
                                         Width="200" Disabled="True" DisplayField="Name" ValueField="CT_ID" AllowBlank="False"
-                                        Editable="False" LabelAlign="Top" OnDirectChange="SelectedTemplate">
+                                        Editable="False" LabelAlign="Top" OnDirectSelect="SelectedTemplate" FieldLabel="Select Template">
                                         <Store>
                                             <ext:Store ID="streComTemplate" runat="server">
                                                 <Model>
@@ -69,7 +69,7 @@
                                 </Items>
                             </ext:FieldSet>
                             <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter template name" Hidden="True" AllowBlank="False" />
+                                FieldLabel="Enter template name" Hidden="True" AllowBlank="False" OnDirectChange="TxtTemplateNameEntered"/>
                         </Items>
                     </ext:Container>
                     <%--RIGHT CONTAINER--%>
@@ -77,7 +77,7 @@
                         Border="false" Margins="0 10 0 5">
                         <Items>
                             <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250"
-                                FieldLabel="Enter template paragragh" LabelAlign="Top" />
+                                FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True"/>
                             <ext:Container runat="server" Layout="hboxLayout">
                                 <Items>
                                     <ext:Button ID="BtnSave" runat="server" Text="Save Template" Margins="10 0 10 20"
