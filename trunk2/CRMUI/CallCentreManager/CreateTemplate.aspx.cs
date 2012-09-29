@@ -39,11 +39,13 @@ namespace CRMUI.CallCentreManager
             var comms = new ComTemplateBl().GetAllTemplates(catid);
             streComTemplate.DataSource = comms;
             streComTemplate.DataBind();
+            newcategory = false;
         }
 
 
         protected void SelectedTemplate(object sender, DirectEventArgs e)
         {
+            newtemplate = false;
             if(newcategory)
             {
                 if (txtCatName.Text == string.Empty)
