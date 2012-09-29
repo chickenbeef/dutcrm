@@ -44,11 +44,26 @@ namespace CRMUI.CallCentreManager
 
         protected void SelectedTemplate(object sender, DirectEventArgs e)
         {
-            if (txtCatName.Text == string.Empty)
+            if(newcategory)
             {
+                if (txtCatName.Text == string.Empty)
+                {
                 txtCatName.Disabled = false;
                 txtCatName.AutoFocus = true;
                 ExtNet.Msg.Alert("Invalid Data", "Please provide a category name then reselect or create a template!").Show();
+                }
+                else
+                {
+                    txtCatName.Disabled = true;
+                    editrPara.Disabled = false;
+                    var tempid = Convert.ToInt32(cmbComTemplates.SelectedItem.Value);
+                    btnCreateTempName.Disabled = true;
+                    cmbTemplateCategory.Disabled = true;
+                    cmbComTemplates.Disabled = true;
+                    btnCreateCatName.Disabled = true;
+                    var temp = new ComTemplateBl().GetTemplateById(tempid);
+                    editrPara.Value = temp.Paragraph;
+                }
             }
             else
             {
@@ -86,11 +101,23 @@ namespace CRMUI.CallCentreManager
         //BUTTON CREATE TEMPLATE
         protected void CreateTemplateName(object sender, DirectEventArgs e)
         {
-            if (txtCatName.Text == string.Empty)
+            if (newcategory)
             {
-                txtCatName.Disabled = false;
-                txtCatName.AutoFocus = true;
-                ExtNet.Msg.Alert("Invalid Data", "Please provide a category name then reselect or create a template!").Show();
+                if (txtCatName.Text == string.Empty)
+                {
+                    txtCatName.Disabled = false;
+                    txtCatName.AutoFocus = true;
+                    ExtNet.Msg.Alert("Invalid Data", "Please provide a category name then reselect or create a template!").Show();
+                }
+                else
+                {
+                    txtCatName.Disabled = true;
+                    cmbComTemplates.Disabled = true;
+                    cmbTemplateCategory.Disabled = true;
+                    btnCreateCatName.Disabled = true;
+                    txtTemplateName.Hidden = false;
+                    newtemplate = true;
+                }
             }
             else
             {
@@ -109,17 +136,12 @@ namespace CRMUI.CallCentreManager
         {
             if (editrPara.Text == string.Empty)
             {
-                ExtNet.Msg.Alert("Invalid Data", "A category, Template Name and Paragraph is reqiured for a template!").Show();
+                ExtNet.Msg.Alert("Invalid Paragraph", "A category, Template Name and Paragraph is reqiured for a template!").Show();
                 editrPara.AutoFocus = true;
-            }
-            else if (txtTemplateName.Text==string.Empty)
-            {
-                ExtNet.Msg.Alert("Invalid Data", "A category, Template Name and Paragraph is reqiured for a template!").Show();
-                txtTemplateName.AutoFocus = true;
             }
             else if (editrPara.Text.Length<1)
             {
-                ExtNet.Msg.Alert("Invalid Data", "A category, Template Name and Paragraph is reqiured for a template!").Show();
+                ExtNet.Msg.Alert("Invalid paragraph", "A category, Template Name and Paragraph is reqiured for a template!").Show();
                 editrPara.AutoFocus = true;
             }
             else
