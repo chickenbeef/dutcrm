@@ -51,7 +51,7 @@
                                 </Store>
                             </ext:ComboBox>
                             <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="610" Height="250"
-                                FieldLabel="Email Message Body" LabelAlign="Top" OnDirectChange="OnTextChange" />
+                                FieldLabel="Email Message Body" LabelAlign="Top" OnDirectChange="OnTextChange" Disabled="True"/>
                             <ext:Panel ID="pnlbuttons" runat="server" Layout="HBoxLayout" Height="300" Flex="1"
                                 Border="false">
                                 <Items>
@@ -72,7 +72,7 @@
                 <Items>
                     <ext:GridPanel ID="gpClient" runat="server" Flex="2">
                         <Store>
-                            <ext:Store ID="streClient" runat="server">
+                            <ext:Store ID="streClient" runat="server" PageSize="1000" Buffered="True">
                                 <Model>
                                     <ext:Model ID="mdlClient" runat="server">
                                         <Fields>

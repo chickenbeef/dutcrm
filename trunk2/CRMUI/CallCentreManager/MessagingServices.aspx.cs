@@ -88,11 +88,15 @@ namespace CRMUI.CallCentreManager
 
         protected void BtnCancelClicked(object sender, DirectEventArgs e)
         {
-            Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
+            cmbCategory.Reset();
+            cmbComTemplate.Reset();
+            cmbComTemplate.Disabled = true;
+            editrPara.Reset();
         }
 
         protected void CmbComTemplateSelectedItem(object sender, DirectEventArgs e)
         {
+            editrPara.Disabled = false;
             var template = new ComTemplateBl().GetTemplateById(Convert.ToInt32(cmbComTemplate.SelectedItem.Value));
             editrPara.Value = template.Paragraph;
         }
@@ -150,8 +154,6 @@ namespace CRMUI.CallCentreManager
         }
         protected void OnTextChange(object sender, EventArgs e)
         {
-            cmbCategory.Disabled = true;
-            cmbComTemplate.Disabled=true;
             btnCancel.Disabled=false;
         }
         #endregion
