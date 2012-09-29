@@ -92,7 +92,7 @@
         <Key>
           <PropertyRef Name="CT_ID" />
         </Key>
-        <Property Name="CT_ID" Type="Edm.Int16" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="CT_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
         <Property Name="Paragraph" Type="Edm.String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
         <Property Name="CAT_ID" Type="Edm.Int32" Nullable="false" />

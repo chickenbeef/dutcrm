@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/09/21 04:22:11 PM
+// Generation date: 2012/09/29 03:01:18 PM
 namespace CRMBusiness.CRM
 {
     
@@ -2129,7 +2129,7 @@ namespace CRMBusiness.CRM
         /// <param name="paragraph">Initial value of Paragraph.</param>
         /// <param name="cAT_ID">Initial value of CAT_ID.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static ComTemplate CreateComTemplate(short cT_ID, string name, string paragraph, int cAT_ID)
+        public static ComTemplate CreateComTemplate(int cT_ID, string name, string paragraph, int cAT_ID)
         {
             ComTemplate comTemplate = new ComTemplate();
             comTemplate.CT_ID = cT_ID;
@@ -2142,7 +2142,7 @@ namespace CRMBusiness.CRM
         /// There are no comments for Property CT_ID in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public short CT_ID
+        public int CT_ID
         {
             get
             {
@@ -2157,8 +2157,8 @@ namespace CRMBusiness.CRM
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private short _CT_ID;
-        partial void OnCT_IDChanging(short value);
+        private int _CT_ID;
+        partial void OnCT_IDChanging(int value);
         partial void OnCT_IDChanged();
         /// <summary>
         /// There are no comments for Property Name in the schema.

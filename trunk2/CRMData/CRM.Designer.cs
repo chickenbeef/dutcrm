@@ -2554,7 +2554,7 @@ namespace CRMData
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="paragraph">Initial value of the Paragraph property.</param>
         /// <param name="cAT_ID">Initial value of the CAT_ID property.</param>
-        public static ComTemplate CreateComTemplate(global::System.Int16 cT_ID, global::System.String name, global::System.String paragraph, global::System.Int32 cAT_ID)
+        public static ComTemplate CreateComTemplate(global::System.Int32 cT_ID, global::System.String name, global::System.String paragraph, global::System.Int32 cAT_ID)
         {
             ComTemplate comTemplate = new ComTemplate();
             comTemplate.CT_ID = cT_ID;
@@ -2572,7 +2572,7 @@ namespace CRMData
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int16 CT_ID
+        public global::System.Int32 CT_ID
         {
             get
             {
@@ -2590,8 +2590,8 @@ namespace CRMData
                 }
             }
         }
-        private global::System.Int16 _CT_ID;
-        partial void OnCT_IDChanging(global::System.Int16 value);
+        private global::System.Int32 _CT_ID;
+        partial void OnCT_IDChanging(global::System.Int32 value);
         partial void OnCT_IDChanged();
     
         /// <summary>

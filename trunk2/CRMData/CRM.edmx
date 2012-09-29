@@ -846,7 +846,7 @@
           <Key>
             <PropertyRef Name="CT_ID" />
           </Key>
-          <Property Name="CT_ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="Paragraph" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Type="Int32" Name="CAT_ID" Nullable="false" />
