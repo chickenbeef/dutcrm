@@ -71,11 +71,15 @@
                             		<ext:Parameter Name = "AllowBlank" Value = "false" Mode = "Raw"/>
                             		<ext:Parameter Name = "msgTarget" Value = "side"/>	
                             	</Defaults>
-
 											
                         <LayoutConfig>
                             <ext:HBoxLayoutConfig Align="Stretch"/>
                         </LayoutConfig>
+												
+																 <ToolTips>
+                                  <ext:ToolTip runat="server" Html="Select Client From Search Result" />
+                                </ToolTips>
+
                         <Items>
                             <ext:GridPanel ID="gpClient" runat="server" Flex="1">
 

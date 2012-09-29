@@ -9,7 +9,7 @@ namespace CRMUI.CallCentreManager
 {
     public partial class Home : System.Web.UI.Page
 		{
-			#region page
+			  #region page
 			protected void Page_Load(object sender, EventArgs e)
         {
         	btnUpdateRole.Disabled = true;
@@ -18,7 +18,7 @@ namespace CRMUI.CallCentreManager
 
 
 
-			#region Search By UserName
+			 #region DIRECT EVENT SEARCH
 			//UserName Search
         protected void SearchByUserName(object sender, DirectEventArgs e)
         {
@@ -74,7 +74,7 @@ namespace CRMUI.CallCentreManager
 
 
 
-			 #region Search By Name
+				#region DIRECT EVENT SEARCH
 				//Name Search
         protected void SearchByName(object sender, DirectEventArgs e)
         {
@@ -187,7 +187,7 @@ namespace CRMUI.CallCentreManager
 				#endregion
 
 
-				#region Radio
+				#region DIRECT EVENT Radio
 				//change Role Selected
 				protected void ChangeRoleValue(object sender, DirectEventArgs e)
 				{
@@ -198,7 +198,7 @@ namespace CRMUI.CallCentreManager
 				#endregion
 
 
-				#region Update Role
+				#region DIRECT EVENT Update Role
 				protected void UpdateRole(object sender, DirectEventArgs e)
         {
 

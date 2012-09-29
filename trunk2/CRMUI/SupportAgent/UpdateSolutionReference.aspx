@@ -47,6 +47,11 @@
                         <LayoutConfig>
                             <ext:HBoxLayoutConfig Align="Stretch"/>
                         </LayoutConfig>
+												
+																<ToolTips>
+                                  <ext:ToolTip runat="server" Html="Select Problem From Search Result" />
+                                </ToolTips>
+
                         <Items>
                             <ext:GridPanel ID="gpProblems" runat="server" Flex="1" >
                                 <Store>
@@ -104,6 +109,11 @@
                 <LayoutConfig>
                     <ext:VBoxLayoutConfig/>
                 </LayoutConfig>
+								
+											<ToolTips>
+                        <ext:ToolTip ID="ToolTip1" runat="server" Html="Select Solution To Update From ComboBox" />
+                      </ToolTips>
+
                 <Items>
                     <ext:TextField runat="server" ID="txtEmpId" FieldLabel="Employee ID" ReadOnly="True" Margins="30 0 10 30" Width="900" Hidden="True" />
 										<ext:TextField runat="server" ID="txtprobid" FieldLabel="PROB_ID" ReadOnly="True" Margins="10 0 10 30" Width="300" Hidden="True" />

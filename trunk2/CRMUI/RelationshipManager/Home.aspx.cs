@@ -38,7 +38,7 @@ namespace CRMUI.RelationshipManager
 			#endregion
 
 
-			#region Search by Client UserName 
+			#region DIRECT EVENT SEARCH
 			// UserName search
         protected void SearchByUserName(object sender, DirectEventArgs e)
         {
@@ -80,7 +80,7 @@ namespace CRMUI.RelationshipManager
 
 
 
-			#region Search by Client Name
+			#region DIRECT EVENT SEARCH 
 				// Name search
         protected void SearchByName(object sender, DirectEventArgs e)
         {
@@ -175,7 +175,7 @@ namespace CRMUI.RelationshipManager
 
 
 
-			#region Add Sale
+			#region DIRECT EVENT Add Sale
 				//save Sale
     	protected void SaveSaves(object sender, DirectEventArgs e)
     	{

@@ -19,6 +19,8 @@
                         <LayoutConfig>
                             <ext:AccordionLayoutConfig />
                         </LayoutConfig>
+												
+
                         <Items>
                             <ext:Panel ID="pnlUsername" runat="server" Title="SEARCH BY USERNAME" Icon="PageMagnify">
                                   <Defaults>
@@ -29,6 +31,8 @@
                                 <LayoutConfig>
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
+																
+
                                 <Items>
                                     <ext:TextField runat="server" ID="txtSUsername" FieldLabel="Employee Username" Width="300" Margins="0 0 0 30" BlankText = "Please Enter Client Username" MinLength = 3 MaxLength = 13 LabelWidth="125">
                                      
@@ -39,6 +43,11 @@
                                     </ext:TextField>
 
                                     <ext:Button runat="server" ID="btnUsernameSearch" Text="Search" Width="80" Margins="0 0 0 10" Icon="Magnifier" OnDirectClick = "SearchByUserName" Disabled = "True"/>
+																		
+
+																		
+																		
+
                                 </Items>
                             </ext:Panel>
 
@@ -52,7 +61,9 @@
                                 <LayoutConfig>
                                     <ext:HBoxLayoutConfig Align="Middle"/>
                                 </LayoutConfig>
+
                                 <Items>
+                                	
                                     <ext:TextField runat="server" ID="txtSName" FieldLabel="Employee Name" Width="300" Margins="0 0 0 30" BlankText = "Please Enter Employee Name" MinLength = 3 MaxLength = 13>
                                     
                                          <Listeners>
@@ -71,6 +82,11 @@
                         <LayoutConfig>
                             <ext:HBoxLayoutConfig Align="Stretch"/>
                         </LayoutConfig>
+												
+																<ToolTips>
+                                  <ext:ToolTip runat="server" Html="Select Employee From Search Result" />
+                                </ToolTips>
+
                         <Items>
                             <ext:GridPanel ID = "gpEmployees" runat="server" Flex="1" >
                                 <Store>

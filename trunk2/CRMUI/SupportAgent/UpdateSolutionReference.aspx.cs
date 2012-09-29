@@ -10,7 +10,7 @@ namespace CRMUI.SupportAgent
 {
     public partial class UpdateSolutionReference : System.Web.UI.Page
 		{
-			  #region Get Employee ID
+			 #region Get Employee ID
 			protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,7 +37,7 @@ namespace CRMUI.SupportAgent
 			#endregion
 
 
-       #region Problem Search
+			 #region DIRECT EVENT SEARCH
 			//problem search
         protected void SearchProb(object sender, DirectEventArgs e)
         {
@@ -96,7 +96,7 @@ namespace CRMUI.SupportAgent
 
 
 
-			#region Grid Panel Row Details
+			 #region Grid Panel Row Details
 				//pass selected prob_id
         protected void PassValue(object sender, DirectEventArgs e)
         {
@@ -153,7 +153,7 @@ namespace CRMUI.SupportAgent
 
 
 
-				#region ComboBox
+			 #region DIRECT EVENT ComboBox
 				//pass selected description to textarea
         protected void PassDescription(object sender, DirectEventArgs e)
         {
@@ -195,7 +195,7 @@ namespace CRMUI.SupportAgent
 
 
 
-				#region Update Solution
+			#region DIRECT EVENT Update Solution
 				//save updated solution
         protected void UpdateSolutions(object sender, DirectEventArgs e)
         {
