@@ -67,15 +67,6 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.LinkButton lnkSupportReports;
         
         /// <summary>
-        /// lnkCharts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.LinkButton lnkCharts;
-        
-        /// <summary>
         /// LnkAutomationSettings control.
         /// </summary>
         /// <remarks>
