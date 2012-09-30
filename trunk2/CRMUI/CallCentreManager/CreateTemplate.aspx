@@ -43,7 +43,7 @@
                                 </Items>
                             </ext:FieldSet>
                             <ext:TextField ID="txtCatName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False" OnDirectChange="TxtCategoryNameChanged"/>
+                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False"/>
                             <%--FIELDSET TEMPLATE DATA--%>
                             <ext:FieldSet runat="server" Margins="5 0 10 0" Width="380" Layout="HBoxLayout" Title="Select or create a template">
                                 <Items>
@@ -68,8 +68,9 @@
                                         Margins="10 0 10 20" OnDirectClick="CreateTemplateName" Disabled="True" Icon="Add" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter template name" Hidden="True" AllowBlank="False" OnDirectChange="TxtTemplateNameEntered"/>
+                            <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top" FieldLabel="Enter template name" Hidden="True"/>
+                                
+                            
                         </Items>
                     </ext:Container>
                     <%--RIGHT CONTAINER--%>
@@ -77,11 +78,14 @@
                         Border="false" Margins="0 10 0 5">
                         <Items>
                             <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250"
-                                FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True"/>
+                                FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True" OnDirectChange="CheckNewTemplate">
+                                </ext:HtmlEditor>
                             <ext:Container runat="server" Layout="hboxLayout">
                                 <Items>
                                     <ext:Button ID="BtnSave" runat="server" Text="Save Template" Margins="10 0 10 20"
-                                        Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" />
+                                                Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" Disabled="true" />
+                                    <ext:Button ID="btnRefresh" runat="server" Text="Refresh" Margins="10 0 10 20"
+                                                Padding="5" OnDirectClick="BtnRefreshClicked" Icon="PageRefresh"/>
                                     <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" OnDirectClick="BtnCancelClicked"
                                         Icon="Cancel" Margins="10 0 10 20" />
                                 </Items>

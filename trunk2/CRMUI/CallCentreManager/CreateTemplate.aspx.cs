@@ -10,7 +10,6 @@ namespace CRMUI.CallCentreManager
     {
         private static bool newcategory;
         private static bool newtemplate;
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             var cats = new CategoriesBl().GetAllCategories();
@@ -23,17 +22,14 @@ namespace CRMUI.CallCentreManager
 
         }
 
-
-        #region COMBOBOXES SELECT EVENTS
-
+        //COMBOBOX SELECT CATEGORY
         protected void SelectedCategory(object sender, DirectEventArgs e)
         {
+            cmbTemplateCategory.Disabled = true;
             btnCreateCatName.Disabled = true;
             cmbComTemplates.Disabled = false;
             btnCreateTempName.Disabled = false;
-            cmbTemplateCategory.Disabled = true;
             cmbComTemplates.Text = "Select a template";
-            
 
             var catid = Convert.ToInt32(cmbTemplateCategory.SelectedItem.Value);
             var comms = new ComTemplateBl().GetAllTemplates(catid);
@@ -42,64 +38,62 @@ namespace CRMUI.CallCentreManager
             newcategory = false;
         }
 
-
-        protected void SelectedTemplate(object sender, DirectEventArgs e)
-        {
-            newtemplate = false;
-            if(newcategory)
-            {
-                if (txtCatName.Text == string.Empty)
-                {
-                txtCatName.Disabled = false;
-                txtCatName.AutoFocus = true;
-                ExtNet.Msg.Alert("Invalid Data", "Please provide a category name then reselect or create a template!").Show();
-                }
-                else
-                {
-                    txtCatName.Disabled = true;
-                    editrPara.Disabled = false;
-                    var tempid = Convert.ToInt32(cmbComTemplates.SelectedItem.Value);
-                    btnCreateTempName.Disabled = true;
-                    cmbTemplateCategory.Disabled = true;
-                    cmbComTemplates.Disabled = true;
-                    btnCreateCatName.Disabled = true;
-                    var temp = new ComTemplateBl().GetTemplateById(tempid);
-                    editrPara.Value = temp.Paragraph;
-                }
-            }
-            else
-            {
-                txtCatName.Disabled = true;
-                editrPara.Disabled = false;
-                var tempid = Convert.ToInt32(cmbComTemplates.SelectedItem.Value);
-                btnCreateTempName.Disabled = true;
-                cmbTemplateCategory.Disabled = true;
-                cmbComTemplates.Disabled = true;
-                btnCreateCatName.Disabled = true;
-                var temp = new ComTemplateBl().GetTemplateById(tempid);
-                editrPara.Value = temp.Paragraph;
-            }
-        }
-        #endregion
-
-        #region DIRECT EVENTS
-
-
-        #region BUTTONS TO CREATE NEW NAMES
         //BUTTON CREATE CATEGORY
         protected void CreateCategoryName(object sender, DirectEventArgs e)
         {
             cmbTemplateCategory.Disabled = true;
             btnCreateCatName.Disabled = true;
-            
+            cmbComTemplates.Disabled = false;
+            btnCreateTempName.Disabled = false;
+
             var comms = new ComTemplateBl().GetAllTemplates();
             streComTemplate.DataSource = comms;
             streComTemplate.DataBind();
             cmbComTemplates.Text = "Select a template";
             txtCatName.Hidden = false;
+            txtCatName.Disabled = false;
             newcategory = true;
         }
 
+        //COMBOBOX SELECT TEMPLATE
+        protected void SelectedTemplate(object sender, DirectEventArgs e)
+        {
+            //validatenewtemp = false;
+            newtemplate = false;
+            if(newcategory)
+            {
+                //VALIDATE NEW CATEGORY DATA
+                if (txtCatName.Text == string.Empty)
+                {
+                    txtCatName.Disabled = false;
+                    ExtNet.Msg.Alert("Invalid Data", "Please provide a category name then reselect or create a template!").Show();
+                    txtCatName.AutoFocus = true;
+                }
+                else
+                {
+                    LoadEditorParagrapgh();
+                }
+            }
+            else
+            {
+                LoadEditorParagrapgh();
+            }
+        }
+
+        //DISABLE ALL CONTROLS AND POPULATE THE HTML EDITOR WITH SELECTED TEMPLATE BODY
+        protected void LoadEditorParagrapgh()
+        {
+            var tempid = Convert.ToInt32(cmbComTemplates.SelectedItem.Value);
+            txtCatName.Disabled = true;
+            editrPara.Disabled = false;
+            btnCreateTempName.Disabled = true;
+            cmbTemplateCategory.Disabled = true;
+            cmbComTemplates.Disabled = true;
+            btnCreateCatName.Disabled = true;
+            var temp = new ComTemplateBl().GetTemplateById(tempid);
+            editrPara.Value = temp.Paragraph;
+            BtnSave.Disabled = false;
+        }
         //BUTTON CREATE TEMPLATE
         protected void CreateTemplateName(object sender, DirectEventArgs e)
         {
@@ -113,37 +107,42 @@ namespace CRMUI.CallCentreManager
                 }
                 else
                 {
-                    txtCatName.Disabled = true;
-                    cmbComTemplates.Disabled = true;
-                    cmbTemplateCategory.Disabled = true;
-                    btnCreateCatName.Disabled = true;
-                    txtTemplateName.Hidden = false;
-                    newtemplate = true;
+                    EnableHtmlEditorForNewTemp();
                 }
             }
             else
             {
-                txtCatName.Disabled = true;
-                cmbComTemplates.Disabled = true;
-                cmbTemplateCategory.Disabled = true;
-                btnCreateCatName.Disabled = true;
-                txtTemplateName.Hidden = false;
-                newtemplate = true;
+                EnableHtmlEditorForNewTemp();
             }
         }
-        #endregion
 
+        //ENABLE HTMLEDITOR FOR NEW TEMPLATE BODY
+        protected void EnableHtmlEditorForNewTemp()
+        {
+            txtCatName.Disabled = true;
+            cmbComTemplates.Disabled = true;
+            cmbTemplateCategory.Disabled = true;
+            btnCreateCatName.Disabled = true;
+            txtTemplateName.Hidden = false;
+            newtemplate = true;
+            btnCreateTempName.Disabled=true;
+            editrPara.Disabled = false;
+        }
+        
+
+        #region DIRECT EVENTS
+        
         //SAVE BUTTONS
         protected void BtnSaveClicked(object sender, DirectEventArgs e)
         {
             if (editrPara.Text == string.Empty)
             {
-                ExtNet.Msg.Alert("Invalid Paragraph", "A category, Template Name and Paragraph is reqiured for a template!").Show();
+                ExtNet.Msg.Alert("Invalid Paragraph", "A paragraph is reqiured for a template, please enter some text!").Show();
                 editrPara.AutoFocus = true;
             }
             else if (editrPara.Text.Length<1)
             {
-                ExtNet.Msg.Alert("Invalid paragraph", "A category, Template Name and Paragraph is reqiured for a template!").Show();
+                ExtNet.Msg.Alert("Invalid paragraph", "A paragraph is reqiured for a template!").Show();
                 editrPara.AutoFocus = true;
             }
             else
@@ -156,9 +155,17 @@ namespace CRMUI.CallCentreManager
 
                     if (newtemplate)
                     {
-                        //addtemplate(ctid)
-                        AddTemplate(txtTemplateName.Value.ToString(), editrPara.Value.ToString(), catid + 1);
-                        ExtNet.MessageBox.Notify("Templates Changes", "Template added with new category").Show();
+                        if (txtTemplateName.Text == string.Empty)
+                        {
+                            ExtNet.Msg.Alert("Invalid Template Name", "A template name is reqiured for a template!").Show();
+                            return;
+                        }
+                        else
+                        {
+                            //addtemplate(ctid)
+                            AddTemplate(txtTemplateName.Value.ToString(), editrPara.Value.ToString(), catid + 1);
+                            ExtNet.MessageBox.Notify("Templates Changes", "Template added with new category").Show();
+                        }
                     }
                     else
                     {
@@ -173,9 +180,17 @@ namespace CRMUI.CallCentreManager
 
                     if (newtemplate)
                     {
-                        //addtemplate(ctid)
-                        AddTemplate(txtTemplateName.Value.ToString(), editrPara.Value.ToString(), catid);
-                        ExtNet.MessageBox.Notify("Templates Changes", "Template added to existing category").Show();
+                        if (txtTemplateName.Text==string.Empty)
+                        {
+                            ExtNet.Msg.Alert("Invalid Template Name", "A template name is reqiured for a template!").Show();
+                            return;
+                        }
+                        else
+                        {
+                            //addtemplate(ctid)
+                            AddTemplate(txtTemplateName.Value.ToString(), editrPara.Value.ToString(), catid);
+                            ExtNet.MessageBox.Notify("Templates Changes", "Template added to existing category").Show();
+                        }
                     }
                     else
                     {
@@ -186,17 +201,22 @@ namespace CRMUI.CallCentreManager
                 }
                 newtemplate = false;
                 newcategory = false;
-                Resetcontrols();
+                
+                BtnSave.Disabled = true;
+                ResetData();
             }
+            
         }
         //CANCEL
         protected void BtnCancelClicked(object sender, DirectEventArgs e)
         {
-            Page.Response.Redirect(HttpContext.Current.Request.Url.ToString(), true);
+            Page.Response.Redirect("~/CallCentreManager/Home.aspx");
         }
 
         #endregion
 
+        
+        
         #region HELPER METHODS
         //ADD TEMPLATE
         protected void AddTemplate(string nwname, string nwparagraph, int catid)
@@ -209,6 +229,12 @@ namespace CRMUI.CallCentreManager
             {
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
+        }
+
+        //ENABLE SAVE BUTTON ON PARAGRAPH TEXT CHANGE
+        protected void CheckNewTemplate(object sender, DirectEventArgs e)
+        {
+            BtnSave.Disabled = false;
         }
 
         //UPDATE TEMPLATE
@@ -224,35 +250,27 @@ namespace CRMUI.CallCentreManager
             }
         }
 
-        //RESET CONTROLS
-        protected void Resetcontrols()
+        private void ResetData()
         {
             cmbTemplateCategory.Reset();
-            txtCatName.Reset();
+            cmbTemplateCategory.Disabled = false;
+            btnCreateCatName.Disabled = false;
             txtCatName.Hidden = true;
+            txtCatName.Clear();
             cmbComTemplates.Reset();
             cmbComTemplates.Disabled = true;
-            txtTemplateName.Reset();
             txtTemplateName.Hidden = true;
+            txtTemplateName.Clear();
             btnCreateTempName.Disabled = true;
             editrPara.Reset();
-            editrPara.ReadOnly = true;
+            editrPara.Disabled = true;
         }
-
+    
         #endregion
 
-        protected void TxtTemplateNameEntered(object sender, EventArgs e)
+        protected void BtnRefreshClicked(object sender, DirectEventArgs e)
         {
-            editrPara.Disabled = false;
-        }
-
-        protected void TxtCategoryNameChanged(object sender, DirectEventArgs e)
-        {
-            if (txtCatName.Text.Length > 0)
-            {
-                cmbComTemplates.Disabled = false;
-                btnCreateTempName.Disabled = false;
-            }
+            ResetData();
         }
     }
 }
