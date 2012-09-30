@@ -212,7 +212,11 @@ namespace CRMUI.CallCentreManager
         {
             Page.Response.Redirect("~/CallCentreManager/Home.aspx");
         }
-
+        //REFRESH BUTTON
+        protected void BtnRefreshClicked(object sender, DirectEventArgs e)
+        {
+            ResetData();
+        }
         #endregion
 
         
@@ -232,7 +236,7 @@ namespace CRMUI.CallCentreManager
         }
 
         //ENABLE SAVE BUTTON ON PARAGRAPH TEXT CHANGE
-        protected void CheckNewTemplate(object sender, DirectEventArgs e)
+        protected void EnableSave(object sender, DirectEventArgs e)
         {
             BtnSave.Disabled = false;
         }
@@ -267,10 +271,6 @@ namespace CRMUI.CallCentreManager
         }
     
         #endregion
-
-        protected void BtnRefreshClicked(object sender, DirectEventArgs e)
-        {
-            ResetData();
-        }
+        
     }
 }

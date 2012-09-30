@@ -77,9 +77,7 @@
                     <ext:Container ID="cntrMessageBody" Height="350" runat="server" Layout="vboxLayout"
                         Border="false" Margins="0 10 0 5">
                         <Items>
-                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250"
-                                FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True" OnDirectChange="CheckNewTemplate">
-                                </ext:HtmlEditor>
+                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250" FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True" OnDirectChange="EnableSave"/>
                             <ext:Container runat="server" Layout="hboxLayout">
                                 <Items>
                                     <ext:Button ID="BtnSave" runat="server" Text="Save Template" Margins="10 0 10 20"
