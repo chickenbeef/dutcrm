@@ -6,20 +6,20 @@
     </ext:ResourceManager>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCMBody" runat="server">
-    <ext:Panel ID="pnlMain" runat="server" Height="615" Title="Update Client" MaxWidth="1349">
+    <ext:Panel ID="pnlMain" runat="server" Height="615" Title="Update Client">
         <LayoutConfig>
             <ext:HBoxLayoutConfig Align='Stretch' />
         </LayoutConfig>
         <Items>
             <ext:Panel ID="pnlDetails" runat="server" Flex="1" Border="false" Layout="VBoxLayout">
                 <Items>
-                    <ext:TextField ID="txtName" runat="server" FieldLabel="Name" Width="300" Margins="30 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your Name" AutoFocus="True"/>
-                    <ext:TextField ID="txtSurname" runat="server" FieldLabel="Surname" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your surname " />
+                    <ext:TextField ID="txtName" runat="server" FieldLabel="Name" Width="300" Margins="30 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your Name" AutoFocus="True" InputType="Text"/>
+                    <ext:TextField ID="txtSurname" runat="server" FieldLabel="Surname" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please Enter your surname " InputType="Text" />
                     <ext:DateField ID="dfDob" runat="server" Vtype="daterange" FieldLabel="Date Of Birth"
                         EnableKeyEvents="true" Width="300" Margins="10 0 10 30" ReadOnly="True" AllowBlank="False" BlankText="Please enter your date of birth"/>
-                    <ext:TextField ID="txtTel" runat="server" FieldLabel="Telephone No" Width="300" Margins="10 0 10 30" ReadOnly="True"/>
-                    <ext:TextField ID="txtCell" runat="server" FieldLabel="Cell No" Width="300" Margins="10 0 10 30" ReadOnly="True"/>
-                    <ext:TextField ID="txtFax" runat="server" FieldLabel="Fax No" Width="300" Margins="10 0 10 30" ReadOnly="True"/>
+                    <ext:TextField ID="txtTel" runat="server" FieldLabel="Telephone No" Width="300" Margins="10 0 10 30" ReadOnly="True" InputType="Tel"/>
+                    <ext:TextField ID="txtCell" runat="server" FieldLabel="Cell No" Width="300" Margins="10 0 10 30" ReadOnly="True" InputType="Tel"/>
+                    <ext:TextField ID="txtFax" runat="server" FieldLabel="Fax No" Width="300" Margins="10 0 10 30" ReadOnly="True" InputType="Tel"/>
                     <ext:Panel runat="server" Layout="HBoxLayout" Border="false">
                         <Items>
                             <ext:Button ID="btnEdit" runat="server" Text="Edit" Padding="5" Margins="0 0 0 135" Icon="PageEdit" OnDirectClick="BtnEditClick"/>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Globalization;
-using System.Web;
 using Ext.Net;
 using CRMBusiness;
 
@@ -13,13 +11,8 @@ namespace CRMUI.CallCentreManager
         protected void Page_Load(object sender, EventArgs e)
         {
             var cats = new CategoriesBl().GetAllCategories();
-
-            if (!IsPostBack)
-            {
-                strCategory.DataSource = cats;
-                strCategory.DataBind();
-            }
-
+            strCategory.DataSource = cats;
+            strCategory.DataBind();
         }
 
         //COMBOBOX SELECT CATEGORY
@@ -60,7 +53,7 @@ namespace CRMUI.CallCentreManager
         {
             //validatenewtemp = false;
             newtemplate = false;
-            if(newcategory)
+            if (newcategory)
             {
                 //VALIDATE NEW CATEGORY DATA
                 if (txtCatName.Text == string.Empty)
@@ -125,13 +118,13 @@ namespace CRMUI.CallCentreManager
             btnCreateCatName.Disabled = true;
             txtTemplateName.Hidden = false;
             newtemplate = true;
-            btnCreateTempName.Disabled=true;
+            btnCreateTempName.Disabled = true;
             editrPara.Disabled = false;
         }
-        
+
 
         #region DIRECT EVENTS
-        
+
         //SAVE BUTTONS
         protected void BtnSaveClicked(object sender, DirectEventArgs e)
         {
@@ -140,7 +133,7 @@ namespace CRMUI.CallCentreManager
                 ExtNet.Msg.Alert("Invalid Paragraph", "A paragraph is reqiured for a template, please enter some text!").Show();
                 editrPara.AutoFocus = true;
             }
-            else if (editrPara.Text.Length<1)
+            else if (editrPara.Text.Length < 1)
             {
                 ExtNet.Msg.Alert("Invalid paragraph", "A paragraph is reqiured for a template!").Show();
                 editrPara.AutoFocus = true;
@@ -180,7 +173,7 @@ namespace CRMUI.CallCentreManager
 
                     if (newtemplate)
                     {
-                        if (txtTemplateName.Text==string.Empty)
+                        if (txtTemplateName.Text == string.Empty)
                         {
                             ExtNet.Msg.Alert("Invalid Template Name", "A template name is reqiured for a template!").Show();
                             return;
@@ -201,16 +194,11 @@ namespace CRMUI.CallCentreManager
                 }
                 newtemplate = false;
                 newcategory = false;
-                
+
                 BtnSave.Disabled = true;
                 ResetData();
             }
-            
-        }
-        //CANCEL
-        protected void BtnCancelClicked(object sender, DirectEventArgs e)
-        {
-            Page.Response.Redirect("~/CallCentreManager/Home.aspx");
+
         }
         //REFRESH BUTTON
         protected void BtnRefreshClicked(object sender, DirectEventArgs e)
@@ -219,8 +207,8 @@ namespace CRMUI.CallCentreManager
         }
         #endregion
 
-        
-        
+
+
         #region HELPER METHODS
         //ADD TEMPLATE
         protected void AddTemplate(string nwname, string nwparagraph, int catid)
@@ -269,8 +257,8 @@ namespace CRMUI.CallCentreManager
             editrPara.Reset();
             editrPara.Disabled = true;
         }
-    
+
         #endregion
-        
+
     }
 }

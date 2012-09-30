@@ -115,9 +115,12 @@ namespace CRMUI.Client
                {
                    dfDob.Focus();
                }
-                  
-               else if( objC.UpdateClient(Convert.ToInt32(txtClientID.Text), txtName.Text, txtSurname.Text, Convert.ToDateTime(dfDob.Text), txtTel.Text, txtCell.Text, txtFax.Text, DateTime.Now))
+
+               else if (objC.UpdateClient(Convert.ToInt32(txtClientID.Text), txtName.Text, txtSurname.Text, Convert.ToDateTime(dfDob.Text), Convert.ToString(txtTel.Text), Convert.ToString(txtCell.Text), Convert.ToString(txtFax.Text), DateTime.Now))
                {
+                   string userName = Membership.GetUser().UserName;
+                   Session["UserName"] = userName;
+                   var objCl = new ClientBl().GetClientUserName(userName);
                    
                    txtName.ReadOnly = true;
                    txtSurname.ReadOnly = true;
@@ -125,7 +128,9 @@ namespace CRMUI.Client
                    txtTel.ReadOnly = true;
                    txtCell.ReadOnly = true;
                    txtFax.ReadOnly = true;
-                   ExtNet.Msg.Notify("Update Status", "Update successful").Show(); 
+                   ExtNet.Msg.Notify("Update Status", "Update successful").Show();
+                   Session["From"] = objCl[0].Name + " " + objCl[0].Surname;
+                   Session["txtClientID.Text"] = objCl[0].CLIENT_ID.ToString(CultureInfo.InvariantCulture);
                }
                else
                {

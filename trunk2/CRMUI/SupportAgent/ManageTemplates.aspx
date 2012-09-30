@@ -22,9 +22,9 @@
                             <ext:FieldSet ID="fdsetSelections" runat="server" Margins="10 0 5 0" Width="380"
                                 Layout="HBoxLayout" Title="Select or create a template category">
                                 <Items>
-                                    <ext:ComboBox ID="cmbTemplateCategory" runat="server" Text="Select a category" Margins="10 0 10 20"
+                                    <ext:ComboBox ID="cmbTemplateCategory" runat="server" Margins="10 0 10 20"
                                         DisplayField="Name" ValueField="CAT_ID" AllowBlank="False" Editable="False" LabelAlign="Top"
-                                        OnDirectChange="SelectedCategory" Width="200">
+                                         OnDirectSelect="SelectedCategory" Width="200" FieldLabel="Select Category">
                                         <Store>
                                             <ext:Store ID="strCategory" runat="server">
                                                 <Model>
@@ -43,13 +43,13 @@
                                 </Items>
                             </ext:FieldSet>
                             <ext:TextField ID="txtCatName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False" />
+                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False"/>
                             <%--FIELDSET TEMPLATE DATA--%>
                             <ext:FieldSet ID="FieldSet1" runat="server" Margins="5 0 10 0" Width="380" Layout="HBoxLayout" Title="Select or create a template">
                                 <Items>
-                                    <ext:ComboBox ID="cmbComTemplates" runat="server" Text="Select a template" Margins="10 0 10 20"
+                                    <ext:ComboBox ID="cmbComTemplates" runat="server" Margins="10 0 10 20"
                                         Width="200" Disabled="True" DisplayField="Name" ValueField="CT_ID" AllowBlank="False"
-                                        Editable="False" LabelAlign="Top" OnDirectChange="SelectedTemplate">
+                                        Editable="False" LabelAlign="Top" OnDirectSelect="SelectedTemplate" FieldLabel="Select Template">
                                         <Store>
                                             <ext:Store ID="streComTemplate" runat="server">
                                                 <Model>
@@ -68,22 +68,22 @@
                                         Margins="10 0 10 20" OnDirectClick="CreateTemplateName" Disabled="True" Icon="Add" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter template name" Hidden="True" AllowBlank="False" />
+                            <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top" FieldLabel="Enter template name" Hidden="True"/>
+                                
+                            
                         </Items>
                     </ext:Container>
                     <%--RIGHT CONTAINER--%>
                     <ext:Container ID="cntrMessageBody" Height="350" runat="server" Layout="vboxLayout"
                         Border="false" Margins="0 10 0 5">
                         <Items>
-                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250"
-                                FieldLabel="Enter template paragragh" LabelAlign="Top" />
+                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250" FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True" OnDirectChange="EnableSave"/>
                             <ext:Container ID="Container1" runat="server" Layout="hboxLayout">
                                 <Items>
                                     <ext:Button ID="BtnSave" runat="server" Text="Save Template" Margins="10 0 10 20"
-                                        Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" />
-                                    <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" OnDirectClick="BtnCancelClicked"
-                                        Icon="Cancel" Margins="10 0 10 20" />
+                                                Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" Disabled="true" />
+                                    <ext:Button ID="btnRefresh" runat="server" Text="Reset" Margins="10 0 10 20"
+                                                Padding="5" OnDirectClick="BtnRefreshClicked" Icon="PageRefresh"/>
                                 </Items>
                             </ext:Container>
                         </Items>

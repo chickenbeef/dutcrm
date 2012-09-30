@@ -82,10 +82,8 @@
                                 <Items>
                                     <ext:Button ID="BtnSave" runat="server" Text="Save Template" Margins="10 0 10 20"
                                                 Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" Disabled="true" />
-                                    <ext:Button ID="btnRefresh" runat="server" Text="Refresh" Margins="10 0 10 20"
+                                    <ext:Button ID="btnRefresh" runat="server" Text="Reset" Margins="10 0 10 20"
                                                 Padding="5" OnDirectClick="BtnRefreshClicked" Icon="PageRefresh"/>
-                                    <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" OnDirectClick="BtnCancelClicked"
-                                        Icon="Cancel" Margins="10 0 10 20" />
                                 </Items>
                             </ext:Container>
                         </Items>

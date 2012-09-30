@@ -171,6 +171,20 @@ namespace CRMUI.CallCentreManager
             saveconfigs.UpdateSetting("Encryption", sslin.ToString(CultureInfo.InvariantCulture));
 
             saveconfigs.UpdateSetting("EmailAddr", txtUsername.Text);
+
+            //save email settings for sending password recovery
+            System.Configuration.Configuration config = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~");
+            var mailSettings = (System.Net.Configuration.MailSettingsSectionGroup)config.GetSectionGroup("system.net/mailSettings");
+            if (mailSettings != null)
+            {
+                mailSettings.Smtp.From = txtUsername.Text;
+                mailSettings.Smtp.Network.Host = txtOtServer.Text;
+                mailSettings.Smtp.Network.UserName = txtUsername.Text;
+                mailSettings.Smtp.Network.Password = txtPassword.Text;
+                mailSettings.Smtp.Network.EnableSsl = chkEnableOtSSL.Checked;
+                mailSettings.Smtp.Network.Port = Convert.ToInt32(txtOtPort.Text);
+            }
+            config.Save();
             return true;
         }
         #endregion

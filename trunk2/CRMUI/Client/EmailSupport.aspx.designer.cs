@@ -94,15 +94,6 @@ namespace CRMUI.Client {
         protected global::Ext.Net.HtmlEditor heDesc;
         
         /// <summary>
-        /// pnlbuttons control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.Panel pnlbuttons;
-        
-        /// <summary>
         /// btnSend control.
         /// </summary>
         /// <remarks>
@@ -119,5 +110,23 @@ namespace CRMUI.Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Panel pnlUploadImg;
+        
+        /// <summary>
+        /// uploadImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.FileUploadField uploadImage;
+        
+        /// <summary>
+        /// btnUploadImgs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnUploadImgs;
     }
 }
