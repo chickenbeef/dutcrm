@@ -109,7 +109,7 @@ namespace CRMUI.Client {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Panel pnlUploadImg;
+        protected global::Ext.Net.FormPanel pnlUploadImg;
         
         /// <summary>
         /// uploadImage control.
@@ -128,5 +128,14 @@ namespace CRMUI.Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Button btnUploadImgs;
+        
+        /// <summary>
+        /// lblFiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label lblFiles;
     }
 }

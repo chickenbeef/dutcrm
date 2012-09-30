@@ -29,14 +29,18 @@
                     </ext:Panel>
                 </Items>
             </ext:Panel>
-            <ext:Panel ID="pnlUploadImg" runat="server" Flex="1" Margins="200 0 10 0" Border="false"
+            <ext:FormPanel ID="pnlUploadImg" runat="server" Flex="1" Margins="210 0 10 0" Border="false"
                 Height="300">
-                <Content>
-                    <ext:FileUploadField ID="uploadImage" runat="server" ButtonText="" Icon="Add" />
-                    <ext:Button ID="btnUploadImgs" runat="server" Text="Upload Images" Margins="20 0 30 0"
-                        OnDirectClick="btnUploadImgs_OnDirectClick" />
-                </Content>
-            </ext:Panel>
+                <Items>
+                    <ext:FileUploadField ID="uploadImage" runat="server" ButtonText="" Icon="Add" AnchorHorizontal="50%"/>
+                    <ext:Button ID="btnUploadImgs" runat="server" Text="Upload Images" AnchorHorizontal="20%" Margins="10 0 10 0" OnDirectClick="btnUploadImgs_OnDirectClick"/>
+                    <ext:Container runat="server" AnchorHorizontal="100%" Border="false">
+                        <Items>
+                            <ext:Label ID="lblFiles" runat="server"/>
+                        </Items>
+                    </ext:Container>
+                </Items>
+            </ext:FormPanel>
         </Items>
     </ext:Panel>
 </asp:Content>
