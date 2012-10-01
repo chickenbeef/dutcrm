@@ -32,20 +32,23 @@ namespace CRMUI.CallCentreManager
             {
                 if (!ValidData())
                 {
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Alert("Error Occured", "Ensure you have selected a template and entered a paragraph!").
                         Show();
                 }
                 else
                 {
+                    
                     var val = e.ExtraParams["Values"];
                     if (val == "[]")
                     {
+                        ExtNet.Mask.Hide();
                         ExtNet.Msg.Alert("Error Occured", "Please select one or more clients!").
                             Show();
                     }
                     else
                     {
-                       
+                        ExtNet.Mask.Hide();
                         var clients = JSON.Deserialize<Dictionary<string, string>[]>(val);
 
                         List<string> emails = new List<string>();
@@ -68,6 +71,7 @@ namespace CRMUI.CallCentreManager
             }
             catch (Exception ex)
             {
+                ExtNet.Mask.Hide();
                 ExtNet.Msg.Alert("Error Occured", ex.Message).Show();
             }
         }

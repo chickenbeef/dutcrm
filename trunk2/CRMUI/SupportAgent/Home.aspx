@@ -216,9 +216,6 @@
                             <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
                             <ext:Button runat="server" ID="btnCCreateTicketSol" Text="Create Ticket With Solution"
                                 Icon="Lightbulb" Disabled="True">
-                                <ToolTips>
-                                    <ext:ToolTip ID="ToolTip3" runat="server" Html="Click if you have a solution" />
-                                </ToolTips>
                                 <DirectEvents>
                                     <Click OnEvent="BtnCCreateTicketSolClick">
                                     </Click>
@@ -227,9 +224,6 @@
                             <ext:ToolbarSeparator ID="ToolbarSeparator1" runat="server" />
                             <ext:Button runat="server" ID="btnCCreateTicketNoSol" Text="Create Ticket Without Solution"
                                 Icon="LightbulbOff" Disabled="True">
-                                <ToolTips>
-                                    <ext:ToolTip ID="ToolTip2" runat="server" Html="Click if you do not have a solution" />
-                                </ToolTips>
                                 <DirectEvents>
                                     <Click OnEvent="BtnCCreateTicketNoSol">
                                     </Click>
@@ -451,9 +445,6 @@
                                     <ext:ToolbarSpacer runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketSol" Text="Create Ticket With Solution"
                                         Icon="Lightbulb" Disabled="True">
-                                        <ToolTips>
-                                            <ext:ToolTip runat="server" Html="Click if you have a solution" />
-                                        </ToolTips>
                                         <DirectEvents>
                                             <Click OnEvent="BtnECreateTicketSolClick">
                                             </Click>
@@ -462,9 +453,6 @@
                                     <ext:ToolbarSeparator runat="server" />
                                     <ext:Button runat="server" ID="btnECreateTicketNoSol" Text="Create Ticket Without Solution"
                                         Icon="LightbulbOff" Disabled="True">
-                                        <ToolTips>
-                                            <ext:ToolTip ID="ToolTip1" runat="server" Html="Click if you do not have a solution" />
-                                        </ToolTips>
                                         <DirectEvents>
                                             <Click OnEvent="BtnECreateTicketNoSol">
                                             </Click>
@@ -549,6 +537,8 @@
         <Items>
             <ext:FormPanel runat="server" Border="false" Frame="True" BodyPadding="20">
                 <Items>
+                    <ext:Hidden runat="server" ID="hEProbDesc"/>
+                    <ext:Hidden runat="server" ID="hESolDesc"/>
                     <ext:ComboBox runat="server" DisplayField="Name" ValueField="CAT_ID" ID="cmbCategory"
                         LabelWidth="70" AllowBlank="False" FieldLabel="Category" Text="Choose a Category.."
                         AnchorHorizontal="30%">

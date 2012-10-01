@@ -299,22 +299,6 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<vClientProblemsLog> vClientProblemsLogs
-        {
-            get
-            {
-                if ((_vClientProblemsLogs == null))
-                {
-                    _vClientProblemsLogs = base.CreateObjectSet<vClientProblemsLog>("vClientProblemsLogs");
-                }
-                return _vClientProblemsLogs;
-            }
-        }
-        private ObjectSet<vClientProblemsLog> _vClientProblemsLogs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<vClient> vClients
         {
             get
@@ -375,6 +359,22 @@ namespace CRMData
             }
         }
         private ObjectSet<ConfigurationSetting> _ConfigurationSettings;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<vClientProblemsLog> vClientProblemsLogs
+        {
+            get
+            {
+                if ((_vClientProblemsLogs == null))
+                {
+                    _vClientProblemsLogs = base.CreateObjectSet<vClientProblemsLog>("vClientProblemsLogs");
+                }
+                return _vClientProblemsLogs;
+            }
+        }
+        private ObjectSet<vClientProblemsLog> _vClientProblemsLogs;
 
         #endregion
         #region AddTo Methods
@@ -484,14 +484,6 @@ namespace CRMData
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the vClientProblemsLogs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTovClientProblemsLogs(vClientProblemsLog vClientProblemsLog)
-        {
-            base.AddObject("vClientProblemsLogs", vClientProblemsLog);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the vClients EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTovClients(vClient vClient)
@@ -521,6 +513,14 @@ namespace CRMData
         public void AddToConfigurationSettings(ConfigurationSetting configurationSetting)
         {
             base.AddObject("ConfigurationSettings", configurationSetting);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the vClientProblemsLogs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTovClientProblemsLogs(vClientProblemsLog vClientProblemsLog)
+        {
+            base.AddObject("vClientProblemsLogs", vClientProblemsLog);
         }
 
         #endregion
@@ -5222,37 +5222,37 @@ namespace CRMData
         /// </summary>
         /// <param name="cPR_ID">Initial value of the CPR_ID property.</param>
         /// <param name="solved">Initial value of the Solved property.</param>
-        /// <param name="cLIENT_ID">Initial value of the CLIENT_ID property.</param>
-        /// <param name="clientName">Initial value of the ClientName property.</param>
-        /// <param name="eMP_ID">Initial value of the EMP_ID property.</param>
-        /// <param name="employeeName">Initial value of the EmployeeName property.</param>
+        /// <param name="dateCreated">Initial value of the DateCreated property.</param>
+        /// <param name="comTypeTel">Initial value of the ComTypeTel property.</param>
+        /// <param name="solvedOnCreate">Initial value of the SolvedOnCreate property.</param>
+        /// <param name="priority">Initial value of the Priority property.</param>
         /// <param name="pROB_ID">Initial value of the PROB_ID property.</param>
         /// <param name="problemDescription">Initial value of the ProblemDescription property.</param>
-        /// <param name="sOL_ID">Initial value of the SOL_ID property.</param>
-        /// <param name="solutionDescription">Initial value of the SolutionDescription property.</param>
-        /// <param name="priority">Initial value of the Priority property.</param>
-        /// <param name="solvedOnCreate">Initial value of the SolvedOnCreate property.</param>
+        /// <param name="eMP_ID">Initial value of the EMP_ID property.</param>
+        /// <param name="employeeName">Initial value of the EmployeeName property.</param>
         /// <param name="employeeSurname">Initial value of the EmployeeSurname property.</param>
+        /// <param name="cLIENT_ID">Initial value of the CLIENT_ID property.</param>
+        /// <param name="clientName">Initial value of the ClientName property.</param>
         /// <param name="clientSurname">Initial value of the ClientSurname property.</param>
-        /// <param name="clientUsername">Initial value of the ClientUsername property.</param>
-        public static vClientProblemsLog CreatevClientProblemsLog(global::System.Int32 cPR_ID, global::System.Boolean solved, global::System.Int32 cLIENT_ID, global::System.String clientName, global::System.Int32 eMP_ID, global::System.String employeeName, global::System.Int32 pROB_ID, global::System.String problemDescription, global::System.Int32 sOL_ID, global::System.String solutionDescription, global::System.String priority, global::System.Boolean solvedOnCreate, global::System.String employeeSurname, global::System.String clientSurname, global::System.String clientUsername)
+        /// <param name="userName">Initial value of the UserName property.</param>
+        public static vClientProblemsLog CreatevClientProblemsLog(global::System.Int32 cPR_ID, global::System.Boolean solved, global::System.DateTime dateCreated, global::System.Boolean comTypeTel, global::System.Boolean solvedOnCreate, global::System.String priority, global::System.Int32 pROB_ID, global::System.String problemDescription, global::System.Int32 eMP_ID, global::System.String employeeName, global::System.String employeeSurname, global::System.Int32 cLIENT_ID, global::System.String clientName, global::System.String clientSurname, global::System.String userName)
         {
             vClientProblemsLog vClientProblemsLog = new vClientProblemsLog();
             vClientProblemsLog.CPR_ID = cPR_ID;
             vClientProblemsLog.Solved = solved;
-            vClientProblemsLog.CLIENT_ID = cLIENT_ID;
-            vClientProblemsLog.ClientName = clientName;
-            vClientProblemsLog.EMP_ID = eMP_ID;
-            vClientProblemsLog.EmployeeName = employeeName;
+            vClientProblemsLog.DateCreated = dateCreated;
+            vClientProblemsLog.ComTypeTel = comTypeTel;
+            vClientProblemsLog.SolvedOnCreate = solvedOnCreate;
+            vClientProblemsLog.Priority = priority;
             vClientProblemsLog.PROB_ID = pROB_ID;
             vClientProblemsLog.ProblemDescription = problemDescription;
-            vClientProblemsLog.SOL_ID = sOL_ID;
-            vClientProblemsLog.SolutionDescription = solutionDescription;
-            vClientProblemsLog.Priority = priority;
-            vClientProblemsLog.SolvedOnCreate = solvedOnCreate;
+            vClientProblemsLog.EMP_ID = eMP_ID;
+            vClientProblemsLog.EmployeeName = employeeName;
             vClientProblemsLog.EmployeeSurname = employeeSurname;
+            vClientProblemsLog.CLIENT_ID = cLIENT_ID;
+            vClientProblemsLog.ClientName = clientName;
             vClientProblemsLog.ClientSurname = clientSurname;
-            vClientProblemsLog.ClientUsername = clientUsername;
+            vClientProblemsLog.UserName = userName;
             return vClientProblemsLog;
         }
 
@@ -5316,9 +5316,9 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> DateCreated
+        public global::System.DateTime DateCreated
         {
             get
             {
@@ -5326,15 +5326,18 @@ namespace CRMData
             }
             set
             {
-                OnDateCreatedChanging(value);
-                ReportPropertyChanging("DateCreated");
-                _DateCreated = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("DateCreated");
-                OnDateCreatedChanged();
+                if (_DateCreated != value)
+                {
+                    OnDateCreatedChanging(value);
+                    ReportPropertyChanging("DateCreated");
+                    _DateCreated = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("DateCreated");
+                    OnDateCreatedChanged();
+                }
             }
         }
-        private Nullable<global::System.DateTime> _DateCreated;
-        partial void OnDateCreatedChanging(Nullable<global::System.DateTime> value);
+        private global::System.DateTime _DateCreated;
+        partial void OnDateCreatedChanging(global::System.DateTime value);
         partial void OnDateCreatedChanged();
     
         /// <summary>
@@ -5364,9 +5367,9 @@ namespace CRMData
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> ComTypeTel
+        public global::System.Boolean ComTypeTel
         {
             get
             {
@@ -5374,15 +5377,18 @@ namespace CRMData
             }
             set
             {
-                OnComTypeTelChanging(value);
-                ReportPropertyChanging("ComTypeTel");
-                _ComTypeTel = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ComTypeTel");
-                OnComTypeTelChanged();
+                if (_ComTypeTel != value)
+                {
+                    OnComTypeTelChanging(value);
+                    ReportPropertyChanging("ComTypeTel");
+                    _ComTypeTel = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ComTypeTel");
+                    OnComTypeTelChanged();
+                }
             }
         }
-        private Nullable<global::System.Boolean> _ComTypeTel;
-        partial void OnComTypeTelChanging(Nullable<global::System.Boolean> value);
+        private global::System.Boolean _ComTypeTel;
+        partial void OnComTypeTelChanging(global::System.Boolean value);
         partial void OnComTypeTelChanged();
     
         /// <summary>
@@ -5390,54 +5396,156 @@ namespace CRMData
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 CLIENT_ID
+        public global::System.Boolean SolvedOnCreate
         {
             get
             {
-                return _CLIENT_ID;
+                return _SolvedOnCreate;
             }
             set
             {
-                if (_CLIENT_ID != value)
+                if (_SolvedOnCreate != value)
                 {
-                    OnCLIENT_IDChanging(value);
-                    ReportPropertyChanging("CLIENT_ID");
-                    _CLIENT_ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("CLIENT_ID");
-                    OnCLIENT_IDChanged();
+                    OnSolvedOnCreateChanging(value);
+                    ReportPropertyChanging("SolvedOnCreate");
+                    _SolvedOnCreate = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("SolvedOnCreate");
+                    OnSolvedOnCreateChanged();
                 }
             }
         }
-        private global::System.Int32 _CLIENT_ID;
-        partial void OnCLIENT_IDChanging(global::System.Int32 value);
-        partial void OnCLIENT_IDChanged();
+        private global::System.Boolean _SolvedOnCreate;
+        partial void OnSolvedOnCreateChanging(global::System.Boolean value);
+        partial void OnSolvedOnCreateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String ClientName
+        public global::System.String Priority
         {
             get
             {
-                return _ClientName;
+                return _Priority;
             }
             set
             {
-                if (_ClientName != value)
+                if (_Priority != value)
                 {
-                    OnClientNameChanging(value);
-                    ReportPropertyChanging("ClientName");
-                    _ClientName = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ClientName");
-                    OnClientNameChanged();
+                    OnPriorityChanging(value);
+                    ReportPropertyChanging("Priority");
+                    _Priority = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("Priority");
+                    OnPriorityChanged();
                 }
             }
         }
-        private global::System.String _ClientName;
-        partial void OnClientNameChanging(global::System.String value);
-        partial void OnClientNameChanged();
+        private global::System.String _Priority;
+        partial void OnPriorityChanging(global::System.String value);
+        partial void OnPriorityChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PROB_ID
+        {
+            get
+            {
+                return _PROB_ID;
+            }
+            set
+            {
+                if (_PROB_ID != value)
+                {
+                    OnPROB_IDChanging(value);
+                    ReportPropertyChanging("PROB_ID");
+                    _PROB_ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("PROB_ID");
+                    OnPROB_IDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _PROB_ID;
+        partial void OnPROB_IDChanging(global::System.Int32 value);
+        partial void OnPROB_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ProblemDescription
+        {
+            get
+            {
+                return _ProblemDescription;
+            }
+            set
+            {
+                if (_ProblemDescription != value)
+                {
+                    OnProblemDescriptionChanging(value);
+                    ReportPropertyChanging("ProblemDescription");
+                    _ProblemDescription = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("ProblemDescription");
+                    OnProblemDescriptionChanged();
+                }
+            }
+        }
+        private global::System.String _ProblemDescription;
+        partial void OnProblemDescriptionChanging(global::System.String value);
+        partial void OnProblemDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> SOL_ID
+        {
+            get
+            {
+                return _SOL_ID;
+            }
+            set
+            {
+                OnSOL_IDChanging(value);
+                ReportPropertyChanging("SOL_ID");
+                _SOL_ID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SOL_ID");
+                OnSOL_IDChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _SOL_ID;
+        partial void OnSOL_IDChanging(Nullable<global::System.Int32> value);
+        partial void OnSOL_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SolutionDescription
+        {
+            get
+            {
+                return _SolutionDescription;
+            }
+            set
+            {
+                OnSolutionDescriptionChanging(value);
+                ReportPropertyChanging("SolutionDescription");
+                _SolutionDescription = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SolutionDescription");
+                OnSolutionDescriptionChanged();
+            }
+        }
+        private global::System.String _SolutionDescription;
+        partial void OnSolutionDescriptionChanging(global::System.String value);
+        partial void OnSolutionDescriptionChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5498,168 +5606,6 @@ namespace CRMData
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 PROB_ID
-        {
-            get
-            {
-                return _PROB_ID;
-            }
-            set
-            {
-                if (_PROB_ID != value)
-                {
-                    OnPROB_IDChanging(value);
-                    ReportPropertyChanging("PROB_ID");
-                    _PROB_ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("PROB_ID");
-                    OnPROB_IDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _PROB_ID;
-        partial void OnPROB_IDChanging(global::System.Int32 value);
-        partial void OnPROB_IDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String ProblemDescription
-        {
-            get
-            {
-                return _ProblemDescription;
-            }
-            set
-            {
-                if (_ProblemDescription != value)
-                {
-                    OnProblemDescriptionChanging(value);
-                    ReportPropertyChanging("ProblemDescription");
-                    _ProblemDescription = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ProblemDescription");
-                    OnProblemDescriptionChanged();
-                }
-            }
-        }
-        private global::System.String _ProblemDescription;
-        partial void OnProblemDescriptionChanging(global::System.String value);
-        partial void OnProblemDescriptionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 SOL_ID
-        {
-            get
-            {
-                return _SOL_ID;
-            }
-            set
-            {
-                if (_SOL_ID != value)
-                {
-                    OnSOL_IDChanging(value);
-                    ReportPropertyChanging("SOL_ID");
-                    _SOL_ID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("SOL_ID");
-                    OnSOL_IDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _SOL_ID;
-        partial void OnSOL_IDChanging(global::System.Int32 value);
-        partial void OnSOL_IDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String SolutionDescription
-        {
-            get
-            {
-                return _SolutionDescription;
-            }
-            set
-            {
-                if (_SolutionDescription != value)
-                {
-                    OnSolutionDescriptionChanging(value);
-                    ReportPropertyChanging("SolutionDescription");
-                    _SolutionDescription = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("SolutionDescription");
-                    OnSolutionDescriptionChanged();
-                }
-            }
-        }
-        private global::System.String _SolutionDescription;
-        partial void OnSolutionDescriptionChanging(global::System.String value);
-        partial void OnSolutionDescriptionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Priority
-        {
-            get
-            {
-                return _Priority;
-            }
-            set
-            {
-                if (_Priority != value)
-                {
-                    OnPriorityChanging(value);
-                    ReportPropertyChanging("Priority");
-                    _Priority = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("Priority");
-                    OnPriorityChanged();
-                }
-            }
-        }
-        private global::System.String _Priority;
-        partial void OnPriorityChanging(global::System.String value);
-        partial void OnPriorityChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean SolvedOnCreate
-        {
-            get
-            {
-                return _SolvedOnCreate;
-            }
-            set
-            {
-                if (_SolvedOnCreate != value)
-                {
-                    OnSolvedOnCreateChanging(value);
-                    ReportPropertyChanging("SolvedOnCreate");
-                    _SolvedOnCreate = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("SolvedOnCreate");
-                    OnSolvedOnCreateChanged();
-                }
-            }
-        }
-        private global::System.Boolean _SolvedOnCreate;
-        partial void OnSolvedOnCreateChanging(global::System.Boolean value);
-        partial void OnSolvedOnCreateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.String EmployeeSurname
         {
             get
@@ -5681,6 +5627,60 @@ namespace CRMData
         private global::System.String _EmployeeSurname;
         partial void OnEmployeeSurnameChanging(global::System.String value);
         partial void OnEmployeeSurnameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 CLIENT_ID
+        {
+            get
+            {
+                return _CLIENT_ID;
+            }
+            set
+            {
+                if (_CLIENT_ID != value)
+                {
+                    OnCLIENT_IDChanging(value);
+                    ReportPropertyChanging("CLIENT_ID");
+                    _CLIENT_ID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("CLIENT_ID");
+                    OnCLIENT_IDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _CLIENT_ID;
+        partial void OnCLIENT_IDChanging(global::System.Int32 value);
+        partial void OnCLIENT_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ClientName
+        {
+            get
+            {
+                return _ClientName;
+            }
+            set
+            {
+                if (_ClientName != value)
+                {
+                    OnClientNameChanging(value);
+                    ReportPropertyChanging("ClientName");
+                    _ClientName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("ClientName");
+                    OnClientNameChanged();
+                }
+            }
+        }
+        private global::System.String _ClientName;
+        partial void OnClientNameChanging(global::System.String value);
+        partial void OnClientNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -5714,27 +5714,27 @@ namespace CRMData
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String ClientUsername
+        public global::System.String UserName
         {
             get
             {
-                return _ClientUsername;
+                return _UserName;
             }
             set
             {
-                if (_ClientUsername != value)
+                if (_UserName != value)
                 {
-                    OnClientUsernameChanging(value);
-                    ReportPropertyChanging("ClientUsername");
-                    _ClientUsername = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("ClientUsername");
-                    OnClientUsernameChanged();
+                    OnUserNameChanging(value);
+                    ReportPropertyChanging("UserName");
+                    _UserName = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("UserName");
+                    OnUserNameChanged();
                 }
             }
         }
-        private global::System.String _ClientUsername;
-        partial void OnClientUsernameChanging(global::System.String value);
-        partial void OnClientUsernameChanged();
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
 
         #endregion
     

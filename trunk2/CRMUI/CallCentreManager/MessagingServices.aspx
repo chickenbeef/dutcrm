@@ -103,7 +103,7 @@
                             <ext:RowSelectionModel runat="server" Mode="Multi" />
                         </SelectionModel>
                         <Buttons>
-                            <ext:Button runat="server" Margins="2 300 2 5" ID="btnSend" Text="Send" Padding="5"
+                            <ext:Button runat="server" Margins="2 300 2 5" ID="btnSend" OnClientClick="Ext.net.Mask.show({msg: 'Sending...'});" Text="Send" Padding="5"
                                 Icon="EmailGo" Flex="1" MaxWidth="80">
                                 <DirectEvents>
                                     <Click OnEvent="SendMessage">

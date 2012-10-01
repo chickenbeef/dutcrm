@@ -481,15 +481,6 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Button btnCCreateTicketSol;
         
         /// <summary>
-        /// ToolTip3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.ToolTip ToolTip3;
-        
-        /// <summary>
         /// ToolbarSeparator1 control.
         /// </summary>
         /// <remarks>
@@ -506,15 +497,6 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Button btnCCreateTicketNoSol;
-        
-        /// <summary>
-        /// ToolTip2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.ToolTip ToolTip2;
         
         /// <summary>
         /// pnlEmailSupport control.
@@ -922,15 +904,6 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.Button btnECreateTicketNoSol;
         
         /// <summary>
-        /// ToolTip1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Ext.Net.ToolTip ToolTip1;
-        
-        /// <summary>
         /// wndAddProblem control.
         /// </summary>
         /// <remarks>
@@ -1010,6 +983,24 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Window wndSendEmail;
+        
+        /// <summary>
+        /// hEProbDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Hidden hEProbDesc;
+        
+        /// <summary>
+        /// hESolDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Hidden hESolDesc;
         
         /// <summary>
         /// cmbCategory control.

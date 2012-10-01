@@ -28,19 +28,19 @@
       [vClientProblemsLog].[DateCreated] AS [DateCreated], 
       [vClientProblemsLog].[DateSolved] AS [DateSolved], 
       [vClientProblemsLog].[ComTypeTel] AS [ComTypeTel], 
-      [vClientProblemsLog].[EMP_ID] AS [EMP_ID], 
-      [vClientProblemsLog].[EmployeeName] AS [EmployeeName], 
-      [vClientProblemsLog].[EmployeeSurname] AS [EmployeeSurname], 
+      [vClientProblemsLog].[SolvedOnCreate] AS [SolvedOnCreate], 
+      [vClientProblemsLog].[Priority] AS [Priority], 
       [vClientProblemsLog].[PROB_ID] AS [PROB_ID], 
       [vClientProblemsLog].[ProblemDescription] AS [ProblemDescription], 
       [vClientProblemsLog].[SOL_ID] AS [SOL_ID], 
       [vClientProblemsLog].[SolutionDescription] AS [SolutionDescription], 
-      [vClientProblemsLog].[Priority] AS [Priority], 
-      [vClientProblemsLog].[SolvedOnCreate] AS [SolvedOnCreate], 
+      [vClientProblemsLog].[EMP_ID] AS [EMP_ID], 
+      [vClientProblemsLog].[EmployeeName] AS [EmployeeName], 
+      [vClientProblemsLog].[EmployeeSurname] AS [EmployeeSurname], 
       [vClientProblemsLog].[CLIENT_ID] AS [CLIENT_ID], 
       [vClientProblemsLog].[ClientName] AS [ClientName], 
       [vClientProblemsLog].[ClientSurname] AS [ClientSurname], 
-      [vClientProblemsLog].[ClientUsername] AS [ClientUsername]
+      [vClientProblemsLog].[UserName] AS [UserName]
       FROM [dbo].[vClientProblemsLog] AS [vClientProblemsLog]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vClients" EntityType="CRMModel.Store.vClients" store:Type="Views" store:Schema="dbo" store:Name="vClients">
@@ -339,38 +339,38 @@
           <Key>
             <PropertyRef Name="CPR_ID" />
             <PropertyRef Name="Solved" />
+            <PropertyRef Name="DateCreated" />
+            <PropertyRef Name="ComTypeTel" />
+            <PropertyRef Name="SolvedOnCreate" />
+            <PropertyRef Name="Priority" />
+            <PropertyRef Name="PROB_ID" />
+            <PropertyRef Name="ProblemDescription" />
             <PropertyRef Name="EMP_ID" />
             <PropertyRef Name="EmployeeName" />
             <PropertyRef Name="EmployeeSurname" />
-            <PropertyRef Name="PROB_ID" />
-            <PropertyRef Name="ProblemDescription" />
-            <PropertyRef Name="SOL_ID" />
-            <PropertyRef Name="SolutionDescription" />
-            <PropertyRef Name="Priority" />
-            <PropertyRef Name="SolvedOnCreate" />
             <PropertyRef Name="CLIENT_ID" />
             <PropertyRef Name="ClientName" />
             <PropertyRef Name="ClientSurname" />
-            <PropertyRef Name="ClientUsername" />
+            <PropertyRef Name="UserName" />
           </Key>
           <Property Name="CPR_ID" Type="int" Nullable="false" />
           <Property Name="Solved" Type="bit" Nullable="false" />
-          <Property Name="DateCreated" Type="date" />
+          <Property Name="DateCreated" Type="date" Nullable="false" />
           <Property Name="DateSolved" Type="date" />
-          <Property Name="ComTypeTel" Type="bit" />
+          <Property Name="ComTypeTel" Type="bit" Nullable="false" />
+          <Property Name="SolvedOnCreate" Type="bit" Nullable="false" />
+          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PROB_ID" Type="int" Nullable="false" />
+          <Property Name="ProblemDescription" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="SOL_ID" Type="int" />
+          <Property Name="SolutionDescription" Type="varchar" MaxLength="2000" />
           <Property Name="EMP_ID" Type="int" Nullable="false" />
           <Property Name="EmployeeName" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="EmployeeSurname" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="PROB_ID" Type="int" Nullable="false" />
-          <Property Name="ProblemDescription" Type="varchar" Nullable="false" MaxLength="2000" />
-          <Property Name="SOL_ID" Type="int" Nullable="false" />
-          <Property Name="SolutionDescription" Type="varchar" Nullable="false" MaxLength="2000" />
-          <Property Name="Priority" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="SolvedOnCreate" Type="bit" Nullable="false" />
           <Property Name="CLIENT_ID" Type="int" Nullable="false" />
           <Property Name="ClientName" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="ClientSurname" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="ClientUsername" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'CRM.dbo.vClients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -673,7 +673,6 @@
           <EntitySet Name="Problems" EntityType="CRMModel.Problem" />
           <EntitySet Name="Sales" EntityType="CRMModel.Sale" />
           <EntitySet Name="Solutions" EntityType="CRMModel.Solution" />
-          <EntitySet Name="vClientProblemsLogs" EntityType="CRMModel.vClientProblemsLog" />
           <EntitySet Name="vClients" EntityType="CRMModel.vClient" />
           <EntitySet Name="vEmployees" EntityType="CRMModel.vEmployee" />
           <AssociationSet Name="Branches_Clients_FK1" Association="CRMModel.Branches_Clients_FK1">
@@ -754,6 +753,7 @@
             <End Role="ComTemplate" EntitySet="ComTemplates" />
           </AssociationSet>
           <EntitySet Name="ConfigurationSettings" EntityType="CRMModel.ConfigurationSetting" />
+          <EntitySet Name="vClientProblemsLogs" EntityType="CRMModel.vClientProblemsLog" />
         </EntityContainer>
         <EntityType Name="Branch">
           <Key>
@@ -956,43 +956,6 @@
           <NavigationProperty Name="ClientProblemsLogs" Relationship="CRMModel.Solutions_ClientProblemsLog_FK1" FromRole="Solutions" ToRole="ClientProblemsLog" />
           <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Solutions_FK1" FromRole="Solutions" ToRole="Employees" />
           <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_Solutions_FK1" FromRole="Solutions" ToRole="Problems" />
-        </EntityType>
-        <EntityType Name="vClientProblemsLog">
-          <Key>
-            <PropertyRef Name="CPR_ID" />
-            <PropertyRef Name="Solved" />
-            <PropertyRef Name="CLIENT_ID" />
-            <PropertyRef Name="ClientName" />
-            <PropertyRef Name="EMP_ID" />
-            <PropertyRef Name="EmployeeName" />
-            <PropertyRef Name="PROB_ID" />
-            <PropertyRef Name="ProblemDescription" />
-            <PropertyRef Name="SOL_ID" />
-            <PropertyRef Name="SolutionDescription" />
-            <PropertyRef Name="Priority" />
-            <PropertyRef Name="SolvedOnCreate" />
-            <PropertyRef Name="EmployeeSurname" />
-            <PropertyRef Name="ClientSurname" />
-            <PropertyRef Name="ClientUsername" />
-          </Key>
-          <Property Name="CPR_ID" Type="Int32" Nullable="false" />
-          <Property Name="Solved" Type="Boolean" Nullable="false" />
-          <Property Name="DateCreated" Type="DateTime" />
-          <Property Name="DateSolved" Type="DateTime" />
-          <Property Name="ComTypeTel" Type="Boolean" />
-          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
-          <Property Name="ClientName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
-          <Property Name="EMP_ID" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
-          <Property Name="PROB_ID" Type="Int32" Nullable="false" />
-          <Property Name="ProblemDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="SOL_ID" Type="Int32" Nullable="false" />
-          <Property Name="SolutionDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-          <Property Name="Priority" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-          <Property Type="Boolean" Name="SolvedOnCreate" Nullable="false" />
-          <Property Type="String" Name="EmployeeSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ClientSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ClientUsername" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vClient">
           <Key>
@@ -1283,6 +1246,43 @@
           <Property Type="String" Name="Setting" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Value" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="vClientProblemsLog">
+          <Key>
+            <PropertyRef Name="CPR_ID" />
+            <PropertyRef Name="Solved" />
+            <PropertyRef Name="DateCreated" />
+            <PropertyRef Name="ComTypeTel" />
+            <PropertyRef Name="SolvedOnCreate" />
+            <PropertyRef Name="Priority" />
+            <PropertyRef Name="PROB_ID" />
+            <PropertyRef Name="ProblemDescription" />
+            <PropertyRef Name="EMP_ID" />
+            <PropertyRef Name="EmployeeName" />
+            <PropertyRef Name="EmployeeSurname" />
+            <PropertyRef Name="CLIENT_ID" />
+            <PropertyRef Name="ClientName" />
+            <PropertyRef Name="ClientSurname" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Type="Int32" Name="CPR_ID" Nullable="false" />
+          <Property Type="Boolean" Name="Solved" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateSolved" />
+          <Property Type="Boolean" Name="ComTypeTel" Nullable="false" />
+          <Property Type="Boolean" Name="SolvedOnCreate" Nullable="false" />
+          <Property Type="String" Name="Priority" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PROB_ID" Nullable="false" />
+          <Property Type="String" Name="ProblemDescription" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="SOL_ID" />
+          <Property Type="String" Name="SolutionDescription" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="EMP_ID" Nullable="false" />
+          <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmployeeSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CLIENT_ID" Nullable="false" />
+          <Property Type="String" Name="ClientName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ClientSurname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1415,26 +1415,6 @@
             <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
             <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="vClientProblemsLogs"><EntityTypeMapping TypeName="CRMModel.vClientProblemsLog"><MappingFragment StoreEntitySet="vClientProblemsLog">
-            <ScalarProperty Name="ClientUsername" ColumnName="ClientUsername" />
-                <ScalarProperty Name="ClientSurname" ColumnName="ClientSurname" />
-                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
-                <ScalarProperty Name="SolvedOnCreate" ColumnName="SolvedOnCreate" />
-                <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
-            <ScalarProperty Name="Solved" ColumnName="Solved" />
-            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-            <ScalarProperty Name="DateSolved" ColumnName="DateSolved" />
-            <ScalarProperty Name="ComTypeTel" ColumnName="ComTypeTel" />
-            <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
-            <ScalarProperty Name="ClientName" ColumnName="ClientName" />
-            <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
-            <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-            <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
-            <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
-            <ScalarProperty Name="SOL_ID" ColumnName="SOL_ID" />
-            <ScalarProperty Name="SolutionDescription" ColumnName="SolutionDescription" />
-            <ScalarProperty Name="Priority" ColumnName="Priority" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="vClients"><EntityTypeMapping TypeName="CRMModel.vClient"><MappingFragment StoreEntitySet="vClients">
             <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
             <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1480,6 +1460,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vClientProblemsLogs">
+            <EntityTypeMapping TypeName="CRMModel.vClientProblemsLog">
+              <MappingFragment StoreEntitySet="vClientProblemsLog">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ClientSurname" ColumnName="ClientSurname" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+                <ScalarProperty Name="SolutionDescription" ColumnName="SolutionDescription" />
+                <ScalarProperty Name="SOL_ID" ColumnName="SOL_ID" />
+                <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+                <ScalarProperty Name="PROB_ID" ColumnName="PROB_ID" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="SolvedOnCreate" ColumnName="SolvedOnCreate" />
+                <ScalarProperty Name="ComTypeTel" ColumnName="ComTypeTel" />
+                <ScalarProperty Name="DateSolved" ColumnName="DateSolved" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Solved" ColumnName="Solved" />
+                <ScalarProperty Name="CPR_ID" ColumnName="CPR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1500,7 +1504,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="CRM" ZoomLevel="80">
+      <Diagram Name="CRM" ZoomLevel="85">
         <EntityTypeShape EntityType="CRMModel.Branch" Width="1.5" PointX="11" PointY="3.125" Height="5.0571093749999987" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.ClientProblemsLog" Width="1.5" PointX="5.25" PointY="12.375" Height="4.0956022135416639" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Client" Width="1.5" PointX="3.75" PointY="0.75" Height="3.7109993489583335" IsExpanded="true" />
@@ -1514,7 +1518,6 @@
         <EntityTypeShape EntityType="CRMModel.Problem" Width="1.5" PointX="3" PointY="17.75" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Sale" Width="1.5" PointX="6" PointY="8.5" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.Solution" Width="1.5" PointX="8.25" PointY="13" Height="2.7494921875000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMModel.vClientProblemsLog" Width="1.5" PointX="10.75" PointY="9.875" Height="3.7109993489583388" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.vClient" Width="1.5" PointX="12.75" PointY="9.875" Height="3.5186979166666674" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMModel.vEmployee" Width="1.5" PointX="10.75" PointY="14.875" Height="3.1340950520833388" IsExpanded="true" />
         <AssociationConnector Association="CRMModel.Branches_Clients_FK1" ManuallyRouted="false">
@@ -1649,6 +1652,7 @@
           <ConnectorPoint PointX="1.5" PointY="2.875" />
         </AssociationConnector>
         <EntityTypeShape EntityType="CRMModel.ConfigurationSetting" Width="1.5" PointX="0.75" PointY="5.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="CRMModel.vClientProblemsLog" Width="1.5" PointX="10.75" PointY="9.375" Height="4.4802050781250031" />
       </Diagram>
     </Diagrams>
   </Designer>

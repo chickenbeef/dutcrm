@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 2012/10/01 02:16:55 PM
+// Generation date: 2012/10/01 09:56:42 PM
 namespace CRMBusiness.CRM
 {
     
@@ -280,23 +280,6 @@ namespace CRMBusiness.CRM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<Solution> _Solutions;
         /// <summary>
-        /// There are no comments for vClientProblemsLogs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<vClientProblemsLog> vClientProblemsLogs
-        {
-            get
-            {
-                if ((this._vClientProblemsLogs == null))
-                {
-                    this._vClientProblemsLogs = base.CreateQuery<vClientProblemsLog>("vClientProblemsLogs");
-                }
-                return this._vClientProblemsLogs;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<vClientProblemsLog> _vClientProblemsLogs;
-        /// <summary>
         /// There are no comments for vClients in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -364,6 +347,23 @@ namespace CRMBusiness.CRM
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<ConfigurationSetting> _ConfigurationSettings;
+        /// <summary>
+        /// There are no comments for vClientProblemsLogs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<vClientProblemsLog> vClientProblemsLogs
+        {
+            get
+            {
+                if ((this._vClientProblemsLogs == null))
+                {
+                    this._vClientProblemsLogs = base.CreateQuery<vClientProblemsLog>("vClientProblemsLogs");
+                }
+                return this._vClientProblemsLogs;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<vClientProblemsLog> _vClientProblemsLogs;
         /// <summary>
         /// There are no comments for Branches in the schema.
         /// </summary>
@@ -469,14 +469,6 @@ namespace CRMBusiness.CRM
             base.AddObject("Solutions", solution);
         }
         /// <summary>
-        /// There are no comments for vClientProblemsLogs in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddTovClientProblemsLogs(vClientProblemsLog vClientProblemsLog)
-        {
-            base.AddObject("vClientProblemsLogs", vClientProblemsLog);
-        }
-        /// <summary>
         /// There are no comments for vClients in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -507,6 +499,14 @@ namespace CRMBusiness.CRM
         public void AddToConfigurationSettings(ConfigurationSetting configurationSetting)
         {
             base.AddObject("ConfigurationSettings", configurationSetting);
+        }
+        /// <summary>
+        /// There are no comments for vClientProblemsLogs in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddTovClientProblemsLogs(vClientProblemsLog vClientProblemsLog)
+        {
+            base.AddObject("vClientProblemsLogs", vClientProblemsLog);
         }
     }
     /// <summary>
@@ -3915,476 +3915,6 @@ namespace CRMBusiness.CRM
         }
     }
     /// <summary>
-    /// There are no comments for CRMModel.vClientProblemsLog in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// CPR_ID
-    /// Solved
-    /// CLIENT_ID
-    /// ClientName
-    /// EMP_ID
-    /// EmployeeName
-    /// PROB_ID
-    /// ProblemDescription
-    /// SOL_ID
-    /// SolutionDescription
-    /// Priority
-    /// SolvedOnCreate
-    /// EmployeeSurname
-    /// ClientSurname
-    /// ClientUsername
-    /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("vClientProblemsLogs")]
-    [global::System.Data.Services.Common.DataServiceKeyAttribute("CPR_ID", "Solved", "CLIENT_ID", "ClientName", "EMP_ID", "EmployeeName", "PROB_ID", "ProblemDescription", "SOL_ID", "SolutionDescription", "Priority", "SolvedOnCreate", "EmployeeSurname", "ClientSurname", "ClientUsername")]
-    public partial class vClientProblemsLog : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new vClientProblemsLog object.
-        /// </summary>
-        /// <param name="cPR_ID">Initial value of CPR_ID.</param>
-        /// <param name="solved">Initial value of Solved.</param>
-        /// <param name="cLIENT_ID">Initial value of CLIENT_ID.</param>
-        /// <param name="clientName">Initial value of ClientName.</param>
-        /// <param name="eMP_ID">Initial value of EMP_ID.</param>
-        /// <param name="employeeName">Initial value of EmployeeName.</param>
-        /// <param name="pROB_ID">Initial value of PROB_ID.</param>
-        /// <param name="problemDescription">Initial value of ProblemDescription.</param>
-        /// <param name="sOL_ID">Initial value of SOL_ID.</param>
-        /// <param name="solutionDescription">Initial value of SolutionDescription.</param>
-        /// <param name="priority">Initial value of Priority.</param>
-        /// <param name="solvedOnCreate">Initial value of SolvedOnCreate.</param>
-        /// <param name="employeeSurname">Initial value of EmployeeSurname.</param>
-        /// <param name="clientSurname">Initial value of ClientSurname.</param>
-        /// <param name="clientUsername">Initial value of ClientUsername.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static vClientProblemsLog CreatevClientProblemsLog(int cPR_ID, bool solved, int cLIENT_ID, string clientName, int eMP_ID, string employeeName, int pROB_ID, string problemDescription, int sOL_ID, string solutionDescription, string priority, bool solvedOnCreate, string employeeSurname, string clientSurname, string clientUsername)
-        {
-            vClientProblemsLog vClientProblemsLog = new vClientProblemsLog();
-            vClientProblemsLog.CPR_ID = cPR_ID;
-            vClientProblemsLog.Solved = solved;
-            vClientProblemsLog.CLIENT_ID = cLIENT_ID;
-            vClientProblemsLog.ClientName = clientName;
-            vClientProblemsLog.EMP_ID = eMP_ID;
-            vClientProblemsLog.EmployeeName = employeeName;
-            vClientProblemsLog.PROB_ID = pROB_ID;
-            vClientProblemsLog.ProblemDescription = problemDescription;
-            vClientProblemsLog.SOL_ID = sOL_ID;
-            vClientProblemsLog.SolutionDescription = solutionDescription;
-            vClientProblemsLog.Priority = priority;
-            vClientProblemsLog.SolvedOnCreate = solvedOnCreate;
-            vClientProblemsLog.EmployeeSurname = employeeSurname;
-            vClientProblemsLog.ClientSurname = clientSurname;
-            vClientProblemsLog.ClientUsername = clientUsername;
-            return vClientProblemsLog;
-        }
-        /// <summary>
-        /// There are no comments for Property CPR_ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int CPR_ID
-        {
-            get
-            {
-                return this._CPR_ID;
-            }
-            set
-            {
-                this.OnCPR_IDChanging(value);
-                this._CPR_ID = value;
-                this.OnCPR_IDChanged();
-                this.OnPropertyChanged("CPR_ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _CPR_ID;
-        partial void OnCPR_IDChanging(int value);
-        partial void OnCPR_IDChanged();
-        /// <summary>
-        /// There are no comments for Property Solved in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool Solved
-        {
-            get
-            {
-                return this._Solved;
-            }
-            set
-            {
-                this.OnSolvedChanging(value);
-                this._Solved = value;
-                this.OnSolvedChanged();
-                this.OnPropertyChanged("Solved");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _Solved;
-        partial void OnSolvedChanging(bool value);
-        partial void OnSolvedChanged();
-        /// <summary>
-        /// There are no comments for Property DateCreated in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.DateTime> DateCreated
-        {
-            get
-            {
-                return this._DateCreated;
-            }
-            set
-            {
-                this.OnDateCreatedChanging(value);
-                this._DateCreated = value;
-                this.OnDateCreatedChanged();
-                this.OnPropertyChanged("DateCreated");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.DateTime> _DateCreated;
-        partial void OnDateCreatedChanging(global::System.Nullable<global::System.DateTime> value);
-        partial void OnDateCreatedChanged();
-        /// <summary>
-        /// There are no comments for Property DateSolved in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<global::System.DateTime> DateSolved
-        {
-            get
-            {
-                return this._DateSolved;
-            }
-            set
-            {
-                this.OnDateSolvedChanging(value);
-                this._DateSolved = value;
-                this.OnDateSolvedChanged();
-                this.OnPropertyChanged("DateSolved");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<global::System.DateTime> _DateSolved;
-        partial void OnDateSolvedChanging(global::System.Nullable<global::System.DateTime> value);
-        partial void OnDateSolvedChanged();
-        /// <summary>
-        /// There are no comments for Property ComTypeTel in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Nullable<bool> ComTypeTel
-        {
-            get
-            {
-                return this._ComTypeTel;
-            }
-            set
-            {
-                this.OnComTypeTelChanging(value);
-                this._ComTypeTel = value;
-                this.OnComTypeTelChanged();
-                this.OnPropertyChanged("ComTypeTel");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Nullable<bool> _ComTypeTel;
-        partial void OnComTypeTelChanging(global::System.Nullable<bool> value);
-        partial void OnComTypeTelChanged();
-        /// <summary>
-        /// There are no comments for Property CLIENT_ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int CLIENT_ID
-        {
-            get
-            {
-                return this._CLIENT_ID;
-            }
-            set
-            {
-                this.OnCLIENT_IDChanging(value);
-                this._CLIENT_ID = value;
-                this.OnCLIENT_IDChanged();
-                this.OnPropertyChanged("CLIENT_ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _CLIENT_ID;
-        partial void OnCLIENT_IDChanging(int value);
-        partial void OnCLIENT_IDChanged();
-        /// <summary>
-        /// There are no comments for Property ClientName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string ClientName
-        {
-            get
-            {
-                return this._ClientName;
-            }
-            set
-            {
-                this.OnClientNameChanging(value);
-                this._ClientName = value;
-                this.OnClientNameChanged();
-                this.OnPropertyChanged("ClientName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _ClientName;
-        partial void OnClientNameChanging(string value);
-        partial void OnClientNameChanged();
-        /// <summary>
-        /// There are no comments for Property EMP_ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int EMP_ID
-        {
-            get
-            {
-                return this._EMP_ID;
-            }
-            set
-            {
-                this.OnEMP_IDChanging(value);
-                this._EMP_ID = value;
-                this.OnEMP_IDChanged();
-                this.OnPropertyChanged("EMP_ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _EMP_ID;
-        partial void OnEMP_IDChanging(int value);
-        partial void OnEMP_IDChanged();
-        /// <summary>
-        /// There are no comments for Property EmployeeName in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string EmployeeName
-        {
-            get
-            {
-                return this._EmployeeName;
-            }
-            set
-            {
-                this.OnEmployeeNameChanging(value);
-                this._EmployeeName = value;
-                this.OnEmployeeNameChanged();
-                this.OnPropertyChanged("EmployeeName");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _EmployeeName;
-        partial void OnEmployeeNameChanging(string value);
-        partial void OnEmployeeNameChanged();
-        /// <summary>
-        /// There are no comments for Property PROB_ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int PROB_ID
-        {
-            get
-            {
-                return this._PROB_ID;
-            }
-            set
-            {
-                this.OnPROB_IDChanging(value);
-                this._PROB_ID = value;
-                this.OnPROB_IDChanged();
-                this.OnPropertyChanged("PROB_ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _PROB_ID;
-        partial void OnPROB_IDChanging(int value);
-        partial void OnPROB_IDChanged();
-        /// <summary>
-        /// There are no comments for Property ProblemDescription in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string ProblemDescription
-        {
-            get
-            {
-                return this._ProblemDescription;
-            }
-            set
-            {
-                this.OnProblemDescriptionChanging(value);
-                this._ProblemDescription = value;
-                this.OnProblemDescriptionChanged();
-                this.OnPropertyChanged("ProblemDescription");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _ProblemDescription;
-        partial void OnProblemDescriptionChanging(string value);
-        partial void OnProblemDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Property SOL_ID in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public int SOL_ID
-        {
-            get
-            {
-                return this._SOL_ID;
-            }
-            set
-            {
-                this.OnSOL_IDChanging(value);
-                this._SOL_ID = value;
-                this.OnSOL_IDChanged();
-                this.OnPropertyChanged("SOL_ID");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private int _SOL_ID;
-        partial void OnSOL_IDChanging(int value);
-        partial void OnSOL_IDChanged();
-        /// <summary>
-        /// There are no comments for Property SolutionDescription in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string SolutionDescription
-        {
-            get
-            {
-                return this._SolutionDescription;
-            }
-            set
-            {
-                this.OnSolutionDescriptionChanging(value);
-                this._SolutionDescription = value;
-                this.OnSolutionDescriptionChanged();
-                this.OnPropertyChanged("SolutionDescription");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _SolutionDescription;
-        partial void OnSolutionDescriptionChanging(string value);
-        partial void OnSolutionDescriptionChanged();
-        /// <summary>
-        /// There are no comments for Property Priority in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Priority
-        {
-            get
-            {
-                return this._Priority;
-            }
-            set
-            {
-                this.OnPriorityChanging(value);
-                this._Priority = value;
-                this.OnPriorityChanged();
-                this.OnPropertyChanged("Priority");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Priority;
-        partial void OnPriorityChanging(string value);
-        partial void OnPriorityChanged();
-        /// <summary>
-        /// There are no comments for Property SolvedOnCreate in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public bool SolvedOnCreate
-        {
-            get
-            {
-                return this._SolvedOnCreate;
-            }
-            set
-            {
-                this.OnSolvedOnCreateChanging(value);
-                this._SolvedOnCreate = value;
-                this.OnSolvedOnCreateChanged();
-                this.OnPropertyChanged("SolvedOnCreate");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private bool _SolvedOnCreate;
-        partial void OnSolvedOnCreateChanging(bool value);
-        partial void OnSolvedOnCreateChanged();
-        /// <summary>
-        /// There are no comments for Property EmployeeSurname in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string EmployeeSurname
-        {
-            get
-            {
-                return this._EmployeeSurname;
-            }
-            set
-            {
-                this.OnEmployeeSurnameChanging(value);
-                this._EmployeeSurname = value;
-                this.OnEmployeeSurnameChanged();
-                this.OnPropertyChanged("EmployeeSurname");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _EmployeeSurname;
-        partial void OnEmployeeSurnameChanging(string value);
-        partial void OnEmployeeSurnameChanged();
-        /// <summary>
-        /// There are no comments for Property ClientSurname in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string ClientSurname
-        {
-            get
-            {
-                return this._ClientSurname;
-            }
-            set
-            {
-                this.OnClientSurnameChanging(value);
-                this._ClientSurname = value;
-                this.OnClientSurnameChanged();
-                this.OnPropertyChanged("ClientSurname");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _ClientSurname;
-        partial void OnClientSurnameChanging(string value);
-        partial void OnClientSurnameChanged();
-        /// <summary>
-        /// There are no comments for Property ClientUsername in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string ClientUsername
-        {
-            get
-            {
-                return this._ClientUsername;
-            }
-            set
-            {
-                this.OnClientUsernameChanging(value);
-                this._ClientUsername = value;
-                this.OnClientUsernameChanged();
-                this.OnPropertyChanged("ClientUsername");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _ClientUsername;
-        partial void OnClientUsernameChanging(string value);
-        partial void OnClientUsernameChanged();
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
     /// There are no comments for CRMModel.vClient in the schema.
     /// </summary>
     /// <KeyProperties>
@@ -5194,6 +4724,476 @@ namespace CRMBusiness.CRM
         private string _Value;
         partial void OnValueChanging(string value);
         partial void OnValueChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for CRMModel.vClientProblemsLog in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// CPR_ID
+    /// Solved
+    /// DateCreated
+    /// ComTypeTel
+    /// SolvedOnCreate
+    /// Priority
+    /// PROB_ID
+    /// ProblemDescription
+    /// EMP_ID
+    /// EmployeeName
+    /// EmployeeSurname
+    /// CLIENT_ID
+    /// ClientName
+    /// ClientSurname
+    /// UserName
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("vClientProblemsLogs")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("CPR_ID", "Solved", "DateCreated", "ComTypeTel", "SolvedOnCreate", "Priority", "PROB_ID", "ProblemDescription", "EMP_ID", "EmployeeName", "EmployeeSurname", "CLIENT_ID", "ClientName", "ClientSurname", "UserName")]
+    public partial class vClientProblemsLog : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new vClientProblemsLog object.
+        /// </summary>
+        /// <param name="cPR_ID">Initial value of CPR_ID.</param>
+        /// <param name="solved">Initial value of Solved.</param>
+        /// <param name="dateCreated">Initial value of DateCreated.</param>
+        /// <param name="comTypeTel">Initial value of ComTypeTel.</param>
+        /// <param name="solvedOnCreate">Initial value of SolvedOnCreate.</param>
+        /// <param name="priority">Initial value of Priority.</param>
+        /// <param name="pROB_ID">Initial value of PROB_ID.</param>
+        /// <param name="problemDescription">Initial value of ProblemDescription.</param>
+        /// <param name="eMP_ID">Initial value of EMP_ID.</param>
+        /// <param name="employeeName">Initial value of EmployeeName.</param>
+        /// <param name="employeeSurname">Initial value of EmployeeSurname.</param>
+        /// <param name="cLIENT_ID">Initial value of CLIENT_ID.</param>
+        /// <param name="clientName">Initial value of ClientName.</param>
+        /// <param name="clientSurname">Initial value of ClientSurname.</param>
+        /// <param name="userName">Initial value of UserName.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static vClientProblemsLog CreatevClientProblemsLog(int cPR_ID, bool solved, global::System.DateTime dateCreated, bool comTypeTel, bool solvedOnCreate, string priority, int pROB_ID, string problemDescription, int eMP_ID, string employeeName, string employeeSurname, int cLIENT_ID, string clientName, string clientSurname, string userName)
+        {
+            vClientProblemsLog vClientProblemsLog = new vClientProblemsLog();
+            vClientProblemsLog.CPR_ID = cPR_ID;
+            vClientProblemsLog.Solved = solved;
+            vClientProblemsLog.DateCreated = dateCreated;
+            vClientProblemsLog.ComTypeTel = comTypeTel;
+            vClientProblemsLog.SolvedOnCreate = solvedOnCreate;
+            vClientProblemsLog.Priority = priority;
+            vClientProblemsLog.PROB_ID = pROB_ID;
+            vClientProblemsLog.ProblemDescription = problemDescription;
+            vClientProblemsLog.EMP_ID = eMP_ID;
+            vClientProblemsLog.EmployeeName = employeeName;
+            vClientProblemsLog.EmployeeSurname = employeeSurname;
+            vClientProblemsLog.CLIENT_ID = cLIENT_ID;
+            vClientProblemsLog.ClientName = clientName;
+            vClientProblemsLog.ClientSurname = clientSurname;
+            vClientProblemsLog.UserName = userName;
+            return vClientProblemsLog;
+        }
+        /// <summary>
+        /// There are no comments for Property CPR_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int CPR_ID
+        {
+            get
+            {
+                return this._CPR_ID;
+            }
+            set
+            {
+                this.OnCPR_IDChanging(value);
+                this._CPR_ID = value;
+                this.OnCPR_IDChanged();
+                this.OnPropertyChanged("CPR_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _CPR_ID;
+        partial void OnCPR_IDChanging(int value);
+        partial void OnCPR_IDChanged();
+        /// <summary>
+        /// There are no comments for Property Solved in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool Solved
+        {
+            get
+            {
+                return this._Solved;
+            }
+            set
+            {
+                this.OnSolvedChanging(value);
+                this._Solved = value;
+                this.OnSolvedChanged();
+                this.OnPropertyChanged("Solved");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _Solved;
+        partial void OnSolvedChanging(bool value);
+        partial void OnSolvedChanged();
+        /// <summary>
+        /// There are no comments for Property DateCreated in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.DateTime DateCreated
+        {
+            get
+            {
+                return this._DateCreated;
+            }
+            set
+            {
+                this.OnDateCreatedChanging(value);
+                this._DateCreated = value;
+                this.OnDateCreatedChanged();
+                this.OnPropertyChanged("DateCreated");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.DateTime _DateCreated;
+        partial void OnDateCreatedChanging(global::System.DateTime value);
+        partial void OnDateCreatedChanged();
+        /// <summary>
+        /// There are no comments for Property DateSolved in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> DateSolved
+        {
+            get
+            {
+                return this._DateSolved;
+            }
+            set
+            {
+                this.OnDateSolvedChanging(value);
+                this._DateSolved = value;
+                this.OnDateSolvedChanged();
+                this.OnPropertyChanged("DateSolved");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _DateSolved;
+        partial void OnDateSolvedChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnDateSolvedChanged();
+        /// <summary>
+        /// There are no comments for Property ComTypeTel in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool ComTypeTel
+        {
+            get
+            {
+                return this._ComTypeTel;
+            }
+            set
+            {
+                this.OnComTypeTelChanging(value);
+                this._ComTypeTel = value;
+                this.OnComTypeTelChanged();
+                this.OnPropertyChanged("ComTypeTel");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _ComTypeTel;
+        partial void OnComTypeTelChanging(bool value);
+        partial void OnComTypeTelChanged();
+        /// <summary>
+        /// There are no comments for Property SolvedOnCreate in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool SolvedOnCreate
+        {
+            get
+            {
+                return this._SolvedOnCreate;
+            }
+            set
+            {
+                this.OnSolvedOnCreateChanging(value);
+                this._SolvedOnCreate = value;
+                this.OnSolvedOnCreateChanged();
+                this.OnPropertyChanged("SolvedOnCreate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _SolvedOnCreate;
+        partial void OnSolvedOnCreateChanging(bool value);
+        partial void OnSolvedOnCreateChanged();
+        /// <summary>
+        /// There are no comments for Property Priority in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string Priority
+        {
+            get
+            {
+                return this._Priority;
+            }
+            set
+            {
+                this.OnPriorityChanging(value);
+                this._Priority = value;
+                this.OnPriorityChanged();
+                this.OnPropertyChanged("Priority");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _Priority;
+        partial void OnPriorityChanging(string value);
+        partial void OnPriorityChanged();
+        /// <summary>
+        /// There are no comments for Property PROB_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int PROB_ID
+        {
+            get
+            {
+                return this._PROB_ID;
+            }
+            set
+            {
+                this.OnPROB_IDChanging(value);
+                this._PROB_ID = value;
+                this.OnPROB_IDChanged();
+                this.OnPropertyChanged("PROB_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _PROB_ID;
+        partial void OnPROB_IDChanging(int value);
+        partial void OnPROB_IDChanged();
+        /// <summary>
+        /// There are no comments for Property ProblemDescription in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ProblemDescription
+        {
+            get
+            {
+                return this._ProblemDescription;
+            }
+            set
+            {
+                this.OnProblemDescriptionChanging(value);
+                this._ProblemDescription = value;
+                this.OnProblemDescriptionChanged();
+                this.OnPropertyChanged("ProblemDescription");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ProblemDescription;
+        partial void OnProblemDescriptionChanging(string value);
+        partial void OnProblemDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property SOL_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<int> SOL_ID
+        {
+            get
+            {
+                return this._SOL_ID;
+            }
+            set
+            {
+                this.OnSOL_IDChanging(value);
+                this._SOL_ID = value;
+                this.OnSOL_IDChanged();
+                this.OnPropertyChanged("SOL_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<int> _SOL_ID;
+        partial void OnSOL_IDChanging(global::System.Nullable<int> value);
+        partial void OnSOL_IDChanged();
+        /// <summary>
+        /// There are no comments for Property SolutionDescription in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string SolutionDescription
+        {
+            get
+            {
+                return this._SolutionDescription;
+            }
+            set
+            {
+                this.OnSolutionDescriptionChanging(value);
+                this._SolutionDescription = value;
+                this.OnSolutionDescriptionChanged();
+                this.OnPropertyChanged("SolutionDescription");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _SolutionDescription;
+        partial void OnSolutionDescriptionChanging(string value);
+        partial void OnSolutionDescriptionChanged();
+        /// <summary>
+        /// There are no comments for Property EMP_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int EMP_ID
+        {
+            get
+            {
+                return this._EMP_ID;
+            }
+            set
+            {
+                this.OnEMP_IDChanging(value);
+                this._EMP_ID = value;
+                this.OnEMP_IDChanged();
+                this.OnPropertyChanged("EMP_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _EMP_ID;
+        partial void OnEMP_IDChanging(int value);
+        partial void OnEMP_IDChanged();
+        /// <summary>
+        /// There are no comments for Property EmployeeName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string EmployeeName
+        {
+            get
+            {
+                return this._EmployeeName;
+            }
+            set
+            {
+                this.OnEmployeeNameChanging(value);
+                this._EmployeeName = value;
+                this.OnEmployeeNameChanged();
+                this.OnPropertyChanged("EmployeeName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _EmployeeName;
+        partial void OnEmployeeNameChanging(string value);
+        partial void OnEmployeeNameChanged();
+        /// <summary>
+        /// There are no comments for Property EmployeeSurname in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string EmployeeSurname
+        {
+            get
+            {
+                return this._EmployeeSurname;
+            }
+            set
+            {
+                this.OnEmployeeSurnameChanging(value);
+                this._EmployeeSurname = value;
+                this.OnEmployeeSurnameChanged();
+                this.OnPropertyChanged("EmployeeSurname");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _EmployeeSurname;
+        partial void OnEmployeeSurnameChanging(string value);
+        partial void OnEmployeeSurnameChanged();
+        /// <summary>
+        /// There are no comments for Property CLIENT_ID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int CLIENT_ID
+        {
+            get
+            {
+                return this._CLIENT_ID;
+            }
+            set
+            {
+                this.OnCLIENT_IDChanging(value);
+                this._CLIENT_ID = value;
+                this.OnCLIENT_IDChanged();
+                this.OnPropertyChanged("CLIENT_ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _CLIENT_ID;
+        partial void OnCLIENT_IDChanging(int value);
+        partial void OnCLIENT_IDChanged();
+        /// <summary>
+        /// There are no comments for Property ClientName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ClientName
+        {
+            get
+            {
+                return this._ClientName;
+            }
+            set
+            {
+                this.OnClientNameChanging(value);
+                this._ClientName = value;
+                this.OnClientNameChanged();
+                this.OnPropertyChanged("ClientName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ClientName;
+        partial void OnClientNameChanging(string value);
+        partial void OnClientNameChanged();
+        /// <summary>
+        /// There are no comments for Property ClientSurname in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ClientSurname
+        {
+            get
+            {
+                return this._ClientSurname;
+            }
+            set
+            {
+                this.OnClientSurnameChanging(value);
+                this._ClientSurname = value;
+                this.OnClientSurnameChanged();
+                this.OnPropertyChanged("ClientSurname");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ClientSurname;
+        partial void OnClientSurnameChanging(string value);
+        partial void OnClientSurnameChanged();
+        /// <summary>
+        /// There are no comments for Property UserName in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string UserName
+        {
+            get
+            {
+                return this._UserName;
+            }
+            set
+            {
+                this.OnUserNameChanging(value);
+                this._UserName = value;
+                this.OnUserNameChanged();
+                this.OnPropertyChanged("UserName");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _UserName;
+        partial void OnUserNameChanging(string value);
+        partial void OnUserNameChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

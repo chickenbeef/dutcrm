@@ -152,6 +152,7 @@ namespace CRMUI.SupportAgent
                         _haveSolution = false;
                         hEProbId.Value = probs[0].PROB_ID;
                         lblEProbDesc.Text = probs[0].Description;
+                        hEProbDesc.Text = probs[0].Description;
                         fsEProbDesc.Visible = true;
                         CheckTicketButtons(_haveSolution);
                         pnlESolutionDetails.UpdateContent();
@@ -237,6 +238,10 @@ namespace CRMUI.SupportAgent
                         //show controls
                         fsEProbDesc.Visible = true;
                         fsESolDesc.Visible = true;
+
+                        //set details for sending of email
+                        hEProbDesc.Value = prob.Description;
+                        hESolDesc.Value = solRow.Description;
                     }
                 }
                 else
@@ -252,6 +257,7 @@ namespace CRMUI.SupportAgent
                             CheckTicketButtons(_haveSolution);
                             hEProbId.Value = probRow.PROB_ID;
                             lblEProbDesc.Text = probRow.Description;
+                            hEProbDesc.Text = probRow.Description;
                             //show controls
                             fsEProbDesc.Visible = true;
                         }
@@ -304,10 +310,11 @@ namespace CRMUI.SupportAgent
 
                         //create the ticket
                         var cpl = new ClientProblemLogBl();
-                        cpl.AddClientProblem(true, date, date, false, cid, emp.EMP_ID, probid, solid, priority);
 
                         //get ticket number
-                        var cprid = cpl.GetLastCprId();
+                        var cprid = cpl.GetLastCprId() + 1;
+
+                        cpl.AddClientProblem(true, date, date, false, cid, emp.EMP_ID, probid, solid, priority);
 
                         //update the email problem to be attended
                         var ep = new EmailProblemBl();
@@ -381,11 +388,13 @@ namespace CRMUI.SupportAgent
                         _clientid = cid;
 
                         var cpl = new ClientProblemLogBl();
+                        //get ticket number
+                        var cprid = cpl.GetLastCprId() + 1;
+
                         cpl.AddClientProblem(false, date, null, false, cid, emp.EMP_ID, probid, null, priority);
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created Without a solution").Show();
 
-                        //get ticket number
-                        var cprid = cpl.GetLastCprId();
+                        
 
                         //update the email problem to be attended
                         var ep = new EmailProblemBl();
@@ -500,6 +509,7 @@ namespace CRMUI.SupportAgent
                         _haveSolution = false;
                         hCProbId.Value = probs[0].PROB_ID;
                         lblCProbDesc.Text = probs[0].Description;
+                        hEProbDesc.Text = probs[0].Description;
                         fsCProbDesc.Visible = true;
                         CheckTicketButtonsCall(_haveSolution);
                         pnlCSolutionDetails.UpdateContent();
@@ -584,6 +594,10 @@ namespace CRMUI.SupportAgent
                         //show controls
                         fsCProbDesc.Visible = true;
                         fsCSolDesc.Visible = true;
+
+                        //set details for sending of email
+                        hEProbDesc.Value = prob.Description;
+                        hESolDesc.Value = solRow.Description;
                     }
                 }
                 else
@@ -599,6 +613,7 @@ namespace CRMUI.SupportAgent
                             CheckTicketButtonsCall(_haveSolution);
                             hCProbId.Value = probRow.PROB_ID;
                             lblCProbDesc.Text = probRow.Description;
+                            hEProbDesc.Text = probRow.Description;
                             //show controls
                             fsCProbDesc.Visible = true;
                         }
@@ -715,7 +730,6 @@ namespace CRMUI.SupportAgent
                         var cpl = new ClientProblemLogBl();
                         cpl.AddClientProblem(false, date, null, true, cid, emp.EMP_ID, probid, null, priority);
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created Without a solution").Show();
-
                         //get ticket number
                         var cprid = cpl.GetLastCprId();
 
@@ -759,6 +773,7 @@ namespace CRMUI.SupportAgent
                 prob.AddProblem(taEProbDesc.Text, DateTime.Now, empid);
                 hEProbId.Value = lastProbId + 1;
                 lblEProbDesc.Text = taEProbDesc.Text;
+                hEProbDesc.Text = taEProbDesc.Text;
                 fsEProbDesc.Visible = true;
                 pnlESolutionDetails.UpdateContent();
                 CheckTicketButtons(_haveSolution);
@@ -789,6 +804,7 @@ namespace CRMUI.SupportAgent
                 prob.AddProblem(taCProbDesc.Text, DateTime.Now, empid);
                 hCProbId.Value = lastProbId + 1;
                 lblCProbDesc.Text = taCProbDesc.Text;
+                hEProbDesc.Text = taCProbDesc.Text;
                 fsCProbDesc.Visible = true;
                 pnlCSolutionDetails.UpdateContent();
                 CheckTicketButtonsCall(_haveSolution);
@@ -822,7 +838,14 @@ namespace CRMUI.SupportAgent
 
         protected void CmbTemplateSelectedItem(object sender, DirectEventArgs e)
         {
-            heEmailBody.Value += cmbTemplate.SelectedItem.Value;
+            var client = new ClientBl().GetClientByClientId(Convert.ToInt32(_clientid));
+            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
+            heEmailBody.Value += cmbTemplate.SelectedItem.Value + "<br/><br/>";
+            heEmailBody.Value += "<b>Problem Description:</b><br/><br/>" + hEProbDesc.Value + "<br/><br/>";
+            if (_haveSolution)
+            {
+                heEmailBody.Value += "<b>New Solution Description:</b><br/><br/>" + hESolDesc.Value;
+            }
         }
 
         protected void WndSendEmailShow(object sender, DirectEventArgs e)
@@ -831,6 +854,14 @@ namespace CRMUI.SupportAgent
             var cats = new CategoriesBl().GetAllCategories();
             streCategories.DataSource = cats;
             streCategories.DataBind();
+
+            var client = new ClientBl().GetClientByClientId(Convert.ToInt32(_clientid));
+            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
+            heEmailBody.Value += "<b>Problem Description:</b><br/><br/>" + hEProbDesc.Value + "<br/><br/>";
+            if (_haveSolution)
+            {
+                heEmailBody.Value += "<b>New Solution Description:</b><br/><br/>" + hESolDesc.Value;
+            }
         }
 
         protected void WndSendEmailClose(object sender, DirectEventArgs e)
@@ -844,7 +875,7 @@ namespace CRMUI.SupportAgent
         {
             try
             {
-                if (heEmailBody.Value != null)
+                if (heEmailBody.Value != null && txtSubject.Text != "")
                 {
                     var objE = new EmailBl();
                     objE.Subject = txtSubject.Text;

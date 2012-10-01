@@ -203,43 +203,6 @@
         <NavigationProperty Name="Employee" Relationship="CRMModel.Employees_Solutions_FK1" FromRole="Solutions" ToRole="Employees" />
         <NavigationProperty Name="Problem" Relationship="CRMModel.Problems_Solutions_FK1" FromRole="Solutions" ToRole="Problems" />
       </EntityType>
-      <EntityType Name="vClientProblemsLog">
-        <Key>
-          <PropertyRef Name="CPR_ID" />
-          <PropertyRef Name="Solved" />
-          <PropertyRef Name="CLIENT_ID" />
-          <PropertyRef Name="ClientName" />
-          <PropertyRef Name="EMP_ID" />
-          <PropertyRef Name="EmployeeName" />
-          <PropertyRef Name="PROB_ID" />
-          <PropertyRef Name="ProblemDescription" />
-          <PropertyRef Name="SOL_ID" />
-          <PropertyRef Name="SolutionDescription" />
-          <PropertyRef Name="Priority" />
-          <PropertyRef Name="SolvedOnCreate" />
-          <PropertyRef Name="EmployeeSurname" />
-          <PropertyRef Name="ClientSurname" />
-          <PropertyRef Name="ClientUsername" />
-        </Key>
-        <Property Name="CPR_ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="Solved" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="DateCreated" Type="Edm.DateTime" Nullable="true" />
-        <Property Name="DateSolved" Type="Edm.DateTime" Nullable="true" />
-        <Property Name="ComTypeTel" Type="Edm.Boolean" Nullable="true" />
-        <Property Name="CLIENT_ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ClientName" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
-        <Property Name="EMP_ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="EmployeeName" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
-        <Property Name="PROB_ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="ProblemDescription" Type="Edm.String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-        <Property Name="SOL_ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="SolutionDescription" Type="Edm.String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
-        <Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
-        <Property Name="SolvedOnCreate" Type="Edm.Boolean" Nullable="false" />
-        <Property Name="EmployeeSurname" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
-        <Property Name="ClientSurname" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
-        <Property Name="ClientUsername" Type="Edm.String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
-      </EntityType>
       <EntityType Name="vClient">
         <Key>
           <PropertyRef Name="CLIENT_ID" />
@@ -300,6 +263,43 @@
         <Property Name="CONFIG_ID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
         <Property Name="Setting" Type="Edm.String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
         <Property Name="Value" Type="Edm.String" Nullable="true" MaxLength="200" Unicode="false" FixedLength="false" />
+      </EntityType>
+      <EntityType Name="vClientProblemsLog">
+        <Key>
+          <PropertyRef Name="CPR_ID" />
+          <PropertyRef Name="Solved" />
+          <PropertyRef Name="DateCreated" />
+          <PropertyRef Name="ComTypeTel" />
+          <PropertyRef Name="SolvedOnCreate" />
+          <PropertyRef Name="Priority" />
+          <PropertyRef Name="PROB_ID" />
+          <PropertyRef Name="ProblemDescription" />
+          <PropertyRef Name="EMP_ID" />
+          <PropertyRef Name="EmployeeName" />
+          <PropertyRef Name="EmployeeSurname" />
+          <PropertyRef Name="CLIENT_ID" />
+          <PropertyRef Name="ClientName" />
+          <PropertyRef Name="ClientSurname" />
+          <PropertyRef Name="UserName" />
+        </Key>
+        <Property Name="CPR_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Solved" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="DateCreated" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="DateSolved" Type="Edm.DateTime" Nullable="true" />
+        <Property Name="ComTypeTel" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="SolvedOnCreate" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        <Property Name="PROB_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ProblemDescription" Type="Edm.String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+        <Property Name="SOL_ID" Type="Edm.Int32" Nullable="true" />
+        <Property Name="SolutionDescription" Type="Edm.String" Nullable="true" MaxLength="2000" Unicode="false" FixedLength="false" />
+        <Property Name="EMP_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="EmployeeName" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="EmployeeSurname" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="CLIENT_ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="ClientName" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="ClientSurname" Type="Edm.String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
       </EntityType>
       <Association Name="Branches_Clients_FK1">
         <End Role="Branches" Type="CRMModel.Branch" Multiplicity="1" />
@@ -545,11 +545,11 @@
         <EntitySet Name="Problems" EntityType="CRMModel.Problem" />
         <EntitySet Name="Sales" EntityType="CRMModel.Sale" />
         <EntitySet Name="Solutions" EntityType="CRMModel.Solution" />
-        <EntitySet Name="vClientProblemsLogs" EntityType="CRMModel.vClientProblemsLog" />
         <EntitySet Name="vClients" EntityType="CRMModel.vClient" />
         <EntitySet Name="vEmployees" EntityType="CRMModel.vEmployee" />
         <EntitySet Name="Categories" EntityType="CRMModel.Category" />
         <EntitySet Name="ConfigurationSettings" EntityType="CRMModel.ConfigurationSetting" />
+        <EntitySet Name="vClientProblemsLogs" EntityType="CRMModel.vClientProblemsLog" />
         <AssociationSet Name="Branches_Clients_FK1" Association="CRMModel.Branches_Clients_FK1">
           <End Role="Branches" EntitySet="Branches" />
           <End Role="Branches1" EntitySet="Branches" />

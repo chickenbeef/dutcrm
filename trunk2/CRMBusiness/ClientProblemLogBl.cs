@@ -86,7 +86,7 @@ namespace CRMBusiness
         public List<vClientProblemsLog> GetClientProblemByUsername(string username)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClientProblemsLogs.Where(x => x.ClientUsername == username).ToList();
+            return _crm.vClientProblemsLogs.Where(x => x.UserName == username).ToList();
         }
 
         public List<vClientProblemsLog> GetClientProblemByDescription(string description)
