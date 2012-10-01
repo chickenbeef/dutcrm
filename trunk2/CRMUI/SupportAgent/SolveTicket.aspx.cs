@@ -156,16 +156,19 @@ namespace CRMUI.SupportAgent
                                        To = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value)).Email
                                    };
                     objE.SendEmail();
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Notify("Email Sent", "Your Email has been sent").Show();
                     wndSendEmail.Close();
                 }
                 else
                 {
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Alert("All fields not filled", "Please enter values for all fields").Show();
                 }
             }
             catch (Exception ex)
             {
+                ExtNet.Mask.Hide();
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }

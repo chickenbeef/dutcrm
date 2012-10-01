@@ -307,7 +307,7 @@ namespace CRMUI.SupportAgent
                         cpl.AddClientProblem(true, date, date, false, cid, emp.EMP_ID, probid, solid, priority);
 
                         //get ticket number
-                        var cprid = cpl.GetLastCprId() + 1;
+                        var cprid = cpl.GetLastCprId();
 
                         //update the email problem to be attended
                         var ep = new EmailProblemBl();
@@ -385,7 +385,7 @@ namespace CRMUI.SupportAgent
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created Without a solution").Show();
 
                         //get ticket number
-                        var cprid = cpl.GetLastCprId() + 1;
+                        var cprid = cpl.GetLastCprId();
 
                         //update the email problem to be attended
                         var ep = new EmailProblemBl();
@@ -655,7 +655,7 @@ namespace CRMUI.SupportAgent
                         cpl.AddClientProblem(true, date, date, true, cid, emp.EMP_ID, probid, solid, priority);
 
                         //get ticket number
-                        var cprid = cpl.GetLastCprId() + 1;
+                        var cprid = cpl.GetLastCprId();
 
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created with a solution").Show();
 
@@ -717,7 +717,7 @@ namespace CRMUI.SupportAgent
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created Without a solution").Show();
 
                         //get ticket number
-                        var cprid = cpl.GetLastCprId() + 1;
+                        var cprid = cpl.GetLastCprId();
 
                         var message = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
                                        (cprid + "<br/><br/>");
@@ -852,16 +852,19 @@ namespace CRMUI.SupportAgent
                     objE.IsHtml = true;
                     objE.To = new ClientBl().GetClientByClientId(_clientid).Email;
                     objE.SendEmail();
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Notify("Email Sent", "Your Email has been sent").Show();
                     wndSendEmail.Close();
                 }
                 else
                 {
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Alert("All fields not filled", "Please enter values for all fields").Show();
                 }
             }
             catch (Exception ex)
             {
+                ExtNet.Mask.Hide();
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }

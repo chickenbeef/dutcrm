@@ -33,7 +33,7 @@
                 Height="300">
                 <Items>
                     <ext:FileUploadField ID="uploadImage" runat="server" ButtonText="" Icon="Add" AnchorHorizontal="50%"/>
-                    <ext:Button ID="btnUploadImgs" runat="server" Text="Upload Images" AnchorHorizontal="20%" Margins="10 0 10 0" OnDirectClick="btnUploadImgs_OnDirectClick"/>
+                    <ext:Button ID="btnUploadImgs" runat="server" Text="Upload Images" AnchorHorizontal="20%" Margins="10 0 10 0" OnClientClick="Ext.net.Mask.show({msg: 'Uploading Image...'});" OnDirectClick="btnUploadImgs_OnDirectClick"/>
                     <ext:Container runat="server" AnchorHorizontal="100%" Border="false">
                         <Items>
                             <ext:Label ID="lblFiles" runat="server"/>

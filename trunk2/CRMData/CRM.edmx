@@ -905,7 +905,7 @@
           <Property Name="ImageFile" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="EP_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EmailProblem" Relationship="CRMModel.EmailProblems_Images_FK1" FromRole="Images" ToRole="EmailProblems" />
-          <Property Type="Int32" Name="CPR_ID" />
+          <Property Type="Int32" Name="CPR_ID" Nullable="true" />
           <NavigationProperty Name="ClientProblemsLog" Relationship="CRMModel.FK_ClientProblemsLog_Images" FromRole="Image" ToRole="ClientProblemsLog" />
         </EntityType>
         <EntityType Name="Note">

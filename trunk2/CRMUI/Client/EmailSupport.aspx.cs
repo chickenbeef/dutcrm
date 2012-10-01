@@ -127,6 +127,8 @@ namespace CRMUI.Client
             {
                 ExtNet.Msg.Notify("No Image selected", "Please select image to upload").Show();
             }
+            System.Threading.Thread.Sleep(2000);
+            ExtNet.Mask.Hide();
         } //end btnUploadImgs
 
 

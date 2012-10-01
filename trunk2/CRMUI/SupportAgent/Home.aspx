@@ -609,7 +609,7 @@
                     </ext:HtmlEditor>
                 </Items>
                 <Buttons>
-                    <ext:Button runat="server" ID="btnSendEmail" Text="Send" Icon="EmailStart" Margins="0 12 0 0">
+                    <ext:Button runat="server" ID="btnSendEmail" OnClientClick="Ext.net.Mask.show({msg: 'Sending...'});" Text="Send" Icon="EmailStart" Margins="0 12 0 0">
                         <ToolTips>
                             <ext:ToolTip runat="server" Html="Click to send the email to the client"/>
                         </ToolTips>

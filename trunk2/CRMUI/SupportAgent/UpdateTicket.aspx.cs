@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using CRMBusiness;
 using CRMBusiness.CRM;
 using Ext.Net;
@@ -218,10 +213,10 @@ namespace CRMUI.SupportAgent
                         var cprid = Convert.ToInt32(hCprId.Value);
                         var emp = new EmployeeBl().GetEmployee(Membership.GetUser().UserName);
                         var objCpl = new ClientProblemLogBl();
-                        //objCpl.UpdateClientProblem(cprid, false, null, emp.EMP_ID, null);
+                        objCpl.UpdateClientProblem(cprid, false, null, emp.EMP_ID, null);
                         ExtNet.Msg.Notify("Ticket Updated", "Ticket has been updated as unsolved and can be viewed under 'Solve Ticket'").Show();
                         var note = new NoteBl();
-                        //note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
+                        note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
 
                         wndSendEmail.Show();
                     }
@@ -233,10 +228,10 @@ namespace CRMUI.SupportAgent
                     var solid = Convert.ToInt32(hNSolId.Value);
                     var emp = new EmployeeBl().GetEmployee(Membership.GetUser().UserName);
                     var objCpl = new ClientProblemLogBl();
-                    //objCpl.UpdateClientProblem(cprid, true, DateTime.Now, emp.EMP_ID, solid);
+                    objCpl.UpdateClientProblem(cprid, true, DateTime.Now, emp.EMP_ID, solid);
                     ExtNet.Msg.Notify("Ticket Updated", "Ticket has been updated with the selected new solution").Show();
                     var note = new NoteBl();
-                    //note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
+                    note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
 
                     wndSendEmail.Show();
                 }
@@ -309,22 +304,27 @@ namespace CRMUI.SupportAgent
             {
                 if (heEmailBody.Value != null)
                 {
-                    var objE = new EmailBl();
-                    objE.Subject = txtSubject.Text;
-                    objE.Body = heEmailBody.Value.ToString();
-                    objE.IsHtml = true;
-                    objE.To = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value)).Email;
+                    var objE = new EmailBl
+                                   {
+                                       Subject = txtSubject.Text,
+                                       Body = heEmailBody.Value.ToString(),
+                                       IsHtml = true,
+                                       To = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value)).Email
+                                   };
                     objE.SendEmail();
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Notify("Email Sent", "Your Email has been sent").Show();
                     wndSendEmail.Close();
                 }
                 else
                 {
+                    ExtNet.Mask.Hide();
                     ExtNet.Msg.Alert("All fields not filled", "Please enter values for all fields").Show();
                 }
             }
             catch (Exception ex)
             {
+                ExtNet.Mask.Hide();
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }
