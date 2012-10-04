@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SupportAgent/SA.Master" AutoEventWireup="true"
-    CodeBehind="Home.aspx.cs" Inherits="CRMUI.SupportAgent.CallHome" %>
+    CodeBehind="Home.aspx.cs" Inherits="CRMUI.SupportAgent.CallHome" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default" DirectMethodNamespace="DM" />
@@ -537,6 +537,7 @@
         <Items>
             <ext:FormPanel runat="server" Border="false" Frame="True" BodyPadding="20">
                 <Items>
+                    <ext:Hidden runat="server" ID="hECprId" />
                     <ext:Hidden runat="server" ID="hEProbDesc"/>
                     <ext:Hidden runat="server" ID="hESolDesc"/>
                     <ext:ComboBox runat="server" DisplayField="Name" ValueField="CAT_ID" ID="cmbCategory"
@@ -562,7 +563,7 @@
                             </Select>
                         </DirectEvents>
                     </ext:ComboBox>
-                    <ext:ComboBox runat="server" ID="cmbTemplate" DisplayField="Name" ValueField="Paragraph"
+                    <ext:ComboBox runat="server" ID="cmbTemplate" DisplayField="Name" ValueField="CT_ID"
                         AllowBlank="False" LabelWidth="70" FieldLabel="Template" Text="Choose a Template.."
                         Disabled="True" AnchorHorizontal="50%">
                         <ToolTips>
@@ -573,6 +574,7 @@
                                 <Model>
                                     <ext:Model ID="Model2" runat="server">
                                         <Fields>
+                                            <ext:ModelField Name="CT_ID"/>
                                             <ext:ModelField Name="Name" />
                                             <ext:ModelField Name="Paragraph" />
                                         </Fields>

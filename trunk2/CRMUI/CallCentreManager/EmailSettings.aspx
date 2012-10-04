@@ -60,7 +60,7 @@
                             <ext:HBoxLayoutConfig Align="Middle" Pack="Center" />
                         </LayoutConfig>
                         <Items>
-                            <ext:Button runat="server" ID="BtnSave" Text="Save" Icon="Disk" Padding="5" OnDirectClick="SaveSettings" />
+                            <ext:Button runat="server" ID="BtnSave" OnClientClick="Ext.net.Mask.show({msg: 'Please wait...'});" Text="Save" Icon="Disk" Padding="5" OnDirectClick="SaveSettings" />
                         </Items>
                     </ext:Container>
                 </Items>

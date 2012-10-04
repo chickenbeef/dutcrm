@@ -200,7 +200,6 @@ namespace CRMUI.SupportAgent
                 newtemplate = false;
                 newcategory = false;
 
-                BtnSave.Disabled = true;
                 ResetData();
             }
 
@@ -261,9 +260,9 @@ namespace CRMUI.SupportAgent
             btnCreateTempName.Disabled = true;
             editrPara.Reset();
             editrPara.Disabled = true;
+            BtnSave.Disabled = true;
         }
 
         #endregion
-
     }
 }

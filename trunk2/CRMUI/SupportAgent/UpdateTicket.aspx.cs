@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Security;
 using CRMBusiness;
 using CRMBusiness.CRM;
@@ -79,7 +80,7 @@ namespace CRMUI.SupportAgent
                 }
                 else
                 {
-                    ExtNet.Msg.Alert("Not Found", "No tickets found for that username.").Show();
+                    ExtNet.Msg.Alert("Not Found", "No tickets found for that client name.").Show();
                 }
                 
             }
@@ -95,6 +96,11 @@ namespace CRMUI.SupportAgent
             try
             {
                 streSolutions.RemoveAll();
+                streNotes.RemoveAll();
+                lblNSolDesc.Html = "";
+                lblEmployeeNameOfNote.Html = "";
+                lblNote.Html = "";
+                btnUpdateTicket.Disabled = false;
                 var cprid = Convert.ToInt32(e.ExtraParams["cprid"]);
                 var cpl = new ClientProblemLogBl().GetClientProblem(cprid);
 
@@ -111,20 +117,21 @@ namespace CRMUI.SupportAgent
 
                     //view new solutions
                     var solutions = new SolutionBl().GetSolutions(cpl.PROB_ID);
+                    var LNewSol = new List<Solution>();
+
                     if(solutions.Count > 0)
                     {
-                        for (int i = 0; i < solutions.Count; i++)
-                        {
-                            if(solutions[i].SOL_ID == cpl.SOL_ID)
-                            {
-                                solutions.RemoveAt(i);
-                            }
-                        }
-                        if(solutions.Count > 0)
+                        LNewSol.AddRange(solutions.Where(sol => sol.SOL_ID != cpl.SOL_ID || sol.Description != cpl.SolutionDescription));
+
+                        if(LNewSol.Count > 0)
                         {
                             _haveNewSolutions = true;
-                            streSolutions.DataSource = solutions;
+                            streSolutions.DataSource = LNewSol;
                             streSolutions.DataBind();
+                        }
+                        else
+                        {
+                            _haveNewSolutions = false;
                         }
                     }
 
@@ -137,7 +144,6 @@ namespace CRMUI.SupportAgent
                     //set details for sending of email
                     hEClientId.Value = cpl.CLIENT_ID;
                     hEProbDesc.Value = cpl.ProblemDescription;
-                    hESolDesc.Value = cpl.SolutionDescription;
                 }
                 
             }
@@ -187,6 +193,7 @@ namespace CRMUI.SupportAgent
                     //view new solution details
                     hNSolId.Value = solid;
                     lblNSolDesc.Html = solution.Description;
+                    hESolDesc.Value = solution.Description;
                 }
             }
             catch (Exception ex)
@@ -217,7 +224,7 @@ namespace CRMUI.SupportAgent
                         ExtNet.Msg.Notify("Ticket Updated", "Ticket has been updated as unsolved and can be viewed under 'Solve Ticket'").Show();
                         var note = new NoteBl();
                         note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
-
+                        hECprId.Value = cprid;
                         wndSendEmail.Show();
                     }
                 }
@@ -232,9 +239,10 @@ namespace CRMUI.SupportAgent
                     ExtNet.Msg.Notify("Ticket Updated", "Ticket has been updated with the selected new solution").Show();
                     var note = new NoteBl();
                     note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
-
+                    hECprId.Value = cprid;
                     wndSendEmail.Show();
                 }
+                btnUpdateTicket.Disabled = true;
             }
             catch (Exception ex)
             {
@@ -266,8 +274,11 @@ namespace CRMUI.SupportAgent
         protected void CmbTemplateSelectedItem(object sender, DirectEventArgs e)
         {
             var client = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value));
-            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
-            heEmailBody.Value += cmbTemplate.SelectedItem.Value + "<br/><br/>";
+            var ctid = Convert.ToInt32(cmbTemplate.SelectedItem.Value);
+            var template = new ComTemplateBl().GetTemplateById(ctid);
+            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                       hECprId.Value + "<br/><br/>";
+            heEmailBody.Value += template.Paragraph + "<br/><br/>";
             heEmailBody.Value += "<b>Problem Description:</b><br/><br/>" + hEProbDesc.Value + "<br/><br/>";
             if(_haveNewSolutions)
             {
@@ -283,7 +294,8 @@ namespace CRMUI.SupportAgent
             streCategories.DataBind();
 
             var client = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value));
-            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
+            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                       hECprId.Value + "<br/><br/>";
             heEmailBody.Value += "<b>Problem Description:</b><br/><br/>" + hEProbDesc.Value + "<br/><br/>";
             if (_haveNewSolutions)
             {

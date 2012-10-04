@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Web.Security;
 using System.Web.UI;
 using CRMBusiness;
@@ -32,6 +33,7 @@ namespace CRMUI.SupportAgent
 
                     //show client contact info
                     var client = new ClientBl().GetClientByClientId(Convert.ToInt32(hClientId.Value));
+                    lblClientName.Html = "Client Name: " + client.Name + " " + client.Surname + "<br/><br/>";
                     lblTelephone.Html = "Client Telephone: " + client.Telephone + "<br/><br/>";
                     lblCell.Html = "Client Cell: " + client.Cell + "<br/><br/>";
                     lblFax.Html = "Client Fax: " + client.Fax;
@@ -39,6 +41,9 @@ namespace CRMUI.SupportAgent
                     //disable/enable view images button
                     var imageCount = new ImageBl().GetImageCountForTicket(Convert.ToInt32(hCPRId.Value));
                     btnViewImages.Disabled = imageCount <= 0;
+
+                    //enable solve button
+                    btnSolveTicket.Disabled = false;
                 }
             }
             catch (Exception ex)
@@ -51,7 +56,7 @@ namespace CRMUI.SupportAgent
         {
             try
             {
-                if(heSolutionDesc.Value != null)
+                if (heSolutionDesc.Value.ToString() != "")
                 {
                     //get employee details
                     var username = Membership.GetUser().UserName;
@@ -69,13 +74,78 @@ namespace CRMUI.SupportAgent
                     var objCpl = new ClientProblemLogBl();
                     var cprid = Convert.ToInt32(hCPRId.Value);
                     objCpl.UpdateClientProblem(cprid, true, DateTime.Now, emp.EMP_ID, solid);
-
+                    hECprId.Value = cprid;
                     hEClientId.Value = hClientId.Value;
                     wndSendEmail.Show();
+
+                    //check for other unsolved tickets with same problem and solve them automatically
+                    //---------------------------
+
+                    //get problem id of previously updated ticket
+                    var probId = new ClientProblemLogBl().GetClientProblem(cprid).PROB_ID;
+
+                    //get unsolved tickets with same problem
+                    var unsolvedTickets = new ClientProblemLogBl().GetClientProblemsByProbId(probId);
+
+                    foreach (var ticket in unsolvedTickets)
+                    {
+                        if (ticket.CPR_ID != cprid)
+                        {
+                            //update the ticket with new solution
+                            objCpl.UpdateClientProblem(ticket.CPR_ID, true, DateTime.Now, emp.EMP_ID, solid);
+                            //send email to client that ticket belongs to
+                            //---------
+
+                            //get client details
+                            var client = new ClientBl().GetClientByClientId(ticket.CLIENT_ID);
+                            //create the body to use in body of email
+                            var sb = new StringBuilder();
+                            sb.Append("Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                      ticket.CPR_ID + "<br/><br/>");
+                            sb.Append("We have a solution to your problem please see below. Thank You");
+                            sb.Append("<br/><br/><b>Problem:</b><br/><br/>");
+                            sb.Append(ticket.ProblemDescription);
+                            sb.Append("<br/><br/><b>Solution:<br/><br/>");
+                            sb.Append(heSolutionDesc.Value.ToString());
+
+                            //send email
+                            var email = new EmailBl
+                                            {
+                                                To = client.Email,
+                                                Bcc = new List<string> {emp.Email},
+                                                Subject = "LawProperty Customer Support",
+                                                Body = sb.ToString(),
+                                                IsHtml = true
+                                            };
+                            var message = "Ticket ID: " + ticket.CPR_ID + "<br/>has also been solved. ";
+                            if (email.SendEmail())
+                            {
+                                ExtNet.Mask.Hide();
+                                ExtNet.Msg.Notify("Auto Ticket Update", message).Show();
+                            }
+                            else
+                            {
+                                ExtNet.Mask.Hide();
+                                ExtNet.Msg.Notify("Auto Send Email Failed", "Client: " +
+                                                                            client.Name + " " + client.Surname + " - " +
+                                                                            email.Error).Show();
+                            }
+                            ExtNet.Mask.Hide();
+                        }
+
+                    }
+                    ExtNet.Mask.Hide();
+                }
+                else
+                {
+                    ExtNet.Mask.Hide();
+                    ExtNet.Msg.Alert("No Solution Entered", "Please enter a solution then click solve.").Show();
+                    heSolutionDesc.Focus();
                 }
             }
             catch (Exception ex)
             {
+                ExtNet.Mask.Hide();
                 ExtNet.Msg.Alert("Error", ex.Message).Show();
             }
         }
@@ -104,8 +174,11 @@ namespace CRMUI.SupportAgent
             try
             {
                 var client = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value));
-                heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
-                heEmailBody.Value += cmbTemplate.SelectedItem.Value;
+                var ctid = Convert.ToInt32(cmbTemplate.SelectedItem.Value);
+                var template = new ComTemplateBl().GetTemplateById(ctid);
+                heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                       (hECprId.Value + "<br/><br/>");
+                heEmailBody.Value += template.Paragraph;
                 heEmailBody.Value += "<br/><br/><b>Problem:</b><br/><br/>" + hEProbDesc.Value;
                 heEmailBody.Value += "<br/><br/><b>Solution Details:</b><br/><br/>" + heSolutionDesc.Value;
             }
@@ -125,9 +198,10 @@ namespace CRMUI.SupportAgent
                 streCategories.DataBind();
 
                 var client = new ClientBl().GetClientByClientId(Convert.ToInt32(hEClientId.Value));
-                heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
+                heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                       (hECprId.Value + "<br/><br/>");
                 heEmailBody.Value += "<br/><br/><b>Problem:</b><br/><br/>" + hEProbDesc.Value;
-                heEmailBody.Value += "<br/><br/><b>Solution Details:</b><br/><br/>" + heSolutionDesc.Value;
+                heEmailBody.Value += "<br/><br/><b>Solution Details:</b><br/>" + heSolutionDesc.Value;
             }
             catch (Exception ex)
             {
@@ -140,6 +214,7 @@ namespace CRMUI.SupportAgent
             cmbCategory.Text = "Choose a Category..";
             cmbTemplate.Text = "Choose a Template..";
             cmbTemplate.Disabled = true;
+            btnSolveTicket.Disabled = true;
         }
 
         protected void BtnSendEmailClick(object sender, DirectEventArgs e)

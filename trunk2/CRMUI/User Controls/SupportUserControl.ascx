@@ -8,13 +8,24 @@
 	style="text-align: justify">
 	<LocalReport ReportPath="Reports\SupportReport.rdlc">
 		<DataSources>
-			<rsweb:ReportDataSource DataSourceId="odsSupportReport" Name="SupportData" />
+			<rsweb:ReportDataSource DataSourceId="odsSupportReportData" 
+                Name="SupportReportData" />
+		    <rsweb:ReportDataSource DataSourceId="odsCommonProblem" Name="CommonProblem" />
 		</DataSources>
 	</LocalReport>
 </rsweb:ReportViewer>
-<asp:ObjectDataSource ID="odsSupportReport" runat="server" 
-	OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-	TypeName="CRMUI.Reports.CRMDataSetTableAdapters.SupportDataTableAdapter">
+
+
+
+<asp:ObjectDataSource ID="odsCommonProblem" runat="server" 
+    OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+    TypeName="CRMUI.Reports.CRMDataSetTableAdapters.CommonProblemTableAdapter">
 </asp:ObjectDataSource>
+<asp:ObjectDataSource ID="odsSupportReportData" runat="server" 
+    OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+    TypeName="CRMUI.Reports.CRMDataSetTableAdapters.SupportReportDataTableAdapter">
+</asp:ObjectDataSource>
+
+
 
 

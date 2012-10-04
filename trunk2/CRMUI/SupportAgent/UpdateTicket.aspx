@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SupportAgent/SA.Master" AutoEventWireup="true"
-    CodeBehind="UpdateTicket.aspx.cs" Inherits="CRMUI.SupportAgent.UpdateTicket" %>
+    CodeBehind="UpdateTicket.aspx.cs" Inherits="CRMUI.SupportAgent.UpdateTicket" ValidateRequest="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" Theme="Default" />
@@ -87,15 +87,9 @@
                                         <Fields>
                                             <ext:ModelField Name="CPR_ID" />
                                             <ext:ModelField Name="DateCreated" />
-                                            <ext:ModelField Name="EMP_ID" />
                                             <ext:ModelField Name="EmployeeName" />
                                             <ext:ModelField Name="EmployeeSurname" />
-                                            <ext:ModelField Name="PROB_ID" />
                                             <ext:ModelField Name="ProblemDescription" />
-                                            <ext:ModelField Name="SOL_ID" />
-                                            <ext:ModelField Name="SolutionDescription" />
-                                            <ext:ModelField Name="Priority" />
-                                            <ext:ModelField Name="CLIENT_ID" />
                                             <ext:ModelField Name="ClientName" />
                                             <ext:ModelField Name="ClientSurname" />
                                         </Fields>
@@ -253,7 +247,7 @@
                                             <ext:Label runat="server" ID="lblOSolDesc" />
                                         </Items>
                                     </ext:FieldSet>
-                                    <ext:Button runat="server" ID="btnUpdateTicket" Text="Update Ticket" OnDirectClick="BtnUpdateTicketClick" />
+                                    <ext:Button runat="server" ID="btnUpdateTicket" Disabled="True" Text="Update Ticket" OnDirectClick="BtnUpdateTicketClick" />
                                 </Items>
                             </ext:FormPanel>
                             <%--NOTE DETAILS--%>
@@ -269,10 +263,10 @@
                                             <ext:Label runat="server" ID="lblNote" />
                                         </Items>
                                     </ext:FieldSet>
-                                    <ext:Label ID="Label1" runat="server" Html="<br/>" />
-                                    <ext:HtmlEditor runat="server" ID="heNote" FieldLabel="Add Note" LabelAlign="Top" AnchorHorizontal="100%">
+                                    <ext:Label ID="Label1" runat="server" Html="<br/><br/>Add Note:<br/><br/>" />
+                                    <ext:HtmlEditor runat="server" ID="heNote" AnchorHorizontal="100%">
                                         <ToolTips>
-                                            <ext:ToolTip runat="server" Html="Add any extra notes make sure the previous solution is here before saving"/>
+                                            <ext:ToolTip runat="server" Html="Add any extra notes here<br/> make sure the previous solution is here before updating"/>
                                         </ToolTips>
                                     </ext:HtmlEditor>
                                 </Items>
@@ -292,6 +286,7 @@
         <Items>
             <ext:FormPanel ID="FormPanel1" runat="server" Border="false" Frame="True" BodyPadding="20">
                 <Items>
+                    <ext:Hidden runat="server" ID="hECprId"/>
                     <ext:Hidden runat="server" ID="hEClientId"/>
                     <ext:Hidden runat="server" ID="hEProbDesc"/>
                     <ext:Hidden runat="server" ID="hESolDesc"/>
@@ -315,7 +310,7 @@
                             </Select>
                         </DirectEvents>
                     </ext:ComboBox>
-                    <ext:ComboBox runat="server" ID="cmbTemplate" DisplayField="Name" ValueField="Paragraph"
+                    <ext:ComboBox runat="server" ID="cmbTemplate" DisplayField="Name" ValueField="CT_ID"
                         AllowBlank="False" LabelWidth="70" FieldLabel="Template" Text="Choose a Template.."
                         Disabled="True" AnchorHorizontal="50%">
                         <Store>
@@ -323,6 +318,7 @@
                                 <Model>
                                     <ext:Model ID="Model3" runat="server">
                                         <Fields>
+                                            <ext:ModelField Name="CT_ID"/>
                                             <ext:ModelField Name="Name" />
                                             <ext:ModelField Name="Paragraph" />
                                         </Fields>

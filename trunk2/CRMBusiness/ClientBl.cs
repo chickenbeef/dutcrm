@@ -64,14 +64,14 @@ namespace CRMBusiness
         public List<vClient> GetClientName(string  cName)
         {
             _crm = new CRMEntities(_uri);          
-            return _crm.vClients.Where(x => x.Name == cName).ToList();            
+            return _crm.vClients.Where(x => x.Name.Contains(cName)).ToList();            
         }
 
         //get client by username
         public List<vClient> GetClientUserName(string cUserName)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClients.Where(x => x.UserName == cUserName).ToList();
+            return _crm.vClients.Where(x => x.UserName.Contains(cUserName)).ToList();
         }
 
         //get client by client id

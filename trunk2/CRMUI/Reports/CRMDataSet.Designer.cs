@@ -32,7 +32,9 @@ namespace CRMUI.Reports {
         
         private ProblemsPerAgentDataTable tableProblemsPerAgent;
         
-        private SupportDataDataTable tableSupportData;
+        private CommonProblemDataTable tableCommonProblem;
+        
+        private SupportReportDataDataTable tableSupportReportData;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -74,8 +76,11 @@ namespace CRMUI.Reports {
                 if ((ds.Tables["ProblemsPerAgent"] != null)) {
                     base.Tables.Add(new ProblemsPerAgentDataTable(ds.Tables["ProblemsPerAgent"]));
                 }
-                if ((ds.Tables["SupportData"] != null)) {
-                    base.Tables.Add(new SupportDataDataTable(ds.Tables["SupportData"]));
+                if ((ds.Tables["CommonProblem"] != null)) {
+                    base.Tables.Add(new CommonProblemDataTable(ds.Tables["CommonProblem"]));
+                }
+                if ((ds.Tables["SupportReportData"] != null)) {
+                    base.Tables.Add(new SupportReportDataDataTable(ds.Tables["SupportReportData"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -139,9 +144,19 @@ namespace CRMUI.Reports {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SupportDataDataTable SupportData {
+        public CommonProblemDataTable CommonProblem {
             get {
-                return this.tableSupportData;
+                return this.tableCommonProblem;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SupportReportDataDataTable SupportReportData {
+            get {
+                return this.tableSupportReportData;
             }
         }
         
@@ -224,8 +239,11 @@ namespace CRMUI.Reports {
                 if ((ds.Tables["ProblemsPerAgent"] != null)) {
                     base.Tables.Add(new ProblemsPerAgentDataTable(ds.Tables["ProblemsPerAgent"]));
                 }
-                if ((ds.Tables["SupportData"] != null)) {
-                    base.Tables.Add(new SupportDataDataTable(ds.Tables["SupportData"]));
+                if ((ds.Tables["CommonProblem"] != null)) {
+                    base.Tables.Add(new CommonProblemDataTable(ds.Tables["CommonProblem"]));
+                }
+                if ((ds.Tables["SupportReportData"] != null)) {
+                    base.Tables.Add(new SupportReportDataDataTable(ds.Tables["SupportReportData"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -284,10 +302,16 @@ namespace CRMUI.Reports {
                     this.tableProblemsPerAgent.InitVars();
                 }
             }
-            this.tableSupportData = ((SupportDataDataTable)(base.Tables["SupportData"]));
+            this.tableCommonProblem = ((CommonProblemDataTable)(base.Tables["CommonProblem"]));
             if ((initTable == true)) {
-                if ((this.tableSupportData != null)) {
-                    this.tableSupportData.InitVars();
+                if ((this.tableCommonProblem != null)) {
+                    this.tableCommonProblem.InitVars();
+                }
+            }
+            this.tableSupportReportData = ((SupportReportDataDataTable)(base.Tables["SupportReportData"]));
+            if ((initTable == true)) {
+                if ((this.tableSupportReportData != null)) {
+                    this.tableSupportReportData.InitVars();
                 }
             }
         }
@@ -308,8 +332,10 @@ namespace CRMUI.Reports {
             base.Tables.Add(this.tableSalesWeek);
             this.tableProblemsPerAgent = new ProblemsPerAgentDataTable();
             base.Tables.Add(this.tableProblemsPerAgent);
-            this.tableSupportData = new SupportDataDataTable();
-            base.Tables.Add(this.tableSupportData);
+            this.tableCommonProblem = new CommonProblemDataTable();
+            base.Tables.Add(this.tableCommonProblem);
+            this.tableSupportReportData = new SupportReportDataDataTable();
+            base.Tables.Add(this.tableSupportReportData);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -338,7 +364,13 @@ namespace CRMUI.Reports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeSupportData() {
+        private bool ShouldSerializeCommonProblem() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeSupportReportData() {
             return false;
         }
         
@@ -410,7 +442,10 @@ namespace CRMUI.Reports {
         public delegate void ProblemsPerAgentRowChangeEventHandler(object sender, ProblemsPerAgentRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void SupportDataRowChangeEventHandler(object sender, SupportDataRowChangeEvent e);
+        public delegate void CommonProblemRowChangeEventHandler(object sender, CommonProblemRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void SupportReportDataRowChangeEventHandler(object sender, SupportReportDataRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1560,20 +1595,14 @@ namespace CRMUI.Reports {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SupportDataDataTable : global::System.Data.TypedTableBase<SupportDataRow> {
+        public partial class CommonProblemDataTable : global::System.Data.TypedTableBase<CommonProblemRow> {
             
             private global::System.Data.DataColumn columnDescription;
             
-            private global::System.Data.DataColumn columnNumberOfProblemsPerDay;
-            
-            private global::System.Data.DataColumn columnSolvedCount;
-            
-            private global::System.Data.DataColumn columnUnSolvedCount;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SupportDataDataTable() {
-                this.TableName = "SupportData";
+            public CommonProblemDataTable() {
+                this.TableName = "CommonProblem";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1581,7 +1610,7 @@ namespace CRMUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SupportDataDataTable(global::System.Data.DataTable table) {
+            internal CommonProblemDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1598,7 +1627,7 @@ namespace CRMUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected SupportDataDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected CommonProblemDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1609,6 +1638,251 @@ namespace CRMUI.Reports {
                 get {
                     return this.columnDescription;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CommonProblemRow this[int index] {
+                get {
+                    return ((CommonProblemRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CommonProblemRowChangeEventHandler CommonProblemRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CommonProblemRowChangeEventHandler CommonProblemRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CommonProblemRowChangeEventHandler CommonProblemRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CommonProblemRowChangeEventHandler CommonProblemRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddCommonProblemRow(CommonProblemRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CommonProblemRow AddCommonProblemRow(string Description) {
+                CommonProblemRow rowCommonProblemRow = ((CommonProblemRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Description};
+                rowCommonProblemRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCommonProblemRow);
+                return rowCommonProblemRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CommonProblemDataTable cln = ((CommonProblemDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CommonProblemDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDescription = base.Columns["Description"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.columnDescription.AllowDBNull = false;
+                this.columnDescription.MaxLength = 2000;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CommonProblemRow NewCommonProblemRow() {
+                return ((CommonProblemRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CommonProblemRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CommonProblemRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CommonProblemRowChanged != null)) {
+                    this.CommonProblemRowChanged(this, new CommonProblemRowChangeEvent(((CommonProblemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CommonProblemRowChanging != null)) {
+                    this.CommonProblemRowChanging(this, new CommonProblemRowChangeEvent(((CommonProblemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CommonProblemRowDeleted != null)) {
+                    this.CommonProblemRowDeleted(this, new CommonProblemRowChangeEvent(((CommonProblemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CommonProblemRowDeleting != null)) {
+                    this.CommonProblemRowDeleting(this, new CommonProblemRowChangeEvent(((CommonProblemRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveCommonProblemRow(CommonProblemRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CRMDataSet ds = new CRMDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CommonProblemDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SupportReportDataDataTable : global::System.Data.TypedTableBase<SupportReportDataRow> {
+            
+            private global::System.Data.DataColumn columnNumberOfProblemsPerDay;
+            
+            private global::System.Data.DataColumn columnSolvedCount;
+            
+            private global::System.Data.DataColumn columnUnSolvedCount;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SupportReportDataDataTable() {
+                this.TableName = "SupportReportData";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SupportReportDataDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected SupportReportDataDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1646,48 +1920,47 @@ namespace CRMUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SupportDataRow this[int index] {
+            public SupportReportDataRow this[int index] {
                 get {
-                    return ((SupportDataRow)(this.Rows[index]));
+                    return ((SupportReportDataRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SupportDataRowChangeEventHandler SupportDataRowChanging;
+            public event SupportReportDataRowChangeEventHandler SupportReportDataRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SupportDataRowChangeEventHandler SupportDataRowChanged;
+            public event SupportReportDataRowChangeEventHandler SupportReportDataRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SupportDataRowChangeEventHandler SupportDataRowDeleting;
+            public event SupportReportDataRowChangeEventHandler SupportReportDataRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SupportDataRowChangeEventHandler SupportDataRowDeleted;
+            public event SupportReportDataRowChangeEventHandler SupportReportDataRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSupportDataRow(SupportDataRow row) {
+            public void AddSupportReportDataRow(SupportReportDataRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SupportDataRow AddSupportDataRow(string Description, int NumberOfProblemsPerDay, int SolvedCount, int UnSolvedCount) {
-                SupportDataRow rowSupportDataRow = ((SupportDataRow)(this.NewRow()));
+            public SupportReportDataRow AddSupportReportDataRow(int NumberOfProblemsPerDay, int SolvedCount, int UnSolvedCount) {
+                SupportReportDataRow rowSupportReportDataRow = ((SupportReportDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Description,
                         NumberOfProblemsPerDay,
                         SolvedCount,
                         UnSolvedCount};
-                rowSupportDataRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSupportDataRow);
-                return rowSupportDataRow;
+                rowSupportReportDataRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSupportReportDataRow);
+                return rowSupportReportDataRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SupportDataDataTable cln = ((SupportDataDataTable)(base.Clone()));
+                SupportReportDataDataTable cln = ((SupportReportDataDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1695,13 +1968,12 @@ namespace CRMUI.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SupportDataDataTable();
+                return new SupportReportDataDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnDescription = base.Columns["Description"];
                 this.columnNumberOfProblemsPerDay = base.Columns["NumberOfProblemsPerDay"];
                 this.columnSolvedCount = base.Columns["SolvedCount"];
                 this.columnUnSolvedCount = base.Columns["UnSolvedCount"];
@@ -1710,42 +1982,38 @@ namespace CRMUI.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
                 this.columnNumberOfProblemsPerDay = new global::System.Data.DataColumn("NumberOfProblemsPerDay", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumberOfProblemsPerDay);
                 this.columnSolvedCount = new global::System.Data.DataColumn("SolvedCount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSolvedCount);
                 this.columnUnSolvedCount = new global::System.Data.DataColumn("UnSolvedCount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnSolvedCount);
-                this.columnDescription.AllowDBNull = false;
-                this.columnDescription.MaxLength = 2000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SupportDataRow NewSupportDataRow() {
-                return ((SupportDataRow)(this.NewRow()));
+            public SupportReportDataRow NewSupportReportDataRow() {
+                return ((SupportReportDataRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SupportDataRow(builder);
+                return new SupportReportDataRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SupportDataRow);
+                return typeof(SupportReportDataRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SupportDataRowChanged != null)) {
-                    this.SupportDataRowChanged(this, new SupportDataRowChangeEvent(((SupportDataRow)(e.Row)), e.Action));
+                if ((this.SupportReportDataRowChanged != null)) {
+                    this.SupportReportDataRowChanged(this, new SupportReportDataRowChangeEvent(((SupportReportDataRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1753,8 +2021,8 @@ namespace CRMUI.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SupportDataRowChanging != null)) {
-                    this.SupportDataRowChanging(this, new SupportDataRowChangeEvent(((SupportDataRow)(e.Row)), e.Action));
+                if ((this.SupportReportDataRowChanging != null)) {
+                    this.SupportReportDataRowChanging(this, new SupportReportDataRowChangeEvent(((SupportReportDataRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1762,8 +2030,8 @@ namespace CRMUI.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SupportDataRowDeleted != null)) {
-                    this.SupportDataRowDeleted(this, new SupportDataRowChangeEvent(((SupportDataRow)(e.Row)), e.Action));
+                if ((this.SupportReportDataRowDeleted != null)) {
+                    this.SupportReportDataRowDeleted(this, new SupportReportDataRowChangeEvent(((SupportReportDataRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1771,14 +2039,14 @@ namespace CRMUI.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SupportDataRowDeleting != null)) {
-                    this.SupportDataRowDeleting(this, new SupportDataRowChangeEvent(((SupportDataRow)(e.Row)), e.Action));
+                if ((this.SupportReportDataRowDeleting != null)) {
+                    this.SupportReportDataRowDeleting(this, new SupportReportDataRowChangeEvent(((SupportReportDataRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSupportDataRow(SupportDataRow row) {
+            public void RemoveSupportReportDataRow(SupportReportDataRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1805,7 +2073,7 @@ namespace CRMUI.Reports {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SupportDataDataTable";
+                attribute2.FixedValue = "SupportReportDataDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2165,26 +2433,41 @@ namespace CRMUI.Reports {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SupportDataRow : global::System.Data.DataRow {
+        public partial class CommonProblemRow : global::System.Data.DataRow {
             
-            private SupportDataDataTable tableSupportData;
+            private CommonProblemDataTable tableCommonProblem;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SupportDataRow(global::System.Data.DataRowBuilder rb) : 
+            internal CommonProblemRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSupportData = ((SupportDataDataTable)(this.Table));
+                this.tableCommonProblem = ((CommonProblemDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Description {
                 get {
-                    return ((string)(this[this.tableSupportData.DescriptionColumn]));
+                    return ((string)(this[this.tableCommonProblem.DescriptionColumn]));
                 }
                 set {
-                    this[this.tableSupportData.DescriptionColumn] = value;
+                    this[this.tableCommonProblem.DescriptionColumn] = value;
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SupportReportDataRow : global::System.Data.DataRow {
+            
+            private SupportReportDataDataTable tableSupportReportData;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SupportReportDataRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSupportReportData = ((SupportReportDataDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2192,14 +2475,15 @@ namespace CRMUI.Reports {
             public int NumberOfProblemsPerDay {
                 get {
                     try {
-                        return ((int)(this[this.tableSupportData.NumberOfProblemsPerDayColumn]));
+                        return ((int)(this[this.tableSupportReportData.NumberOfProblemsPerDayColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NumberOfProblemsPerDay\' in table \'SupportData\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberOfProblemsPerDay\' in table \'SupportReportData\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableSupportData.NumberOfProblemsPerDayColumn] = value;
+                    this[this.tableSupportReportData.NumberOfProblemsPerDayColumn] = value;
                 }
             }
             
@@ -2208,14 +2492,14 @@ namespace CRMUI.Reports {
             public int SolvedCount {
                 get {
                     try {
-                        return ((int)(this[this.tableSupportData.SolvedCountColumn]));
+                        return ((int)(this[this.tableSupportReportData.SolvedCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SolvedCount\' in table \'SupportData\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SolvedCount\' in table \'SupportReportData\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSupportData.SolvedCountColumn] = value;
+                    this[this.tableSupportReportData.SolvedCountColumn] = value;
                 }
             }
             
@@ -2224,51 +2508,51 @@ namespace CRMUI.Reports {
             public int UnSolvedCount {
                 get {
                     try {
-                        return ((int)(this[this.tableSupportData.UnSolvedCountColumn]));
+                        return ((int)(this[this.tableSupportReportData.UnSolvedCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UnSolvedCount\' in table \'SupportData\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'UnSolvedCount\' in table \'SupportReportData\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSupportData.UnSolvedCountColumn] = value;
+                    this[this.tableSupportReportData.UnSolvedCountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumberOfProblemsPerDayNull() {
-                return this.IsNull(this.tableSupportData.NumberOfProblemsPerDayColumn);
+                return this.IsNull(this.tableSupportReportData.NumberOfProblemsPerDayColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNumberOfProblemsPerDayNull() {
-                this[this.tableSupportData.NumberOfProblemsPerDayColumn] = global::System.Convert.DBNull;
+                this[this.tableSupportReportData.NumberOfProblemsPerDayColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSolvedCountNull() {
-                return this.IsNull(this.tableSupportData.SolvedCountColumn);
+                return this.IsNull(this.tableSupportReportData.SolvedCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSolvedCountNull() {
-                this[this.tableSupportData.SolvedCountColumn] = global::System.Convert.DBNull;
+                this[this.tableSupportReportData.SolvedCountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsUnSolvedCountNull() {
-                return this.IsNull(this.tableSupportData.UnSolvedCountColumn);
+                return this.IsNull(this.tableSupportReportData.UnSolvedCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUnSolvedCountNull() {
-                this[this.tableSupportData.UnSolvedCountColumn] = global::System.Convert.DBNull;
+                this[this.tableSupportReportData.UnSolvedCountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2412,22 +2696,56 @@ namespace CRMUI.Reports {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class SupportDataRowChangeEvent : global::System.EventArgs {
+        public class CommonProblemRowChangeEvent : global::System.EventArgs {
             
-            private SupportDataRow eventRow;
+            private CommonProblemRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SupportDataRowChangeEvent(SupportDataRow row, global::System.Data.DataRowAction action) {
+            public CommonProblemRowChangeEvent(CommonProblemRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SupportDataRow Row {
+            public CommonProblemRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class SupportReportDataRowChangeEvent : global::System.EventArgs {
+            
+            private SupportReportDataRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SupportReportDataRowChangeEvent(SupportReportDataRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SupportReportDataRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3134,7 +3452,7 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SupportDataTableAdapter : global::System.ComponentModel.Component {
+    public partial class CommonProblemTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3148,7 +3466,7 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public SupportDataTableAdapter() {
+        public CommonProblemTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3245,8 +3563,174 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SupportData";
+            tableMapping.DataSetTable = "CommonProblem";
             tableMapping.ColumnMappings.Add("Description", "Description");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["CRM"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        Description\r\nFROM            CommonProblem";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CRMDataSet.CommonProblemDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CRMDataSet.CommonProblemDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            CRMDataSet.CommonProblemDataTable dataTable = new CRMDataSet.CommonProblemDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SupportReportDataTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public SupportReportDataTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SupportReportData";
             tableMapping.ColumnMappings.Add("NumberOfProblemsPerDay", "NumberOfProblemsPerDay");
             tableMapping.ColumnMappings.Add("SolvedCount", "SolvedCount");
             tableMapping.ColumnMappings.Add("UnSolvedCount", "UnSolvedCount");
@@ -3266,11 +3750,10 @@ namespace CRMUI.Reports.CRMDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CommonProblem.Description, ProblemsPerDay.NumberOfProblemsPerDay, SolvedProblems.SolvedCount, UnSolvedProblems.UnSolvedCount
-FROM            CommonProblem CROSS JOIN
-                         ProblemsPerDay CROSS JOIN
-                         SolvedProblems CROSS JOIN
-                         UnSolvedProblems";
+            this._commandCollection[0].CommandText = "SELECT        ProblemsPerDay.NumberOfProblemsPerDay, SolvedProblems.SolvedCount, " +
+                "UnSolvedProblems.UnSolvedCount\r\nFROM            ProblemsPerDay CROSS JOIN\r\n     " +
+                "                    SolvedProblems CROSS JOIN\r\n                         UnSolved" +
+                "Problems";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3278,7 +3761,7 @@ FROM            CommonProblem CROSS JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CRMDataSet.SupportDataDataTable dataTable) {
+        public virtual int Fill(CRMDataSet.SupportReportDataDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3291,9 +3774,9 @@ FROM            CommonProblem CROSS JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CRMDataSet.SupportDataDataTable GetData() {
+        public virtual CRMDataSet.SupportReportDataDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CRMDataSet.SupportDataDataTable dataTable = new CRMDataSet.SupportDataDataTable();
+            CRMDataSet.SupportReportDataDataTable dataTable = new CRMDataSet.SupportReportDataDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

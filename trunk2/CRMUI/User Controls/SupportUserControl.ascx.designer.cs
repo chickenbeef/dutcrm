@@ -22,12 +22,21 @@ namespace CRMUI.User_Controls {
         protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
         
         /// <summary>
-        /// odsSupportReport control.
+        /// odsCommonProblem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsSupportReport;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsCommonProblem;
+        
+        /// <summary>
+        /// odsSupportReportData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsSupportReportData;
     }
 }

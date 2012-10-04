@@ -75,7 +75,7 @@
                     </ext:Container>
                     <ext:Container ID="Container1" runat="server" Margins="5 0 10 0">
                         <Items>
-                            <ext:Button runat="server" ID="btnConfirm" Text="Save" Padding="5" Icon="PageSave" OnDirectClick="SaveSettings" Disabled="True"/>
+                            <ext:Button runat="server" ID="btnConfirm" Text="Save" Padding="5" Icon="PageSave" OnClientClick="Ext.net.Mask.show({msg: 'Please wait...'});" OnDirectClick="SaveSettings" Disabled="True"/>
                             <ext:Button ID="btnCancel" runat="server" Text="Cancel" Padding="5" OnDirectClick="CancelClicked" Icon="Cancel" Margin="10"/>
                         </Items>
                     </ext:Container>

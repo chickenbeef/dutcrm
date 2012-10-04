@@ -42,7 +42,7 @@
                                         Margins="10 0 10 20" OnDirectClick="CreateCategoryName" Icon="add" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:TextField ID="txtCatName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
+                            <ext:TextField ID="txtCatName" runat="server" Width="200" Margins="5 0 10 30" LabelAlign="Top"
                                 FieldLabel="Enter category name" Hidden="True" AllowBlank="False"/>
                             <%--FIELDSET TEMPLATE DATA--%>
                             <ext:FieldSet ID="FieldSet1" runat="server" Margins="5 0 10 0" Width="380" Layout="HBoxLayout" Title="Select or create a template">
@@ -68,7 +68,7 @@
                                         Margins="10 0 10 20" OnDirectClick="CreateTemplateName" Disabled="True" Icon="Add" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top" FieldLabel="Enter template name" Hidden="True"/>
+                            <ext:TextField ID="txtTemplateName" runat="server" Width="200" Margins="5 0 10 30" LabelAlign="Top" FieldLabel="Enter template name" Hidden="True"/>
                                 
                             
                         </Items>

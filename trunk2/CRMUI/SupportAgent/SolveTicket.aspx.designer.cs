@@ -130,6 +130,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.FieldSet fsExtraDetails;
         
         /// <summary>
+        /// lblClientName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label lblClientName;
+        
+        /// <summary>
         /// lblTelephone control.
         /// </summary>
         /// <remarks>
@@ -155,6 +164,15 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Label lblFax;
+        
+        /// <summary>
+        /// lblSolDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Label lblSolDesc;
         
         /// <summary>
         /// heSolutionDesc control.
@@ -200,6 +218,15 @@ namespace CRMUI.SupportAgent {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.FormPanel FormPanel1;
+        
+        /// <summary>
+        /// hECprId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Hidden hECprId;
         
         /// <summary>
         /// hEClientId control.

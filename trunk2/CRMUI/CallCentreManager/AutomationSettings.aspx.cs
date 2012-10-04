@@ -40,15 +40,18 @@ namespace CRMUI.CallCentreManager
                    cmbPriorities.Disable(true);
                    txtHours.Disable(true);
                    txtMins.Disable(true);
+                   ExtNet.Mask.Hide();
                    ExtNet.Msg.Notify("Update Status", " Escalation update successful").Show();
                }
                else
                {
+                   ExtNet.Mask.Hide();
                    ExtNet.Msg.Notify("Update Status", "Escalation update was not completed").Show();
                }
            }
            catch (Exception ex)
            {
+               ExtNet.Mask.Hide();
                ExtNet.Msg.Alert("Error", ex.Message).Show();
            }
        }

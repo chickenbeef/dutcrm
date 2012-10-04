@@ -427,6 +427,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.FormPanel FormPanel1;
         
         /// <summary>
+        /// hECprId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Hidden hECprId;
+        
+        /// <summary>
         /// hEClientId control.
         /// </summary>
         /// <remarks>

@@ -6,16 +6,12 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b4aa6ee6-30b5-4414-a9b5-3c6ba138bb2f</rd:DataSourceID>
+      <rd:DataSourceID>c5003e25-7094-48de-9db9-0e9902c1b532</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="SupportData">
+    <DataSet Name="SupportReportData">
       <Fields>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="NumberOfProblemsPerDay">
           <DataField>NumberOfProblemsPerDay</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -36,10 +32,30 @@
       <rd:DataSetInfo>
         <rd:DataSetName>CRMDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Joshua\Documents\DUT 3rd year\DS3\CRM\Implementation\WebApp\CRM svn\CRMUI\Reports\CRMDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>SupportData</rd:TableName>
+        <rd:TableName>SupportReportData</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>SupportDataTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>SupportReportDataTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="CommonProblem">
+      <Fields>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CRMDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>CRMDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Joshua\Documents\DUT 3rd year\DS3\CRM\Implementation\WebApp\CRM svn\CRMUI\Reports\CRMDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>CommonProblem</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CommonProblemTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -94,78 +110,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox10">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Most Common Problem:</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Calisto MT</FontFamily>
-                  <FontSize>16pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                  <Color>DarkBlue</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>4.77534cm</Top>
-        <Left>2.30188cm</Left>
-        <Height>0.81167cm</Height>
-        <Width>7.39479cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox23">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Fields!Description.Value</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontFamily>Calisto MT</FontFamily>
-                  <FontSize>12pt</FontSize>
-                  <TextDecoration>None</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>6.0125cm</Top>
-        <Left>2.30188cm</Left>
-        <Height>2.47854cm</Height>
-        <Width>15.69229cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox11">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -188,11 +132,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>10.02562cm</Top>
-        <Left>2.30188cm</Left>
+        <Top>8.58589cm</Top>
+        <Left>2.30191cm</Left>
         <Height>1.12917cm</Height>
         <Width>9.18924cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -223,7 +167,7 @@
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="SolvedCount">
+            <ChartSeries Name="SolvedCount1">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
@@ -262,7 +206,7 @@
                 <MinMovingDistance>0pt</MinMovingDistance>
               </ChartSmartLabel>
             </ChartSeries>
-            <ChartSeries Name="UnSolvedCount1">
+            <ChartSeries Name="UnSolvedCount">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
@@ -496,12 +440,12 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>SupportData</DataSetName>
-        <Top>16.66029cm</Top>
-        <Left>4.11869cm</Left>
+        <DataSetName>SupportReportData</DataSetName>
+        <Top>13.71243cm</Top>
+        <Left>4.11873cm</Left>
         <Height>6.95792cm</Height>
         <Width>12.04201cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -532,11 +476,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>12.91868cm</Top>
-        <Left>2.30188cm</Left>
+        <Top>9.97082cm</Top>
+        <Left>2.30192cm</Left>
         <Height>0.81167cm</Height>
         <Width>5.98778cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -554,7 +498,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!SolvedCount.Value</Value>
+                <Value>=Sum(Fields!SolvedCount.Value, "SupportReportData")</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calisto MT</FontFamily>
@@ -569,11 +513,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>12.91868cm</Top>
-        <Left>8.28966cm</Left>
+        <Top>9.97082cm</Top>
+        <Left>8.2897cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.945cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -606,11 +550,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>14.42681cm</Top>
-        <Left>2.30189cm</Left>
+        <Top>11.47895cm</Top>
+        <Left>2.30193cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.65937cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -628,7 +572,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!UnSolvedCount.Value</Value>
+                <Value>=Sum(Fields!UnSolvedCount.Value, "SupportReportData")</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calisto MT</FontFamily>
@@ -643,11 +587,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>14.42681cm</Top>
-        <Left>8.96126cm</Left>
+        <Top>11.47895cm</Top>
+        <Left>8.9613cm</Left>
         <Height>0.81167cm</Height>
         <Width>6.945cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -665,7 +609,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!NumberOfProblemsPerDay.Value</Value>
+                <Value>=Sum(Fields!NumberOfProblemsPerDay.Value, "SupportReportData")</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Calisto MT</FontFamily>
@@ -680,11 +624,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NumberOfProblemsPerDay</rd:DefaultName>
-        <Top>10.02562cm</Top>
-        <Left>12.05654cm</Left>
+        <Top>8.58589cm</Top>
+        <Left>12.05657cm</Left>
         <Height>1.12917cm</Height>
         <Width>5.93763cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -695,6 +639,131 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>6.17806in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.4133in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Most Common Problem (s)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Calisto MT</FontFamily>
+                                <FontSize>16pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                                <Color>DarkBlue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.4133in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Description">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Description.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Calisto MT</FontFamily>
+                                <FontSize>16pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Description</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <KeepTogether>true</KeepTogether>
+        <DataSetName>CommonProblem</DataSetName>
+        <Top>5.09799cm</Top>
+        <Left>2.30188cm</Left>
+        <Height>2.09956cm</Height>
+        <Width>15.69227cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
     </ReportItems>
     <Height>29.7cm</Height>
     <Style>

@@ -123,6 +123,7 @@ namespace CRMUI.SupportAgent
                 cmbEPriority.Disabled = true;
                 btnECreateTicketNoSol.Disabled = true;
                 btnECreateTicketSol.Disabled = true;
+                streESolutions.RemoveAll();
                 var probs = new ProblemBl().GetProblems(txtEProbDesc.Text);
                 //no problem found
                 if (probs.Count <= 0)
@@ -333,11 +334,10 @@ namespace CRMUI.SupportAgent
 
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created with a solution").Show();
 
-                        var message = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
-                                       (cprid + "<br/><br/>");
+                        hECprId.Value = cprid;
+                        //show send email window
                         wndSendEmail.Show();
                         heEmailBody.Disabled = false;
-                        heEmailBody.Value = message;
 
                         //disable buttons
                         cmbEPriority.Disabled = true;
@@ -411,11 +411,9 @@ namespace CRMUI.SupportAgent
                             }
                         }
 
-                        var message = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
-                                       (cprid + "<br/><br/>");
+                        hECprId.Value = cprid;
                         wndSendEmail.Show();
                         heEmailBody.Disabled = false;
-                        heEmailBody.Value = message;
 
                         //disable buttons
                         cmbEPriority.Disabled = true;
@@ -480,6 +478,7 @@ namespace CRMUI.SupportAgent
                 cmbCPriority.Disabled = true;
                 btnCCreateTicketNoSol.Disabled = true;
                 btnCCreateTicketSol.Disabled = true;
+                streCSolutions.RemoveAll();
                 var probs = new ProblemBl().GetProblems(txtCProbDesc.Text);
                 //no problem found
                 if (probs.Count <= 0)
@@ -674,11 +673,9 @@ namespace CRMUI.SupportAgent
 
                         ExtNet.Msg.Notify("Ticket Created", "The ticket has been created with a solution").Show();
 
-                        var message = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
-                                       (cprid + "<br/><br/>");
+                        hECprId.Value = cprid;
                         wndSendEmail.Show();
                         heEmailBody.Disabled = false;
-                        heEmailBody.Value = message;
 
                         //disable buttons
                         cmbEPriority.Disabled = true;
@@ -733,11 +730,9 @@ namespace CRMUI.SupportAgent
                         //get ticket number
                         var cprid = cpl.GetLastCprId();
 
-                        var message = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
-                                       (cprid + "<br/><br/>");
+                        hECprId.Value = cprid;
                         wndSendEmail.Show();
                         heEmailBody.Disabled = false;
-                        heEmailBody.Value = message;
 
                         //disable buttons
                         cmbCPriority.Disabled = true;
@@ -839,8 +834,11 @@ namespace CRMUI.SupportAgent
         protected void CmbTemplateSelectedItem(object sender, DirectEventArgs e)
         {
             var client = new ClientBl().GetClientByClientId(Convert.ToInt32(_clientid));
-            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
-            heEmailBody.Value += cmbTemplate.SelectedItem.Value + "<br/><br/>";
+            var ctid = Convert.ToInt32(cmbTemplate.SelectedItem.Value);
+            var template = new ComTemplateBl().GetTemplateById(ctid);
+            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                       hECprId.Value + "<br/><br/>";
+            heEmailBody.Value += template.Paragraph + "<br/><br/>";
             heEmailBody.Value += "<b>Problem Description:</b><br/><br/>" + hEProbDesc.Value + "<br/><br/>";
             if (_haveSolution)
             {
@@ -856,7 +854,8 @@ namespace CRMUI.SupportAgent
             streCategories.DataBind();
 
             var client = new ClientBl().GetClientByClientId(Convert.ToInt32(_clientid));
-            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/><br/>";
+            heEmailBody.Value = "Hi " + client.Name + " " + client.Surname + "<br/>Your Ticket number is: " +
+                                       hECprId.Value + "<br/><br/>";
             heEmailBody.Value += "<b>Problem Description:</b><br/><br/>" + hEProbDesc.Value + "<br/><br/>";
             if (_haveSolution)
             {

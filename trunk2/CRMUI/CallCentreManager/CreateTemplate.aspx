@@ -5,7 +5,8 @@
     <ext:ResourceManager ID="ResourceManagerCreateTemplate" runat="server" Theme="Default" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphCallCMBody" runat="server">
-    <ext:Panel ID="pnlMain" runat="server" MinHeight="612" Title="Create or edit templates" MaxWidth="1349">
+    <ext:Panel ID="pnlMain" runat="server" MinHeight="612" Title="Create or edit templates"
+        MaxWidth="1349">
         <LayoutConfig>
             <ext:HBoxLayoutConfig Align="Middle" Pack="Center" />
         </LayoutConfig>
@@ -22,9 +23,9 @@
                             <ext:FieldSet ID="fdsetSelections" runat="server" Margins="10 0 5 0" Width="380"
                                 Layout="HBoxLayout" Title="Select or create a template category">
                                 <Items>
-                                    <ext:ComboBox ID="cmbTemplateCategory" runat="server" Margins="10 0 10 20"
-                                        DisplayField="Name" ValueField="CAT_ID" AllowBlank="False" Editable="False" LabelAlign="Top"
-                                         OnDirectSelect="SelectedCategory" Width="200" FieldLabel="Select Category">
+                                    <ext:ComboBox ID="cmbTemplateCategory" runat="server" Margins="10 0 10 20" DisplayField="Name"
+                                        ValueField="CAT_ID" AllowBlank="False" Editable="False" LabelAlign="Top" OnDirectSelect="SelectedCategory"
+                                        Width="200" FieldLabel="Select Category">
                                         <Store>
                                             <ext:Store ID="strCategory" runat="server">
                                                 <Model>
@@ -42,14 +43,14 @@
                                         Margins="10 0 10 20" OnDirectClick="CreateCategoryName" Icon="add" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:TextField ID="txtCatName" runat="server" Margins="5 0 10 30" LabelAlign="Top"
-                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False" MaxWidth="200"/>
+                            <ext:TextField ID="txtCatName" runat="server" Margins="5 0 10 30" Width="200" LabelAlign="Top"
+                                FieldLabel="Enter category name" Hidden="True" AllowBlank="False" MaxWidth="200" />
                             <%--FIELDSET TEMPLATE DATA--%>
                             <ext:FieldSet runat="server" Margins="5 0 10 0" Width="380" Layout="HBoxLayout" Title="Select or create a template">
                                 <Items>
-                                    <ext:ComboBox ID="cmbComTemplates" runat="server" Margins="10 0 10 20"
-                                        Width="200" Disabled="True" DisplayField="Name" ValueField="CT_ID" AllowBlank="False"
-                                        Editable="False" LabelAlign="Top" OnDirectSelect="SelectedTemplate" FieldLabel="Select Template">
+                                    <ext:ComboBox ID="cmbComTemplates" runat="server" Margins="10 0 10 20" Width="200"
+                                        Disabled="True" DisplayField="Name" ValueField="CT_ID" AllowBlank="False" Editable="False"
+                                        LabelAlign="Top" OnDirectSelect="SelectedTemplate" FieldLabel="Select Template">
                                         <Store>
                                             <ext:Store ID="streComTemplate" runat="server">
                                                 <Model>
@@ -68,22 +69,22 @@
                                         Margins="10 0 10 20" OnDirectClick="CreateTemplateName" Disabled="True" Icon="Add" />
                                 </Items>
                             </ext:FieldSet>
-                            <ext:TextField ID="txtTemplateName" runat="server" Margins="5 0 10 30" LabelAlign="Top" FieldLabel="Enter template name" Hidden="True" MaxWidth="200"/>
-                                
-                            
+                            <ext:TextField ID="txtTemplateName" runat="server" Width="200" Margins="5 0 10 30"
+                                LabelAlign="Top" FieldLabel="Enter template name" Hidden="True" />
                         </Items>
                     </ext:Container>
                     <%--RIGHT CONTAINER--%>
                     <ext:Container ID="cntrMessageBody" Height="350" runat="server" Layout="vboxLayout"
                         Border="false" Margins="0 10 0 5">
                         <Items>
-                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250" FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True" OnDirectChange="EnableSave"/>
+                            <ext:HtmlEditor ID="editrPara" runat="server" Margins="10 0 10 15" Width="550" Height="250"
+                                FieldLabel="Enter template paragragh" LabelAlign="Top" Disabled="True" OnDirectChange="EnableSave" />
                             <ext:Container runat="server" Layout="hboxLayout">
                                 <Items>
                                     <ext:Button ID="BtnSave" runat="server" Text="Save Template" Margins="10 0 10 20"
-                                                Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" Disabled="true" />
-                                    <ext:Button ID="btnRefresh" runat="server" Text="Reset" Margins="10 0 10 20"
-                                                Padding="5" OnDirectClick="BtnRefreshClicked" Icon="PageRefresh"/>
+                                        Padding="5" OnDirectClick="BtnSaveClicked" Icon="ScriptSave" Disabled="true" />
+                                    <ext:Button ID="btnRefresh" runat="server" Text="Reset" Margins="10 0 10 20" Padding="5"
+                                        OnDirectClick="BtnRefreshClicked" Icon="PageRefresh" />
                                 </Items>
                             </ext:Container>
                         </Items>

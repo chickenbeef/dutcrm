@@ -1,4 +1,5 @@
 ﻿using System;
+using CRMBusiness.CRM;
 using Ext.Net;
 using CRMBusiness;
 
@@ -194,8 +195,7 @@ namespace CRMUI.CallCentreManager
                 }
                 newtemplate = false;
                 newcategory = false;
-
-                BtnSave.Disabled = true;
+               
                 ResetData();
             }
 
@@ -205,6 +205,7 @@ namespace CRMUI.CallCentreManager
         {
             ResetData();
         }
+
         #endregion
 
 
@@ -256,9 +257,9 @@ namespace CRMUI.CallCentreManager
             btnCreateTempName.Disabled = true;
             editrPara.Reset();
             editrPara.Disabled = true;
+            BtnSave.Disabled = true;
         }
 
         #endregion
-
     }
 }

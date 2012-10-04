@@ -82,14 +82,30 @@ FROM            ProblemsPerAgent</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SupportDataTableAdapter" GeneratorDataComponentClassName="SupportDataTableAdapter" Name="SupportData" UserDataComponentName="SupportDataTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CommonProblemTableAdapter" GeneratorDataComponentClassName="CommonProblemTableAdapter" Name="CommonProblem" UserDataComponentName="CommonProblemTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CRM (Web.config)" DbObjectName="CRM.dbo.CommonProblem" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Description
+FROM            CommonProblem</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SupportReportDataTableAdapter" GeneratorDataComponentClassName="SupportReportDataTableAdapter" Name="SupportReportData" UserDataComponentName="SupportReportDataTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="CRM (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CommonProblem.Description, ProblemsPerDay.NumberOfProblemsPerDay, SolvedProblems.SolvedCount, UnSolvedProblems.UnSolvedCount
-FROM            CommonProblem CROSS JOIN
-                         ProblemsPerDay CROSS JOIN
+                    <CommandText>SELECT        ProblemsPerDay.NumberOfProblemsPerDay, SolvedProblems.SolvedCount, UnSolvedProblems.UnSolvedCount
+FROM            ProblemsPerDay CROSS JOIN
                          SolvedProblems CROSS JOIN
                          UnSolvedProblems</CommandText>
                     <Parameters />
@@ -98,7 +114,6 @@ FROM            CommonProblem CROSS JOIN
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Description" DataSetColumn="Description" />
               <Mapping SourceColumn="NumberOfProblemsPerDay" DataSetColumn="NumberOfProblemsPerDay" />
               <Mapping SourceColumn="SolvedCount" DataSetColumn="SolvedCount" />
               <Mapping SourceColumn="UnSolvedCount" DataSetColumn="UnSolvedCount" />
@@ -193,7 +208,7 @@ FROM            CommonProblem CROSS JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SupportData" msprop:Generator_TableClassName="SupportDataDataTable" msprop:Generator_TableVarName="tableSupportData" msprop:Generator_TablePropName="SupportData" msprop:Generator_RowDeletingName="SupportDataRowDeleting" msprop:Generator_UserTableName="SupportData" msprop:Generator_RowChangingName="SupportDataRowChanging" msprop:Generator_RowEvHandlerName="SupportDataRowChangeEventHandler" msprop:Generator_RowDeletedName="SupportDataRowDeleted" msprop:Generator_RowEvArgName="SupportDataRowChangeEvent" msprop:Generator_RowChangedName="SupportDataRowChanged" msprop:Generator_RowClassName="SupportDataRow">
+        <xs:element name="CommonProblem" msprop:Generator_TableClassName="CommonProblemDataTable" msprop:Generator_TableVarName="tableCommonProblem" msprop:Generator_TablePropName="CommonProblem" msprop:Generator_RowDeletingName="CommonProblemRowDeleting" msprop:Generator_UserTableName="CommonProblem" msprop:Generator_RowChangingName="CommonProblemRowChanging" msprop:Generator_RowEvHandlerName="CommonProblemRowChangeEventHandler" msprop:Generator_RowDeletedName="CommonProblemRowDeleted" msprop:Generator_RowEvArgName="CommonProblemRowChangeEvent" msprop:Generator_RowChangedName="CommonProblemRowChanged" msprop:Generator_RowClassName="CommonProblemRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
@@ -203,6 +218,12 @@ FROM            CommonProblem CROSS JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SupportReportData" msprop:Generator_TableClassName="SupportReportDataDataTable" msprop:Generator_TableVarName="tableSupportReportData" msprop:Generator_TablePropName="SupportReportData" msprop:Generator_RowDeletingName="SupportReportDataRowDeleting" msprop:Generator_UserTableName="SupportReportData" msprop:Generator_RowChangingName="SupportReportDataRowChanging" msprop:Generator_RowEvHandlerName="SupportReportDataRowChangeEventHandler" msprop:Generator_RowDeletedName="SupportReportDataRowDeleted" msprop:Generator_RowEvArgName="SupportReportDataRowChangeEvent" msprop:Generator_RowChangedName="SupportReportDataRowChanged" msprop:Generator_RowClassName="SupportReportDataRow">
+          <xs:complexType>
+            <xs:sequence>
               <xs:element name="NumberOfProblemsPerDay" msprop:Generator_ColumnVarNameInTable="columnNumberOfProblemsPerDay" msprop:Generator_ColumnPropNameInRow="NumberOfProblemsPerDay" msprop:Generator_ColumnPropNameInTable="NumberOfProblemsPerDayColumn" msprop:Generator_UserColumnName="NumberOfProblemsPerDay" type="xs:int" minOccurs="0" />
               <xs:element name="SolvedCount" msprop:Generator_ColumnVarNameInTable="columnSolvedCount" msprop:Generator_ColumnPropNameInRow="SolvedCount" msprop:Generator_ColumnPropNameInTable="SolvedCountColumn" msprop:Generator_UserColumnName="SolvedCount" type="xs:int" minOccurs="0" />
               <xs:element name="UnSolvedCount" msprop:Generator_ColumnVarNameInTable="columnUnSolvedCount" msprop:Generator_ColumnPropNameInRow="UnSolvedCount" msprop:Generator_ColumnPropNameInTable="UnSolvedCountColumn" msprop:Generator_UserColumnName="UnSolvedCount" type="xs:int" minOccurs="0" />

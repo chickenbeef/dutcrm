@@ -86,18 +86,18 @@ namespace CRMBusiness
         public List<vClientProblemsLog> GetClientProblemByUsername(string username)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClientProblemsLogs.Where(x => x.UserName == username).ToList();
+            return _crm.vClientProblemsLogs.Where(x => x.UserName.Contains(username) && x.Solved).ToList();
         }
 
         public List<vClientProblemsLog> GetClientProblemByDescription(string description)
         {
             _crm = new CRMEntities(_uri);
-            return _crm.vClientProblemsLogs.Where(x => x.ProblemDescription.Contains(description)).ToList();
+            return _crm.vClientProblemsLogs.Where(x => x.ProblemDescription.Contains(description) && x.Solved).ToList();
         }
 
         public List<vClientProblemsLog> GetClientProblemByClientName(string name)
         {
-            return new CRMEntities(_uri).vClientProblemsLogs.Where(c => c.ClientName == name).ToList();
+            return new CRMEntities(_uri).vClientProblemsLogs.Where(c => c.ClientName.Contains(name) && c.Solved).ToList();
         } 
 
         public bool UpdateClientProblem(int cprId, bool cprSolved, DateTime? dSolved,
@@ -118,6 +118,11 @@ namespace CRMBusiness
         public int GetLastCprId()
         {
             return new CRMEntities(_uri).ClientProblemsLogs.ToList().Max(cpl => cpl.CPR_ID);
+        }
+
+        public List<vClientProblemsLog> GetClientProblemsByProbId(int probid)
+        {
+            return new CRMEntities(_uri).vClientProblemsLogs.Where(x => x.PROB_ID == probid).ToList();
         }
 
         #endregion

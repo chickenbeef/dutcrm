@@ -44,31 +44,37 @@ namespace CRMUI.CallCentreManager
                 {
                     txtUsername.Focus();
                     InvalidMessage();
+                    ExtNet.Mask.Hide();
                 }
                 else if (Validconfmpw == false)
                 {
                     txtConfirmPassword.Focus();
                     InvalidMessage();
+                    ExtNet.Mask.Hide();
                 }
                 else if (Validincserver == false)
                 {
                     txtInServer.Focus();
                     InvalidMessage();
+                    ExtNet.Mask.Hide();
                 }
                 else if (Validincport == false)
                 {
                     txtInPort.Focus();
                     InvalidMessage();
+                    ExtNet.Mask.Hide();
                 }
                 else if (Validoutserver == false)
                 {
                     txtOtServer.Focus();
                     InvalidMessage();
+                    ExtNet.Mask.Hide();
                 }
                 else if (Validoutport == false)
                 {
                     txtOtPort.Focus();
                     InvalidMessage();
+                    ExtNet.Mask.Hide();
                 }
                 else
                 {
@@ -77,15 +83,18 @@ namespace CRMUI.CallCentreManager
                     {
                         ExtNet.MessageBox.Notify("Save Status", "Email Settings updated successfuly!").Show();
                         Disablecontrols();
+                        ExtNet.Mask.Hide();
                     }
                     else
                     {
                         ExtNet.MessageBox.Notify("Save Status", "Update incomplete!").Show();
+                        ExtNet.Mask.Hide();
                     }
                 }
             }
             catch (Exception ex)
             {
+                ExtNet.Mask.Hide();
                 ExtNet.MessageBox.Alert("Error", ex.Message).Show();
             }
         }
