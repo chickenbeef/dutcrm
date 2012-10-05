@@ -119,7 +119,8 @@ namespace CRMUI.CallCentreManager
                     To = string.Empty,
                     Bcc = mailadresses,
                     Subject = cmbComTemplate.SelectedItem.Text,
-                    Body = editrPara.Text
+                    Body = editrPara.Text,
+                    IsHtml = true
                 };
 
                 if (objmailmessage.SendEmail())
