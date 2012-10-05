@@ -876,11 +876,13 @@ namespace CRMUI.SupportAgent
             {
                 if (heEmailBody.Value != null && txtSubject.Text != "")
                 {
-                    var objE = new EmailBl();
-                    objE.Subject = txtSubject.Text;
-                    objE.Body = heEmailBody.Value.ToString();
-                    objE.IsHtml = true;
-                    objE.To = new ClientBl().GetClientByClientId(_clientid).Email;
+                    var objE = new EmailBl
+                                   {
+                                       Subject = txtSubject.Text,
+                                       Body = heEmailBody.Value.ToString(),
+                                       IsHtml = true,
+                                       To = new ClientBl().GetClientByClientId(_clientid).Email
+                                   };
                     objE.SendEmail();
                     ExtNet.Mask.Hide();
                     ExtNet.Msg.Notify("Email Sent", "Your Email has been sent").Show();

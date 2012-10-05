@@ -40,13 +40,22 @@ namespace CRMUI.Login {
         protected global::Ext.Net.Panel pnlPasswordrecover;
         
         /// <summary>
-        /// PasswordRecovery1 control.
+        /// txtUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PasswordRecovery PasswordRecovery1;
+        protected global::Ext.Net.TextField txtUsername;
+        
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnSubmit;
         
         /// <summary>
         /// HyperLink1 control.
@@ -55,6 +64,6 @@ namespace CRMUI.Login {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::Ext.Net.HyperLink HyperLink1;
     }
 }

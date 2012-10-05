@@ -33,7 +33,7 @@ namespace CRMUI.SupportAgent
 
                     //show client contact info
                     var client = new ClientBl().GetClientByClientId(Convert.ToInt32(hClientId.Value));
-                    lblClientName.Html = "Client Name: " + client.Name + " " + client.Surname + "<br/><br/>";
+                    lblClientName.Html = "Client Name: " + client.Name + " " + client.Surname + "<br/>Ticket ID: " + cprid + "<br/><br/>";
                     lblTelephone.Html = "Client Telephone: " + client.Telephone + "<br/><br/>";
                     lblCell.Html = "Client Cell: " + client.Cell + "<br/><br/>";
                     lblFax.Html = "Client Fax: " + client.Fax;
@@ -127,8 +127,8 @@ namespace CRMUI.SupportAgent
                             {
                                 ExtNet.Mask.Hide();
                                 ExtNet.Msg.Notify("Auto Send Email Failed", "Client: " +
-                                                                            client.Name + " " + client.Surname + " - " +
-                                                                            email.Error).Show();
+                                                                            client.Name + " " + client.Surname + "<br/><b>" +
+                                                                            email.Error + "</b>").Show();
                             }
                             ExtNet.Mask.Hide();
                         }
