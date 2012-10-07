@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Configuration;
 using System.Web.Security;
 using Ext.Net;
 
@@ -16,7 +17,6 @@ namespace CRMUI.Login
                      if (Roles.IsUserInRole(txtUserName.Text, "Call Centre Manager"))
                      {
                          Response.Redirect("~/CallCentreManager/Home.aspx");
-
                      }
 
                      if (Roles.IsUserInRole(txtUserName.Text, "Client"))

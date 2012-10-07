@@ -130,6 +130,7 @@
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
     <Content Include="CRMService.svc" />
+    <Content Include="ErrorPages\Oops.aspx" />
     <Content Include="Images\Header1.png" />
     <Content Include="Images\Header2.png" />
     <Content Include="Images\Logo.png" />
@@ -244,6 +245,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\CustomError.Master.cs">
+      <DependentUpon>CustomError.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\CustomError.Master.designer.cs">
+      <DependentUpon>CustomError.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordRecovery.aspx.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
@@ -404,6 +419,7 @@
     <Content Include="SupportAgent\ImageView.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ErrorPages\CustomError.Master" />
     <None Include="Reports\CRMDataSet.xsc">
       <DependentUpon>CRMDataSet.xsd</DependentUpon>
     </None>
