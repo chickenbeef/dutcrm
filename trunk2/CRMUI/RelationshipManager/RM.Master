@@ -46,7 +46,7 @@
                                 <Items>
                                     <ext:LinkButton runat="server" ID="lnkRecordSale" Text="Record Sale" AutoPostBack="True" PostBackUrl="~/RelationshipManager/Home.aspx"/>
                                     <ext:ToolbarFill runat="server"/>
-                                    <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Default.aspx"/>
+                                    <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" OnClick="LnkLogoutClick"/>
                                 </Items>
                             </ext:Toolbar></td>
                     </tr>

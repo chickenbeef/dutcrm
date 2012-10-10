@@ -69,7 +69,7 @@
                             <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
                             <ext:ToolbarFill ID="ToolbarFill1" runat="server" />
                             <ext:ToolbarSeparator runat="server" />
-                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" PostBackUrl="~/Default.aspx" />
+                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" OnClick="LnkLogoutClick"/>
                         </Items>
                     </ext:Toolbar>
                 </td>

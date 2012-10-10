@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Security;
 
 namespace CRMUI.SalesManager
 {
@@ -6,6 +7,12 @@ namespace CRMUI.SalesManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+        protected void LnkLogoutClick(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
         }
     }
 }

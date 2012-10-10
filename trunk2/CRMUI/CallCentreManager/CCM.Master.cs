@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Ext.Net;
 
 
 namespace CRMUI.CallCentreManager
@@ -15,5 +17,10 @@ namespace CRMUI.CallCentreManager
 
         }
 
+        protected void LnkLogoutClick(object sender, EventArgs eventArgs)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+        }
     }
 }
