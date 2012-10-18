@@ -22,6 +22,15 @@ namespace CRMUI.CallCentreManager {
         protected global::Ext.Net.ResourceManager ResourceManagerc;
         
         /// <summary>
+        /// FancyTheme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.ChartTheme FancyTheme;
+        
+        /// <summary>
         /// pnlMain control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,32 @@ namespace CRMUI.CallCentreManager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Ext.Net.Toolbar tlbarChart;
+        
+        /// <summary>
+        /// Chart1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Chart Chart1;
+        
+        /// <summary>
+        /// Store1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Store Store1;
+        
+        /// <summary>
+        /// Model1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Model Model1;
     }
 }
