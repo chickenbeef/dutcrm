@@ -7,144 +7,135 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRMUI.CallCentreManager {
+namespace CRMUI.SupportAgent {
     
     
-    public partial class CCM {
+    public partial class ChangePassword {
         
         /// <summary>
-        /// head control.
+        /// ResourceManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
-        /// form1 control.
+        /// pnlMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::Ext.Net.Panel pnlMain;
         
         /// <summary>
-        /// Toolbar1 control.
+        /// pnlPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.Toolbar Toolbar1;
+        protected global::Ext.Net.FormPanel pnlPassword;
         
         /// <summary>
-        /// lnkUpdateRoles control.
+        /// cntrcurrentpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkUpdateRoles;
+        protected global::Ext.Net.Container cntrcurrentpassword;
         
         /// <summary>
-        /// lnkMessagingServices control.
+        /// txtOldPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkMessagingServices;
+        protected global::Ext.Net.TextField txtOldPassword;
         
         /// <summary>
-        /// lnkSupportReports control.
+        /// lblOldPasswordError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkSupportReports;
+        protected global::Ext.Net.Label lblOldPasswordError;
         
         /// <summary>
-        /// lnkCharts control.
+        /// cntrnewpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkCharts;
+        protected global::Ext.Net.Container cntrnewpassword;
         
         /// <summary>
-        /// LnkAutomationSettings control.
+        /// txtNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton LnkAutomationSettings;
+        protected global::Ext.Net.TextField txtNewPassword;
         
         /// <summary>
-        /// lnkEmailSettings control.
+        /// lblNewPasswordError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkEmailSettings;
+        protected global::Ext.Net.Label lblNewPasswordError;
         
         /// <summary>
-        /// lnkManageTemplates control.
+        /// cntnrconfirmpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkManageTemplates;
+        protected global::Ext.Net.Container cntnrconfirmpassword;
         
         /// <summary>
-        /// ToolbarSpacer2 control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.ToolbarSpacer ToolbarSpacer2;
+        protected global::Ext.Net.TextField txtConfirmPassword;
         
         /// <summary>
-        /// lnkChangePassword control.
+        /// lblConfirmPasswordError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkChangePassword;
+        protected global::Ext.Net.Label lblConfirmPasswordError;
         
         /// <summary>
-        /// ToolbarFill1 control.
+        /// Container1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.ToolbarFill ToolbarFill1;
+        protected global::Ext.Net.Container Container1;
         
         /// <summary>
-        /// lnkLogout control.
+        /// BtnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Ext.Net.LinkButton lnkLogout;
-        
-        /// <summary>
-        /// cphCallCMBody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cphCallCMBody;
+        protected global::Ext.Net.Button BtnSave;
     }
 }

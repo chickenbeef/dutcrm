@@ -73,7 +73,7 @@ namespace CRMUI.SupportAgent
                     //update the ticket to have the new solution
                     var objCpl = new ClientProblemLogBl();
                     var cprid = Convert.ToInt32(hCPRId.Value);
-                    objCpl.UpdateClientProblem(cprid, true, DateTime.Now, emp.EMP_ID, solid);
+                    objCpl.UpdateClientProblem(cprid, true, DateTime.Now, DateTime.Now, emp.EMP_ID, solid);
                     hECprId.Value = cprid;
                     hEClientId.Value = hClientId.Value;
                     wndSendEmail.Show();
@@ -92,7 +92,7 @@ namespace CRMUI.SupportAgent
                         if (ticket.CPR_ID != cprid)
                         {
                             //update the ticket with new solution
-                            objCpl.UpdateClientProblem(ticket.CPR_ID, true, DateTime.Now, emp.EMP_ID, solid);
+                            objCpl.UpdateClientProblem(ticket.CPR_ID, true, DateTime.Now, DateTime.Now, emp.EMP_ID, solid);
                             //send email to client that ticket belongs to
                             //---------
 

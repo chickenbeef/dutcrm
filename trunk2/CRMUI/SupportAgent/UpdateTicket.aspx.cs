@@ -220,7 +220,7 @@ namespace CRMUI.SupportAgent
                         var cprid = Convert.ToInt32(hCprId.Value);
                         var emp = new EmployeeBl().GetEmployee(Membership.GetUser().UserName);
                         var objCpl = new ClientProblemLogBl();
-                        objCpl.UpdateClientProblem(cprid, false, null, emp.EMP_ID, null);
+                        objCpl.UpdateClientProblem(cprid, false, DateTime.Now, null, emp.EMP_ID, null);
                         ExtNet.Msg.Notify("Ticket Updated", "Ticket has been updated as unsolved and can be viewed under 'Solve Ticket'").Show();
                         var note = new NoteBl();
                         note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);
@@ -235,7 +235,7 @@ namespace CRMUI.SupportAgent
                     var solid = Convert.ToInt32(hNSolId.Value);
                     var emp = new EmployeeBl().GetEmployee(Membership.GetUser().UserName);
                     var objCpl = new ClientProblemLogBl();
-                    objCpl.UpdateClientProblem(cprid, true, DateTime.Now, emp.EMP_ID, solid);
+                    objCpl.UpdateClientProblem(cprid, true, DateTime.Now, DateTime.Now, emp.EMP_ID, solid);
                     ExtNet.Msg.Notify("Ticket Updated", "Ticket has been updated with the selected new solution").Show();
                     var note = new NoteBl();
                     note.AddNote(heNote.Value.ToString(), DateTime.Now, cprid, emp.EMP_ID);

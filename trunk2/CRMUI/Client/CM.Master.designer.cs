@@ -58,6 +58,15 @@ namespace CRMUI.Client {
         protected global::Ext.Net.LinkButton LnkEmailSupport;
         
         /// <summary>
+        /// lnkChangePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.LinkButton lnkChangePassword;
+        
+        /// <summary>
         /// tblfCM control.
         /// </summary>
         /// <remarks>

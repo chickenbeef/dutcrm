@@ -112,6 +112,15 @@ namespace CRMUI.SupportAgent {
         protected global::Ext.Net.ToolbarSpacer ToolbarSpacer2;
         
         /// <summary>
+        /// lnkChangePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.LinkButton lnkChangePassword;
+        
+        /// <summary>
         /// ToolbarFill1 control.
         /// </summary>
         /// <remarks>

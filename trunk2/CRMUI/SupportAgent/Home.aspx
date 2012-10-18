@@ -620,4 +620,14 @@
             </Show>
         </DirectEvents>
     </ext:Window>
+    <ext:TaskManager runat="server" ID="tmEmailProblems">
+        <Tasks>
+            <ext:Task TaskID="UpdateEmailProblems" Interval="10000">
+                <DirectEvents>
+                    <Update onEvent="RefreshEmailProblems">
+                    </Update>
+                </DirectEvents>
+            </ext:Task>
+        </Tasks>
+    </ext:TaskManager>
 </asp:Content>

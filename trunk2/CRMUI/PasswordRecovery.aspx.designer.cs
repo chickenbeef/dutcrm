@@ -58,6 +58,15 @@ namespace CRMUI.Login {
         protected global::Ext.Net.Button btnSubmit;
         
         /// <summary>
+        /// btnReset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Ext.Net.Button btnReset;
+        
+        /// <summary>
         /// HyperLink1 control.
         /// </summary>
         /// <remarks>

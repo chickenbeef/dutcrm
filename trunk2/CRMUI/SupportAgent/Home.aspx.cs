@@ -38,9 +38,12 @@ namespace CRMUI.SupportAgent
             #endregion
 
             #region Populate GridPanel With emails
-            var ep = new EmailProblemBl().GetAllUnAttendedEmailProblems();
-            streEmailProbs.DataSource = ep;
-            streEmailProbs.DataBind();
+            if (Roles.IsUserInRole("Email Support Agent"))
+            {
+                var ep = new EmailProblemBl().GetAllUnAttendedEmailProblems();
+                streEmailProbs.DataSource = ep;
+                streEmailProbs.DataBind();
+            }
             #endregion
         }
 
@@ -300,7 +303,7 @@ namespace CRMUI.SupportAgent
                         var epid = Convert.ToInt32(hEPId.Value);
                         var solid = Convert.ToInt32(hESolId.Value);
                         var probid = Convert.ToInt32(hEProbId.Value);
-                        var date = DateTime.Now.Date;
+                        var date = DateTime.Now;
                         var priority = cmbEPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
 
                         //get details of client
@@ -378,7 +381,7 @@ namespace CRMUI.SupportAgent
                         var cid = Convert.ToInt32(hEClientId.Value);
                         var epid = Convert.ToInt32(hEPId.Value);
                         var probid = Convert.ToInt32(hEProbId.Value);
-                        var date = DateTime.Now.Date;
+                        var date = DateTime.Now;
                         var priority = cmbEPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
 
                         //get details of client
@@ -429,6 +432,16 @@ namespace CRMUI.SupportAgent
             }
         }
 
+        //auto update email problems
+        protected void RefreshEmailProblems(object sender, DirectEventArgs e)
+        {
+            if (Roles.IsUserInRole("Email Support Agent"))
+            {
+                var ep = new EmailProblemBl().GetAllUnAttendedEmailProblems();
+                streEmailProbs.DataSource = ep;
+                streEmailProbs.DataBind();
+            }
+        }
 
         #endregion
 
@@ -655,7 +668,7 @@ namespace CRMUI.SupportAgent
                         var cid = Convert.ToInt32(hCClientId.Value);
                         var solid = Convert.ToInt32(hCSolId.Value);
                         var probid = Convert.ToInt32(hCProbId.Value);
-                        var date = DateTime.Now.Date;
+                        var date = DateTime.Now;
                         var priority = cmbCPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
 
                         //get details of client
@@ -715,7 +728,7 @@ namespace CRMUI.SupportAgent
                         var emp = new EmployeeBl().GetEmployee(username);
                         var cid = Convert.ToInt32(hCClientId.Value);
                         var probid = Convert.ToInt32(hCProbId.Value);
-                        var date = DateTime.Now.Date;
+                        var date = DateTime.Now;
                         var priority = cmbCPriority.SelectedItem.Value.ToString(CultureInfo.InvariantCulture);
 
                         //get details of client

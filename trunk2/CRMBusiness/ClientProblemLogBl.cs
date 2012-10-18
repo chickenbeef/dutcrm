@@ -100,13 +100,14 @@ namespace CRMBusiness
             return new CRMEntities(_uri).vClientProblemsLogs.Where(c => c.ClientName.Contains(name) && c.Solved).ToList();
         } 
 
-        public bool UpdateClientProblem(int cprId, bool cprSolved, DateTime? dSolved,
+        public bool UpdateClientProblem(int cprId, bool cprSolved, DateTime datecreated, DateTime? dSolved,
                                         Int32 eId, Int32? sId)
         {
             _crm = new CRMEntities(_uri);
             var objCpl = _crm.ClientProblemsLogs.Where(x => x.CPR_ID == cprId).ToList()[0];
             if (objCpl == null) return false;
             objCpl.Solved = cprSolved;
+            objCpl.DateCreated = datecreated;
             objCpl.DateSolved = dSolved;
             objCpl.EMP_ID = eId;
             objCpl.SOL_ID = sId;

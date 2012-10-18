@@ -47,7 +47,7 @@
                 <td>
                     <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
                         <Items>
-                            <ext:LinkButton AutoPostBack="True" ID="lnkHome" runat="server" Text="Home"/>
+                            <ext:LinkButton AutoPostBack="True" ID="lnkHome" runat="server" Text="Home" />
                             <ext:ToolbarSpacer runat="server" />
                             <ext:LinkButton ID="LnkSolveTicket" runat="server" Text="Solve Ticket" AutoPostBack="True"
                                 PostBackUrl="~/SupportAgent/SolveTicket.aspx" />
@@ -56,14 +56,16 @@
                                 PostBackUrl="~/SupportAgent/UpdateTicket.aspx" />
                             <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
                             <ext:LinkButton ID="lnkUpdateSolution" runat="server" Text="Update Solution" AutoPostBack="True"
-                                PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx"/>
+                                PostBackUrl="~/SupportAgent/UpdateSolutionReference.aspx" />
                             <ext:ToolbarSpacer ID="ToolbarSpacer3" runat="server" />
                             <ext:LinkButton ID="lnkManageTemplates" runat="server" Text="Manage Templates" AutoPostBack="True"
-                                PostBackUrl="~/SupportAgent/ManageTemplates.aspx"/>
+                                PostBackUrl="~/SupportAgent/ManageTemplates.aspx" />
                             <ext:ToolbarSpacer ID="ToolbarSpacer2" runat="server" />
+                            <ext:LinkButton ID="lnkChangePassword" runat="server" Text="Change Password" AutoPostBack="True"
+                                PostBackUrl="~/SupportAgent/ChangePassword.aspx" />
                             <ext:ToolbarFill ID="ToolbarFill1" runat="server" />
                             <ext:ToolbarSeparator runat="server" />
-                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" OnClick="LnkLogoutClick"/>
+                            <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" OnClick="LnkLogoutClick" />
                         </Items>
                     </ext:Toolbar>
                 </td>

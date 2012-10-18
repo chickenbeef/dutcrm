@@ -45,6 +45,8 @@
                             <ext:Toolbar ID="Toolbar1" runat="server" MaxWidth="1349">
                                 <Items>
                                     <ext:LinkButton runat="server" ID="lnkRecordSale" Text="Record Sale" AutoPostBack="True" PostBackUrl="~/RelationshipManager/Home.aspx"/>
+																		 <ext:ToolbarSpacer ID="ToolbarSpacer1" runat="server" />
+																		 <ext:LinkButton runat="server" ID="lnkChangePassword" Text="Change Password" AutoPostBack="True" PostBackUrl="~/RelationshipManager/ChangePassword.aspx"/>
                                     <ext:ToolbarFill runat="server"/>
                                     <ext:LinkButton runat="server" ID="lnkLogout" Text="Logout" AutoPostBack="True" OnClick="LnkLogoutClick"/>
                                 </Items>

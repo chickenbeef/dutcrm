@@ -48,6 +48,7 @@
                                     <ext:ToolbarSpacer runat="server"/>
                                     <ext:LinkButton ID="LnkEmailSupport" runat="server" Text="Email Support" AutoPostBack="True" PostBackUrl="~/Client/EmailSupport.aspx" />
                                     <ext:ToolbarSpacer runat="server"/>
+																		<ext:LinkButton ID="lnkChangePassword" runat="server" Text="Change Password" AutoPostBack="True" PostBackUrl="~/Client/ChangePassword.aspx" />
                                     <ext:ToolbarFill ID="tblfCM" runat="server"/>
                                     <ext:ToolbarSeparator runat="server"/>
                                     <ext:LinkButton runat="server" ID="lnkCMLogout" Text="Logout" AutoPostBack="True" OnClick="LnkLogoutClick"/>

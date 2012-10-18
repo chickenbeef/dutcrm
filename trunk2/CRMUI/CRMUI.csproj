@@ -121,12 +121,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CallCentreManager\AutomationSettings.aspx" />
+    <Content Include="CallCentreManager\ChangePassword.aspx" />
     <Content Include="CallCentreManager\Charts.aspx" />
     <Content Include="CallCentreManager\CreateTemplate.aspx" />
     <Content Include="CallCentreManager\EmailSettings.aspx" />
     <Content Include="CallCentreManager\Home.aspx" />
     <Content Include="CallCentreManager\MessagingServices.aspx" />
     <Content Include="CallCentreManager\SupportReports.aspx" />
+    <Content Include="Client\ChangePassword.aspx" />
     <Content Include="Client\EmailSupport.aspx" />
     <Content Include="Client\Home.aspx" />
     <Content Include="CRMService.svc" />
@@ -136,10 +138,13 @@
     <Content Include="Images\Logo.png" />
     <Content Include="Default.aspx" />
     <Content Include="PasswordRecovery.aspx" />
+    <Content Include="RelationshipManager\ChangePassword.aspx" />
     <Content Include="RelationshipManager\Home.aspx" />
+    <Content Include="SalesManager\ChangePassword.aspx" />
     <Content Include="SalesManager\Home.aspx" />
     <Content Include="SalesManager\SM.Master" />
     <Content Include="Styles\Main.css" />
+    <Content Include="SupportAgent\ChangePassword.aspx" />
     <Content Include="SupportAgent\Home.aspx" />
     <Content Include="SupportAgent\ManageTemplates.aspx" />
     <Content Include="SupportAgent\UpdateTicket.aspx" />
@@ -175,6 +180,13 @@
     </Compile>
     <Compile Include="CallCentreManager\CCM.Master.designer.cs">
       <DependentUpon>CCM.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CallCentreManager\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallCentreManager\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="CallCentreManager\Charts.aspx.cs">
       <DependentUpon>Charts.aspx</DependentUpon>
@@ -217,6 +229,13 @@
     </Compile>
     <Compile Include="CallCentreManager\SupportReports.aspx.designer.cs">
       <DependentUpon>SupportReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\CM.Master.cs">
       <DependentUpon>CM.Master</DependentUpon>
@@ -266,6 +285,27 @@
     </Compile>
     <Compile Include="PasswordRecovery.aspx.designer.cs">
       <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RelationshipManager\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RelationshipManager\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesManager\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesManager\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportAgent\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupportAgent\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserLogin.Master.cs">
       <DependentUpon>UserLogin.Master</DependentUpon>
