@@ -14,12 +14,14 @@
             <AxisTitleLeft Fill="#eee" />
             <AxisTitleBottom Fill="#eee" />
         </ext:ChartTheme>
-    <ext:Panel ID="pnlMain" runat="server" Height="600" Title="System charts and graphs" LayoutConfig="FitLayout" Icon="ServerChart" MaxWidth="1349">
+    <ext:Panel ID="pnlMain" runat="server" Height="600" Title="System charts and graphs"  Icon="ServerChart" MaxWidth="1349">
+       <LayoutConfig>
+           <ext:FitLayoutConfig runat="server" />
+       </LayoutConfig>
         <TopBar>
             <ext:Toolbar ID="tlbarChart" runat="server">
                 <Items>
                     <ext:Button runat="server" Text="Refresh Data" Icon="DatabaseRefresh" OnDirectClick="RefreshData"/>
-                    <ext:Button runat="server" Text="Save Chart" Icon="Disk" OnDirectClick="SaveChart"/>
                 </Items>
             </ext:Toolbar>
         </TopBar>
@@ -30,6 +32,7 @@
                     Theme="Fancy"
                     Shadow="true">
                     <AnimateConfig Easing="BounceOut" Duration="750" />
+                    <LegendConfig Position="Right" />
                     <Store>
                         <ext:Store ID="Store1" 
                             runat="server" 
@@ -88,29 +91,34 @@
                     <Axes>
                         <ext:NumericAxis                             
                             Fields="ValueV,ValueZ"                                                        
-                            Title="Problems "
+                            Title="# of tickets "
                             Minimum="0"
-                            Maximum="8">
-                             <Label>
-                                <Renderer Handler="return Ext.util.Format.number(value, '0');" />
-                            </Label> 
+                            Maximum="8"
+                            MinorTickSteps="1"
+                            RoundToDecimal="True"
+                            Decimals="0"
+                            >
+                            <Label>
+                                <Renderer Handler="return Ext.util.Format.number(value, '0,0');" />
+                            </Label>
+                              
                             <GridConfig>
                                 <Odd Stroke="#555" />
                                 <Even Stroke="#555" />
                             </GridConfig>
-                        </ext:NumericAxis>                            
-
+                        </ext:NumericAxis> 
+                            
                         <ext:CategoryAxis 
                             Position="Bottom"
                             Fields="DateV"
-                            Title="Days">
+                            Title="Past 7 Days">
                             <Label>
                                 <Renderer Handler="return Ext.util.Format.date(value, 'd-M-y');"/>
                             </Label>
                         </ext:CategoryAxis>
-
                     </Axes>
-
+                    
+                 
                     <Series>
                         <ext:ColumnSeries
                             Axis="Left"

@@ -13,28 +13,14 @@ namespace CRMUI.CallCentreManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             var data = new ChartBL().Getsolvedoncreate();
 
             Store1.DataSource = data;
             Store1.DataBind();
+
         }
 
-        protected void SaveChart(object sender, DirectEventArgs e)
-        {
-            try
-            {
-                //ExtNet.MessageBox.Confirm('Confirm Download', 'Would you like to download this chart as an image',Func<choice>
-                //{if(choice == 'yes')
-                //{
-                //    btn
-                //} 
-                //})
-            }
-            catch(Exception ex)
-            {
-                ExtNet.MessageBox.Alert("Error", ex.Message).Show();
-            }
-        }
 
         protected void RefreshData(object sender, DirectEventArgs e)
         {
